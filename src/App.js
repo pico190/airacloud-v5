@@ -1,8 +1,12 @@
 import './App.css';
+import { StartSwiftlyIDClient } from './utils/SwiftlyIDManager';
 
 function App() {
+
+  var SwiftlyIDClient = StartSwiftlyIDClient();
+
   return (
-    <h1>Sexo</h1>
+    <h1>{SwiftlyIDClient}</h1>
   );
 }
 
