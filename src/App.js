@@ -4,9 +4,10 @@ import { StartSwiftlyIDClient } from './utils/SwiftlyIDManager';
 function App() {
 
   var SwiftlyIDClient = StartSwiftlyIDClient();
+  console.log(SwiftlyIDClient);
 
   return (
-    <h1>{SwiftlyIDClient}</h1>
+    <h1>Consola</h1>
   );
 }
 
