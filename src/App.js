@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 // Pages
 import { Home } from './pages/Home.js'
+import { NotFound } from './pages/NotFound.js'
 
 
 function App() {
