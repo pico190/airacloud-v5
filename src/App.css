@@ -16,6 +16,10 @@ body {
     color: white;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
 /* Sidebar */
 .sidebar {
     width: 30%;
@@ -24,10 +28,6 @@ body {
     /* background-color: rgb(15, 17, 20); */
     background-color: hsla(0, 0%, 100%, 0.03);
     backdrop-filter: blur(98px);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
 }
 
 .colors-img {
@@ -51,4 +51,21 @@ h1, h2, h3, h4, h5, h6 {
 .aira_logo_title {
     display: flex;
     flex-direction: column;
+}
+
+/* Content */
+
+.content {
+    width: 70%;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+.contentTitle {
+    font-family: 82px;
 }
