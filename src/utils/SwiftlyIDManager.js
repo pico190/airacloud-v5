@@ -13,20 +13,20 @@ export function StartSwiftlyIDClient() {
                 window.location.replace("https://xploit.men/aira/swiftlyid-error.php/");
             } else {
                 token = data;
+                $.get("https://xploit.men/swiftly/api/swiftlyid/getinfo/getname.php?token="+token, (data) => {
+                    if(data==="Error 12xGcidT9pwcVnsx3MXWVw$3R&j7W6") {
+                        window.location.replace("https://xploit.men/aira/swiftlyid-error.php");
+                    } else {
+                        username = data;
+                        var response = {
+                            'token': token,
+                            'username': username
+                        }
+                        return response;
+                    }
+                });
             }
         });
-        $.get("https://xploit.men/swiftly/api/swiftlyid/getinfo/getname.php?token="+token, (data) => {
-            if(data==="Error 12xGcidT9pwcVnsx3MXWVw$3R&j7W6") {
-                window.location.replace("https://xploit.men/aira/swiftlyid-error.php/");
-            } else {
-                username = data;
-            }
-        });
-        var response = {
-            'token': token,
-            'username': username
-        }
-        return response;
     }
     
 }
