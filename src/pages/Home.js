@@ -1,5 +1,5 @@
-import { Content } from 'Home/content'
-import { SideBar } from 'Home/sidebar'
+import { Content } from 'homec/content'
+import { SideBar } from 'homec/sidebar'
 
 export function Home() {
     return (
