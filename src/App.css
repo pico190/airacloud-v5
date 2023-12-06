@@ -22,4 +22,6 @@ body {
     height: 100vh;
     position: fixed;
     background-color: rgb(15, 17, 20);
+    background-image: url("/aira.sidebar.svg");
+    background-size: cover;
 }
