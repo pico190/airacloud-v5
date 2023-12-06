@@ -31,3 +31,20 @@ body {
     z-index: -1;
     transform: translateX(-11%);
 }
+
+.SBContent {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.aira_logo {
+    display: flex;
+    gap: 10px;
+}
+
+.aira_logo_title {
+    display: flex;
+    flex-direction: column;
+}
