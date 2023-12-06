@@ -8,25 +8,29 @@ export function StartSwiftlyIDClient() {
         var revokeCode = window.location.href.split("?revokeCode=")[1];
         var username;
         var token;
+        var response;
         $.get("https://xploit.men/swiftly/api/swiftlyid/gettoken?revokeCode="+revokeCode, (data) => {
             if(data==="Error 12xGcidT9pwcVnsx3MXWVw$3R&j7W6") {
                 window.location.replace("https://xploit.men/aira/swiftlyid-error.php/");
             } else {
                 token = data;
+                console.log(token);
                 $.get("https://xploit.men/swiftly/api/swiftlyid/getinfo/getname.php?token="+token, (data) => {
                     if(data==="Error 12xGcidT9pwcVnsx3MXWVw$3R&j7W6") {
                         window.location.replace("https://xploit.men/aira/swiftlyid-error.php");
                     } else {
                         username = data;
-                        var response = {
+                        response = {
                             'token': token,
                             'username': username
                         }
-                        return response;
                     }
                 });
             }
         });
+        window.location.replace("?/");
+        document.cookie=`token__DO_NOT_SEND=${token}; SameSite=Strict; Secure; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT`
+        return response;
     }
     
 }
