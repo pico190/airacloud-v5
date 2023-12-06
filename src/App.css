@@ -47,6 +47,21 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    height: 100%;
+}
+
+.sb_separator {
+    margin-top: auto;
+}
+
+.aira_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.aira_info_title {
+    display: flex;
+    gap: 10px;
 }
 
 .aira_logo {
