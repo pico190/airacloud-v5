@@ -12,9 +12,9 @@ export function SBContent() {
                 <img width="54px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt=""/>
                 <span>
                     <font style={{fontSize: "26px", opacity: "0.75"}}><b>AiraCloud</b> Release 1.0</font>
-                    <br /><font style={{fontSize: "12px", opacity: "0.25"}}>Engine v5.1.69</font>
-                    <br /><font style={{fontSize: "12px", opacity: "0.25"}}>Last update 32 minues ago. <u>See changelog</u>.</font>
-                    <br /><font style={{fontSize: "12px", opacity: "0.5"}}>(c) 2023 Aira / Made with 💚 by Swiftly</font>
+                    <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Engine v5.1.69</font>
+                    <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Last update 32 minues ago. <u>See changelog</u>.</font>
+                    <br /><font style={{fontSize: "16px", opacity: "0.5"}}>(c) 2023 Aira / Made with 💚 by Swiftly</font>
                 </span>
         </div>
     </div>)
