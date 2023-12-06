@@ -22,6 +22,12 @@ body {
     height: 100vh;
     position: fixed;
     /* background-color: rgb(15, 17, 20); */
-    background-color: rgb(255, 255, 255, 0.1);
+    background-color: hsla(0, 0%, 100%, 0.03);
     backdrop-filter: blur(98px);
+}
+
+.colors-img {
+    position: absolute;
+    z-index: -1;
+    transform: translateX(-11%);
 }
