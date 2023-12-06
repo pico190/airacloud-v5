@@ -56,11 +56,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .aira_info {
     display: flex;
-    flex-direction: column;
-}
-
-.aira_info_title {
-    display: flex;
     gap: 10px;
 }
 
