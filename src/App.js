@@ -4,7 +4,7 @@ import { UrlParser } from './utils/UrlParser';
 import { useState, useEffect } from 'react';
 
 // Pages
-import { Home } from 'pages/Home'
+import { Home } from './pages/Home.js'
 
 
 function App() {
