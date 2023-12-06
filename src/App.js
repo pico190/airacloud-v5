@@ -6,8 +6,9 @@ function App() {
   var SwiftlyIDClient = StartSwiftlyIDClient();
   console.log(SwiftlyIDClient);
 
+
+  
   return (
-    <h1>Consola</h1>
   );
 }
 
