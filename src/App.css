@@ -106,6 +106,10 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(255,255,255, .11);
 }
 
+.default-content-button:hover {
+    background-color: #1a1e24;
+}
+
 
 .contentTitle {
     font-size: 56px;
