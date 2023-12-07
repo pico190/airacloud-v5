@@ -1,5 +1,7 @@
 export function SBContent() {
-    return (<div className="SBContent">
+    return (
+    <>
+    <div className="SBContent">
         <div className="aira_logo">
             <img width="54px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt=""/>
             <div className="aira_logo_title">
@@ -10,7 +12,7 @@ export function SBContent() {
         <div className="sb_section">
             <div className="sb_sect_titl_tile">
                 <p><b>Pinned projects</b> <span>3/6</span></p>
-                <div className="spacer">
+                <div className="spacer" />
                 <p>icon here</p>
             </div>
             <div className="sb_sect_tileContainer">
@@ -38,5 +40,7 @@ export function SBContent() {
                     <br /><font style={{fontSize: "16px", opacity: "0.5"}}>(c) 2023 Aira / Made with 💚 by Swiftly</font>
                 </span>
         </div>
-    </div>)
+    </div>
+    </>
+    )
 }
