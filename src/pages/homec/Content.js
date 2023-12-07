@@ -3,7 +3,12 @@ function Recent() {
 
     function Button({ name }) {
         return (
-            <div className="default-content-button"><b>{name}</b></div>
+            <div className="default-content-button">
+                <b>
+                    {name}
+                </b>
+                <img src="https://xploit.men/scdn/?fluenticons&amp;name=chevron-right&amp;type=fluent&amp;fill=white" loading="lazy" alt=""/>
+            </div>
         )
     }
 

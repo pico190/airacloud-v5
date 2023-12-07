@@ -81,6 +81,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 40px;
 }
 
+.recent-activity {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 14px;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
 .default-content-button {
     background-color: #16191E;
     display: inline-flex;
