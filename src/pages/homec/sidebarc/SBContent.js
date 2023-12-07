@@ -7,6 +7,27 @@ export function SBContent() {
                 <span>BETA</span>
             </div>
         </div>
+        <div className="sb_section">
+            <div className="sb_sect_titl_tile">
+                <p><b>Pinned projects</b> <span>3/6</span></p>
+                <div className="spacer">
+                <p>icon here</p>
+            </div>
+            <div className="sb_sect_tileContainer">
+                <div className="sb_sect_tile_contained">
+                    <p>icon here</p>
+                    <p>Swofolofto</p>
+                </div>
+                <div className="sb_sect_tile_contained">
+                    <p>icon here</p>
+                    <p>AiraCloud en Astro</p>
+                </div>
+                <div className="sb_sect_tile_contained">
+                    <p>icon here</p>
+                    <p>Tumbar a Stoximo</p>
+                </div>
+            </div>
+        </div>
         <div className="sb_separator"></div>
         <div className="aira_info">
                 <img width="54px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt=""/>
