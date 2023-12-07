@@ -81,6 +81,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 40px;
 }
 
+.default-content-button {
+    background-color: #16191E;
+    display: inline-flex;
+    width: 297px;
+    height: 50px;
+    padding-left: 17px;
+    padding-right: 17px;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255, .11);
+}
+
 
 .contentTitle {
     font-size: 56px;
