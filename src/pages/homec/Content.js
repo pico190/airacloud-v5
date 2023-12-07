@@ -7,6 +7,7 @@ function Recent() {
                 <b>
                     {name}
                 </b>
+                <div className="spacer" />
                 <img src="https://xploit.men/scdn/?fluenticons&amp;name=chevron-right&amp;type=fluent&amp;fill=white" loading="lazy" alt=""/>
             </div>
         )
