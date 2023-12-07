@@ -8,7 +8,7 @@ export function Button({ icon, icontype, name }) {
     
     return (
         <div className="default-content-button">
-            <img src={iconurl} loading="lazy" alt="" width="32" />
+            <img src={iconurl} loading="lazy" alt="" width="32px" height="32px" />
             <b className="content-button-text">
                 {name}
             </b>
