@@ -32,7 +32,7 @@ export function SBContent() {
         </div>
         <div className="sb_separator"></div>
         <div className="aira_info">
-                <img width="54px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt=""/>
+                <img width="54px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt="" style={{height: "fit-content"}}/>
                 <span>
                     <font style={{fontSize: "26px", opacity: "0.75"}}><b>AiraCloud</b> Release 1.0</font>
                     <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Engine v5.1.69</font>

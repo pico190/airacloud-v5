@@ -4,7 +4,7 @@ function Recent() {
     function Button({ name }) {
         return (
             <div className="default-content-button">
-                <b>
+                <b className="content-button-text">
                     {name}
                 </b>
                 <div className="spacer" />

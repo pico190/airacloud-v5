@@ -110,6 +110,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #1a1e24;
 }
 
+.content-button-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: clip;
+    width: fit-content;
+}
+
 
 .contentTitle {
     font-size: 56px;
