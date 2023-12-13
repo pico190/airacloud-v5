@@ -22,7 +22,7 @@ export function StartSwiftlyIDClient() {
         return response;
     }
 
-    if(!window.location.href.includes("?revokeCode=")) {
+    if(!window.location.href.includes("?revokeCode=") && !window.location.href.includes("!")) {
         window.location.replace("https://xploit.men/swiftly/login/aira?redirect_uri="+window.location.href)
         return false;
     } else {
@@ -38,7 +38,7 @@ export function StartSwiftlyIDClient() {
                 response__ = loadByToken(token);
             }
         });
-        // window.location.replace("?/");
+        window.location.replace("!/");
         return response__;
     }
     
