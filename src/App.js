@@ -10,12 +10,17 @@ import { NotFound } from './pages/NotFound.js'
 
 function App() {
 
+
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
 
   useEffect(() => {
     seturlparsed(UrlParser());
   }, [window.location.href]);
+
+  if(urlparsed[0]==="") {
+    window.location.href="home/"
+  }
 
   useEffect(() => {
     
