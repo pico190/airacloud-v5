@@ -22,16 +22,17 @@ function App() {
 
       console.log(urlparsed[0])
     
-      switch (urlparsed[0]) {
-        case "" || undefined || null:
-          window.location.href="/home/"
-        case "home":
-          setContent(<Home />)
-          break;
-      
-        default:
-          setContent(<NotFound />)
-          break;
+      if (urlparsed[0] === "" || urlparsed[0] === undefined) {
+        window.location.href = "/home/";
+      } else {
+        switch (urlparsed[0]) {
+          case "home":
+            setContent(<Home />);
+            break;
+          default:
+            setContent(<NotFound />);
+            break;
+        }
       }
 
 
