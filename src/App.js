@@ -11,6 +11,11 @@ import { NotFound } from './pages/NotFound.js'
 function App() {
 
 
+  useEffect(() => {
+    var SwiftlyIDClient = StartSwiftlyIDClient();
+    console.log(SwiftlyIDClient);
+  }, []);
+
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
 
@@ -23,7 +28,7 @@ function App() {
       console.log(urlparsed[0])
     
       if (urlparsed[0] === "" || urlparsed[0] === undefined) {
-        window.location.href = "/home/";
+        window.location.href = "/!/home/";
       } else {
         switch (urlparsed[0]) {
           case "home":
@@ -38,10 +43,6 @@ function App() {
 
   }, [urlparsed]);
 
-  useEffect(() => {
-    var SwiftlyIDClient = StartSwiftlyIDClient();
-    console.log(SwiftlyIDClient);
-  }, []);
 
 
   
