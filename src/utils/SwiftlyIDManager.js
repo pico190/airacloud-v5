@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export function StartSwiftlyIDClient() {
 
     function loadByToken(token) {
