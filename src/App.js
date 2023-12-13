@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
 
+      console.log(urlparsed[0])
     
       switch (urlparsed[0]) {
         case "" || undefined || null:
