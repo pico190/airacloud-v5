@@ -18,11 +18,11 @@ function App() {
     seturlparsed(UrlParser());
   }, [window.location.href]);
 
-  if(urlparsed[0]==="") {
-    window.location.href="home/"
-  }
-
   useEffect(() => {
+
+    if(urlparsed[0]==="") {
+      window.location.href="/home/"
+    }
     
     switch (urlparsed[0]) {
       case "home":
