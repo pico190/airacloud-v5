@@ -22,11 +22,8 @@ export function StartSwiftlyIDClient() {
         return response;
     }
 
-    if(!window.location.href.includes("?revokeCode=") && !window.location.href.includes("!")) {
-        window.location.replace("https://xploit.men/swiftly/login/aira?redirect_uri="+window.location.href)
-        return false;
-    } else {
-        var revokeCode = window.location.href.split("?revokeCode=")[1];
+    function loadByRevokeCode(revokeCode) {
+        
         var username = "";
         var token = "";
         var response__ = "";
@@ -38,6 +35,25 @@ export function StartSwiftlyIDClient() {
                 response__ = loadByToken(token);
             }
         });
+    }
+
+    if(!window.location.href.includes("?revokeCode=") && !window.location.href.includes("!")) {
+        window.location.replace("https://xploit.men/swiftly/login/aira?redirect_uri="+window.location.href)
+        return false;
+    } else {
+        if(window.location.href.includes("?revokeCode=")) {
+            var revokeCode = window.location.href.split("?revokeCode=")[1];
+            loadByRevokeCode(revokeCode)
+        } else {
+            if(getCookieValue("revokeCode")!=="" && getCookieValue("revokeCode")!==undefined && getCookieValue("revokeCode")!==null) {
+                window.location.replace("https://xploit.men/swiftly/login/aira?redirect_uri="+window.location.href)
+            }  else {
+                var revokeCode = window.location.href.split("?revokeCode=")[1];
+                loadByRevokeCode(revokeCode)
+
+            }
+
+        }
         if(!window.location.href.includes("!")) {
             window.location.replace("/!/");
         }
