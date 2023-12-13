@@ -24,6 +24,7 @@ export function StartSwiftlyIDClient() {
 
     function loadByRevokeCode(revokeCode) {
         
+        document.cookie = "revokeCode="+revokeCode+"; SameSite=Strict; Secure;"
         var username = "";
         var token = "";
         var response__ = "";
@@ -48,7 +49,7 @@ export function StartSwiftlyIDClient() {
             if(getCookieValue("revokeCode")!=="" && getCookieValue("revokeCode")!==undefined && getCookieValue("revokeCode")!==null) {
                 window.location.replace("https://xploit.men/swiftly/login/aira?redirect_uri="+window.location.href)
             }  else {
-                var revokeCode = window.location.href.split("?revokeCode=")[1];
+                var revokeCode = getCookieValue("revokeCode");
                 loadByRevokeCode(revokeCode)
 
             }
