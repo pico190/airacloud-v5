@@ -38,7 +38,9 @@ export function StartSwiftlyIDClient() {
                 response__ = loadByToken(token);
             }
         });
-        window.location.replace("!/");
+        if(!window.location.href.includes("!")) {
+            window.location.replace("/!/");
+        }
         return response__;
     }
     
