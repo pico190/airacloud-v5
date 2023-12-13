@@ -32,9 +32,11 @@ function App() {
 
   }, [urlparsed]);
 
+  useEffect(() => {
+    var SwiftlyIDClient = StartSwiftlyIDClient();
+    console.log(SwiftlyIDClient);
+  }, []);
 
-  var SwiftlyIDClient = StartSwiftlyIDClient();
-  console.log(SwiftlyIDClient);
 
   
 
