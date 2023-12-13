@@ -22,16 +22,17 @@ function App() {
 
     if(urlparsed[0]==="") {
       window.location.href="/home/"
-    }
+    } else {
     
-    switch (urlparsed[0]) {
-      case "home":
-        setContent(<Home />)
-        break;
-    
-      default:
-        setContent(<NotFound />)
-        break;
+      switch (urlparsed[0]) {
+        case "home":
+          setContent(<Home />)
+          break;
+      
+        default:
+          setContent(<NotFound />)
+          break;
+      }
     }
 
 
