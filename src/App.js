@@ -20,11 +20,10 @@ function App() {
 
   useEffect(() => {
 
-    if(urlparsed[0]==="") {
-      window.location.href="/home/"
-    } else {
     
       switch (urlparsed[0]) {
+        case "" || undefined || null:
+          window.location.href="/home/"
         case "home":
           setContent(<Home />)
           break;
@@ -33,7 +32,6 @@ function App() {
           setContent(<NotFound />)
           break;
       }
-    }
 
 
   }, [urlparsed]);
