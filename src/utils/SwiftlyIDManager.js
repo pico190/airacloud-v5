@@ -40,7 +40,7 @@ export function StartSwiftlyIDClient() {
                     // alert("jamon "+data);
 
                     // lastresponse
-                    alert(response);
+                    alert(data);
 
                 })                                                             
 
