@@ -36,8 +36,8 @@ export function StartSwiftlyIDClient() {
                     window.history.pushState("", "", "https://airacloud-v5.vercel.app/")
 
                     var lastresponse = {
-                        usertoken: responsetoken,
-                        username: data
+                        "usertoken": responsetoken,
+                        "username": data
                     }
 
                     alert("jamon ("+username+")");
