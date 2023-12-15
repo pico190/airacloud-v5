@@ -26,9 +26,11 @@ function App() {
   useEffect(() => {
 
       console.log(urlparsed[0])
-    
-      if (urlparsed[0] === "" || urlparsed[0] === undefined) {
-        window.location.href = "/!/home/";
+
+      if (urlparsed[0].includes("?")) {
+        return true;
+      } else if (urlparsed[0] === "" || urlparsed[0] === undefined) {
+        window.location.href = "/home/";
       } else {
         switch (urlparsed[0]) {
           case "home":
