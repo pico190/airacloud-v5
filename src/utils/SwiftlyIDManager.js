@@ -13,9 +13,10 @@ export function StartSwiftlyIDClient() {
             // Revoke Code
             const revokeCode = url.split("?revokeCode=")[1];
             const token = undefined
-            $.get(`https://xploit.men/swiftly/api/swiftlyid/gettoken?revokeCode=${revokeCode}`, (data) => {token = data;})
-
+            $.get(`https://xploit.men/swiftly/api/swiftlyid/gettoken?revokeCode=${revokeCode}`, (data) => {token = data;}).then(() => {
+            
             alert(revokeCode + ", " + token)
+            });
 
         } else {
 
