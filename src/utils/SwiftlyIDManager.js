@@ -1,10 +1,7 @@
 import $ from 'jquery';
-import { useState } from 'react';
 // import { getCookieValue } from './GetCookieValue';
 
 export function StartSwiftlyIDClient() {
-
-    var [response, setResponse] = useState(undefined);
 
     const url = window.location.href;
     const swiftlyIDError = "Error 12xGcidT9pwcVnsx3MXWVw$3R&j7W6";
@@ -28,21 +25,22 @@ export function StartSwiftlyIDClient() {
                 var responsetoken = data;  
                 $.get(getName + responsetoken, (data) => {          
                     
-                    if(data === swiftlyIDError) {
-                        window.location.href = "https://xploit.men/aira/error.php?error=e0x01"
-                        return true;
-                    }
+                    // if(data === swiftlyIDError) {
+                    //     window.location.href = "https://xploit.men/aira/error.php?error=e0x01"
+                    //     return true;
+                    // }
                     
-                    window.history.pushState("", "", "https://airacloud-v5.vercel.app/")
+                    // window.history.pushState("", "", "https://airacloud-v5.vercel.app/home/")
 
-                    var lastresponse = {
-                        "usertoken": responsetoken,
-                        "username": data
-                    }
+                    // var lastresponse = {
+                    //     "usertoken": responsetoken,
+                    //     "username": data
+                    // }
 
-                    alert("jamon "+data);
+                    // alert("jamon "+data);
 
-                    setResponse(lastresponse)
+                    // lastresponse
+                    alert(response);
 
                 })                                                             
 
