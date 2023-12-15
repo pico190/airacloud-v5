@@ -40,7 +40,7 @@ export function StartSwiftlyIDClient() {
                         "username": data
                     }
 
-                    alert("jamon ("+username+")");
+                    alert("jamon "+data);
 
                     setResponse(lastresponse)
 
