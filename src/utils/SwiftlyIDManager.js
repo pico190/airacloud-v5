@@ -25,8 +25,8 @@ export function StartSwiftlyIDClient() {
                     return true;
                 }
             
-                var token = data;  
-                $.get(getName + token, (data) => {          
+                var responsetoken = data;  
+                $.get(getName + responsetoken, (data) => {          
                     
                     if(data === swiftlyIDError) {
                         window.location.href = "https://xploit.men/aira/error.php?error=e0x01"
@@ -36,9 +36,11 @@ export function StartSwiftlyIDClient() {
                     window.history.pushState("", "", "https://airacloud-v5.vercel.app/")
 
                     var lastresponse = {
-                        usertoken: token,
+                        usertoken: responsetoken,
                         username: data
                     }
+
+                    alert("jamon ("+username+")");
 
                     setResponse(lastresponse)
 
