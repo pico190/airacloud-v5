@@ -10,7 +10,7 @@ export function Stats() {
                 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
                 
                 var chartWidth = window.innerWidth * 0.4;
-                var chartHeight = pageWidth / 0.1;
+                var chartHeight = chartWidth / 0.1;
 
                 const options = {
                     theme: "dark2",
