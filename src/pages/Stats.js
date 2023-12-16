@@ -21,7 +21,7 @@ export function Stats() {
                     axisX: {
                       lineColor: "transparent",
                       tickColor: "transparent",
-                      interval: 2,
+                      interval: 1.3,
                       labelFontColor: "rgba(255, 255, 255, .3)",
                       labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
                     },
@@ -70,7 +70,7 @@ export function Stats() {
                         <h1>Gráfico de visitas</h1>
                         <br /><br />
                         <div className="chart1">
-                            <div style={{width: "40vw"}}>
+                            <div style={{width: "80vw"}}>
                                 <CanvasJSChart options = {options} />    
                             </div>
                             <div style={{width: "100%"}}>
