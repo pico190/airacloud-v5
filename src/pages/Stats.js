@@ -10,7 +10,7 @@ export function Stats() {
             var CanvasJSChart = CanvasJSReact.CanvasJSChart;
             
             const options = {
-                theme: "light2",
+                theme: "dark",
                 animationEnabled: true,
                 exportEnabled: true,
                 title: {
