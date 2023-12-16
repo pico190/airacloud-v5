@@ -47,6 +47,7 @@ function App() {
         }
       }
 
+      console.log(window.innerWidth);
 
   }, [urlparsed, window.innerWidth]);
 
