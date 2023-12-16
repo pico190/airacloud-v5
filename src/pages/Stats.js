@@ -11,7 +11,7 @@ export function Stats() {
             
             const options = {
                 theme: "dark2",
-                backgroundColor: "black",
+                backgroundColor: "#07080a",
       			animationEnabled: true,
 				axisX: {
                   lineColor: "transparent",
