@@ -21,13 +21,14 @@ export function Stats() {
 				axisY: {
                   lineColor: "transparent",
                   gridColor: "rgba(255, 255, 255, .1)",
-                  tickColor: "transparent"
+                  tickColor: "transparent",
+                  interval: 10
                 },
                 data: [
                 {
 					type: "spline",
 					lineColor: "#ff83e6",
-                  	color: "#ff57dd",
+                  	color: "#ff2ed5",
                     xValueFormatString: "YYYY",
                     yValueFormatString: "#",
                     dataPoints: [
