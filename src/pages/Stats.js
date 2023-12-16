@@ -22,7 +22,7 @@ export function Stats() {
                   lineColor: "transparent",
                   gridColor: "rgba(255, 255, 255, .1)",
                   tickColor: "transparent",
-                  interval: 10
+                  interval: 2
                 },
                 data: [
                 {
