@@ -10,7 +10,7 @@ export function StartSwiftlyIDClient() {
     };
 
     if (req.getResponseHeader('token')===null) {
-        window.location.href = 'http://xploit.men/swiftly/login/aira';
+        window.location.href = 'https://xploit.men/swiftly/login/aira';
     } else {
         const url = window.location.href;
         const swiftlyIDError = "Error 12xGcidT9pwcVnsx3MXWVw$3R&j7W6";
