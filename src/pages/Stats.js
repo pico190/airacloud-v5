@@ -18,7 +18,7 @@ export function Stats() {
                   lineColor: "transparent",
                   tickColor: "transparent",
                   interval: 2,
-                  labelFontColor: "rgba(255, 255, 255, .1)",
+                  labelFontColor: "rgba(255, 255, 255, .3)",
                   labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
                 },
 				axisY: {
@@ -26,7 +26,7 @@ export function Stats() {
                   gridColor: "rgba(255, 255, 255, .1)",
                   tickColor: "transparent",
                   interval: 2,
-                  labelFontColor: "rgba(255, 255, 255, .1)",
+                  labelFontColor: "rgba(255, 255, 255, .3)",
                   labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
                 },
                 data: [
