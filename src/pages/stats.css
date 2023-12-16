@@ -10,3 +10,6 @@
 .canvasjs-chart-credit {
     display: none!important;
 }
+.chart1 {
+    display: flex;
+}
