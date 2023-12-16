@@ -66,10 +66,10 @@ export function Stats() {
                 <h1>Gráfico de visitas</h1>
                 <br /><br />
                 <div className="chart1">
-                    <div>
+                    <div style={{width: "500px"}}>
                         <CanvasJSChart options = {options} />    
                     </div>
-                    <div>
+                    <div style={{width: "100%"}}>
                         <iframe style={{borderRadius:"12px"}} src="https://open.spotify.com/embed/track/6EiEuUU8TcAWsMBOMOIHe6?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
                     </div>
 
