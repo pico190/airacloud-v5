@@ -25,32 +25,33 @@ function App() {
     seturlparsed(UrlParser());
   }, [window.location.href]);
 
-  useEffect(() => {
+  function renderize () {
+    
+    console.log(urlparsed[0]);
+    console.log(window.innerWidth);
 
-      console.log(urlparsed[0])
-
-      if (urlparsed[0].includes("?")) {
-        return true;
-      } else if (urlparsed[0] === "" || urlparsed[0] === undefined) {
-        window.location.href = "/home/";
-      } else {
-        switch (urlparsed[0]) {
-          case "home":
-            setContent(<Home />);
-            break;
-          case "stats":
-            setContent(<Stats />);
-            break;
-          default:
-            setContent(<NotFound />);
-            break;
-        }
+    if (urlparsed[0].includes("?")) {
+      return true;
+    } else if (urlparsed[0] === "" || urlparsed[0] === undefined) {
+      window.location.href = "/home/";
+    } else {
+      switch (urlparsed[0]) {
+        case "home":
+          setContent(<Home />);
+          break;
+        case "stats":
+          setContent(<Stats />);
+          break;
+        default:
+          setContent(<NotFound />);
+          break;
       }
+    }
 
-      console.log(window.innerWidth);
 
-  }, [urlparsed, window.innerWidth]);
-
+  }
+  useEffect(() => { renderize () }, [urlparsed, window.innerWidth]);
+  window.addEventListener("resize", () => { renderize(); })
 
 
   
