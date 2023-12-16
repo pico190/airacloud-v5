@@ -14,8 +14,8 @@ function App() {
   useEffect(() => {
     console_start();
 
-    // var SwiftlyIDClient = StartSwiftlyIDClient();
-    // console.log(SwiftlyIDClient);
+    var SwiftlyIDClient = StartSwiftlyIDClient();
+    console.log(SwiftlyIDClient);
   }, []);
 
   var [content, setContent] = useState()

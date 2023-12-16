@@ -15,7 +15,7 @@ export function Stats() {
                 const options = {
                     theme: "dark2",
                     backgroundColor: "#07080a",
-                      animationEnabled: true,
+                    animationEnabled: true,
                     width: chartWidth,
                     height: chartHeight,
                     axisX: {
