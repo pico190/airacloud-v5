@@ -1,5 +1,5 @@
 import { NotFound } from './NotFound.js'
-import './statcs.css';
+import './stats.css';
 
 export function Stats() {
     if(window.location.href.includes(`Fr0W7JpIHa0u5mRbCvJ0KDnP41J6qeZjdluvq2Exc3tDE6mRyl`)) {
