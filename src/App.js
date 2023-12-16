@@ -6,10 +6,11 @@ import { useState, useEffect } from 'react';
 // Pages
 import { Home } from './pages/Home.js'
 import { NotFound } from './pages/NotFound.js'
-
+import { console_start } from './utils/Console.js';
 
 function App() {
 
+  console_start();
 
   useEffect(() => {
     var SwiftlyIDClient = StartSwiftlyIDClient();
