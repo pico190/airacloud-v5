@@ -28,7 +28,7 @@ export function Stats() {
                 {
 					type: "spline",
 					lineColor: "#ff83e6",
-                  	color: "#ff2ed5",
+                  	color: "#ff0bce",
                     xValueFormatString: "YYYY",
                     yValueFormatString: "#",
                     dataPoints: [
