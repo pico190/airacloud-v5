@@ -9,7 +9,7 @@ export function Stats() {
                 var CanvasJS = CanvasJSReact.CanvasJS;
                 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
                 
-                var pageWidth = window.innerWidth * 0.4 + 'px';
+                var pageWidth = window.innerWidth * 0.4;
 
                 const options = {
                     theme: "dark2",
