@@ -9,13 +9,15 @@ export function Stats() {
                 var CanvasJS = CanvasJSReact.CanvasJS;
                 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
                 
-                var pageWidth = window.innerWidth * 0.4;
+                var chartWidth = window.innerWidth * 0.4;
+                var chartHeight = pageWidth / 0.1;
 
                 const options = {
                     theme: "dark2",
                     backgroundColor: "#07080a",
                       animationEnabled: true,
-                    width: pageWidth,
+                    width: chartWidth,
+                    height: chartHeight,
                     axisX: {
                       lineColor: "transparent",
                       tickColor: "transparent",
