@@ -10,18 +10,23 @@ export function Stats() {
             var CanvasJSChart = CanvasJSReact.CanvasJSChart;
             
             const options = {
-                theme: "dark",
-                animationEnabled: true,
-                exportEnabled: true,
-                title: {
-                    text: "Number of iPhones Sold"
+                theme: "dark2",
+                backgroundColor: "black",
+      			animationEnabled: true,
+				axisX: {
+                  lineColor: "transparent",
+                  tickColor: "transparent"
                 },
-                axisY: {
-                    title: "Number of iPhones ( in Million )"
+				axisY: {
+                  lineColor: "rgba(255, 255, 255, .1)",
+                  gridColor: "rgba(255, 255, 255, .1)",
+                  tickColor: "transparent"
                 },
                 data: [
                 {
-                    type: "area",
+					type: "spline",
+					lineColor: "#ff83e6",
+                  	color: "#ff68e0",
                     xValueFormatString: "YYYY",
                     yValueFormatString: "#,##0.## Million",
                     dataPoints: [
