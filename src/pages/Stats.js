@@ -13,7 +13,7 @@ export function Stats() {
                 theme: "dark2",
                 backgroundColor: "#07080a",
       			animationEnabled: true,
-                width: "100px",
+                width: 100,
 				axisX: {
                   lineColor: "transparent",
                   tickColor: "transparent"
