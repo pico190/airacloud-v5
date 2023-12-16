@@ -27,8 +27,8 @@ function App() {
 
   function renderize () {
     
-    console.log(urlparsed[0]);
-    console.log(window.innerWidth);
+    // console.log(urlparsed[0]);
+    // console.log(window.innerWidth);
 
     if (urlparsed[0].includes("?")) {
       return true;
