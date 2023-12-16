@@ -1,10 +1,10 @@
 import { NotFound } from './NotFound.js'
 
 export function Stats() {
-    if(window.location.href.includes(`47b*KAvwpHl<<Lk4{8?,&£2V"==j:51s64.F{A-URqP|cP_&/e`)) {
+    if(window.location.href.includes(`Fr0W7JpIHa0u5mRbCvJ0KDnP41J6qeZjdluvq2Exc3tDE6mRyl`)) {
         return (<h1>Visitas</h1>)
     } else {
-        return <NotFound/>
+        return (<NotFound />);
     }
     
 }
