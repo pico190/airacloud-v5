@@ -1,4 +1,4 @@
-import CanvasJSReact from '@canvasjs/react-charts';
+import CanvasJSReact from '@canvasjs/charts';
 
 import { NotFound } from './NotFound.js'
 import './stats.css';
