@@ -10,9 +10,9 @@ import { console_start } from './utils/Console.js';
 
 function App() {
 
-  console_start();
-
   useEffect(() => {
+    console_start();
+
     var SwiftlyIDClient = StartSwiftlyIDClient();
     console.log(SwiftlyIDClient);
   }, []);

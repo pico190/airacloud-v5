@@ -1,4 +1,6 @@
 export function console_start() {
+    console.clear()
+    
     // Title
     console.log("%cAiraCloud", "background: linear-gradient(to left, #FF9BFF, #FFCB9B); font-size: 100px; font-family: 'Atkinson Hyperlegible', 'Poppins', --sistem-ui, Arial, sans-serif; font-weight: bold; -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent;");
     
