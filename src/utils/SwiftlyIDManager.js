@@ -3,17 +3,22 @@ import $ from 'jquery';
 
 export function StartSwiftlyIDClient() {
     
-    if (!req.headers.token) {
+    var req = new XMLHttpRequest();
+    req.open('GET', document.location, true);
+    req.send(null);
+    req.onload = function() {
+    };
+
+    if (req.getResponseHeader('token')) {
         window.location.href = 'http://xploit.men/swiftly/login/aira';
     } else {
         const url = window.location.href;
         const swiftlyIDError = "Error 12xGcidT9pwcVnsx3MXWVw$3R&j7W6";
     
         // urls
-        const getToken = "https://xploit.men/swiftly/api/swiftlyid/gettoken?revokeCode=";
         const getName = "https://xploit.men/swiftly/api/swiftlyid/getinfo/getname?token=";
     
-        alert(req.headers.token);
+        alert(req.getResponseHeader('token'));
     }
 
       
