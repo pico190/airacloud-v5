@@ -29,11 +29,22 @@ export function Stats() {
                   labelFontColor: "rgba(255, 255, 255, .3)",
                   labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
                 },
+                toolTip: {
+                    enabled: true,       
+                    animationEnabled: true,
+                    borderColor: "#ff83e6",
+                    backgroundColor: "#07080a",
+                    
+                            fontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
+                    cornerRadius: 4
+                },
                 data: [
                 {
 					type: "spline",
 					lineColor: "#ff83e6",
-                  	color: "#ff0bce",
+                  	lineThickness: 5,
+                  	color: "#ff83e6",
+					markerSize: 5,
                     xValueFormatString: "YYYY",
                     yValueFormatString: "#",
                     dataPoints: [
