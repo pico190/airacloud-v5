@@ -13,12 +13,13 @@ export function Stats() {
                 theme: "dark2",
                 backgroundColor: "#07080a",
       			animationEnabled: true,
+                width: "100px",
 				axisX: {
                   lineColor: "transparent",
                   tickColor: "transparent"
                 },
 				axisY: {
-                  lineColor: "rgba(255, 255, 255, .1)",
+                  lineColor: "transparent",
                   gridColor: "rgba(255, 255, 255, .1)",
                   tickColor: "transparent"
                 },
@@ -26,9 +27,9 @@ export function Stats() {
                 {
 					type: "spline",
 					lineColor: "#ff83e6",
-                  	color: "#ff68e0",
+                  	color: "#4bc716",
                     xValueFormatString: "YYYY",
-                    yValueFormatString: "#,##0.## Million",
+                    yValueFormatString: "#",
                     dataPoints: [
                         { x: new Date(2017, 0), y: 7.6},
                         { x: new Date(2016, 0), y: 7.3},
