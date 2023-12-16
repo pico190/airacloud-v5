@@ -5,8 +5,6 @@ import './stats.css';
 
 export function Stats() {
     if(window.location.href.includes(`Fr0W7JpIHa0u5mRbCvJ0KDnP41J6qeZjdluvq2Exc3tDE6mRyl`)) {
-        
-            function load() {
 
                 var CanvasJS = CanvasJSReact.CanvasJS;
                 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -81,12 +79,7 @@ export function Stats() {
                     </div>
                     </>
                 )
-            }
-
-            load();
-            window.addEventListener("resize", () => {
-                load();
-            })
+            
     } else {
         return (<NotFound />);
     }

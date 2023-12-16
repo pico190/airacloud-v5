@@ -48,7 +48,7 @@ function App() {
       }
 
 
-  }, [urlparsed]);
+  }, [urlparsed, window.innerWidth]);
 
 
 
