@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: flex-start;
     align-content: flex-start;
-    gap: 14px;
+    gap: 10px;
     align-self: stretch;
     flex-wrap: wrap;
 }
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 .default-content-button {
     background-color: #16191E;
     display: inline-flex;
-    width: 297px;
+    width: calc(50% - 5px);
     height: 50px;
     padding-left: 17px;
     padding-right: 17px;
