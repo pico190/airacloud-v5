@@ -2,19 +2,20 @@ import './App.css';
 import { StartSwiftlyIDClient } from './utils/SwiftlyIDManager';
 import { UrlParser } from './utils/UrlParser';
 import { useState, useEffect } from 'react';
+import { console_start } from './utils/Console.js';
 
 // Pages
 import { Home } from './pages/Home.js'
 import { NotFound } from './pages/NotFound.js'
-import { console_start } from './utils/Console.js';
+import { Stats } from './pages/Stats.js'
 
 function App() {
 
   useEffect(() => {
     console_start();
 
-    var SwiftlyIDClient = StartSwiftlyIDClient();
-    console.log(SwiftlyIDClient);
+    // var SwiftlyIDClient = StartSwiftlyIDClient();
+    // console.log(SwiftlyIDClient);
   }, []);
 
   var [content, setContent] = useState()
@@ -36,6 +37,9 @@ function App() {
         switch (urlparsed[0]) {
           case "home":
             setContent(<Home />);
+            break;
+          case "stats":
+            setContent(<Stats />);
             break;
           default:
             setContent(<NotFound />);
