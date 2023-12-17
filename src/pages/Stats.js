@@ -32,6 +32,9 @@ export function Stats() {
                       interval: 2,
                       labelFontColor: "rgba(255, 255, 255, .3)",
                       labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
+                      crosshair: {
+                          enabled: true
+                      }
                     },
                     toolTip: {
                         enabled: true,       
@@ -44,7 +47,7 @@ export function Stats() {
                     },
                     data: [
                     {
-                        type: "line",
+                        type: "spline",
                         lineColor: "#ff83e6",
                           lineThickness: 5,
                           color: "#ff83e6",
