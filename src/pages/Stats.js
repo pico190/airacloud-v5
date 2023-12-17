@@ -29,7 +29,7 @@ export function Stats() {
                           label: "",
                           lineDashType: "solid",          
                           snapToDataPoint: true,
-                          color: "#33558B",
+                          color: "rgba(255, 255, 255, .4)",
                           labelBackgroundColor: "#33558B"
 
                             // labelBackgroundColor: "black",
