@@ -79,7 +79,7 @@ export function Stats() {
                 return (
                     <>
                     <div className="stats">
-                        <h1>Gráfico de visitas</h1>
+                        <h1>Gráfico de visitas <button><img src="https://xploit.men/scdn/?fluenticons&name=arrow-sync&type=fluent" alt="" /></button></h1>
                         <br /><br />
                         <div className="chart1">
                             <div style={{width: "80vw"}}>
