@@ -10,6 +10,10 @@ body {
     background-color: #07080A;
 }
 
+:root {
+    --sb-width: 30%;
+}
+
 * {
     font-family: 'Atkinson Hyperlegible';
     box-sizing: border-box;
@@ -43,16 +47,24 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration-thickness: 0.1px;
     text-decoration-color: rgba(255, 255, 255, 0.568);
 }
-
 /* Sidebar */
 .sidebar {
-    width: 30%;
+    width: var(--sb-width);
     height: 100vh;
     position: fixed;
     /* background-color: rgb(15, 17, 20); */
     background-color: hsla(0, 0%, 100%, 0.03);
     backdrop-filter: blur(98px);
 }
+
+.sb-separator {
+    height: 100vh;
+    border-left: 1px solid red;
+    position: fixed;
+    left: var(--sb-width);
+
+}
+
 
 .colors-img {
     position: absolute;
@@ -118,6 +130,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     border-radius: 12px;
     border: 1px solid rgba(255,255,255, .11);
+    cursor: pointer;
 }
 
 .default-content-button:hover {

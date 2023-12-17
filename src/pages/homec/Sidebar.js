@@ -1,4 +1,5 @@
 import { SBContent } from './sidebarc/SBContent'
+import { SideBarSeparator } from './sidebarc/separator'
 
 export function SideBar() {
     return (
@@ -9,6 +10,7 @@ export function SideBar() {
 
         </div>
         <img loading="lazy" src="https://airacloud-v5.vercel.app/aira.sidebar.svg" className="colors-img" alt=""/>
+        <SideBarSeparator />
         </>
     )
 }
