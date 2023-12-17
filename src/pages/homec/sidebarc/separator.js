@@ -2,10 +2,13 @@ export function SideBarSeparator() {
     
     function loadSeparator() {
         var separator = document.getElementById("sb-separator");
-        separator.addEventListener("dragstart", () => {
-            alert("sex");
+        separator.addEventListener("mousedown", () => {
+            alert("msex");
+        })
+        separator.addEventListener("mouseup", () => {
+            alert("usex");
         })
     }
     
-    return <div id="sb-separator" draggable className="sb-separator" onload={() => {loadSeparator()}} />
+    return <div id="sb-separator" className="sb-separator" onload={() => {loadSeparator()}} />
 }
