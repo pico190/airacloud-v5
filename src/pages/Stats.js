@@ -26,9 +26,15 @@ export function Stats() {
                       labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
                       crosshair: {
                           enabled: true,
-                            labelBackgroundColor: "black",
-                                    labelFontColor: "rgba(255, 255, 255, .3)",
-                                    labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
+                          label: "",
+                          lineDashType: "solid",          
+                          snapToDataPoint: true,
+                          color: "#33558B",
+                          labelBackgroundColor: "#33558B"
+
+                            // labelBackgroundColor: "black",
+                            //         labelFontColor: "rgba(255, 255, 255, .3)",
+                            //         labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
                       }
                     },
                     axisY: {
