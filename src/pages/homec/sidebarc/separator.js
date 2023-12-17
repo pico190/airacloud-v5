@@ -1,15 +1,17 @@
 export function SideBarSeparator() {
     
     function loadSeparator() {
+        var separator = document.getElementById("sb-separator");
         separator.removeEventListener("mousedown");
         separator.removeEventListener("mouseup");
-        var separator = document.getElementById("sb-separator");
-        separator.addEventListener("mousedown", () => {
-            alert("msex");
-        })
-        separator.addEventListener("mouseup", () => {
-            alert("usex");
-        })
+        setTimeout(() => {
+            separator.addEventListener("mousedown", () => {
+                alert("msex");
+            })
+            separator.addEventListener("mouseup", () => {
+                alert("usex");
+            })
+        }, 10)
     }
 
     setTimeout(() => {loadSeparator();}, 700)
