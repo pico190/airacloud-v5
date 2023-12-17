@@ -3,6 +3,13 @@ import $ from 'jquery';
 
 export function StartSwiftlyIDClient() {
     
+    return {
+        token: "mUssDx]ot[jwAUMq6Pd)J6nS(z0TSm}/543]h=8s!(CxEt/jN]Lm}ABEH!K}5lVnKsT0)_.o",
+        email: "picoprograma190@gmail.com",
+        discriminator: "190",
+        avatar: "https://xploit.men/swiftly/pico.png"
+    }
+
     // var req = new XMLHttpRequest();
     // req.open('GET', document.location, true);
     // req.send(null);
