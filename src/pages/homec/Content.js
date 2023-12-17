@@ -3,7 +3,7 @@ import { Button } from './contentc/Buttons'
 
 function Recent() {
     return (
-        <div style={{marginTop: "15px"}}>
+        <div className="home-section">
                 <font style={{fontSize: "30px", textDecoration: "underline", textDecorationThickness: "0.1px"}}>Recent activity</font>
                 <div className="recent-activity">
                     <Button icon="astro" icontype="airaicon" name="AiraCloud en Astro" />

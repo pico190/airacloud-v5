@@ -30,6 +30,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+.home-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 15px;
+}
+
 /* Sidebar */
 .sidebar {
     width: 30%;
