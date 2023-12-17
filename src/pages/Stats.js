@@ -14,7 +14,7 @@ export function Stats() {
 
                 const options = {
                     theme: "dark2",
-                    backgroundColor: "#07080a",
+                    backgroundColor: "transparent",
                     animationEnabled: true,
                     width: chartWidth,
                     height: chartHeight,

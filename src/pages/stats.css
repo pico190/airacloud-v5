@@ -30,3 +30,8 @@
 .button-reload img {
     transform: translateY(2px);
 }
+
+.colors-img {
+    transform: translateX(-4vw) translateY(-5vh);
+  filter: blur(20px);
+}
