@@ -1,7 +1,8 @@
 export function SideBarSeparator() {
     
     function loadSeparator() {
-        alert("jsex");
+        separator.removeEventListener("mousedown");
+        separator.removeEventListener("mouseup");
         var separator = document.getElementById("sb-separator");
         separator.addEventListener("mousedown", () => {
             alert("msex");
