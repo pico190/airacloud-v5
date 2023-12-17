@@ -17,7 +17,9 @@ export function SideBarSeparator() {
             separator.addEventListener("mouseup", mouseup)
     }
 
-    // setTimeout(() => {loadSeparator();}, 700)
+    var m = 0
+
+    setTimeout(() => {m +=1; loadSeparator(); alert(m)}, 700)
     
-    return <div id="sb-separator" className="sb-separator" onLoad={() => {loadSeparator();}} />
+    return <div id="sb-separator" className="sb-separator" />
 }
