@@ -11,5 +11,5 @@ export function SideBarSeparator() {
         })
     }
     
-    return <div id="sb-separator" className="sb-separator" onLoad={loadSeparator} />
+    return <div id="sb-separator" className="sb-separator" onLoad={() => {loadSeparator()}} />
 }
