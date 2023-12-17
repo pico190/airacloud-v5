@@ -4,7 +4,7 @@ import { Button } from './contentc/Buttons'
 function Recent() {
     return (
         <div className="home-section">
-                <font style={{fontSize: "30px", textDecoration: "underline", textDecorationThickness: "0.1px"}}>Recent activity</font>
+                <font className="home-section-title">Recent activity</font>
                 <div className="recent-activity">
                     <Button icon="astro" icontype="airaicon" name="AiraCloud en Astro" />
                     <Button icon="react" icontype="airaicon" name="Nature Porn" />
@@ -24,9 +24,8 @@ export function Content() {
         <div className="content">
             <h1 className="contentTitle">Welcome, Optix!</h1>
             <Recent />
-            <div style={{marginTop: "15px"}}>
-                <font style={{fontSize: "30px"}}>All your projects</font>
-
+            <div className="home-section">
+                    <font className="home-section-title">All your projects</font>
             </div>
         </div>
     )
