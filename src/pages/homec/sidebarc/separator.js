@@ -3,7 +3,7 @@ export function SideBarSeparator() {
     function loadSeparator() {
         var separator = document.getElementById("sb-separator");
         separator.addEventListener("dragstart", () => {
-            alert("sex")
+            alert("sex");
         })
     }
     
