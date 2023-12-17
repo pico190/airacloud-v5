@@ -25,7 +25,10 @@ export function Stats() {
                       labelFontColor: "rgba(255, 255, 255, .3)",
                       labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
                       crosshair: {
-                          enabled: true
+                          enabled: true,
+                            labelBackgroundColor: "black",
+                                    labelFontColor: "rgba(255, 255, 255, .3)",
+                                    labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
                       }
                     },
                     axisY: {
