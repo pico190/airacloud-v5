@@ -58,11 +58,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sb-separator {
-    height: 100vh;
-    border-left: 1px solid red;
-    position: fixed;
+    border-left: 1px solid transparent;
     left: var(--sb-width);
-
+    background-color: transparent;
+    width: 14px;
+    cursor: e-resize;
+    z-index: 1000;
+}
+.sb-separator:hover {
+    border-left: 1px solid rgba(255, 255, 255, 0.701);
 }
 
 
