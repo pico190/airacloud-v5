@@ -24,6 +24,9 @@ export function Stats() {
                       interval: 1.3,
                       labelFontColor: "rgba(255, 255, 255, .3)",
                       labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
+                      crosshair: {
+                          enabled: true
+                      }
                     },
                     axisY: {
                       lineColor: "transparent",
@@ -31,10 +34,7 @@ export function Stats() {
                       tickColor: "transparent",
                       interval: 2,
                       labelFontColor: "rgba(255, 255, 255, .3)",
-                      labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif",
-                      crosshair: {
-                          enabled: true
-                      }
+                      labelFontFamily: "'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif"
                     },
                     toolTip: {
                         enabled: true,       
