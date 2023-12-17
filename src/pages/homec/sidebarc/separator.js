@@ -7,5 +7,5 @@ export function SideBarSeparator() {
         })
     }
     
-    return <div id="sb-separator" draggable className="sb-separator" onload={loadSeparator()} />
+    return <div id="sb-separator" draggable className="sb-separator" onload={() => {loadSeparator()}} />
 }
