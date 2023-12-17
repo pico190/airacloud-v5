@@ -44,7 +44,7 @@ export function Stats() {
                     },
                     data: [
                     {
-                        type: "spline",
+                        type: "line",
                         lineColor: "#ff83e6",
                           lineThickness: 5,
                           color: "#ff83e6",

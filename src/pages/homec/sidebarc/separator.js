@@ -1,37 +1,30 @@
 export function SideBarSeparator() {
-    class Separator extends React.Component {
-        state = {
-          separatorInitialized: false,
-        };
-      
-        componentDidMount() {
-          if (!this.state.separatorInitialized) {
-            this.loadSeparator();
-          }
-        }
-      
-        loadSeparator() {
-          const separator = document.getElementById("sb-separator");
-      
-          function mousedown() {
+    
+
+function loadSeparator() {
+
+    if (!localStorage.getItem('separatorInitialized')) {
+        localStorage.setItem('separatorInitialized', true);
+        alert("a");
+
+        const separator = document.getElementById("sb-separator");
+
+        function mousedown() {
             alert("m");
-          }
-      
-          function mouseup() {
+        }
+    
+        function mouseup() {
             alert("u");
-          }
-      
-          separator.addEventListener("mousedown", mousedown);
-          separator.addEventListener("mouseup", mouseup);
-      
-          this.setState({
-            separatorInitialized: true,
-          }); // Marcamos que el separador ha sido inicializado
         }
-      
-        render() {
-          return <div id="sb-separator" className="sb-separator" />;
-        }
-      }
-      
+    
+        separator.addEventListener("mousedown", mousedown);
+        separator.addEventListener("mouseup", mouseup);
+    
+    }
+}
+
+
+loadSeparator();
+
+return <div id="sb-separator" className="sb-separator" />;
 }
