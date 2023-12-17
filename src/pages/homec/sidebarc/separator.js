@@ -10,6 +10,8 @@ export function SideBarSeparator() {
             alert("usex");
         })
     }
+
+    setTimeout(() => {loadSeparator();}, 700)
     
-    return <div id="sb-separator" className="sb-separator" onLoad={() => {loadSeparator()}} />
+    return <div id="sb-separator" className="sb-separator" onLoad={() => {loadSeparator();}} />
 }
