@@ -38,9 +38,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home-section-title {
-    font-size: "30px"; 
-    text-decoration: "underline"; 
-    text-decoration-thickness: "0.1px";
+    font-size: 30px; 
+    text-decoration: underline; 
+    text-decoration-thickness: 0.1px;
     text-decoration-color: rgba(255, 255, 255, 0.291);
 }
 
