@@ -27,12 +27,12 @@ function App() {
 
   function renderize () {
     
-    // console.log(urlparsed[0]);
+    console.log(urlparsed[0]);
     // console.log(window.innerWidth);
 
     if (urlparsed[0].includes("?")) {
       return true;
-    } else if (urlparsed[0] === "" || urlparsed[0] === undefined) {
+    } else if (urlparsed[0] === "" || urlparsed[0] === undefined || urlparsed[0] === null) {
       window.location.href = "/home/";
     } else {
       switch (urlparsed[0]) {
