@@ -30,22 +30,26 @@ function App() {
     console.log(urlparsed[0]);
     // console.log(window.innerWidth);
 
-    if (urlparsed[0].includes("?")) {
-      return true;
-    } else if (urlparsed[0] === "" || urlparsed[0] === undefined || urlparsed[0] === null) {
-      window.location.href = "/home/";
-    } else {
-      switch (urlparsed[0]) {
-        case "home":
-          setContent(<Home />);
-          break;
-        case "stats":
-          setContent(<Stats />);
-          break;
-        default:
-          setContent(<NotFound />);
-          break;
+    try {
+      if (urlparsed[0].includes("?")) {
+        return true;
+      } else if (urlparsed[0] === "" || urlparsed[0] === undefined || urlparsed[0] === null) {
+        window.location.href = "/home/";
+      } else {
+        switch (urlparsed[0]) {
+          case "home":
+            setContent(<Home />);
+            break;
+          case "stats":
+            setContent(<Stats />);
+            break;
+          default:
+            setContent(<NotFound />);
+            break;
+        }
       }
+    } catch(error) {
+      window.location.href = "/home/";
     }
 
 
