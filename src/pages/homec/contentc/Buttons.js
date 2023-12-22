@@ -3,7 +3,7 @@ export function Button({ icon, icontype, name }) {
     if(icontype === "airaicon") {
         var iconurl = `https://airacloud-v5.vercel.app/airaicons/${icon}.svg`;
     } else {
-        var iconurl = `https://xploit.men/scdn/?fluenticons&amp;name=${icon}&amp;type=fluent&amp;fill=white`;
+        var iconurl = `https://xploit.men/scdn/?fluenticons&name=${icon}&type=fluent&fill=white`;
     }
     
     return (
@@ -13,7 +13,7 @@ export function Button({ icon, icontype, name }) {
                 {name}
             </b>
             <div className="spacer" />
-            <img src="https://xploit.men/scdn/?fluenticons&amp;name=chevron-right&amp;type=fluent&amp;fill=white" loading="lazy" alt=""/>
+            <img src="https://xploit.men/scdn/?fluenticons&name=chevron-right&type=fluent&fill=white" loading="lazy" alt=""/>
         </div>
     )
 }
