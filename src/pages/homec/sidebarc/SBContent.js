@@ -20,6 +20,7 @@ export function SBContent() {
         function click() {
             var overlayElement = document.getElementById(sectionid+"_overlay");
             var titleElement = document.getElementById(sectionid+"_title");
+            overlayElement.style = {display: "none"};
             overlayElement.style.width = "0px"
             overlayElement.style.height = "0px"
             overlayElement.style.left = (mousePosition.x - titleElement.offsetLeft)  +"px"
@@ -34,8 +35,7 @@ export function SBContent() {
                 setTimeout(() => {
                     overlayElement.style.opacity = 0;
                     setTimeout(() => {
-                        overlayElement.style.display = "none";
-                        overlayElement.style.opacity = 1;
+                        overlayElement.style = {display: "none"};
                     }, 500)
                 }, 600)
             }, 100)
