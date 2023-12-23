@@ -22,10 +22,11 @@ export function SBContent() {
             var titleElement = document.getElementById(sectionid+"_title");
             overlayElement.style.width = "0px"
             overlayElement.style.height = "0px"
-            overlayElement.style.display = "block"
-
             overlayElement.style.left = (mousePosition.x - titleElement.offsetLeft)  +"px"
             overlayElement.style.top = (mousePosition.y - titleElement.offsetTop)  +"px"
+            overlayElement.style.display = "block"
+
+
 
             setTimeout(() => {
                 overlayElement.style.width = "900px"
