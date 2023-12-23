@@ -2,7 +2,6 @@ import { SBContent } from './sidebarc/SBContent'
 import { SideBarSeparator } from './sidebarc/separator'
 import "./sidebar.css";
 
-im
 export function SideBar() {
     return (
         <>

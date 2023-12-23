@@ -8,6 +8,7 @@ import { console_start } from './utils/Console.js';
 import { Home } from './pages/Home.js'
 import { NotFound } from './pages/NotFound.js'
 import { Stats } from './pages/Stats.js'
+import { Editor } from './pages/Editor.js'
 
 function App() {
 
@@ -42,6 +43,13 @@ function App() {
             break;
           case "stats":
             setContent(<Stats />);
+            break;
+          case "editor":
+            if(urlparsed[1]) {
+              setContent(<Editor />);
+            } else {
+              window.location.href="https://xploit.men/aira/projectnotfound.html"
+            }
             break;
           default:
             setContent(<NotFound />);

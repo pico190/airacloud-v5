@@ -78,7 +78,7 @@ export function Stats() {
             
                 return (
                     <>
-                    <img loading="lazy" src="https://airacloud-v5.vercel.app/aira.stats.svg" className="colors-img" alt=""/>
+                    <img loading="lazy" src="https://airacloud-v5.vercel.app/aira.stats.svg" className="colors-img-stats" alt=""/>
                     <div className="stats">
                         <h1>Gráfico de visitas <button className="button-reload"><img src="https://xploit.men/scdn/?fluenticons&name=arrow-sync&type=fluent" alt="" /></button></h1>
                         <br /><br />

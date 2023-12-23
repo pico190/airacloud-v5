@@ -18,7 +18,7 @@ export function SBContent() {
             <div className="sb_sect_tileContainer">
                 <div className="sb_sect_tile_contained">
                     <p>icon here</p>
-                    <p>Swofolofto</p>
+                    <p>Swoftolofto</p>
                 </div>
                 <div className="sb_sect_tile_contained">
                     <p>icon here</p>
@@ -26,7 +26,7 @@ export function SBContent() {
                 </div>
                 <div className="sb_sect_tile_contained">
                     <p>icon here</p>
-                    <p>Tumbar a Stoximo</p>
+                    <p>Tumbar web a Stuxiom</p>
                 </div>
             </div>
         </div>
