@@ -143,6 +143,14 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
+.sb_sect_tileContainer .clickable {
+    background-color: #1b1e24;
+}
+
 .sb_sect_tile_contained {
   display: flex;
   height: 40px;

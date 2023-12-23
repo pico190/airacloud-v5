@@ -42,7 +42,7 @@ export function SBContent() {
         }
         return (
             <div className="sb_section">
-                <div className="sb_sect_titl_tile" id={sectionid+"_title"} onClick={() => {click()}}>
+                <div className="sb_sect_titl_tile clickable" id={sectionid+"_title"} onClick={() => {click()}}>
                     <div className="overlay" style={{display: "none"}} id={sectionid+"_overlay"}/>
                     <p>{title}<span> {span}</span></p>
                     <div className="spacer" />
