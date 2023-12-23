@@ -16,8 +16,8 @@ export function SBContent() {
     function SectionElement({children, icon}) { return ( <div className="sb_sect_tile_contained"><img alt="" loading="lazy" src={`https://xploit.men/scdn/?fluenticons&name=${icon}`}/><p>{children}</p></div>)}
     function Section({children, title, span=""}) {
         const sectionid = title.toLowerCase().replace(" ", "_");
+        const mousePosition = useMousePosition();
         function click() {
-            const mousePosition = useMousePosition();
             var overlayElement = document.getElementById(sectionid+"_overlay");
             overlayElement.style.display = "block"
             overlayElement.style.left = mousePosition.x
