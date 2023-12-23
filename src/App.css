@@ -120,6 +120,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0px 17px;
   align-items: center;
   align-self: stretch;
+  position: relative;
+  overflow: hidden;
 }
 
 .sb_sect_titl_tile p {
@@ -162,9 +164,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sb_sect_titl_tile .overlay {
-    width: 50px;
-    height: 50px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.1);  
+    position: absolute;
+    border-radius: 1000px;
+    transition-duration: 1s;
 }
 
 /* Content */

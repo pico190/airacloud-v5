@@ -1,3 +1,5 @@
+import {useMousePosition} from '././././utils/useMousePosition'
+
 export function SBContent() {
 
     function Title() {
@@ -13,9 +15,29 @@ export function SBContent() {
     }
     function SectionElement({children, icon}) { return ( <div className="sb_sect_tile_contained"><img alt="" loading="lazy" src={`https://xploit.men/scdn/?fluenticons&name=${icon}`}/><p>{children}</p></div>)}
     function Section({children, title, span=""}) {
+        const sectionid = title.toLowerCase().replace(" ", "_");
+        function click() {
+            const mousePosition = useMousePosition();
+            var overlayElement = document.getElementById(sectionid+"_overlay");
+            overlayElement.style.display = "block"
+            overlayElement.style.left = mousePosition.x
+            overlayElement.style.top = mousePosition.y
+            setTimeout(() => {
+                overlayElement.style.width = "100px"
+                overlayElement.style.height = "100px"
+                setTimeout(() => {
+                    overlayElement.style.opacity = 0;
+                    setTimeout(() => {
+                        overlayElement.style.display = "none";
+                        overlayElement.style.opacity = 1;
+                    }, 500)
+                }, 800)
+            }, 500)
+        }
         return (
             <div className="sb_section">
-                <div className="sb_sect_titl_tile">
+                <div className="sb_sect_titl_tile" onClick={() => {click()}}>
+                    <div className="overlay" style={{display: "none"}} id={sectionid+"_overlay"}/>
                     <p>{title}<span> {span}</span></p>
                     <div className="spacer" />
                     <img alt="" loading="lazy" src="https://xploit.men/scdn/?fluenticons&name=chevron_down"/>
