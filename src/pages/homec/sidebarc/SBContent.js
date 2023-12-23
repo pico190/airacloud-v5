@@ -20,8 +20,8 @@ export function SBContent() {
         function click() {
             var overlayElement = document.getElementById(sectionid+"_overlay");
             overlayElement.style.display = "block"
-            overlayElement.style.left = mousePosition.x
-            overlayElement.style.top = mousePosition.y
+            overlayElement.style.left = mousePosition.x+"px"
+            overlayElement.style.top = mousePosition.y+"px"
             setTimeout(() => {
                 overlayElement.style.width = "100px"
                 overlayElement.style.height = "100px"
