@@ -56,7 +56,9 @@ export function SBContent() {
     <div className="SBContent">
         <Title />
         <Section title="Pinned projects" span="3/6" >
-            <SectionElement children="Swoftolofto" icon="chevron_down" />
+            <SectionElement children="Swoftolofto" icon="pin" />
+            <SectionElement children="AiraCloud en Astro" icon="pin" />
+            <SectionElement children="Tumbar a Stuxiom" icon="pin" />
         </Section>
         <div className="sb_separator"></div>
         <div className="aira_info">
