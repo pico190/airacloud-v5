@@ -141,13 +141,10 @@ h1, h2, h3, h4, h5, h6 {
   align-self: stretch;
   flex-direction: column;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.clickable {
-    cursor: pointer;
-}
-
-.sb_sect_titl_tile.clickable:hover, .sb_sect_tile_contained.clickable:hover {
+.sb_sect_titl_tile:hover, .sb_sect_tile_contained:hover {
     background-color: #1a1e24!important;
 }
 
@@ -158,6 +155,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 10px;
   align-self: stretch;
+  cursor: pointer;
 }
 
 .sb_sect_tile_contained p {
