@@ -37,7 +37,7 @@ export function SBContent() {
                         overlayElement.style.opacity = 1;
                     }, 500)
                 }, 600)
-            }, 500)
+            }, 100)
         }
         return (
             <div className="sb_section">
