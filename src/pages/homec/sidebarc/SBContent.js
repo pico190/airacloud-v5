@@ -13,19 +13,19 @@ export function SBContent() {
             <div className="sb_sect_titl_tile">
                 <p><b>Pinned projects</b> <span>3/6</span></p>
                 <div className="spacer" />
-                <p>icon here</p>
+                <img alt="" loading="lazy" src="https://xploit.men/scdn/?fluenticons&name=chevron_down"/>
             </div>
             <div className="sb_sect_tileContainer">
                 <div className="sb_sect_tile_contained">
-                    <p>icon here</p>
+                    <img alt="" loading="lazy" src="https://xploit.men/scdn/?fluenticons&name=pin"/>
                     <p>Swoftolofto</p>
                 </div>
                 <div className="sb_sect_tile_contained">
-                    <p>icon here</p>
+                    <img alt="" loading="lazy" src="https://xploit.men/scdn/?fluenticons&name=pin"/>
                     <p>AiraCloud en Astro</p>
                 </div>
                 <div className="sb_sect_tile_contained">
-                    <p>icon here</p>
+                    <img alt="" loading="lazy" src="https://xploit.men/scdn/?fluenticons&name=pin"/>
                     <p>Tumbar web a Stuxiom</p>
                 </div>
             </div>
@@ -37,7 +37,7 @@ export function SBContent() {
                     <font style={{fontSize: "26px", opacity: "0.75"}}><b>AiraCloud</b> Release 1.0</font>
                     <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Engine v5.1.69</font>
                     <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Last update 32 minues ago. <u>See changelog</u>.</font>
-                    <br /><font style={{fontSize: "16px", opacity: "0.5"}}>(c) 2023 Aira / Made with 💚 by Swiftly</font>
+                    <br /><font style={{fontSize: "16px", opacity: "0.5"}}>(c) 2023 Aira / Made with <img alt="" loading="lazy" src="https://discord.com/assets/dab6d97cf00d7ff2dbfc.svg" width="10px" /> by Swiftly</font>
                 </span>
         </div>
     </div>
