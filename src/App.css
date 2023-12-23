@@ -140,6 +140,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 0px;
   align-self: stretch;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .sb_sect_tile_contained {
