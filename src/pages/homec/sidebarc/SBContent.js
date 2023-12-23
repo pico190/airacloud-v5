@@ -22,9 +22,11 @@ export function SBContent() {
             overlayElement.style.display = "block"
             overlayElement.style.left = mousePosition.x+"px"
             overlayElement.style.top = mousePosition.y+"px"
+            overlayElement.style.width = "0px"
+            overlayElement.style.height = "0px"
             setTimeout(() => {
-                overlayElement.style.width = "100px"
-                overlayElement.style.height = "100px"
+                overlayElement.style.width = "900px"
+                overlayElement.style.height = "900px"
                 setTimeout(() => {
                     overlayElement.style.opacity = 0;
                     setTimeout(() => {
