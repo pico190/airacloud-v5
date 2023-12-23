@@ -1,6 +1,6 @@
 import { SBContent } from './sidebarc/SBContent'
 import { SideBarSeparator } from './sidebarc/separator'
-import "./sidebar.css";
+
 
 export function SideBar() {
     return (
