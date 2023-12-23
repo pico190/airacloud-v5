@@ -19,9 +19,10 @@ export function SBContent() {
         const mousePosition = useMousePosition();
         function click() {
             var overlayElement = document.getElementById(sectionid+"_overlay");
+            var titleElement = document.getElementById(sectionid+"_title");
             overlayElement.style.display = "block"
-            overlayElement.style.left = mousePosition.x+"px"
-            overlayElement.style.top = mousePosition.y+"px"
+            overlayElement.style.left = (mousePosition.x - titleElement.offsetLeft)  +"px"
+            overlayElement.style.top = (mousePosition.y - titleElement.offsetTop)  +"px"
             overlayElement.style.width = "0px"
             overlayElement.style.height = "0px"
             setTimeout(() => {
@@ -33,12 +34,12 @@ export function SBContent() {
                         overlayElement.style.display = "none";
                         overlayElement.style.opacity = 1;
                     }, 500)
-                }, 800)
+                }, 600)
             }, 500)
         }
         return (
             <div className="sb_section">
-                <div className="sb_sect_titl_tile" onClick={() => {click()}}>
+                <div className="sb_sect_titl_tile" id={sectionid+"_title"} onClick={() => {click()}}>
                     <div className="overlay" style={{display: "none"}} id={sectionid+"_overlay"}/>
                     <p>{title}<span> {span}</span></p>
                     <div className="spacer" />
