@@ -1,6 +1,6 @@
 import React from 'react';
 
-const useMousePosition = () => {
+export const useMousePosition = () => {
     const [
       mousePosition,
       setMousePosition,
