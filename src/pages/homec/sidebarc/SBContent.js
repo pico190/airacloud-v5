@@ -37,7 +37,7 @@ export function SBContent() {
                     <font style={{fontSize: "26px", opacity: "0.75"}}><b>AiraCloud</b> Release 1.0</font>
                     <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Engine v5.1.69</font>
                     <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Last update 32 minues ago. <u>See changelog</u>.</font>
-                    <br /><font style={{fontSize: "16px", opacity: "0.5"}}>(c) 2023 Aira / Made with <img alt="" loading="lazy" src="https://discord.com/assets/dab6d97cf00d7ff2dbfc.svg" width="10px" /> by Swiftly</font>
+                    <br /><font style={{fontSize: "16px", opacity: "0.5"}}>(c) 2023 Aira / Made with <img alt="" loading="lazy" src="https://xploit.men/scdn/heart.svg" width="15px" height="15px" style={{transform: "translateY(15%)"}} /> by Swiftly</font>
                 </span>
         </div>
     </div>
