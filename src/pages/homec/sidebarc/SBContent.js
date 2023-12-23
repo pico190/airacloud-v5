@@ -1,4 +1,4 @@
-import {useMousePosition} from '././././utils/useMousePosition'
+import {useMousePosition} from '../../../utils/useMousePosition'
 
 export function SBContent() {
 
