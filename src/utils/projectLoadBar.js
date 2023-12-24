@@ -4,6 +4,7 @@ export function projectLoadBar() {
     var airaloadbar = document.getElementById("airaloadbar");
     var root = document.getElementById("root");
     root.style.left = "0vw";
+    root.style.position = "fixed";
     setTimeout(() => {
         root.style.left = "-100vw";
         airaloadbar.style.left = "0vw";
