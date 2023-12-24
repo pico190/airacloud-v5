@@ -233,12 +233,28 @@ h1, h2, h3, h4, h5, h6 {
 /* AiraLoadBar */
 #airaloadbar {
     width: 100vw;
-    background-color: black;
+    background-color: #07080A;
+    background-image: url('https://airacloud-v5.vercel.app/loaderbg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     position:fixed;
     left: 0;
     z-index: 1000;
     transition: left 0.5s;
+}
+
+#airaloadbar h1 {
+    font-size: 50px;
+}
+#airaloadbar img {
+    height: 60px;
+    margin-right: 12px;
+    transform: translateY(2px);
 }
 
 #root {
