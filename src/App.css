@@ -146,6 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sb_sect_titl_tile:hover, .sb_sect_tile_contained:hover {
     background-color: #1a1e24!important;
+    user-select: none;
 }
 
 .sb_sect_tile_contained {
@@ -210,6 +211,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 12px;
     border: 1px solid rgba(255,255,255, .11);
     cursor: pointer;
+    user-select: none;
 }
 
 .default-content-button:hover {
@@ -227,4 +229,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .contentTitle {
     font-size: 56px;
+}
+
+/* AiraLoadBar */
+#airaloadbar {
+    width: 100vw;
+    background-color: black;
+    height: 100vh;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
