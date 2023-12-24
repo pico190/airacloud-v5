@@ -241,11 +241,21 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
     position:fixed;
     left: 0;
     z-index: 1000;
     transition: left 0.5s;
+    gap: 45px
+}
+#airaloadbar font {
+    flex-direction: row;
+}
+
+#airaloadbar span {
+    opacity: 0.5;
+    font-style:italic;
 }
 
 #airaloadbar h1 {
