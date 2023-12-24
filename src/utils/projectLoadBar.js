@@ -21,8 +21,8 @@ export function projectLoadBar(projectName) {
     }
     setTimeout(() => {
         loadProtip();
-    }, 2000)
+    }, 4000)
     setInterval(() => {
         loadProtip();
-    }, 10000)
+    }, 7000)
 }

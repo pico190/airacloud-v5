@@ -32,6 +32,8 @@
 }
 
 .colors-img-stats {
+    position: absolute;
+    z-index: -1;
     filter: blur(1000px);
     transform: translateX(-47%) translateY(-48%) scale(0.6);
     opacity: 0.8;
