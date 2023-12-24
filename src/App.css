@@ -237,7 +237,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: black;
     height: 100vh;
     position:fixed;
-    top: 0;
     left: 0;
     z-index: 1000;
+    transition: left 1s;
+}
+
+#root {
+    transition: left 1s;
 }
