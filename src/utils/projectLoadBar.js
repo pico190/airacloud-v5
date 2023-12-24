@@ -5,7 +5,7 @@ export function projectLoadBar() {
     var root = document.getElementById("root");
     root.style.left = "0vw";
     setTimeout(() => {
-        root.style.root = "-100vw";
+        root.style.left = "-100vw";
         airaloadbar.style.left = "0vw";
     }, 200)
 
