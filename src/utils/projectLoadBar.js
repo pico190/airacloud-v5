@@ -19,6 +19,6 @@ export function projectLoadBar(projectName) {
             setInterval(() => {
                 var protip = protips[Math.floor(Math.random() * protips.length)];
                 span.innerHTML = protip;
-            }, 1000)
+            }, 5000)
     }, 500)
 }
