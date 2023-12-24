@@ -1,7 +1,7 @@
 
 import { Button } from './contentc/Buttons'
 
-function Recent() {
+function Recent({ sidinfo }) {
     return (
         <div className="home-section">
                 <font className="home-section-title">Recent activity</font>
@@ -19,7 +19,7 @@ function Recent() {
 
 
 
-export function Content() {
+export function Content({ sidinfo }) {
     return (
         <div className="content">
             <h1 className="contentTitle">Welcome, Optix!</h1>

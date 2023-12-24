@@ -1,7 +1,7 @@
 import {useMousePosition} from '../../../utils/useMousePosition'
 import { projectLoadBar } from '../../../utils/projectLoadBar';
 
-export function SBContent() {
+export function SBContent({ sidinfo }) {
 
     function Title() {
         return (
@@ -60,8 +60,15 @@ export function SBContent() {
     <div className="SBContent">
         <Title />
         <Section title="Pinned projects" span="3/6" >
-            <SectionElement children="Swoftolofto" icon="pin" />
-            <SectionElement children="AiraCloud en Astro" icon="pin" />
+            {
+                sidinfo.projects.map(element => {
+                    if(element.pinned) {
+                        return (
+                            <SectionElement id={element.id} children={element.name} icon="pin" />
+                        )
+                    }
+                })
+            }
             <SectionElement children="Tumbar a Stuxiom" icon="pin" />
         </Section>
         <div className="sb_separator"></div>

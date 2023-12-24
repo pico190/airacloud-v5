@@ -1,11 +1,11 @@
 import { Content } from './homec/Content'
 import { SideBar } from './homec/Sidebar'
 
-export function Home() {
+export function Home({ sidinfo }) {
     return (
         <>
-            <SideBar />
-            <Content />
+            <SideBar sidinfo={sidinfo} />
+            <Content sidinfo={sidinfo} />
         </>
     )
 }

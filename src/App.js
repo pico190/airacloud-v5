@@ -12,15 +12,15 @@ import { Editor } from './pages/Editor.js'
 
 function App() {
 
-  useEffect(() => {
-    console_start();
 
-    var SwiftlyIDClient = StartSwiftlyIDClient();
-    console.log(SwiftlyIDClient);
-  }, []);
-
+  var [SwiftlyIDClient, setSwiftlyIDClient] = useState(StartSwiftlyIDClient())
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
+
+  useEffect(() => {
+    console_start();
+    console.log(SwiftlyIDClient);
+  }, [SwiftlyIDClient]);
 
   useEffect(() => {
     seturlparsed(UrlParser());
@@ -39,7 +39,7 @@ function App() {
       } else {
         switch (urlparsed[0]) {
           case "home":
-            setContent(<Home />);
+            setContent(<Home sidinfo={SwiftlyIDClient} />);
             break;
           case "stats":
             setContent(<Stats />);
