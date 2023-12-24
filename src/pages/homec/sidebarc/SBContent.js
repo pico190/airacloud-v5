@@ -14,7 +14,7 @@ export function SBContent() {
             </div>
         )
     }
-    function SectionElement({children, icon}) { return ( <div className="sb_sect_tile_contained" onClick={() => {projectLoadBar();}}><img alt="" loading="lazy" src={`https://xploit.men/scdn/?fluenticons&name=${icon}`}/><p>{children}</p></div>)}
+    function SectionElement({children, icon}) { return ( <div className="sb_sect_tile_contained" onClick={() => {projectLoadBar(children);}}><img alt="" loading="lazy" src={`https://xploit.men/scdn/?fluenticons&name=${icon}`}/><p>{children}</p></div>)}
     function Section({children, title, span=""}) {
         const sectionid = title.toLowerCase().replace(" ", "_");
         const mousePosition = useMousePosition();
