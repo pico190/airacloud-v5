@@ -15,10 +15,14 @@ export function projectLoadBar(projectName) {
     var firstphrase = "Loading your project, <b>"+projectName+"</b>...";
     var span = document.getElementById("loadingProtip");
     span.innerHTML = firstphrase
+    function loadProtip() {
+        var protip = protips[Math.floor(Math.random() * protips.length)];
+        span.innerHTML = protip;
+    }
     setTimeout(() => {
-            setInterval(() => {
-                var protip = protips[Math.floor(Math.random() * protips.length)];
-                span.innerHTML = protip;
-            }, 5000)
-    }, 500)
+        loadProtip();
+    }, 2000)
+    setInterval(() => {
+        loadProtip();
+    }, 10000)
 }
