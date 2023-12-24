@@ -238,9 +238,9 @@ h1, h2, h3, h4, h5, h6 {
     position:fixed;
     left: 0;
     z-index: 1000;
-    transition: left 1s;
+    transition: left 0.5s;
 }
 
 #root {
-    transition: left 1s;
+    transition: left 0.5s;
 }
