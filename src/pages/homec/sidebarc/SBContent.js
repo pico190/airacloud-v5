@@ -14,6 +14,22 @@ export function SBContent({ sidinfo }) {
             </div>
         )
     }
+    function EngineVersion() {
+        return (
+            <>
+                <div className="sb_separator"></div>
+                <div className="aira_info">
+                        <img width="54px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt="" style={{height: "fit-content"}}/>
+                        <span>
+                            <font style={{fontSize: "26px", opacity: "0.75"}}><b>AiraCloud</b> Release 1.0</font>
+                            <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Engine v5.1.69</font>
+                            <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Last update 32 minues ago. <u>See changelog</u>.</font>
+                            <br /><font style={{fontSize: "16px", opacity: "0.5"}}>(c) 2023 Aira / Made with <img alt="" loading="lazy" src="https://xploit.men/scdn/heart.svg" width="15px" height="15px" style={{transform: "translateY(15%)"}} /> by Swiftly</font>
+                        </span>
+                </div>
+            </>
+        )
+    }
     function SectionElement({children, icon}) { return ( <div className="sb_sect_tile_contained" onClick={() => {projectLoadBar(children);}}><img alt="" loading="lazy" src={`https://xploit.men/scdn/?fluenticons&name=${icon}`}/><p>{children}</p></div>)}
     function Section({children, title, span=""}) {
         const sectionid = title.toLowerCase().replace(" ", "_");
@@ -38,7 +54,7 @@ export function SBContent({ sidinfo }) {
                     setTimeout(() => {
                         overlayElement.style = {display: "none"};
                     }, 500)
-                }, 600)
+                }, 300)
             }, 100)
         }
         return (
@@ -69,18 +85,11 @@ export function SBContent({ sidinfo }) {
                     }
                 })
             }
-            <SectionElement children="Tumbar a Stuxiom" icon="pin" />
         </Section>
-        <div className="sb_separator"></div>
-        <div className="aira_info">
-                <img width="54px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt="" style={{height: "fit-content"}}/>
-                <span>
-                    <font style={{fontSize: "26px", opacity: "0.75"}}><b>AiraCloud</b> Release 1.0</font>
-                    <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Engine v5.1.69</font>
-                    <br /><font style={{fontSize: "16px", opacity: "0.25"}}>Last update 32 minues ago. <u>See changelog</u>.</font>
-                    <br /><font style={{fontSize: "16px", opacity: "0.5"}}>(c) 2023 Aira / Made with <img alt="" loading="lazy" src="https://xploit.men/scdn/heart.svg" width="15px" height="15px" style={{transform: "translateY(15%)"}} /> by Swiftly</font>
-                </span>
-        </div>
+        <Section title="My teams" span="3/6" >
+            <SectionElement id="none" children={element.name} icon="pin" />
+        </Section>
+        <EngineVersion />
     </div>
     </>
     )
