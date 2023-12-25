@@ -7,7 +7,6 @@ import { LoadWeb } from './utils/LoadWeb.js'
 
 // Pages
 import { Home } from './pages/Home.js'
-import { NotFound } from './pages/NotFound.js'
 import { Stats } from './pages/Stats.js'
 import { Editor } from './pages/Editor.js'
 
@@ -46,13 +45,14 @@ function App() {
             setContent(<Stats />);
             break;
           case "editor":
-            if(urlparsed[1]) {
+            if(urlparsed[1]=="test") {
+              setContent(<LoadWeb url="https://airacloud-v5.vercel.app/comingsoon.html" />);
             } else {
-              setContent(<LoadWeb url="https://xploit.men/aira/projectnotfound.html" />);
+              setContent(<LoadWeb url="https://airacloud-v5.vercel.app/projectnotfound.html" />);
             }
             break;
           default:
-            setContent(<NotFound />);
+            setContent(<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
             break;
         }
       }
