@@ -12,7 +12,6 @@ import { Editor } from './pages/Editor.js'
 
 function App() {
 
-
   var [SwiftlyIDClient, setSwiftlyIDClient] = useState(StartSwiftlyIDClient())
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
