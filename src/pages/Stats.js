@@ -1,6 +1,6 @@
 import CanvasJSReact from '@canvasjs/react-charts';
 
-import { NotFound } from './NotFound.js'
+import { LoadWeb } from '../utils/LoadWeb.js'
 import './stats.css';
 
 export function Stats() {
@@ -96,7 +96,7 @@ export function Stats() {
                 )
             
     } else {
-        return (<NotFound />);
+        return (<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
     }
     
 }
