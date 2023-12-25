@@ -5,6 +5,7 @@ export function LoadWeb({url}) {
             if(loadweb.contentWindow.document.title==="AiraCloud v5") {
                 window.location.href = "https://airacloud-v5.vercel.app/home/";
                 loadweb.style.display = "none";
+                loadweb.remove();
             }
         }, 10)
     })
