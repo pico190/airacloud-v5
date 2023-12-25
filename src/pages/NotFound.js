@@ -1,4 +1,4 @@
-import LoadWeb from "../utils/LoadWeb";
+import { LoadWeb } from "../utils/LoadWeb";
 
 export function NotFound() {
     return (
