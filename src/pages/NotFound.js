@@ -1,3 +1,7 @@
+import LoadWeb from "../utils/LoadWeb";
+
 export function NotFound() {
-    window.location.href="https://xploit.men/aira/notfound.html"
+    return (
+        <LoadWeb url="https://xploit.men/aira/notfound.html" />
+    );
 }

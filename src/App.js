@@ -46,9 +46,8 @@ function App() {
             break;
           case "editor":
             if(urlparsed[1]) {
-              setContent(<Editor />);
             } else {
-              window.location.href="https://xploit.men/aira/projectnotfound.html"
+              setContent(<LoadWeb url="https://xploit.men/aira/projectnotfound.html" />);
             }
             break;
           default:
