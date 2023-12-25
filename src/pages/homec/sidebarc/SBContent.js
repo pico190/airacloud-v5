@@ -87,7 +87,7 @@ export function SBContent({ sidinfo }) {
             }
         </Section>
         <Section title="My teams" span="3/6" >
-            <SectionElement id="none" children={element.name} icon="pin" />
+            <SectionElement id="none" children="Unknown" icon="people_team" />
         </Section>
         <EngineVersion />
     </div>

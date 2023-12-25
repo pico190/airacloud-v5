@@ -3,6 +3,7 @@ import { StartSwiftlyIDClient } from './utils/SwiftlyIDManager';
 import { UrlParser } from './utils/UrlParser';
 import { useState, useEffect } from 'react';
 import { console_start } from './utils/Console.js';
+import { LoadWeb } from './utils/LoadWeb.js'
 
 // Pages
 import { Home } from './pages/Home.js'
