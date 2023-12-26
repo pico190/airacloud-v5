@@ -71,11 +71,17 @@ export function SBContent({ sidinfo }) {
             </div>
         )
     }
+        var span = 0
+        sidinfo.projects.map(element => {
+            if(element.pinned) {
+                span += 1;
+            }
+        })
     return (
     <>
     <div className="SBContent">
         <Title />
-        <Section title="Pinned projects" span="3/6" >
+        <Section title="Pinned projects" span={span+"/6"} >
             {
                 sidinfo.projects.map(element => {
                     if(element.pinned) {
@@ -86,7 +92,7 @@ export function SBContent({ sidinfo }) {
                 })
             }
         </Section>
-        <Section title="My teams" span="3/6" >
+        <Section title="My teams" >
             <SectionElement id="none" children="Unknown" icon="people_team" />
         </Section>
         <EngineVersion />
