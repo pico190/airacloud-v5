@@ -6,7 +6,15 @@ function Recent({ sidinfo }) {
         <div className="home-section">
                 <font className="home-section-title">Recent activity</font>
                 <div className="recent-activity">
-                    <Button icon="astro" icontype="airaicon" name="AiraCloud en Astro" />
+                    {
+                        sidinfo.projects.map(element => {
+                            if(element.pinned) {
+                                return (
+                                    <Button id={element.id} icon={element.type} icontype="airaicon" name={element.name} />
+                                )
+                            }
+                        })
+                    }
                     <Button icon="react" icontype="airaicon" name="Nature Porn" />
                     <Button icon="people_team" icontype="fluent" name="Swiftly Team" />
                 </div>
@@ -14,6 +22,16 @@ function Recent({ sidinfo }) {
     )
 }
 
+function Projects({ sidinfo }) {
+    return (
+        <div className="home-section">
+                <font className="home-section-title">All your projects</font>
+                <div className="recent-activity">
+                    <Button icon="folder_create" icontype="fluent" name="Create a project" />
+                </div>
+        </div>
+    )
+}
 
 
 
@@ -24,9 +42,7 @@ export function Content({ sidinfo }) {
         <div className="content">
             <h1 className="contentTitle">Welcome, Optix!</h1>
             <Recent />
-            <div className="home-section">
-                    <font className="home-section-title">All your projects</font>
-            </div>
+            <Projects />
         </div>
     )
 }
