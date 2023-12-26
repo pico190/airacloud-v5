@@ -8,15 +8,13 @@ function Recent({ sidinfo }) {
                 <div className="recent-activity">
                     {
                         sidinfo.projects.map(element => {
-                            if(element.pinned) {
+                            if(element.recent) {
                                 return (
                                     <Button id={element.id} icon={element.type} icontype="airaicon" name={element.name} />
                                 )
                             }
                         })
                     }
-                    <Button icon="react" icontype="airaicon" name="Nature Porn" />
-                    <Button icon="people_team" icontype="fluent" name="Swiftly Team" />
                 </div>
         </div>
     )
@@ -41,8 +39,8 @@ export function Content({ sidinfo }) {
     return (
         <div className="content">
             <h1 className="contentTitle">Welcome, Optix!</h1>
-            <Recent />
-            <Projects />
+            <Recent sidinfo={sidinfo} />
+            <Projects sidinfo={sidinfo} />
         </div>
     )
 }
