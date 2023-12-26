@@ -37,7 +37,7 @@ export function StartSwiftlyIDClient() {
                 name: "LipseloCraft 3",
                 type: "java",
                 id: "n23QYW9f7IqPv6zXFtDoOp4X6tXj",
-                pinned: true,
+                pinned: false,
                 recent: false,
                 position: 3
             },
