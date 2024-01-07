@@ -5,7 +5,7 @@ export function StartSwiftlyIDClient() {
     
     var token = "mUssDx]ot[jwAUMq6Pd)J6nS(z0TSm}/543]h=8s!(CxEt/jN]Lm}ABEH!K}5lVnKsT0)_.o"
     $.post("https://xploit.men/aira/api/v1/projects/getuserprojects.php", {token: token}, (data) => {
-        projects = data;
+        var projects = data;
         return {
             token: token,
             name: "Pico",
