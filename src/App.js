@@ -12,7 +12,16 @@ import { Editor } from './pages/Editor.js'
 
 function App() {
 
-  var [SwiftlyIDClient, setSwiftlyIDClient] = useState(async () => await StartSwiftlyIDClient())
+  const [SwiftlyIDClient, setSwiftlyIDClient] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await StartSwiftlyIDClient();
+      setSwiftlyIDClient(result);
+    };
+
+    fetchData();
+  }, []);
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
 

@@ -1,8 +1,8 @@
 import {useMousePosition} from '../../../utils/useMousePosition'
 import { projectLoadBar } from '../../../utils/projectLoadBar';
 
-export function SBContent({ sidinfo }) {
-
+export function SBContent({ sidinfo, projects }) {
+    var alluserprojects = projects;
     function Title() {
         return (
             <div className="aira_logo">
@@ -72,7 +72,7 @@ export function SBContent({ sidinfo }) {
         )
     }
         var span = 0
-        sidinfo.projects.map(element => {
+        alluserprojects.map(element => {
             if(element.pinned) {
                 span += 1;
             }
@@ -83,7 +83,7 @@ export function SBContent({ sidinfo }) {
         <Title />
         <Section title="Pinned projects" span={span+"/6"} >
             {
-                sidinfo.projects.map(element => {
+                alluserprojects.map(element => {
                     if(element.pinned) {
                         return (
                             <SectionElement id={element.id} children={element.name} icon="pin" />

@@ -1,13 +1,14 @@
 
 import { Button } from './contentc/Buttons'
 
-function Recent({ sidinfo }) {
+function Recent({ sidinfo, projects }) {
+    var alluserprojects = projects;
     return (
         <div className="home-section">
                 <font className="home-section-title">Recent activity</font>
                 <div className="recent-activity">
                     {
-                        sidinfo.projects.map(element => {
+                        alluserprojects.map(element => {
                             if(element.recent) {
                                 return (
                                     <Button id={element.id} icon={element.type} icontype="airaicon" name={element.name} />
@@ -20,7 +21,7 @@ function Recent({ sidinfo }) {
     )
 }
 
-function Projects({ sidinfo }) {
+function Projects({ sidinfo, projects }) {
     return (
         <div className="home-section">
                 <font className="home-section-title">All your projects</font>
@@ -35,12 +36,12 @@ function Projects({ sidinfo }) {
 
 
 
-export function Content({ sidinfo }) {
+export function Content({ sidinfo, projects }) {
     return (
         <div className="content">
-            <h1 className="contentTitle">Welcome, Optix!</h1>
-            <Recent sidinfo={sidinfo} />
-            <Projects sidinfo={sidinfo} />
+            <h1 className="contentTitle">Welcome, {sidinfo.name}!</h1>
+            <Recent sidinfo={sidinfo} projects={projects} />
+            <Projects sidinfo={sidinfo} projects={projects} />
         </div>
     )
 }

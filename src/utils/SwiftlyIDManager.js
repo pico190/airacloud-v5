@@ -5,24 +5,13 @@ export async function StartSwiftlyIDClient() {
     
     return new Promise((resolve, reject) => {
         var token = "mUssDx]ot[jwAUMq6Pd)J6nS(z0TSm}/543]h=8s!(CxEt/jN]Lm}ABEH!K}5lVnKsT0)_.o"
-        $.post("https://xploit.men/aira/api/v1/projects/getuserprojects.php", {token: token}, (data) => {
-            var projects = data;
-            resolve({
-                token: token,
-                name: "Pico",
-                username: "pico_190",
-                email: "picoprograma190@gmail.com",
-                discriminator: "190",
-                avatar: "https://xploit.men/swiftly/pico.png",
-                projects: projects
-            });
-        }).fail((error) => {
-            fetch('https://airacloud-v5.vercel.app/sid.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.innerHTML = data;
-            })
-            .catch(error => alert("Error while loading AiraCloud. Please contact with Swiftly Team"));
+        resolve({
+            token: token,
+            name: "Pico",
+            username: "pico_190",
+            email: "picoprograma190@gmail.com",
+            discriminator: "190",
+            avatar: "https://xploit.men/swiftly/pico.png",
         });
     });
 
