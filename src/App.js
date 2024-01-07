@@ -12,7 +12,7 @@ import { Editor } from './pages/Editor.js'
 
 function App() {
 
-  var [SwiftlyIDClient, setSwiftlyIDClient] = useState(StartSwiftlyIDClient())
+  var [SwiftlyIDClient, setSwiftlyIDClient] = useState(async () => await StartSwiftlyIDClient())
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
 
@@ -57,7 +57,7 @@ function App() {
 
 
   }
-  useEffect(() => { renderize () }, [urlparsed, window.innerWidth]);
+  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient]);
   window.addEventListener("resize", () => { renderize(); })
 
 
