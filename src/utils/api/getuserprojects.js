@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export async function getUserProjects(token) {
 
     return new Promise((resolve, reject) => {
