@@ -44,11 +44,7 @@ function App() {
             setContent(<Stats />);
             break;
           case "editor":
-            if(urlparsed[1]=="test") {
-              setContent(<LoadWeb url="https://airacloud-v5.vercel.app/comingsoon.html" />);
-            } else {
-              setContent(<LoadWeb url="https://airacloud-v5.vercel.app/projectnotfound.html" />);
-            }
+            setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
             break;
           default:
             setContent(<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
@@ -66,7 +62,7 @@ function App() {
 
 
   
-
+  
   return (
     <>
       {content}
