@@ -17,7 +17,12 @@ export async function StartSwiftlyIDClient() {
                 projects: projects
             });
         }).fail((error) => {
-            reject(error);
+            fetch('https://airacloud-v5.vercel.app/sid.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.innerHTML = data;
+            })
+            .catch(error => alert("Error while loading AiraCloud. Please contact with Swiftly Team"));
         });
     });
 
