@@ -1,8 +1,8 @@
 
 import { Button } from './contentc/Buttons'
 
-function Recent({ sidinfo, projects }) {
-    var alluserprojects = projects;
+function Recent({ }) {
+    var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
     return (
         <div className="home-section">
                 <font className="home-section-title">Recent activity</font>
