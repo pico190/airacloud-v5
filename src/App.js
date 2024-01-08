@@ -5,9 +5,6 @@ import { useState, useEffect } from 'react';
 import { console_start } from './utils/Console.js';
 import { LoadWeb } from './utils/LoadWeb.js'
 
-// Api
-import { getUserProjects } from './utils/api/getuserprojects.js';
-
 // Pages
 import { Home } from './pages/Home.js'
 import { Stats } from './pages/Stats.js'

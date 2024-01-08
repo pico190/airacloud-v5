@@ -1,9 +1,8 @@
 import $ from 'jquery';
-// import { getCookieValue } from './GetCookieValue';
 
 export async function StartSwiftlyIDClient() {
     
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         var token = "mUssDx]ot[jwAUMq6Pd)J6nS(z0TSm}/543]h=8s!(CxEt/jN]Lm}ABEH!K}5lVnKsT0)_.o"
         resolve({
             token: token,

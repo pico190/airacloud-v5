@@ -21,7 +21,7 @@ function Recent({ sidinfo, projects }) {
     )
 }
 
-function Projects({ sidinfo, projects }) {
+function Projects({ }) {
     return (
         <div className="home-section">
                 <font className="home-section-title">All your projects</font>
@@ -36,12 +36,12 @@ function Projects({ sidinfo, projects }) {
 
 
 
-export function Content({ sidinfo, projects }) {
+export function Content({ sidinfo }) {
     return (
         <div className="content">
             <h1 className="contentTitle">Welcome, {sidinfo.name}!</h1>
-            <Recent sidinfo={sidinfo} projects={projects} />
-            <Projects sidinfo={sidinfo} projects={projects} />
+            <Recent sidinfo={sidinfo} />
+            <Projects sidinfo={sidinfo} />
         </div>
     )
 }
