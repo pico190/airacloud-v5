@@ -1,6 +1,6 @@
 
 import { Button } from './contentc/Buttons'
-import { gcookie } from './utils/CookieParser.js';
+import { gcookie } from '../../utils/CookieParser.js';
 import { decode } from 'js-base64';
 
 function Recent({ }) {
