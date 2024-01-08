@@ -2,8 +2,11 @@ import './App.css';
 import { StartSwiftlyIDClient } from './utils/SwiftlyIDManager';
 import { UrlParser } from './utils/UrlParser';
 import { useState, useEffect } from 'react';
-import { console_start } from './utils/Console.js';
-import { LoadWeb } from './utils/LoadWeb.js'
+import { console_start } from './utils/Console';
+import { LoadWeb } from './utils/LoadWeb'
+
+// Api
+import { loadProjects } from '../utils/api/loadprojects'
 
 // Pages
 import { Home } from './pages/Home.js'
@@ -26,6 +29,9 @@ function App() {
                   };
 
                   fetchData();
+
+                  
+                  loadProjects(sidinfo.token);
                 }, []);
 
   var [content, setContent] = useState()

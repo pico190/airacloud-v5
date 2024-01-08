@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { encode } from 'js-base64';
 
-export function getUserProjects(token) {
+export function loadProjects(token) {
     
     const usertoken = token;
 
