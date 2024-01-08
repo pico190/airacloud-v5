@@ -4,7 +4,7 @@ import { getUserProjects } from '../utils/api/getuserprojects'
 
 export function Home({ sidinfo }) {
     const fetchData = async () => {
-      const projects = await getUserProjects();
+      const projects = getUserProjects(sidinfo.token);
       
       return (
         <>

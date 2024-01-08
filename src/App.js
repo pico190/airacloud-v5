@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react';
 import { console_start } from './utils/Console.js';
 import { LoadWeb } from './utils/LoadWeb.js'
 
+// Api
+import { getUserProjects } from './utils/api/getuserprojects.js';
+
 // Pages
 import { Home } from './pages/Home.js'
 import { Stats } from './pages/Stats.js'
@@ -12,16 +15,35 @@ import { Editor } from './pages/Editor.js'
 
 function App() {
 
-  const [SwiftlyIDClient, setSwiftlyIDClient] = useState(null);
+    ///////////////////////////////
+    /////////  User Info  /////////
+    ///////////////////////////////
+    
+                // SID Client
+                const [SwiftlyIDClient, setSwiftlyIDClient] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await StartSwiftlyIDClient();
-      setSwiftlyIDClient(result);
-    };
+                useEffect(() => {
+                  const fetchData = async () => {
+                    const result = await StartSwiftlyIDClient();
+                    setSwiftlyIDClient(result);
+                  };
 
-    fetchData();
-  }, []);
+                  fetchData();
+                }, []);
+
+          // Projects
+          const [projects, setProjects] = useState(null);
+
+          useEffect(() => {
+            const fetchData = async () => {
+              const result = await getUserProjects();
+              setProjects(result);
+            };
+
+            fetchData();
+          }, []);
+
+
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
 
