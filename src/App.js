@@ -24,7 +24,7 @@ function App() {
     ///////////////////////////////
     
                 // SID Client
-                const [SwiftlyIDClient, setSwiftlyIDClient] = useState({"418": "Client Error"});
+                const [SwiftlyIDClient, setSwiftlyIDClient] = useState("");
 
                 useEffect(() => {
                   const fetchData = async () => {
@@ -60,26 +60,23 @@ function App() {
       } else if (urlparsed[0] === "" || urlparsed[0] === undefined || urlparsed[0] === null) {
         window.location.href = "/home/";
       } else {
-        setContent(
-          <>
-          <h1>Debug Mode</h1>
-          <p><b>SID</b>: {JSON.stringify(SwiftlyIDClient)}</p>
-          <p><b>Projects</b>: {JSON.stringify(decode(gcookie("DATA__PROJECTS")))}</p></>
-        )
-        // switch (urlparsed[0]) {
-        //   case "home":
-        //     setContent(<Home sidinfo={SwiftlyIDClient} />);
-        //     break;
-        //   case "stats":
-        //     setContent(<Stats />);
-        //     break;
-        //   case "editor":
-        //     setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
-        //     break;
-        //   default:
-        //     setContent(<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
-        //     break;
-        // }
+
+        if(SwiftlyIDClient!=="") {
+          switch (urlparsed[0]) {
+            case "home":
+              setContent(<Home sidinfo={SwiftlyIDClient} />);
+              break;
+            case "stats":
+              setContent(<Stats />);
+              break;
+            case "editor":
+              setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
+              break;
+            default:
+              setContent(<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
+              break;
+          }
+        }
       }
     } catch(error) {
       window.location.href = "/home/";
@@ -87,7 +84,7 @@ function App() {
 
 
   }
-  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient]);
+  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient, gcookie("DATA__PROJECTS")]);
   window.addEventListener("resize", () => { renderize(); })
 
 
