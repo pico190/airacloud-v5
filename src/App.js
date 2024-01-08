@@ -15,7 +15,7 @@ import { Editor } from './pages/Editor.js'
 
 // Temp
 import { gcookie } from './utils/CookieParser.js';
-import { decode } from 'js-base64';
+
 
 function App() {
 
