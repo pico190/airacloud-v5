@@ -28,10 +28,12 @@ function App() {
                     setSwiftlyIDClient(result);
                   };
 
-                  fetchData();
+                  fetchData()
+                  .then(() => {
+                    loadProjects(SwiftlyIDClient.token);
+                  });
 
                   
-                  loadProjects(sidinfo.token);
                 }, []);
 
   var [content, setContent] = useState()
