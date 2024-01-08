@@ -31,19 +31,6 @@ function App() {
                   fetchData();
                 }, []);
 
-          // Projects
-          const [projects, setProjects] = useState(null);
-
-          useEffect(() => {
-            const fetchData = async () => {
-              const result = await getUserProjects();
-              setProjects(result);
-            };
-
-            fetchData();
-          }, []);
-
-
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
 
