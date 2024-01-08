@@ -6,7 +6,7 @@ import { console_start } from './utils/Console';
 import { LoadWeb } from './utils/LoadWeb'
 
 // Api
-import { loadProjects } from '../utils/api/loadprojects'
+import { loadProjects } from './utils/api/loadprojects'
 
 // Pages
 import { Home } from './pages/Home.js'
