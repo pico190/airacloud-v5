@@ -1,8 +1,11 @@
 import {useMousePosition} from '../../../utils/useMousePosition'
 import { projectLoadBar } from '../../../utils/projectLoadBar';
+import { decode } from 'js-base64';
+import { gcookie } from '../../../utils/CookieParser';
 
-export function SBContent({ sidinfo, projects }) {
-    var alluserprojects = projects;
+export function SBContent({ sidinfo }) {
+
+    // Elements
     function Title() {
         return (
             <div className="aira_logo">
@@ -71,12 +74,21 @@ export function SBContent({ sidinfo, projects }) {
             </div>
         )
     }
+
+    const alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
+    alert(JSON.stringify(alluserprojects))
+    console.log(alluserprojects);
+    
+
+    // Pinned Limit (*/6) message
         var span = 0
         alluserprojects.map(element => {
             if(element.pinned) {
                 span += 1;
             }
         })
+
+    // Return
     return (
     <>
     <div className="SBContent">

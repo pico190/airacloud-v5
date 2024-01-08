@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { encode, decode } from 'js-base64';
+import { encode } from 'js-base64';
 
 export function getUserProjects(token) {
     
