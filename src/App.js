@@ -20,7 +20,7 @@ function App() {
     ///////////////////////////////
     
                 // SID Client
-                const [SwiftlyIDClient, setSwiftlyIDClient] = useState(null);
+                const [SwiftlyIDClient, setSwiftlyIDClient] = useState({"502": "Internal Server Error"});
 
                 useEffect(() => {
                   const fetchData = async () => {
