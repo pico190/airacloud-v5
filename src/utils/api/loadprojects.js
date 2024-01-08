@@ -6,7 +6,6 @@ export function loadProjects(token) {
     const usertoken = token;
 
     function resolve(projects) {
-        console.log(projects);
         let currentDate = new Date();
         let expiryDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
 

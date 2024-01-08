@@ -13,6 +13,10 @@ import { Home } from './pages/Home.js'
 import { Stats } from './pages/Stats.js'
 import { Editor } from './pages/Editor.js'
 
+// Temp
+import { gcookie } from './utils/CookieParser.js';
+import { decode } from 'js-base64';
+
 function App() {
 
     ///////////////////////////////
@@ -56,20 +60,26 @@ function App() {
       } else if (urlparsed[0] === "" || urlparsed[0] === undefined || urlparsed[0] === null) {
         window.location.href = "/home/";
       } else {
-        switch (urlparsed[0]) {
-          case "home":
-            setContent(<Home sidinfo={SwiftlyIDClient} />);
-            break;
-          case "stats":
-            setContent(<Stats />);
-            break;
-          case "editor":
-            setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
-            break;
-          default:
-            setContent(<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
-            break;
-        }
+        setContent(
+          <>
+          <h1>Debug Mode</h1>
+          <p><b>SID</b>: {JSON.stringify(SwiftlyIDClient)}</p>
+          <p><b>Projects</b>: {JSON.stringify(decode(gcookie("DATA__PROJECTS")))}</p></>
+        )
+        // switch (urlparsed[0]) {
+        //   case "home":
+        //     setContent(<Home sidinfo={SwiftlyIDClient} />);
+        //     break;
+        //   case "stats":
+        //     setContent(<Stats />);
+        //     break;
+        //   case "editor":
+        //     setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
+        //     break;
+        //   default:
+        //     setContent(<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
+        //     break;
+        // }
       }
     } catch(error) {
       window.location.href = "/home/";

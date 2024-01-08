@@ -76,7 +76,6 @@ export function SBContent({ sidinfo }) {
     }
 
     const alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
-    alert(JSON.stringify(alluserprojects))
     console.log(alluserprojects);
     
 
