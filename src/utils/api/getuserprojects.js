@@ -1,12 +1,16 @@
 import $ from 'jquery';
-import { encode, decode } from 'https://cdn.jsdelivr.net/npm/js-base64@3.7.5/base64.mjs';
+import { encode, decode } from 'js-base64';
 
 export function getUserProjects(token) {
     
     const usertoken = token;
 
     function resolve(projects) {
+        console.log(projects);
+        let currentDate = new Date();
+        let expiryDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
 
+        document.cookie = "DATA__PROJECTS="+encode(JSON.stringify(projects))+"; SameSite=Strict; Secure; path=/; expires="+expiryDate.toUTCString()+";"
     }
     
     $.post(
