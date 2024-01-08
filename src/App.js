@@ -20,21 +20,18 @@ function App() {
     ///////////////////////////////
     
                 // SID Client
-                const [SwiftlyIDClient, setSwiftlyIDClient] = useState({"502": "Internal Server Error"});
+                const [SwiftlyIDClient, setSwiftlyIDClient] = useState({"418": "Client Error"});
 
                 useEffect(() => {
                   const fetchData = async () => {
                     const result = await StartSwiftlyIDClient();
                     setSwiftlyIDClient(result);
+                    loadProjects(result.token);
                   };
-
-                  fetchData()
-                  .then(() => {
-                    loadProjects(SwiftlyIDClient.token);
-                  });
-
-                  
+                
+                  fetchData();
                 }, []);
+                
 
   var [content, setContent] = useState()
   var [urlparsed, seturlparsed] = useState(UrlParser())
