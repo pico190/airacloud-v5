@@ -1,3 +1,5 @@
+import { gcookie } from "../CookieParser";
+
 export function Text({ id }) {
     var language = navigator.language.slice(0, 2);
 
@@ -29,10 +31,19 @@ export function Text({ id }) {
             let expiryDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
     
             document.cookie = "DATA__LANG=" + language + "; SameSite=Strict; Secure; path=/; expires=" + expiryDate.toUTCString() + ";"
-            document.cookie = "DATA__LANG=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         }
     }
 
-    return "Sex";
     
+    var lang = gcookie("DATA__LANG");
+
+    fetch('https://airacloud-v5.vercel.app/translates/'+lang+'.json')
+    .then(response => response.json())
+    .then(data => {
+        return data[id]
+    })
+    .catch(error => {
+        document.cookie = "DATA__LANG=en; SameSite=Strict; Secure; path=/; expires=" + expiryDate.toUTCString() + ";"
+    });
+
 }
