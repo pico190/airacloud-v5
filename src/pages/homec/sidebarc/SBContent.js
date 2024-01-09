@@ -36,8 +36,8 @@ export function SBContent({ sidinfo }) {
         )
     }
     function SectionElement({children, icon}) { return ( <div className="sb_sect_tile_contained" onClick={() => {projectLoadBar(children);}}><img alt="" loading="lazy" src={`https://xploit.men/scdn/?fluenticons&name=${icon}`}/><p>{children}</p></div>)}
-    function Section({children, title, span=""}) {
-        const sectionid = title.toLowerCase().replace(" ", "_");
+    function Section({children, title, id, span=""}) {
+        const sectionid = id;
         const mousePosition = useMousePosition();
         function click() {
             var overlayElement = document.getElementById(sectionid+"_overlay");
@@ -91,7 +91,7 @@ export function SBContent({ sidinfo }) {
 
 
     // Pined projects
-    var pinnedprojects = ( <Section title="Pinned projects" span={span+"/6"} >
+    var pinnedprojects = ( <Section title="Pinned projects" span={span+"/6"} id="pinned" >
     {
         alluserprojects.map(element => {
             if(element.pinned) {
@@ -109,7 +109,7 @@ export function SBContent({ sidinfo }) {
     <div className="SBContent">
         <Title />
         {pinnedprojects}
-        <Section title={Text("sb.section.teams.title")} >
+        <Section title={Text("sb.section.teams.title")} id="teams">
             <SectionElement id="none" children={Text("general.unknown")} icon="people_team" />
         </Section>
         <EngineVersion />
