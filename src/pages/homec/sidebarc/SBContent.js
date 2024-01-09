@@ -3,6 +3,8 @@ import { projectLoadBar } from '../../../utils/projectLoadBar';
 import { decode } from 'js-base64';
 import { gcookie } from '../../../utils/CookieParser';
 
+// Translates
+import { Text } from '../../../utils/translates/text' 
 export function SBContent({ sidinfo }) {
 
     // Elements
@@ -107,8 +109,8 @@ export function SBContent({ sidinfo }) {
     <div className="SBContent">
         <Title />
         {pinnedprojects}
-        <Section title="My teams" >
-            <SectionElement id="none" children="Unknown" icon="people_team" />
+        <Section title={Text("sb.section.teams.title")} >
+            <SectionElement id="none" children={Text("general.unknown")} icon="people_team" />
         </Section>
         <EngineVersion />
     </div>
