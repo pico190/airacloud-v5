@@ -2,6 +2,8 @@ import { gcookie } from "../CookieParser";
 
 export function Text({ id }) {
     var language = navigator.language.slice(0, 2);
+    let currentDate = new Date();
+    let expiryDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
 
     if (!document.cookie.includes("DATA__LANG")) {
     
@@ -26,9 +28,6 @@ export function Text({ id }) {
             if (!languages.includes(language)) {
                 language = "en";
             }
-            
-            let currentDate = new Date();
-            let expiryDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
     
             document.cookie = "DATA__LANG=" + language + "; SameSite=Strict; Secure; path=/; expires=" + expiryDate.toUTCString() + ";"
         }
