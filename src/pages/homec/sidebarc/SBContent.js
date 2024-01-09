@@ -87,22 +87,26 @@ export function SBContent({ sidinfo }) {
             }
         })
 
+
+    // Pined projects
+    pinnedprojects = ( <Section title="Pinned projects" span={span+"/6"} >
+    {
+        alluserprojects.map(element => {
+            if(element.pinned) {
+                return (
+                    <SectionElement id={element.id} children={element.name} icon="pin" />
+                )
+            }
+        })
+    }
+</Section>)
+    span === 0 ? pinnedprojects = (<></>) : pinnedprojects = pinnedprojects
     // Return
     return (
     <>
     <div className="SBContent">
         <Title />
-        <Section title="Pinned projects" span={span+"/6"} >
-            {
-                alluserprojects.map(element => {
-                    if(element.pinned) {
-                        return (
-                            <SectionElement id={element.id} children={element.name} icon="pin" />
-                        )
-                    }
-                })
-            }
-        </Section>
+        {pinnedprojects}
         <Section title="My teams" >
             <SectionElement id="none" children="Unknown" icon="people_team" />
         </Section>
