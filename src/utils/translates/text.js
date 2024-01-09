@@ -39,10 +39,17 @@ export function Text({ id }) {
     fetch('https://airacloud-v5.vercel.app/translates/'+lang+'.json')
     .then(response => response.json())
     .then(data => {
-        return data[id]
+        setTimeout(() => {
+            var span = document.getElementById("id");
+            span.innerText = data[id]
+        }, 900)
     })
     .catch(error => {
         document.cookie = "DATA__LANG=en; SameSite=Strict; Secure; path=/; expires=" + expiryDate.toUTCString() + ";"
     });
+
+    return (
+        <span id={id} ></span>
+    )
 
 }
