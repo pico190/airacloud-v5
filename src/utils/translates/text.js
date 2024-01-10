@@ -33,23 +33,37 @@ export function Text({ id }) {
         }
     }
 
-    
+    ////////////////////////////////////////////////
+
     var lang = gcookie("DATA__LANG");
 
-    fetch('https://airacloud-v5.vercel.app/translates/'+lang+'.json')
-    .then(response => response.json())
-    .then(data => {
-        setTimeout(() => {
-            var span = document.getElementById(id);
-            span.innerText = data[id]
-        }, 900)
-    })
-    .catch(error => {
-        document.cookie = "DATA__LANG=en; SameSite=Strict; Secure; path=/; expires=" + expiryDate.toUTCString() + ";"
-    });
+    
+    let storedData = localStorage.getItem('langs');
+    
+    if (storedData) {
+        processData(JSON.parse(storedData));
+    } else {
+        
+        fetch('https://airacloud-v5.vercel.app/translates/'+lang+'.json')
+        .then(response => response.json())
+        .then(data => {
+            setTimeout(() => {
+                localStorage.setItem('langs', JSON.stringify(data));
+                processData(data, language);
+                var span = document.getElementById(id);
+                span.innerText = data[id]
+            }, 900)
+        })
+        .catch(error => {
+        });
+    }
 
-    return (
-        <span id={id} />
-    )
+    function processData(data, language) {
+        let languages = Object.keys(data);
+        if (!languages.includes(language)) {
+            language = "en";
+        }
+    }
+    
 
 }
