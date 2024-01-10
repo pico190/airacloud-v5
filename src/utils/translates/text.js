@@ -49,7 +49,7 @@ export function Text({ id }) {
     });
 
     return (
-        <span id={id} ></span>
+        <span id={id} />
     )
 
 }

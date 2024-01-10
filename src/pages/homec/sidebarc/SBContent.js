@@ -66,7 +66,7 @@ export function SBContent({ sidinfo }) {
             <div className="sb_section">
                 <div className="sb_sect_titl_tile" id={sectionid+"_title"} onClick={() => {click()}}>
                     <div className="overlay" style={{display: "none"}} id={sectionid+"_overlay"}/>
-                    <p>{title}<span> {span}</span></p>
+                    <p><Title id={title} /><span data="span-1"> {span}</span></p>
                     <div className="spacer" />
                     <img alt="" loading="lazy" src="https://xploit.men/scdn/?fluenticons&name=chevron_down"/>
                 </div>
@@ -109,7 +109,7 @@ export function SBContent({ sidinfo }) {
     <div className="SBContent">
         <Title />
         {pinnedprojects}
-        <Section title={Text("sb.section.teams.title")} id="teams">
+        <Section title="sb.section.teams.title" id="teams">
             <SectionElement id="none" children={Text("general.unknown")} icon="people_team" />
         </Section>
         <EngineVersion />
