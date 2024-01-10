@@ -40,7 +40,7 @@ export function Text({ id }) {
     .then(response => response.json())
     .then(data => {
         setTimeout(() => {
-            var span = document.getElementById("id");
+            var span = document.getElementById(id);
             span.innerText = data[id]
         }, 900)
     })
