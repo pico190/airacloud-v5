@@ -35,7 +35,7 @@ export function SBContent({ sidinfo }) {
             </>
         )
     }
-    function SectionElement({children, icon}) { return ( <div className="sb_sect_tile_contained" onClick={() => {projectLoadBar(children);}}><img alt="" loading="lazy" src={`https://xploit.men/scdn/?fluenticons&name=${icon}`}/><p>{children}</p></div>)}
+    function SectionElement({title, icon}) { return ( <div className="sb_sect_tile_contained" onClick={() => {projectLoadBar(children);}}><img alt="" loading="lazy" src={`https://xploit.men/scdn/?fluenticons&name=${icon}`}/><p><Text id={title} /></p></div>)}
     function Section({children, title, id, span=""}) {
         const sectionid = id;
         const mousePosition = useMousePosition();
@@ -110,7 +110,7 @@ export function SBContent({ sidinfo }) {
         <Title />
         {pinnedprojects}
         <Section title="sb.section.teams.title" id="teams">
-            <SectionElement id="none" children={Text("general.unknown")} icon="people_team" />
+            <SectionElement id="none" title="general.unknown" icon="people_team" />
         </Section>
         <EngineVersion />
     </div>
