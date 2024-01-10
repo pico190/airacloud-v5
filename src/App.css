@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 86%;
 }
 
-.sb_sect_titl_tile p span {
+.sb_sect_titl_tile p span[data="span-1"] {
   opacity: 0.5;
 }
 
