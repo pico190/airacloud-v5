@@ -38,7 +38,7 @@ export function Text({ id }) {
     var lang = gcookie("DATA__LANG");
 
     
-    let storedData = localStorage.getItem('langs');
+    let storedData = localStorage.getItem('translates');
     
     if (storedData) {
         processData(JSON.parse(storedData));
@@ -48,22 +48,11 @@ export function Text({ id }) {
         .then(response => response.json())
         .then(data => {
             setTimeout(() => {
-                localStorage.setItem('langs', JSON.stringify(data));
-                processData(data, language);
+                localStorage.setItem('translates', JSON.stringify(data));
                 var span = document.getElementById(id);
                 span.innerText = data[id]
             }, 900)
         })
-        .catch(error => {
-        });
     }
-
-    function processData(data, language) {
-        let languages = Object.keys(data);
-        if (!languages.includes(language)) {
-            language = "en";
-        }
-    }
-    
 
 }
