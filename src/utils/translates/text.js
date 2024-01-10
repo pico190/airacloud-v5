@@ -41,7 +41,9 @@ export function Text({ id }) {
     let storedData = localStorage.getItem('translates');
     
     if (storedData) {
-        processData(JSON.parse(storedData));
+        var data = JSON.parse(storedData);
+        var span = document.getElementById(id);
+        span.innerText = data[id]
     } else {
         
         fetch('https://airacloud-v5.vercel.app/translates/'+lang+'.json')
