@@ -34,7 +34,7 @@ export function Text({ id, var1="" }) {
 
     if (storedData) {
         const data = JSON.parse(storedData);
-        return data[id] || "";
+        return data[id].replace(/●/, var1) || "Translate Error";
     } else {
         fetch(`https://airacloud-v5.vercel.app/translates/${lang}.json`)
             .then(response => response.json())
@@ -42,9 +42,8 @@ export function Text({ id, var1="" }) {
                 setTimeout(() => {
                     localStorage.setItem('translates', JSON.stringify(data));
                     
-                    var resulttr = data[id];
-                    var resulttr2 = resulttr.replace(" ", "b")
-                    return resulttr2 || "Translate Error";
+                    var resulttr = data[id].replace(/●/, var1);
+                    return resulttr || "Translate Error";
                 }, 900);
             });
     }
