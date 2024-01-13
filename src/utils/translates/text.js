@@ -42,7 +42,7 @@ export function Text({ id, var1="" }) {
                 setTimeout(() => {
                     localStorage.setItem('translates', JSON.stringify(data));
                     
-                    var resulttr = data[id].replace("●", var1);
+                    var resulttr = data[id].replace(/●/, var1);
                     return resulttr || "Translate Error";
                 }, 900);
             });
