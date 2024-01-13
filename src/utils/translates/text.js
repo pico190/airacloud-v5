@@ -1,6 +1,6 @@
 import { gcookie } from "../CookieParser";
 
-export function Text({ id }) {
+export function Text({ id, vars=[] }) {
     const language = navigator.language.slice(0, 2);
     const currentDate = new Date();
     const expiryDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
@@ -41,7 +41,12 @@ export function Text({ id }) {
             .then(data => {
                 setTimeout(() => {
                     localStorage.setItem('translates', JSON.stringify(data));
-                    return data[id] || "";
+                    
+                    var resulttr = data[id];
+                    vars.forEach(var_ => {
+                        resulttr = resulttr.replace("●", var_)
+                    });
+                    return resulttr || "Translate Error";
                 }, 900);
             });
     }
