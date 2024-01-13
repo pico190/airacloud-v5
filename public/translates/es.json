@@ -1,5 +1,25 @@
 {
-    "sb.section.teams.title": "Mis equipos",
     "general.unknown": "Desconocido",
+
+    "general.second": "Segundo",
+    "general.minute": "Minuto",
+    "general.hour": "Hora",
+    "general.day": "Dia",
+    "general.month": "Mes",
+    "general.year": "Año",
+
+    "general.seconds": "Segundos",
+    "general.minutes": "Minutos",
+    "general.hours": "Horas",
+    "general.days": "Dias",
+    "general.months": "Meses",
+    "general.years": "Años",
+
+    "sb.section.teams.title": "Mis equipos",
+    "sb.down.release": "Versión 0.0",
+    "sb.down.engine": "Motor v0.0",
+    "sb.down.lastupdate": "Ultima actualización hace ●.",
+    "sb.down.lastupdate1": "Ver registro de cambios.",
+
     "content.welcome": "Bienvenido, ●!"
 }

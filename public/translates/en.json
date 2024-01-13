@@ -1,5 +1,25 @@
 {
-    "sb.section.teams.title": "My teams",
     "general.unknown": "Unknown",
+
+    "general.second": "Second",
+    "general.minute": "Minute",
+    "general.hour": "Hour",
+    "general.day": "Day",
+    "general.month": "Month",
+    "general.year": "Year",
+
+    "general.seconds": "Seconds",
+    "general.minutes": "Minutes",
+    "general.hours": "Hours",
+    "general.days": "Days",
+    "general.months": "Months",
+    "general.years": "Years",
+
+    "sb.section.teams.title": "My teams",
+    "sb.down.release": "Release 0.0",
+    "sb.down.engine": "Engine v0.0",
+    "sb.down.lastupdate": "Last update ● ago.",
+    "sb.down.lastupdate1": "See changelog.",
+
     "content.welcome": "Welcome, ●!"
 }
