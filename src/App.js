@@ -84,7 +84,7 @@ function App() {
 
 
   }
-  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient, gcookie("DATA__PROJECTS")]);
+  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient, document.cookie]);
   window.addEventListener("resize", () => { renderize(); })
 
 
