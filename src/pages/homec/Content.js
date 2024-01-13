@@ -45,7 +45,7 @@ function Projectssection({ }) {
 export function Content({ sidinfo }) {
     return (
         <div className="content">
-            <h1 className="contentTitle">{Text("content.welcome").replace("●", sidinfo.name)}</h1>
+            <h1 className="contentTitle">{Text({"id":"content.welcome"}).replace("●", sidinfo.name)}</h1>
             <Recent sidinfo={sidinfo} />
             <Projectssection sidinfo={sidinfo} />
         </div>
