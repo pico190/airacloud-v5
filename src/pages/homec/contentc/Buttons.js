@@ -1,3 +1,4 @@
+import { Text } from "../../../utils/translates/text";
 
 export function Button({ icon, icontype, name }) {
     if(icontype === "airaicon") {
