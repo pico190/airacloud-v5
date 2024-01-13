@@ -3,6 +3,7 @@ import { Button } from './contentc/Buttons'
 import { gcookie } from '../../utils/CookieParser.js';
 import { decode } from 'js-base64';
 
+import { Text } from '../../utils/translates/text.js';
 import { Projects } from './contentc/projects.js';
 
 function Recent({ }) {
@@ -44,7 +45,7 @@ function Projectssection({ }) {
 export function Content({ sidinfo }) {
     return (
         <div className="content">
-            <h1 className="contentTitle">Welcome, {sidinfo.name}!</h1>
+            <h1 className="contentTitle">{Text("content.welcome").replace("●", sidinfo.name)}</h1>
             <Recent sidinfo={sidinfo} />
             <Projectssection sidinfo={sidinfo} />
         </div>
