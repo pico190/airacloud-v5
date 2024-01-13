@@ -42,7 +42,9 @@ function Projectssection({ }) {
         <div className="home-section">
                 <font className="home-section-title"><Text id="content.section.projects" /></font>
                 <div className="recent-activity">
-                    <Button icon="folder_create" icontype="fluent" name="general.createproject" />
+                    <Button icon="folder_create" icontype="fluent" >
+                        <Text id="general.createproject" />
+                    </Button>
                 </div>
                 <Projects />
         </div>

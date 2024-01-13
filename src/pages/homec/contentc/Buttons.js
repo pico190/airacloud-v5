@@ -1,6 +1,4 @@
-import { Text } from "../../../utils/translates/text";
-
-export function Button({ icon, icontype, name }) {
+export function Button({ children, icon, icontype }) {
     if(icontype === "airaicon") {
         var iconurl = `https://airacloud-v5.vercel.app/airaicons/${icon}.svg`;
     } else {
@@ -11,7 +9,7 @@ export function Button({ icon, icontype, name }) {
         <div className="default-content-button">
             <img src={iconurl} loading="lazy" alt="" width="32px" height="32px" style={{marginRight: "9px"}} />
             <b className="content-button-text">
-                <Text id={name} />
+                {children}
             </b>
             <div className="spacer" />
             <img src="https://xploit.men/scdn/?fluenticons&name=chevron-right&type=fluent&fill=white" loading="lazy" alt=""/>
