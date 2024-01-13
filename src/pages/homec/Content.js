@@ -17,7 +17,7 @@ function Recent({ }) {
                         alluserprojects.map(element => {
                             if(element.recent) {
                                 return (
-                                    <Button id={element.id} icon={element.type} icontype="airaicon" name={element.name} />
+                                    <Button children={element.name} id={element.id} icon={element.type} icontype="airaicon" />
                                 )
                             }
                         })
