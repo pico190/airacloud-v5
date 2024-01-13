@@ -43,9 +43,10 @@ export function Text({ id, vars=[] }) {
                     localStorage.setItem('translates', JSON.stringify(data));
                     
                     var resulttr = data[id];
-                    vars.forEach(var_ => {
-                        resulttr = resulttr.replace("●", var_)
-                    });
+                    resulttr = "sexo";
+                    // vars.forEach(var_ => {
+                    //     resulttr = resulttr.replace("●", var_)
+                    // });
                     return resulttr || "Translate Error";
                 }, 900);
             });
