@@ -1,5 +1,6 @@
 {
     "general.unknown": "Unknown",
+    "general.createproject": "Create a project",
 
     "general.second": "Second",
     "general.minute": "Minute",
@@ -21,5 +22,7 @@
     "sb.down.lastupdate": "Last update ● ago.",
     "sb.down.lastupdate1": "See changelog.",
 
-    "content.welcome": "Welcome, ●!"
+    "content.welcome": "Welcome, ●!",
+    "content.section.recentactivity": "Recent activity",
+    "content.section.projects": "All your projects"
 }

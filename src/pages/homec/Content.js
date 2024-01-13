@@ -8,9 +8,10 @@ import { Projects } from './contentc/projects.js';
 
 function Recent({ }) {
     var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
-    return (
+    var recentactivity = (
+        
         <div className="home-section">
-                <font className="home-section-title">Recent activity</font>
+                <font className="home-section-title"><Text id="content.section.recentactivity" /></font>
                 <div className="recent-activity">
                     {
                         alluserprojects.map(element => {
@@ -24,12 +25,22 @@ function Recent({ }) {
                 </div>
         </div>
     )
+    if(alluserprojects.every(obj => obj.recent)) {
+        recentactivity = (<></>)
+    }
+    return (
+        <>
+        {
+            recentactivity
+        }
+        </>
+    )
 }
 
 function Projectssection({ }) {
     return (
         <div className="home-section">
-                <font className="home-section-title">All your projects</font>
+                <font className="home-section-title"><Text id="content.section.projects" /></font>
                 <div className="recent-activity">
                     <Button icon="folder_create" icontype="fluent" name="Create a project" />
                 </div>
