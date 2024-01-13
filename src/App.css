@@ -310,8 +310,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .project-box > .row:last-child > .item:first-child {
-    border-top-left-radius: 36px;
+    border-bottom-left-radius: 36px;
   }
   .project-box > .row:last-child > .item:last-child {
-    border-top-right-radius: 36px;
+    border-bottom-right-radius: 36px;
   }
