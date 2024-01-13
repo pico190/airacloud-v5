@@ -5,46 +5,40 @@ export function Text({ id, var1="" }) {
     const currentDate = new Date();
     const expiryDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
 
-    if (!document.cookie.includes("DATA__LANG")) {
-        let storedData = localStorage.getItem('langs');
-        if (storedData) {
-            processData(JSON.parse(storedData));
-        } else {
-            fetch('https://airacloud-v5.vercel.app/translates/langs.json')
-                .then(response => response.json())
-                .then(data => {
-                    localStorage.setItem('langs', JSON.stringify(data));
-                    processData(data, language);
-                })
-                .catch(error => console.error("Error loading text. Check your internet connection"));
-        }
-
-        function processData(data, language) {
-            const languages = Object.keys(data);
-            if (!languages.includes(language)) {
-                language = "en";
-            }
-
-            document.cookie = `DATA__LANG=${language}; SameSite=Strict; Secure; path=/; expires=${expiryDate.toUTCString()};`;
-        }
+    const langCookie = gcookie("DATA__LANG");
+    const storedLangs = localStorage.getItem('langs');
+    
+    if (!langCookie || (storedLangs && !Object.keys(JSON.parse(storedLangs)).includes(langCookie))) {
+        fetch('https://airacloud-v5.vercel.app/translates/langs.json')
+            .then(response => response.json())
+            .then(data => {
+                const languages = Object.keys(data);
+                const selectedLang = languages.includes(language) ? language : "en";
+                localStorage.setItem('langs', JSON.stringify(data));
+                fetchAndSaveTranslates(selectedLang);
+            })
+            .catch(error => console.error("Error loading text. Check your internet connection"));
+    } else {
+        fetchAndSaveTranslates(langCookie);
     }
 
-    const lang = gcookie("DATA__LANG");
+    function fetchAndSaveTranslates(selectedLang) {
+        fetch(`https://airacloud-v5.vercel.app/translates/${selectedLang}.json`)
+            .then(response => response.json())
+            .then(data => {
+                localStorage.setItem('translates', JSON.stringify(data));
+                const resulttr = data[id].replace(/●/, var1);
+                return resulttr || "Translate Error";
+            })
+            .catch(error => console.error("Error loading text. Check your internet connection"));
+    }
+
     const storedData = localStorage.getItem('translates');
 
     if (storedData) {
         const data = JSON.parse(storedData);
         return data[id].replace(/●/, var1) || "Translate Error";
-    } else {
-        fetch(`https://airacloud-v5.vercel.app/translates/${lang}.json`)
-            .then(response => response.json())
-            .then(data => {
-                setTimeout(() => {
-                    localStorage.setItem('translates', JSON.stringify(data));
-                    
-                    var resulttr = data[id].replace(/●/, var1);
-                    return resulttr || "Translate Error";
-                }, 900);
-            });
     }
+
+    return "Translate Error";
 }
