@@ -11,7 +11,7 @@ export function Button({ icon, icontype, name }) {
         <div className="default-content-button">
             <img src={iconurl} loading="lazy" alt="" width="32px" height="32px" style={{marginRight: "9px"}} />
             <b className="content-button-text">
-                <Text id={name} />
+                {name}
             </b>
             <div className="spacer" />
             <img src="https://xploit.men/scdn/?fluenticons&name=chevron-right&type=fluent&fill=white" loading="lazy" alt=""/>
