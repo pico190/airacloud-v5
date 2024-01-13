@@ -1,14 +1,34 @@
 export function Projects() {
     return (
         <>
-            <div className="project-box">
-                <div className="row">
-                    <div className="item" children="potatoes" />
-                    <div className="item" children="potatoes" />
+            <div class="project-box">
+                <div class="row">
+                    <div class="item">potatoes</div>
+                    <div class="item">potatoes</div>
+                    <div class="item">potatoes</div>
+                    <div class="item">potatoes</div>
+                    <div class="item">potatoes</div>
                 </div>
-                <div className="row">
-                    <div className="item fill" />
-                    <div className="item fill" />
+                <div class="row">
+                    <div class="item">potatoes</div>
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                </div>
+                <div class="row">
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                </div>
+                <div class="row">
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
+                    <div class="item item-fill" />
                 </div>
             </div>
         </>
