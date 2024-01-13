@@ -25,7 +25,7 @@ function Recent({ }) {
                 </div>
         </div>
     )
-    if(alluserprojects.every(obj => obj.recent)) {
+    if(!alluserprojects.every(obj => obj.recent === true)) {
         recentactivity = (<></>)
     }
     return (
