@@ -3,6 +3,7 @@
 /* Important */
 body, html {
     margin: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -37,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 .home-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     margin-top: 15px;
 }
 
@@ -272,3 +273,35 @@ h1, h2, h3, h4, h5, h6 {
 #root {
     transition: left 0.5s;
 }
+
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #16191e;
+    border: 1px solid #ffffff1c;
+    width: 158px;
+    height: 158px;
+  }
+  .row {
+    display: flex;
+    gap: 6px;
+    /*! height: 100px; */
+  }
+  .project-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow: hidden;
+    border-radius: 36px;
+  }
+  .item.item-fill {
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  .project-box:first-child {
+    background-color: red;
+  }
