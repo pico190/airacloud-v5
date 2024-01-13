@@ -110,7 +110,9 @@ export function SBContent({ sidinfo }) {
         <Title />
         {pinnedprojects}
         <Section title="sb.section.teams.title" id="teams">
-            <SectionElement id="none" children="Unknown" icon="people_team" />
+            <SectionElement id="none" icon="people_team" >
+                <Text id="general.unknown" />
+            </SectionElement>
         </Section>
         <EngineVersion />
     </div>
