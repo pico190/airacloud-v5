@@ -302,6 +302,16 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
     background-color: rgba(255, 255, 255, 0.03);
   }
-  .project-box:first-child {
-    background-color: red;
+  .project-box > .row:first-child > .item:first-child {
+    border-top-left-radius: 36px;
+  }
+  .project-box > .row:first-child > .item:last-child {
+    border-top-right-radius: 36px;
+  }
+
+  .project-box > .row:last-child > .item:first-child {
+    border-top-left-radius: 36px;
+  }
+  .project-box > .row:last-child > .item:last-child {
+    border-top-right-radius: 36px;
   }
