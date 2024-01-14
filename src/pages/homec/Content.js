@@ -42,7 +42,7 @@ function NoProjects({ }) {
     return (
         <div className="content-noprojects">
             <h1>Create your first project</h1>
-            <button className="button-primary">
+            <button className="button-primary" style={{transform: "scale(0.88)"}}>
                 Create project
             </button>
         </div>
