@@ -9,6 +9,12 @@ import Monaco from '@monaco-editor/react';
 export function Editor({urlparsed, sidinfo}) {
     try {
         var projectId = urlparsed[1];
+        if(projectId.length === 0) {
+            projectId = "none";
+            return (
+                <LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />
+            )
+        }
     } catch(err) {
         var projectId = "none";
         return (
