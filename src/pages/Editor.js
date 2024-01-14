@@ -7,11 +7,14 @@ import { LoadWeb } from '../utils/LoadWeb'
 import Monaco from '@monaco-editor/react';
 
 export function Editor({urlparsed, sidinfo}) {
-    if(urlparsed[1].length<=0 || urlparsed[1] === undefined || urlparsed[1] === null) {
+    try {
+        var projectId = urlparsed[1];
+    } catch(err) {
+        var projectId = "none";
         return (
             <LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />
         )
-    } else {
+    }
         var testPhpCode = `<?php
 $a = "patatas";
 ?>
@@ -42,5 +45,4 @@ $a = "patatas";
             </div>
             </>
         )
-    }
 }
