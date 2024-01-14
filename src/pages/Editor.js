@@ -31,7 +31,7 @@ $a = "patatas";
 
         }
         window.addEventListener("load", () => {
-            alert("sex");
+            console.log("loaded")
         })
         return (
             <>
