@@ -27,13 +27,16 @@ $a = "patatas";
 
 <h1><?php echo $a; ?></h1>`
         function changeFont() {
-            var input = document.getElementById("fontFamily");
-            alert(input.value);
+            var input = document.getElementById("fontFamily").value;
+            alert(input);
             console.log(input);
-            // var style = document.getElementById("style--1");
-            // style.innerHTML = `.monaco-editor *, .monaco-editor {
-            //     font-family: '${input}', Consolas!important;
-            // }`
+            setTimeout(() => {
+                document.getElementById("fontFamily").value = input;
+            }, 10)
+            var style = document.getElementById("style--1");
+            style.innerHTML = `.monaco-editor *, .monaco-editor {
+                font-family: '${input}', Consolas!important;
+            }`
         }
         function loadEditor() {
             changeFont();
