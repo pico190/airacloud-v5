@@ -28,8 +28,6 @@ $a = "patatas";
 <h1><?php echo $a; ?></h1>`
         function changeFont() {
             var input = document.getElementById("fontFamily").value;
-            alert(input);
-            console.log(input);
             setTimeout(() => {
                 document.getElementById("fontFamily").value = input;
             }, 10)
