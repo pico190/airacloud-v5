@@ -13,9 +13,9 @@ export function Projects() {
                     const index = rowIndex * columns + colIndex;
                     const item =  alluserprojects[index] || {};
                     const itemName = item.name || "";
-                    const itemIconName = item.type || "txt";
-                    const itemIcon = <img height="93" src={"https://airacloud-v5.vercel.app/airaicons/" + itemIconName + ".svg"} />;
-                    const isFill = itemName === "" ? " item-fill" : "";
+                    var itemIconName = item.type || "txt";
+                    var itemIcon = <img height="93" src={"https://airacloud-v5.vercel.app/airaicons/" + itemIconName + ".svg"} />;
+                    var isFill = itemName === "" ? " item-fill" : "";
                     isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
                     return <div class={"item" + isFill} key={colIndex}>
                             {itemIcon}
