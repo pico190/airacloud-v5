@@ -42,7 +42,7 @@ function NoProjects({ }) {
     return (
         <div className="content-noprojects">
             <h1>Create your first project</h1>
-            <button className="button-1">
+            <button className="button-primary">
                 Create project
             </button>
         </div>
