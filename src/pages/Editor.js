@@ -13,7 +13,7 @@ export function Editor({urlparsed, sidinfo}) {
         )
     } else {
         return (
-            <Monaco height="100px" theme="vs-dark" defaultLanguage="javascript" defaultValue="// some comment" />
+            <Monaco height="100vh" theme="vs-dark" defaultLanguage="javascript" defaultValue="// some comment" />
         )
     }
 }
