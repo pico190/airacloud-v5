@@ -363,4 +363,22 @@ h1, h2, h3, h4, h5, h6 {
 
   .content-noprojects h1 {
     font-size: 50px;
+    z-index: 100;
+  }
+
+  .content.noprojects::before {
+    background-color: #0000005e;
+    width: 70vw;
+    content: "";
+    position: fixed;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    position: fixed;
+  }
+  .content.noprojects {
+    background-image: url('https://airacloud-v5.vercel.app/coming-soon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
   }

@@ -71,10 +71,14 @@ export function Content({ sidinfo }) {
     var content = <><h1 className="contentTitle"><Text id="content.welcome" var1={sidinfo.name} /></h1><Recent sidinfo={sidinfo} /><Projectssection sidinfo={sidinfo} /></>
     var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
     
+    var noprojects_ = "";
+    
     alluserprojects.length === 0 ? content = <NoProjects /> : void(0);
+    alluserprojects.length === 0 ? noprojects_ = " noprojects" : void(0);
+
 
     return (
-        <div className="content">
+        <div className={"content" + noprojects_}>
             {
                 content
             }
