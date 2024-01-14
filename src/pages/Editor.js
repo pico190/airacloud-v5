@@ -17,12 +17,26 @@ $a = "patatas";
 ?>
 
 <h1><?php echo $a; ?></h1>`
+        function changeFont() {
+            var input = document.getElementById("fontFamily");
+
+        }
         return (
+            <>
+            <style id="style--1" />
             <Monaco 
-            height="100vh" 
+            height="100vh"
+            width="80%"
+            onLoad={() => {alert("sex")}}
             theme="vs-dark" 
             defaultLanguage="php" 
             defaultValue={testPhpCode} />
+            <div style={{position:"fixed", right: "0px", height: "100vh", width: "20%"}}>
+                <b>Propiedades epicas del editor</b><span> (esto es de aira y es temporal papi)</span>
+                <hr />
+                <input value="Consolas" onChange={() => {changeFont()}} id="fontFamily" />
+            </div>
+            </>
         )
     }
 }
