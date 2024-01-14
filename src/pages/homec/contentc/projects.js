@@ -13,10 +13,12 @@ export function Projects() {
                     const index = rowIndex * columns + colIndex;
                     const item =  alluserprojects[index] || {};
                     const itemName = item.name || "";
-                    const itemIcon = item.type || "";
+                    const itemIconName = item.type || "txt";
+                    const itemIcon = <img width="93px" height="93px" src={"https://airacloud-v5.vercel.app/airaicons/" + itemIcon + ".svg"} />;
                     const isFill = itemName === "" ? " item-fill" : "";
+                    isFill.includes("item-fill") ? itemIcon = <></> : itemIcon = itemIcon;
                     return <div class={"item" + isFill} key={colIndex}>
-                            <img width="93px" height="93px" src={"https://airacloud-v5.vercel.app/airaicons/" + itemIcon + ".svg"} />
+                            {itemIcon}
                             {itemName}
                            </div>;
                 })
