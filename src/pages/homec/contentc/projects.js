@@ -6,24 +6,26 @@ export function Projects() {
     var rows = 4;
     var columns = 5;
     var projectBox = <div class="project-box">{
-        Array.from({ length: rows }, (_, rowIndex) => (
-            <div class="row" key={rowIndex}>
-                {
-                    Array.from({ length: columns }, (_, colIndex) => {
-                        const index = rowIndex * columns + colIndex;
-                        const itemName = alluserprojects[index] ? alluserprojects[index].name : "";
-                        return <div class="item" key={colIndex}>{itemName}</div>;
-                    })
-                }
-            </div>
-        ))
-    }</div>;
-    
-    return (
-        <>
-            {projectBox}
-        </>
-    );
+    Array.from({ length: rows }, (_, rowIndex) => (
+        <div class="row" key={rowIndex}>
+            {
+                Array.from({ length: columns }, (_, colIndex) => {
+                    const index = rowIndex * columns + colIndex;
+                    const item =  alluserprojects[index] || {};
+                    const itemName = item.name || "";
+                    const isFill = itemName === "" ? " item-fill" : "";
+                    return <div class={"item" + isFill} key={colIndex}>{itemName}</div>;
+                })
+            }
+        </div>
+    ))
+}</div>;
+
+return (
+    <>
+        {projectBox}
+    </>
+);
     
                 /* <div class="row">
                     <div class="item">potatoes</div>
