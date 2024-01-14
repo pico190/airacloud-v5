@@ -27,8 +27,14 @@ $a = "patatas";
 
 <h1><?php echo $a; ?></h1>`
         function changeFont() {
-            var input = document.getElementById("fontFamily");
-
+            var input = document.getElementById("fontFamily").value;
+            var style = document.getElementById("style--1");
+            style.innerHTML = `.monaco-editor *, .monaco-editor {
+                font-family: '${input}', Consolas!important;
+            }`
+        }
+        function loadEditor() {
+            changeFont();
         }
         window.addEventListener("load", () => {
             console.log("loaded")
@@ -39,8 +45,8 @@ $a = "patatas";
             <Monaco 
             height="100vh"
             width="80%"
-            onChange={() => {alert("changed")}}
-            onMount={() => {alert("loaded?")}}
+            onChange={() => {}}
+            onMount={() => {loadEditor()}}
             theme="vs-dark" 
             options={{
                 contextmenu: false
