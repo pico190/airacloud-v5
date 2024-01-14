@@ -16,7 +16,7 @@ export function Projects() {
                     const itemIconName = item.type || "txt";
                     const itemIcon = <img height="93" src={"https://airacloud-v5.vercel.app/airaicons/" + itemIconName + ".svg"} />;
                     const isFill = itemName === "" ? " item-fill" : "";
-                    isFill.includes("item-fill") ? itemIcon = <></> : itemIcon = itemIcon;
+                    isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
                     return <div class={"item" + isFill} key={colIndex}>
                             {itemIcon}
                             {itemName}
