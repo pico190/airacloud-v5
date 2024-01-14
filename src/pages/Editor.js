@@ -40,6 +40,7 @@ $a = "patatas";
             height="100vh"
             width="80%"
             onChange={() => {alert("changed")}}
+            onMount={() => {alert("loaded?")}}
             theme="vs-dark" 
             options={{
                 contextmenu: false
