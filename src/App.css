@@ -328,3 +328,26 @@ h1, h2, h3, h4, h5, h6 {
   .project-box > .row:last-child > .item:last-child {
     border-bottom-right-radius: 36px;
   }
+
+  
+  .button-primary {
+    border-radius: 1000px;
+    background: #0064C8; 
+    display: flex;
+    width: 270px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0; 
+    font-size: 30px; 
+    font-weight: bold;
+    border: 0;
+}
+.button-primary:active {
+    opacity: 0.9;
+    transform: scale(0.95);
+}
+.button-primary:hover {
+    background: #004f9e; 
+}

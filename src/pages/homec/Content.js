@@ -38,6 +38,17 @@ function Recent({ }) {
     )
 }
 
+function NoProjects({ }) {
+    return (
+        <div className="content-noprojects">
+            <h1>Create your first project</h1>
+            <button className="button-1">
+                Create project
+            </button>
+        </div>
+    )
+}
+
 function Projectssection({ }) {
     return (
         <div className="home-section">
@@ -57,11 +68,17 @@ function Projectssection({ }) {
 
 
 export function Content({ sidinfo }) {
+    var content = <><Recent sidinfo={sidinfo} /><Projectssection sidinfo={sidinfo} /></>
+    var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
+    
+    alluserprojects.length === 0 ? content = <NoProjects /> : void(0);
+
     return (
         <div className="content">
             <h1 className="contentTitle"><Text id="content.welcome" var1={sidinfo.name} /></h1>
-            <Recent sidinfo={sidinfo} />
-            <Projectssection sidinfo={sidinfo} />
+            {
+                content
+            }
         </div>
     )
 }
