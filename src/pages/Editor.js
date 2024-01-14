@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Content } from './homec/Content'
 import { SideBar } from './homec/Sidebar'
