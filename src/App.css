@@ -286,6 +286,9 @@ h1, h2, h3, h4, h5, h6 {
     width: 158px;
     height: 158px;
   }
+  .item:hover {
+    background-color: #1a1e24;
+  }
   .row {
     display: flex;
     gap: 6px;
