@@ -2,7 +2,7 @@ import { decode } from 'js-base64';
 import { gcookie } from '../../../utils/CookieParser';
 
 export function Projects() {
-    var alluserprojects = JSON.parse(decode(gcookie("alluserprojects__PROJECTS")));
+    var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
     var rows = 4;
     var columns = 5;
     var projectBox = <div class="project-box">{
