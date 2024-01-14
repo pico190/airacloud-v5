@@ -45,9 +45,12 @@ $a = "patatas";
             setTimeout(() => {
                 document.getElementById("fontSize").value = input;
             }, 10)
-            var option = options;
-            option.fontSize = input
-            setOptions(option)
+            // var option = options;
+            // option.fontSize = input
+            setOptions({
+                fontSize: input,
+                contextmenu: false
+            })
         }
         function loadEditor() {
             changeFont();
