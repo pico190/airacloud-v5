@@ -302,6 +302,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 6px;
     overflow: hidden;
     border-radius: 36px;
+    margin-bottom: 15px;
   }
   .item.item-fill {
     border: 0;
