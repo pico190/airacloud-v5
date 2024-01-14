@@ -285,6 +285,8 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #ffffff1c;
     width: 158px;
     height: 158px;
+    cursor: pointer;
+    user-select: none;
   }
   .item:hover {
     background-color: #1a1e24;
