@@ -346,7 +346,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .button-primary:active {
     opacity: 0.9;
-    transform: scale(0.95);
+    transform: scale(0.74) !important;
 }
 .button-primary:hover {
     background: #004f9e; 
