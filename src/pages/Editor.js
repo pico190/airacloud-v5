@@ -62,7 +62,7 @@ $a = "patatas";
             onMount={() => {loadEditor()}}
             theme="vs-dark" 
             options={{
-                fontSize: "56px",
+                fontSize: "20px",
                 contextmenu: false
             }}
             defaultLanguage="php" 
