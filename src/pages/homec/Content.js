@@ -41,9 +41,9 @@ function Recent({ }) {
 function NoProjects({ }) {
     return (
         <div className="content-noprojects">
-            <h1>Create your first project</h1>
+            <h1><Text id="content.noproject.title" /></h1>
             <button className="button-primary" style={{transform: "scale(0.88)"}}>
-                Create project
+            <Text id="general.createproject" />
             </button>
         </div>
     )
@@ -72,7 +72,7 @@ export function Content({ sidinfo }) {
     var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
     
     var noprojects_ = "";
-    
+
     alluserprojects.length === 0 ? content = <NoProjects /> : void(0);
     alluserprojects.length === 0 ? noprojects_ = " noprojects" : void(0);
 

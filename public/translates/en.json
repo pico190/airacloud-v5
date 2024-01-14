@@ -25,5 +25,6 @@
 
     "content.welcome": "Welcome, ●!",
     "content.section.recentactivity": "Recent activity",
-    "content.section.projects": "All your projects"
+    "content.section.projects": "All your projects",
+    "content.noproject.title": "Create your first project"
 }
