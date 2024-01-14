@@ -27,11 +27,13 @@ $a = "patatas";
 
 <h1><?php echo $a; ?></h1>`
         function changeFont() {
-            var input = document.getElementById("fontFamily").value;
-            var style = document.getElementById("style--1");
-            style.innerHTML = `.monaco-editor *, .monaco-editor {
-                font-family: '${input}', Consolas!important;
-            }`
+            var input = document.getElementById("fontFamily");
+            alert(input.value);
+            console.log(input);
+            // var style = document.getElementById("style--1");
+            // style.innerHTML = `.monaco-editor *, .monaco-editor {
+            //     font-family: '${input}', Consolas!important;
+            // }`
         }
         function loadEditor() {
             changeFont();
@@ -56,7 +58,7 @@ $a = "patatas";
             <div style={{position:"fixed", right: "0px", height: "100vh", width: "20%", padding: "8px", top: "0px", backgroundColor: "#ffffff08"}}>
                 <b>Propiedades epicas del editor</b><span> (esto es de aira y es temporal papi)</span>
                 <hr style={{border: 0, borderBottom: "1px solid #ffffff24"}} />
-                <input type="text" value="Consolas" placeholder="Font family" onChange={() => {changeFont()}} id="fontFamily" style={{background: "#ffffff0f", border: 0, padding: "8px", borderRadius: "3px", outline: 0}} />
+                <input type="input" value="Consolas" placeholder="Font family" onChange={() => {changeFont()}} id="fontFamily" style={{background: "#ffffff0f", border: 0, padding: "8px", borderRadius: "3px", outline: 0}} />
             </div>
             </>
         )
