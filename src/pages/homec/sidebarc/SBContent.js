@@ -91,7 +91,7 @@ export function SBContent({ sidinfo }) {
 
 
     // Pined projects
-    var pinnedprojects = ( <Section title="Pinned projects" span={span+"/6"} id="pinned" >
+    var pinnedprojects = ( <Section title="sb.section.pinned.title" span={span+"/6"} id="pinned" >
     {
         alluserprojects.map(element => {
             if(element.pinned) {
