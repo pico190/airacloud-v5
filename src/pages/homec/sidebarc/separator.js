@@ -5,7 +5,9 @@ function loadSeparator() {
 
     if (!localStorage.getItem('separatorInitialized')) {
         localStorage.setItem('separatorInitialized', true);
-        alert("a");
+        setTimeout(() => {
+            window.location.reload();
+        }, 450)
 
         const separator = document.getElementById("sb-separator");
 

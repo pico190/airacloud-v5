@@ -1,8 +1,16 @@
+
 export function Projects() {
+    var rows = 4;
+    var columns = 5;
+
+
     return (
         <>
             <div class="project-box">
-                <div class="row">
+                {
+                    projectBox
+                }
+                {/* <div class="row">
                     <div class="item">potatoes</div>
                     <div class="item">potatoes</div>
                     <div class="item">potatoes</div>
@@ -29,7 +37,7 @@ export function Projects() {
                     <div class="item item-fill" />
                     <div class="item item-fill" />
                     <div class="item item-fill" />
-                </div>
+                </div> */}
             </div>
         </>
     )
