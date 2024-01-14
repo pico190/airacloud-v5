@@ -27,7 +27,8 @@ $a = "patatas";
             <Monaco 
             height="100vh"
             width="80%"
-            onLoad={() => {alert("sex")}}
+            onChange={() => {alert("changed")}}
+            editorDidMount={() => {alert("sex")}}
             theme="vs-dark" 
             options={{
                 contextmenu: false
