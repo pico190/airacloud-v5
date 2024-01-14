@@ -30,6 +30,9 @@ $a = "patatas";
             var input = document.getElementById("fontFamily");
 
         }
+        window.addEventListener("load", () => {
+            alert("sex");
+        })
         return (
             <>
             <style id="style--1" />
@@ -37,7 +40,6 @@ $a = "patatas";
             height="100vh"
             width="80%"
             onChange={() => {alert("changed")}}
-            editorDidMount={() => {alert("sex")}}
             theme="vs-dark" 
             options={{
                 contextmenu: false
