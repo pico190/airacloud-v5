@@ -12,7 +12,6 @@ export async function StartSwiftlyIDClient() {
             discriminator: "190",
             avatar: "https://xploit.men/swiftly/pico.png",
         });
-        console.log("potato")
     });
 
     //     {
