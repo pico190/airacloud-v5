@@ -19,7 +19,7 @@ export function Projects() {
                     isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
                     return <div class={"item" + isFill} key={colIndex}>
                             {itemIcon}
-                            {itemName}
+                            <b>{itemName}</b>
                            </div>;
                 })
             }
