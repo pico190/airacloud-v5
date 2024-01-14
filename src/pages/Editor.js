@@ -21,6 +21,10 @@ export function Editor({urlparsed, sidinfo}) {
             <LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />
         )
     }
+        const [options, setOptions] = useState({
+            fontSize: "20px",
+            contextmenu: false
+        });
         var testPhpCode = `<?php
 $a = "patatas";
 ?>
@@ -36,16 +40,15 @@ $a = "patatas";
                 font-family: '${input}', Consolas!important;
             }`
         }
-        // function changeSize() {
-        //     var input = document.getElementById("fontFamily").value;
-        //     setTimeout(() => {
-        //         document.getElementById("fontFamily").value = input;
-        //     }, 10)
-        //     var style = document.getElementById("style--1");
-        //     style.innerHTML = `.monaco-editor *, .monaco-editor {
-        //         font-family: '${input}', Consolas!important;
-        //     }`
-        // }
+        function changeSize() {
+            var input = document.getElementById("fontSize").value;
+            setTimeout(() => {
+                document.getElementById("fontSize").value = input;
+            }, 10)
+            var option = options;
+            option.fontSize = input
+            setOptions(option)
+        }
         function loadEditor() {
             changeFont();
         }
@@ -61,10 +64,7 @@ $a = "patatas";
             onChange={() => {}}
             onMount={() => {loadEditor()}}
             theme="vs-dark" 
-            options={{
-                fontSize: "20px",
-                contextmenu: false
-            }}
+            options={options}
             defaultLanguage="php" 
             defaultValue={testPhpCode} />
             <div style={{position:"fixed", right: "0px", height: "100vh", width: "20%", padding: "8px", top: "0px", backgroundColor: "#ffffff08"}}>
