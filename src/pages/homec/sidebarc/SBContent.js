@@ -24,7 +24,7 @@ export function SBContent({ sidinfo }) {
             <>
                 <div className="sb_separator"></div>
                 <div className="aira_info">
-                        <img width="54px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt="" style={{height: "fit-content"}}/>
+                        <img width="44px" src="https://airacloud-v5.vercel.app/icon.svg" loading="lazy" alt="" style={{height: "fit-content"}}/>
                         <span>
                             <font style={{fontSize: "26px", opacity: "0.75"}}><b>AiraCloud</b> <Text id="sb.down.release" var1="1.0" var1r="0.0" /></font>
                             <br /><font style={{fontSize: "16px", opacity: "0.5"}}><Text id="sb.down.engine" var1="v5.2.0" var1r="v0.0" /></font>
