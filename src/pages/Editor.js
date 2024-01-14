@@ -29,7 +29,9 @@ $a = "patatas";
             width="80%"
             onLoad={() => {alert("sex")}}
             theme="vs-dark" 
-            contextmenu={false}
+            options={{
+                contextmenu: false
+            }}
             defaultLanguage="php" 
             defaultValue={testPhpCode} />
             <div style={{position:"fixed", right: "0px", height: "100vh", width: "20%", padding: "8px", top: "0px", backgroundColor: "#ffffff08"}}>
