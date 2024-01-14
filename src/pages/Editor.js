@@ -36,6 +36,16 @@ $a = "patatas";
                 font-family: '${input}', Consolas!important;
             }`
         }
+        // function changeSize() {
+        //     var input = document.getElementById("fontFamily").value;
+        //     setTimeout(() => {
+        //         document.getElementById("fontFamily").value = input;
+        //     }, 10)
+        //     var style = document.getElementById("style--1");
+        //     style.innerHTML = `.monaco-editor *, .monaco-editor {
+        //         font-family: '${input}', Consolas!important;
+        //     }`
+        // }
         function loadEditor() {
             changeFont();
         }
@@ -48,6 +58,7 @@ $a = "patatas";
             <Monaco 
             height="100vh"
             width="80%"
+            fontSize="36px"
             onChange={() => {}}
             onMount={() => {loadEditor()}}
             theme="vs-dark" 
