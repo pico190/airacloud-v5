@@ -32,9 +32,10 @@ export function Editor({urlparsed, sidinfo}) {
             onChange={() => {}}
             onMount={() => {loadEditor()}}
             theme="vs-dark" 
-            options={options}
-            defaultLanguage="php" 
-            defaultValue={testPhpCode} />
+            options={{
+                contextMenus: false
+            }}
+            defaultLanguage="php" />
             </>
         )
 }
