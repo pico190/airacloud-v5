@@ -58,11 +58,11 @@ $a = "patatas";
             <Monaco 
             height="100vh"
             width="80%"
-            fontSize="36px"
             onChange={() => {}}
             onMount={() => {loadEditor()}}
             theme="vs-dark" 
             options={{
+                fontSize: "56px",
                 contextmenu: false
             }}
             defaultLanguage="php" 
