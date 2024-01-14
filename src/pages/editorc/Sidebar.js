@@ -1,4 +1,4 @@
-import { SideBarSeparator } from './sidebarc/separator'
+import { SideBarSeparator } from '../homec/sidebarc/separator'
 
 
 export function SideBar({ title, children }) {
