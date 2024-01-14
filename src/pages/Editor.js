@@ -31,7 +31,7 @@ $a = "patatas";
             theme="vs-dark" 
             defaultLanguage="php" 
             defaultValue={testPhpCode} />
-            <div style={{position:"fixed", right: "0px", height: "100vh", width: "20%"}}>
+            <div style={{position:"fixed", right: "0px", height: "100vh", width: "20%", padding: "8px", top: "0px"}}>
                 <b>Propiedades epicas del editor</b><span> (esto es de aira y es temporal papi)</span>
                 <hr />
                 <input value="Consolas" onChange={() => {changeFont()}} id="fontFamily" />
