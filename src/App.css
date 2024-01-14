@@ -287,6 +287,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 158px;
     cursor: pointer;
     user-select: none;
+    gap: 10px;
+  }
+  .item b {
+    width: 80%;
+    text-align: center;
   }
   .item:hover {
     background-color: #1a1e24;
