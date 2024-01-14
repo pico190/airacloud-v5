@@ -56,7 +56,7 @@ $a = "patatas";
             <div style={{position:"fixed", right: "0px", height: "100vh", width: "20%", padding: "8px", top: "0px", backgroundColor: "#ffffff08"}}>
                 <b>Propiedades epicas del editor</b><span> (esto es de aira y es temporal papi)</span>
                 <hr style={{border: 0, borderBottom: "1px solid #ffffff24"}} />
-                <input value="Consolas" placeholder="Font family" id="fontFamily" style={{background: "#ffffff0f", border: 0, padding: "8px", borderRadius: "3px", outline: 0}} />
+                <input type="text" value="Consolas" placeholder="Font family" onChange={() => {changeFont()}} id="fontFamily" style={{background: "#ffffff0f", border: 0, padding: "8px", borderRadius: "3px", outline: 0}} />
             </div>
             </>
         )
