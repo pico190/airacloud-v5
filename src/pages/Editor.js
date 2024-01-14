@@ -12,8 +12,17 @@ export function Editor({urlparsed, sidinfo}) {
             <LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />
         )
     } else {
+        var testPhpCode = `<?php
+$a = "patatas";
+?>
+
+<h1><?php echo $a; ?></h1>`
         return (
-            <Monaco height="100vh" theme="vs-dark" defaultLanguage="javascript" defaultValue="// some comment" />
+            <Monaco 
+            height="100vh" 
+            theme="vs-dark" 
+            defaultLanguage="php" 
+            defaultValue={testPhpCode} />
         )
     }
 }
