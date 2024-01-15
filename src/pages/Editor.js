@@ -47,7 +47,7 @@ export function Editor({urlparsed, sidinfo}) {
                     contextmenu: false,
                     cursorBlinking: "smooth",
                     autoIndent: true,
-                    fontSize: "14px",
+                    fontSize: "16px",
                     smoothScrolling: true,
                     dragAndDrop: true
                 }}
