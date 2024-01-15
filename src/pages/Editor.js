@@ -43,7 +43,7 @@ export function Editor({urlparsed, sidinfo}) {
         });
         return (
             <>
-            <SideBar title="a" >patatas</SideBar>
+            <SideBar title="Monaco Playground" >patatas</SideBar>
             <div className="content">
                 <Monaco 
                 height="100%"
