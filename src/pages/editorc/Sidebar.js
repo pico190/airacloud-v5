@@ -13,7 +13,7 @@ export function SideBar({ title, children }) {
                                 <span>AiraCloud</span>
                             </div>
                     </div>
-                    <h1>mi proyecto</h1>
+                    <h1>{title}</h1>
                 </div>
                 {children}
             </div>

@@ -16,10 +16,13 @@ body {
 }
 
 * {
-    font-family: 'Atkinson Hyperlegible';
     box-sizing: border-box;
     color: white;
     transition-duration: 0.1s;
+}
+
+*:not(.monaco-editor *, .monaco-editor) {
+  font-family: 'Atkinson Hyperlegible';
 }
 
 img {
@@ -408,4 +411,10 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     gap: 2px;
+  }
+
+  .monaco-editor {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.11);
   }

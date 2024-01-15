@@ -28,8 +28,8 @@ export function Editor({urlparsed, sidinfo}) {
             <SideBar title="a" >patatas</SideBar>
             <div className="content">
                 <Monaco 
-                height="70vh"
-                width="70%"
+                height="100%"
+                width="100%"
                 onChange={() => {}}
                 onMount={() => {loadEditor()}}
                 theme="vs-dark" 
