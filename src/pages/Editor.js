@@ -3,7 +3,7 @@ import React from 'react';
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
 
-import Monaco from '@monaco-editor/react';
+import Monaco, { monaco } from '@monaco-editor/react';
 
 export function Editor({urlparsed, sidinfo}) {
                     try {
@@ -24,6 +24,14 @@ export function Editor({urlparsed, sidinfo}) {
         function loadEditor() {
         }    
         monaco.editor.defineTheme('airadefault', {
+            base: 'vs-dark',
+            inherit: true,
+            rules: [],
+            colors: {
+                'editor.background': '#16191E',
+            },
+        });
+        monaco.editor.defineTheme('picobsidian', {
             base: 'vs-dark',
             inherit: true,
             rules: [],
