@@ -26,16 +26,18 @@ export function Editor({urlparsed, sidinfo}) {
         return (
             <>
             <SideBar title="a" >patatas</SideBar>
-            <Monaco 
-            height="70vh"
-            width="70%"
-            onChange={() => {}}
-            onMount={() => {loadEditor()}}
-            theme="vs-dark" 
-            options={{
-                contextMenus: false
-            }}
-            defaultLanguage="php" />
+            <div className="content">
+                <Monaco 
+                height="70vh"
+                width="70%"
+                onChange={() => {}}
+                onMount={() => {loadEditor()}}
+                theme="vs-dark" 
+                options={{
+                    contextMenus: false
+                }}
+                defaultLanguage="php" />
+            </div>
             </>
         )
 }
