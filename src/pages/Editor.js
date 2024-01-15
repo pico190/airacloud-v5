@@ -30,7 +30,7 @@ export function Editor({urlparsed, sidinfo}) {
         }    
         function change() {
             var iframe = document.getElementById("iframe-1")
-            iframe.innerHTML = "editorRef.current.getValue()";
+            iframe.innerHTML = editorRef.current.getValue();
 
         }
         loader.init().then((monaco) => {
@@ -63,7 +63,7 @@ export function Editor({urlparsed, sidinfo}) {
                         smoothScrolling: true,
                         dragAndDrop: true
                     }}
-                    defaultLanguage="php" />
+                    defaultLanguage={urlparsed[1]} />
                     <div className="iframe">
                         <div className="url">
                             https://sexo.com/
