@@ -23,7 +23,7 @@ export function Editor({urlparsed, sidinfo}) {
 
         function loadEditor() {
             var content = document.getElementsByClassName("content")[0];
-            content.computedStyleMap.padding = "18px";
+            content.style.padding = "18px";
         }    
         loader.init().then((monaco) => {
             monaco.editor.defineTheme('airadefault', {
