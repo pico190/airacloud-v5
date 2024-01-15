@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .monaco-editor {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 12px!important;
+    overflow: hidden!important;
+    border: 1px solid rgba(255, 255, 255, 0.11)!important;
   }
