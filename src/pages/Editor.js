@@ -32,14 +32,6 @@ export function Editor({urlparsed, sidinfo}) {
                     'editor.background': '#16191E',
                 },
             });
-            monaco.editor.defineTheme('picobsidian', {
-                base: 'vs-dark',
-                inherit: true,
-                rules: [],
-                colors: {
-                    'editor.background': '#16191E',
-                },
-            });
         });
         return (
             <>
@@ -55,7 +47,7 @@ export function Editor({urlparsed, sidinfo}) {
                     contextmenu: false,
                     cursorBlinking: "smooth",
                     autoIndent: true,
-                    fontSize: "18px",
+                    fontSize: "14px",
                     smoothScrolling: true,
                     dragAndDrop: true
                 }}
