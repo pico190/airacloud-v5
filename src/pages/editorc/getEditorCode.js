@@ -1,6 +1,6 @@
 export function getEditorCode() {
-    codelements = document.getElementsByClassName("view-line")
-    code = ""
+    var codelements = document.getElementsByClassName("view-line")
+    var code = ""
 
     const sortedElements = Array.from(codelements).sort((a, b) => {
         const topA = parseInt(a.style.top);

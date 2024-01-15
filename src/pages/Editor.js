@@ -45,7 +45,7 @@ export function Editor({urlparsed, sidinfo}) {
                 },
             });
         });
-        iframelangs=["html", "php"]
+        var iframelangs=["html", "php"]
         return (
             <>
             <SideBar title="Monaco Playground" >
