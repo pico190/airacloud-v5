@@ -3,7 +3,7 @@ import React from 'react';
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
 
-import Monaco, { loader } from '@monaco-editor/react';
+import * as monaco from '@monaco-editor/react';
 
 export function Editor({urlparsed, sidinfo}) {
                     try {
@@ -23,7 +23,7 @@ export function Editor({urlparsed, sidinfo}) {
 
         function loadEditor() {
         }    
-        loader.editor.defineTheme('airadefault', {
+        monaco.editor.defineTheme('airadefault', {
             base: 'vs-dark',
             inherit: true,
             rules: [],
@@ -31,7 +31,7 @@ export function Editor({urlparsed, sidinfo}) {
                 'editor.background': '#16191E',
             },
         });
-        loader.editor.defineTheme('picobsidian', {
+        monaco.editor.defineTheme('picobsidian', {
             base: 'vs-dark',
             inherit: true,
             rules: [],
@@ -43,7 +43,7 @@ export function Editor({urlparsed, sidinfo}) {
             <>
             <SideBar title="a" >patatas</SideBar>
             <div className="content">
-                <Monaco 
+                <monaco.Monaco 
                 height="100%"
                 width="100%"
                 onChange={() => {}}
