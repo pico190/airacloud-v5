@@ -43,9 +43,13 @@ export function Editor({urlparsed, sidinfo}) {
                 },
             });
         });
+        iframelangs=["html", "php"]
         return (
             <>
-            <SideBar title="Monaco Playground" >patatas</SideBar>
+            <SideBar title="Monaco Playground" >
+                <img src={"https://airacloud-v5.vercel.app/airaicons/"+urlparsed[1]+".svg"} loading="lazy" alt=""/>
+                <span>{urlparsed[1]}</span>
+            </SideBar>
             <div className="content">
                 <div className="content-left">
                     <style children=":root, * {--sb-width: 28%!important;}" />
@@ -64,12 +68,14 @@ export function Editor({urlparsed, sidinfo}) {
                         dragAndDrop: true
                     }}
                     defaultLanguage={urlparsed[1]} />
-                    <div className="iframe">
-                        <div className="url">
-                            https://sexo.com/
+                    {
+                        <div className="iframe">
+                            <div className="url">
+                                https://sexo.com/
+                            </div>
+                            <iframe id="iframe-1"></iframe>
                         </div>
-                        <iframe id="iframe-1"></iframe>
-                    </div>
+                    }
                 </div>
             </div>
             </>
