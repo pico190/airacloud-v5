@@ -49,8 +49,10 @@ export function Editor({urlparsed, sidinfo}) {
         return (
             <>
             <SideBar title="Monaco Playground" >
-                <img src={"https://airacloud-v5.vercel.app/airaicons/"+urlparsed[1]+".svg"} loading="lazy" alt=""/>
-                <span>{urlparsed[1]}</span>
+                <div style="display: flex;gap: 10px;">
+                    <img src={"https://airacloud-v5.vercel.app/airaicons/"+urlparsed[1]+".svg"} loading="lazy" alt="" style="width: 20px;" />
+                    <span>{urlparsed[1]}</span>
+                </div>
             </SideBar>
             <div className="content">
                 <div className="content-left">

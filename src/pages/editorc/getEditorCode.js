@@ -12,5 +12,5 @@ export function getEditorCode() {
         code += elem.innerText + "\n";
     });
 
-    console.log(code);
+    return code;
 }
