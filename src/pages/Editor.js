@@ -38,6 +38,7 @@ export function Editor({urlparsed, sidinfo}) {
                     cursorBlinking: "smooth",
                     autoIndent: true,
                     fontSize: "18px",
+                    smoothScrolling: true,
                     dragAndDrop: true
                 }}
                 defaultLanguage="php" />

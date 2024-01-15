@@ -18,11 +18,11 @@ body {
 * {
     box-sizing: border-box;
     color: white;
-    transition-duration: 0.1s;
 }
 
 *:not(.monaco-editor *, .monaco-editor) {
   font-family: 'Atkinson Hyperlegible';
+  transition-duration: 0.1s;
 }
 
 img {
