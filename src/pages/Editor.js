@@ -34,7 +34,11 @@ export function Editor({urlparsed, sidinfo}) {
                 onMount={() => {loadEditor()}}
                 theme="vs-dark" 
                 options={{
-                    contextMenus: false
+                    contextmenu: false,
+                    cursorBlinking: "smooth",
+                    autoIndent: true,
+                    fontSize: "18px",
+                    dragAndDrop: true
                 }}
                 defaultLanguage="php" />
             </div>
