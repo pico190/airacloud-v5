@@ -1,9 +1,13 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
 
 import Monaco, { loader } from '@monaco-editor/react';
+
+// Utils
+import { getEditorCode } from './editorc/getEditorCode';
+
 
 export function Editor({urlparsed, sidinfo}) {
                     try {
@@ -21,17 +25,15 @@ export function Editor({urlparsed, sidinfo}) {
                         )
                     }
 
-        const editorRef = useRef(null);
         
+
         function loadEditor(editor, monaco) {
-            editorRef.current = editor;
             var content = document.getElementsByClassName("content")[0];
             content.style.padding = "18px";
         }    
         function change() {
             var iframe = document.getElementById("iframe-1")
-            iframe.innerHTML = editorRef.current.getValue();
-
+            iframe.innerHTML = getEditorCode();
         }
         loader.init().then((monaco) => {
             monaco.editor.defineTheme('airadefault', {
