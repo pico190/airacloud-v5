@@ -22,7 +22,15 @@ export function Editor({urlparsed, sidinfo}) {
                     }
 
         function loadEditor() {
-        }
+        }    
+        monaco.editor.defineTheme('airadefault', {
+            base: 'vs-dark',
+            inherit: true,
+            rules: [],
+            colors: {
+                'editor.background': '#16191E',
+            },
+        });
         return (
             <>
             <SideBar title="a" >patatas</SideBar>
@@ -32,7 +40,7 @@ export function Editor({urlparsed, sidinfo}) {
                 width="100%"
                 onChange={() => {}}
                 onMount={() => {loadEditor()}}
-                theme="twilight" 
+                theme="airadefault" 
                 options={{
                     contextmenu: false,
                     cursorBlinking: "smooth",
