@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
@@ -21,10 +21,18 @@ export function Editor({urlparsed, sidinfo}) {
                         )
                     }
 
-        function loadEditor() {
+        const editorRef = useRef(null);
+        
+        function loadEditor(editor, monaco) {
+            editorRef.current = editor;
             var content = document.getElementsByClassName("content")[0];
             content.style.padding = "18px";
         }    
+        function change() {
+            var iframe = document.getElementById("iframe-1")
+            iframe.innerHTML = "editorRef.current.getValue()";
+
+        }
         loader.init().then((monaco) => {
             monaco.editor.defineTheme('airadefault', {
                 base: 'vs-dark',
@@ -40,11 +48,12 @@ export function Editor({urlparsed, sidinfo}) {
             <SideBar title="Monaco Playground" >patatas</SideBar>
             <div className="content">
                 <div className="content-left">
+                    <style children=":root, * {--sb-width: 28%!important;}" />
                     <Monaco 
                     height="100%"
                     width="100%"
-                    onChange={() => {}}
-                    onMount={() => {loadEditor()}}
+                    onChange={change}
+                    onMount={loadEditor}
                     theme="airadefault" 
                     options={{
                         contextmenu: false,
@@ -59,9 +68,7 @@ export function Editor({urlparsed, sidinfo}) {
                         <div className="url">
                             https://sexo.com/
                         </div>
-                        <iframe>
-                            Pronto Optix webcode a tomar por culo chicos
-                        </iframe>
+                        <iframe id="iframe-1"></iframe>
                     </div>
                 </div>
             </div>
