@@ -387,3 +387,25 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
     background-position: 50%;
   }
+
+  .aira_logo_small {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    opacity: 0.5;
+  }
+
+  .aira_logo_small .aira_logo_title span {
+    font-size: 20px;
+  }
+
+  .aira_logo_small img {
+    height: 20px;
+    width: 27px;
+  }
+
+  .aira_sb_title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
