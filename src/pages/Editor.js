@@ -32,7 +32,7 @@ export function Editor({urlparsed, sidinfo}) {
                 width="100%"
                 onChange={() => {}}
                 onMount={() => {loadEditor()}}
-                theme="vs-dark" 
+                theme="twilight" 
                 options={{
                     contextmenu: false,
                     cursorBlinking: "smooth",
