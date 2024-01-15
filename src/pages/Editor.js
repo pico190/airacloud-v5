@@ -22,6 +22,8 @@ export function Editor({urlparsed, sidinfo}) {
                     }
 
         function loadEditor() {
+            var content = document.getElementsByClassName("content")[0];
+            content.computedStyleMap.padding = "18px";
         }    
         loader.init().then((monaco) => {
             monaco.editor.defineTheme('airadefault', {
@@ -37,21 +39,31 @@ export function Editor({urlparsed, sidinfo}) {
             <>
             <SideBar title="Monaco Playground" >patatas</SideBar>
             <div className="content">
-                <Monaco 
-                height="100%"
-                width="100%"
-                onChange={() => {}}
-                onMount={() => {loadEditor()}}
-                theme="airadefault" 
-                options={{
-                    contextmenu: false,
-                    cursorBlinking: "smooth",
-                    autoIndent: true,
-                    fontSize: "16px",
-                    smoothScrolling: true,
-                    dragAndDrop: true
-                }}
-                defaultLanguage="php" />
+                <div className="content-left">
+                    <Monaco 
+                    height="100%"
+                    width="100%"
+                    onChange={() => {}}
+                    onMount={() => {loadEditor()}}
+                    theme="airadefault" 
+                    options={{
+                        contextmenu: false,
+                        cursorBlinking: "smooth",
+                        autoIndent: true,
+                        fontSize: "16px",
+                        smoothScrolling: true,
+                        dragAndDrop: true
+                    }}
+                    defaultLanguage="php" />
+                    <div className="iframe">
+                        <div className="url">
+                            https://sexo.com/
+                        </div>
+                        <iframe>
+                            Pronto Optix webcode a tomar por culo chicos
+                        </iframe>
+                    </div>
+                </div>
             </div>
             </>
         )

@@ -418,3 +418,29 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden!important;
     border: 1px solid rgba(255, 255, 255, 0.11)!important;
   }
+
+  .content-left {
+    display: flex;
+    gap: 15px;
+  }
+
+  .iframe {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px!important;
+    border: 1px solid rgba(255, 255, 255, 0.11)!important;
+    overflow: hidden!important;
+    background-color: #16191E;
+  }
+
+  .iframe .url {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.11) !important;
+    padding: 8px 12px;
+  }
+
+  .iframe iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+  }
