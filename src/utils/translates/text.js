@@ -64,5 +64,5 @@ export function Text({ id, var1 = "", var1r = "●" }) {
         fetchData();
     }, [id, var1, var1r]);
 
-    return <div>{translatedText}</div>;
+    return <span>{translatedText}</span>;
 }
