@@ -73,12 +73,12 @@ export function Editor({urlparsed, sidinfo}) {
                     }}
                     defaultLanguage={urlparsed[1]} />
                     {
-                        <div className="iframe">
-                            <div className="url">
-                                https://sexo.com/
-                            </div>
-                            <iframe id="iframe-1"></iframe>
-                        </div>
+                        // <div className="iframe">
+                        //     <div className="url">
+                        //         https://sexo.com/
+                        //     </div>
+                        //     <iframe id="iframe-1"></iframe>
+                        // </div>
                     }
                 </div>
             </div>
