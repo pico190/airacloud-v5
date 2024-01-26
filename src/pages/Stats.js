@@ -87,7 +87,9 @@ export function Stats() {
                                 <CanvasJSChart options = {options} />    
                             </div>
                             <div style={{width: "100%"}}>
-                                <iframe style={{borderRadius:"12px"}} src="https://open.spotify.com/embed/track/6EiEuUU8TcAWsMBOMOIHe6?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
+                                <span>0</span> visitas hoy
+                                <span>0</span> visitas este mes
+                                <span>0</span> visitas únicas
                             </div>
         
                         </div>
