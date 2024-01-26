@@ -98,11 +98,11 @@ export function SBContent({ sidinfo }) {
                 return (
                     <SectionElement id={element.id} children={element.name} icon="pin" />
                 )
-            } return;
+            } return ( <></> );
         })
     }
 </Section>)
-    span === 0 ? pinnedprojects = (<></>) : pinnedprojects = pinnedprojects
+    span === 0 ? pinnedprojects = (<></>) : void(0);
     // Return
     return (
     <>

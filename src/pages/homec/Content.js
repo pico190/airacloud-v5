@@ -19,7 +19,7 @@ function Recent() {
                                 return (
                                     <Button children={element.name} id={element.id} icon={element.type} icontype="airaicon" />
                                 )
-                            } return;
+                            } return (<></>);
                         })
                     }
                 </div>
