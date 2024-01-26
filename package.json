@@ -9,6 +9,8 @@
     "react-scripts": "5.0.1",
     "@canvasjs/charts": "^3.7.34",
     "@monaco-editor/react": "4.6.0",
+    "@vercel/analytics": "1.1.2",
+    "@vercel/speed-insights": "1.0.8",
     "js-base64": "3.7.5",
     "jquery": "^3.7.1",
     "web-vitals": "^3.5.1"
