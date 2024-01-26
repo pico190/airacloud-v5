@@ -10,8 +10,9 @@ import { getEditorCode } from './editorc/getEditorCode';
 
 
 export function Editor({urlparsed, sidinfo}) {
+                    var projectId
                     try {
-                        var projectId = urlparsed[1];
+                        projectId = urlparsed[1];
                         if(projectId.length === 0) {
                             projectId = "none";
                             return (
@@ -19,7 +20,7 @@ export function Editor({urlparsed, sidinfo}) {
                             )
                         }
                     } catch(err) {
-                        var projectId = "none";
+                        projectId = "none";
                         return (
                             <LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />
                         )
@@ -45,7 +46,7 @@ export function Editor({urlparsed, sidinfo}) {
                 },
             });
         });
-        var iframelangs=["html", "php"]
+        // var iframelangs=["html", "php"]
         return (
             <>
             <SideBar title="Monaco Playground" >

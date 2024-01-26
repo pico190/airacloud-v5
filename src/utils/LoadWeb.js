@@ -10,6 +10,6 @@ export function LoadWeb({url}) {
         }, 10)
     })
     return (
-        <iframe id="loadweb" style={{top: "0px", left: "0px", position:"fixed", border: "none", width: "100vw", height: "100vh"}} src={url} /> 
+        <iframe id="loadweb" title="loadweb" style={{top: "0px", left: "0px", position:"fixed", border: "none", width: "100vw", height: "100vh"}} src={url} /> 
     )
 }

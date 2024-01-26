@@ -15,7 +15,7 @@ import { Stats } from './pages/Stats.js'
 import { Editor } from './pages/Editor.js'
 
 // Temp
-import { gcookie } from './utils/CookieParser.js';
+// import { gcookie } from './utils/CookieParser.js';
 
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
   }, [SwiftlyIDClient]);
 
   useEffect(() => {
-    seturlparsed(UrlParser());
+    seturlparsed(UrlParser()); // eslint-disable-next-line
   }, [window.location.href]);
 
   function renderize () {
@@ -93,7 +93,7 @@ function App() {
 
 
   }
-  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient, document.cookie]);
+  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient, document.cookie, renderize]);
   window.addEventListener("resize", () => { renderize(); })
 
 

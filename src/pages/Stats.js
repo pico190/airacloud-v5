@@ -6,7 +6,7 @@ import './stats.css';
 export function Stats() {
     if(window.location.href.includes(`Fr0W7JpIHa0u5mRbCvJ0KDnP41J6qeZjdluvq2Exc3tDE6mRyl`)) {
 
-                var CanvasJS = CanvasJSReact.CanvasJS;
+                // var CanvasJS = CanvasJSReact.CanvasJS;
                 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
                 
                 var chartWidth = window.innerWidth * 0.4;

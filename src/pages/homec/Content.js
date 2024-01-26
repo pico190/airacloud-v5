@@ -6,7 +6,7 @@ import { decode } from 'js-base64';
 import { Text } from '../../utils/translates/text.js';
 import { Projects } from './contentc/projects.js';
 
-function Recent({ }) {
+function Recent() {
     var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
     var recentactivity = (
         
@@ -19,7 +19,7 @@ function Recent({ }) {
                                 return (
                                     <Button children={element.name} id={element.id} icon={element.type} icontype="airaicon" />
                                 )
-                            }
+                            } return;
                         })
                     }
                 </div>
@@ -38,7 +38,7 @@ function Recent({ }) {
     )
 }
 
-function NoProjects({ }) {
+function NoProjects() {
     return (
         <div className="content-noprojects">
             <h1><Text id="content.noproject.title" /></h1>
@@ -49,7 +49,7 @@ function NoProjects({ }) {
     )
 }
 
-function Projectssection({ }) {
+function Projectssection() {
     return (
         <div className="home-section">
                 <font className="home-section-title"><Text id="content.section.projects" /></font>

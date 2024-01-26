@@ -83,7 +83,7 @@ export function SBContent({ sidinfo }) {
 
     // Pinned Limit (*/6) message
         var span = 0
-        alluserprojects.map(element => {
+        alluserprojects.forEach(element => {
             if(element.pinned) {
                 span += 1;
             }
@@ -98,7 +98,7 @@ export function SBContent({ sidinfo }) {
                 return (
                     <SectionElement id={element.id} children={element.name} icon="pin" />
                 )
-            }
+            } return;
         })
     }
 </Section>)

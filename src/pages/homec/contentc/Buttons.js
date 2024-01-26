@@ -1,8 +1,9 @@
 export function Button({ children, icon, icontype }) {
+    var iconurl;
     if(icontype === "airaicon") {
-        var iconurl = `https://airacloud-v5.vercel.app/airaicons/${icon}.svg`;
+        iconurl = `https://airacloud-v5.vercel.app/airaicons/${icon}.svg`;
     } else {
-        var iconurl = `https://xploit.men/scdn/?fluenticons&name=${icon}&type=fluent&fill=white`;
+        iconurl = `https://xploit.men/scdn/?fluenticons&name=${icon}&type=fluent&fill=white`;
     }
     
     return (
