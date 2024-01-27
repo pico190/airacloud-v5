@@ -16,13 +16,13 @@ export function Editor({urlparsed, sidinfo}) {
                         if(projectId.length === 0) {
                             projectId = "none";
                             return (
-                                <LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />
+                                <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
                             )
                         }
                     } catch(err) {
                         projectId = "none";
                         return (
-                            <LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />
+                            <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
                         )
                     }
 
@@ -51,7 +51,7 @@ export function Editor({urlparsed, sidinfo}) {
             <>
             <SideBar title="Monaco Playground" >
                 <div style={{display: "flex", gap: "10px"}}>
-                    <img src={"https://airacloud-v5.vercel.app/airaicons/"+urlparsed[1]+".svg"} loading="lazy" alt="" style={{width: "20px"}} />
+                    <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
                     <span>{urlparsed[1]}</span>
                 </div>
             </SideBar>

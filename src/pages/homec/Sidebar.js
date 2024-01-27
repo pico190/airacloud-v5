@@ -9,7 +9,7 @@ export function SideBar({ sidinfo }) {
             
           <SBContent sidinfo={sidinfo} />  
         </div>
-        <img loading="lazy" src="https://airacloud-v5.vercel.app/aira.sidebar.svg" className="colors-img" alt=""/>
+        <img loading="lazy" src={'https://'+window.location.host+'/aira.sidebar.svg'} className="colors-img" alt=""/>
         <SideBarSeparator />
         </>
     )

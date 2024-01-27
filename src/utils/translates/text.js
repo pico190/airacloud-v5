@@ -16,7 +16,7 @@ export function Text({ id, var1 = "", var1r = "●" }) {
 
                 async function fetchAndSaveLangs() {
                     try {
-                        const response = await fetch('https://airacloud-v5.vercel.app/translates/langs.json');
+                        const response = await fetch('https://'+window.location.host+'/translates/langs.json');
                         const data = await response.json();
                         const languages = Object.keys(data);
                         const selectedLang = languages.includes(language) ? language : "en";
@@ -31,7 +31,7 @@ export function Text({ id, var1 = "", var1r = "●" }) {
 
                 async function fetchAndSaveTranslates(selectedLang) {
                     try {
-                        const response = await fetch(`https://airacloud-v5.vercel.app/translates/${selectedLang}.json`);
+                        const response = await fetch(`https://`+window.location.host+`/translates/${selectedLang}.json`);
                         const data = await response.json();
                         localStorage.setItem('translates', JSON.stringify(data));
 

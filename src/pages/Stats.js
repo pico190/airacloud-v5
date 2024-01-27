@@ -78,7 +78,7 @@ export function Stats() {
             
                 return (
                     <>
-                    <img loading="lazy" src="https://airacloud-v5.vercel.app/aira.stats.svg" className="colors-img-stats" alt=""/>
+                    <img loading="lazy" src={'https://'+window.location.host+'/aira.stats.svg'} className="colors-img-stats" alt=""/>
                     <div className="stats">
                         <h1>Gráfico de visitas <button className="button-reload"><img src="https://xploit.men/scdn/?fluenticons&name=arrow-sync&type=fluent" alt="" /></button></h1>
                         <br /><br />
@@ -98,7 +98,7 @@ export function Stats() {
                 )
             
     } else {
-        return (<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
+        return (<LoadWeb url={'https://'+window.location.host+'/notfound.html'} />);
     }
     
 }

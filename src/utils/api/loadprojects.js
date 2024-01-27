@@ -21,7 +21,7 @@ export function loadProjects(token) {
         }
     )
     .fail(() => {
-        fetch('https://airacloud-v5.vercel.app/sid.html')
+        fetch('https://'+window.location.host+'/sid.html')
         .then(response => response.text())
         .then(data => {
             document.body.innerHTML = data;
