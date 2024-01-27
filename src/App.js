@@ -82,7 +82,7 @@ function App() {
               setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
               break;
             default:
-              setContent(<LoadWeb url="https://airacloud-v5.vercel.app/notfound.html" />);
+              setContent(<LoadWeb url={'https://'+window.location.host+'/notfound.html'} />);
               break;
           }
         }
