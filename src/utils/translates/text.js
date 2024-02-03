@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { gcookie } from "../CookieParser";
 
 export function Text({ id, var1 = "", var1r = "●" }) {
-    const [translatedText, setTranslatedText] = useState("Translate Error");
+    const [translatedText, setTranslatedText] = useState("");
 
     useEffect(() => {
         async function fetchData() {
@@ -13,6 +13,7 @@ export function Text({ id, var1 = "", var1r = "●" }) {
 
                 let langCookie = gcookie("DATA__LANG");
                 let storedLangs = localStorage.getItem('langs');
+                let translationDone = localStorage.getItem('translationDone');
 
                 async function fetchAndSaveLangs() {
                     try {
@@ -40,20 +41,29 @@ export function Text({ id, var1 = "", var1r = "●" }) {
                     } catch (error) {
                         console.error("Error loading translates. Check your internet connection", error);
                         setTranslatedText("Translate Error");
+                    } finally {
+                        localStorage.setItem('translationDone', 'true'); // Marca que la traducción se ha completado
                     }
                 }
 
-                if (!langCookie) {
-                    if (!storedLangs) {
-                        await fetchAndSaveLangs();
+                if (!translationDone) { // Verifica si la traducción ya se ha realizado
+                    if (!langCookie) {
+                        if (!storedLangs) {
+                            await fetchAndSaveLangs();
+                        } else {
+                            const languages = JSON.parse(storedLangs);
+                            langCookie = languages.includes(language) ? language : "en";
+                            document.cookie = `DATA__LANG=${langCookie}; SameSite=Strict; Secure; path=/; expires=${expiryDate.toUTCString()};`;
+                            await fetchAndSaveTranslates(langCookie);
+                        }
                     } else {
-                        const languages = JSON.parse(storedLangs);
-                        langCookie = languages.includes(language) ? language : "en";
-                        document.cookie = `DATA__LANG=${langCookie}; SameSite=Strict; Secure; path=/; expires=${expiryDate.toUTCString()};`;
                         await fetchAndSaveTranslates(langCookie);
                     }
                 } else {
-                    await fetchAndSaveTranslates(langCookie);
+                    const storedTranslates = localStorage.getItem('translates');
+                    const data = JSON.parse(storedTranslates);
+                    const resulttr = data[id]?.replace(var1r, var1) || "Translate Error";
+                    setTranslatedText(resulttr);
                 }
             } catch (err) {
                 console.error("Translate Error", err);
