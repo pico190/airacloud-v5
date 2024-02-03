@@ -2,7 +2,7 @@ import './App.css';
 import { StartSwiftlyIDClient } from './utils/SwiftlyIDManager';
 import { UrlParser } from './utils/UrlParser';
 import { useState, useEffect } from 'react';
-import { console_start } from './utils/Console';
+import { console_start, console_info } from './utils/Console';
 import { LoadWeb } from './utils/LoadWeb'
 
 import $ from 'jquery';
@@ -51,7 +51,8 @@ function App() {
 
   useEffect(() => {
     console_start();
-    console.log(SwiftlyIDClient);
+    console_info("Swiftly Client ID Loaded (", SwiftlyIDClient, ")")
+    console.log("potato"+SwiftlyIDClient);
   }, [SwiftlyIDClient]);
 
   useEffect(() => {
