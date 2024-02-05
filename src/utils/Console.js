@@ -15,5 +15,20 @@ export function console_start() {
 
 export function console_info(data, data2, data3, data4, data5) {
     const info = "font-family: 'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif; font-size: 15px;";
-    console.log("%cInfo%c | %c"+data, info+"background-color: rgba(163, 120, 8, 0.25); border-radius: 4px; padding-left: 3px; padding-right: 3px;", info+"color: rgba(255, 255, 255, .3);", info, "%c"+data2, info, "%c"+data3, info, "%c"+data4, info, "%c"+data5, info)
+    console.log("%cInfo%c | %c"+data, info+"background-color: rgba(26, 8, 163, 0.25); border-radius: 4px; padding-left: 3px; padding-right: 3px;", info+"color: rgba(255, 255, 255, .3);", info, "%c"+data2, info, "%c"+data3, info, "%c"+data4, info, "%c"+data5, info)
+}
+
+export function console_error(data, data2, data3, data4, data5) {
+    const info = "font-family: 'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif; font-size: 15px;";
+    console.log("%cError%c | %c"+data, info+"background-color: rgba(163, 8, 8, 0.25); border-radius: 4px; padding-left: 3px; padding-right: 3px;", info+"color: rgba(255, 255, 255, .3);", info, "%c"+data2, info, "%c"+data3, info, "%c"+data4, info, "%c"+data5, info)
+}
+
+export function console_warn(data, data2, data3, data4, data5) {
+    const info = "font-family: 'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif; font-size: 15px;";
+    console.log("%cWarning%c | %c"+data, info+"background-color: rgba(163, 126, 8, 0.25); border-radius: 4px; padding-left: 3px; padding-right: 3px;", info+"color: rgba(255, 255, 255, .3);", info, "%c"+data2, info, "%c"+data3, info, "%c"+data4, info, "%c"+data5, info)
+}
+
+export function console_group(data, data2, data3, data4, data5) {
+    const info = "font-family: 'Atkinson Hyperlegible', 'Poppins', --system-ui, Arial, sans-serif; font-size: 15px;";
+    console.group("%cInfo%c | %c"+data, info+"background-color: rgba(26, 8, 163, 0.25); border-radius: 4px; padding-left: 3px; padding-right: 3px;", info+"color: rgba(255, 255, 255, .3);", info, "%c"+data2, info, "%c"+data3, info, "%c"+data4, info, "%c"+data5, info)
 }
