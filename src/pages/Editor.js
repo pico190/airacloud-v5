@@ -5,6 +5,7 @@ import { LoadWeb } from '../utils/LoadWeb'
 
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
+import { vscode } from '@uiw/codemirror-theme-vscode';
 
 
 export function Editor({urlparsed, sidinfo}) {
@@ -42,7 +43,7 @@ export function Editor({urlparsed, sidinfo}) {
                     <CodeMirror
                     value="console.log('hello world!');"
                     height="200px"
-                    theme={myTheme}
+                    theme={vscode}
                     extensions={[javascript({ jsx: true })]}
                     onChange={(value, viewUpdate) => {
                         console.log('value:', value);
