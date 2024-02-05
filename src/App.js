@@ -61,7 +61,7 @@ function App() {
 
   function renderize () {
     
-    console.log(urlparsed[0]);
+    console_info("Url changed: "+urlparsed[0]);
     // console.log(window.innerWidth);
 
     try {
@@ -94,7 +94,7 @@ function App() {
 
 
   } // eslint-disable-next-line
-  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient, document.cookie, renderize]);
+  useEffect(() => { renderize () }, [urlparsed, document.cookie]);
   window.addEventListener("resize", () => { renderize(); })
 
 

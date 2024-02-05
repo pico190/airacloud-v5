@@ -38,16 +38,14 @@ export function Editor({urlparsed, sidinfo}) {
             </SideBar>
             <div className="content">
                 <div className="content-left">
-                    <style children=":root, * {--sb-width: 28%!important;}" />
+                    <style children=":root, * {--sb-width: 28%!important;} .content {padding: 20px;}" />
                     
                     <CodeMirror
                     value="console.log('hello world!');"
-                    height="200px"
+                    height="100%"
+                    width="100%"
                     theme={vscodeDark}
                     extensions={[javascript({ jsx: true })]}
-                    onChange={(value, viewUpdate) => {
-                        console.log('value:', value);
-                    }}
                     />
                     {
                         // <div className="iframe">
