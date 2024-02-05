@@ -3,10 +3,8 @@ import React from 'react';
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
 
-import Monaco, { loader } from '@monaco-editor/react';
-
-// Utils
-import { getEditorCode } from './editorc/getEditorCode';
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
 
 
 export function Editor({urlparsed, sidinfo}) {
@@ -28,28 +26,10 @@ export function Editor({urlparsed, sidinfo}) {
 
         
 
-        function loadEditor(editor, monaco) {
-            var content = document.getElementsByClassName("content")[0];
-            content.style.padding = "18px";
-        }    
-        function change() {
-            var iframe = document.getElementById("iframe-1")
-            iframe.innerHTML = getEditorCode();
-        }
-        loader.init().then((monaco) => {
-            monaco.editor.defineTheme('airadefault', {
-                base: 'vs-dark',
-                inherit: true,
-                rules: [],
-                colors: {
-                    'editor.background': '#16191E',
-                },
-            });
-        });
         // var iframelangs=["html", "php"]
         return (
             <>
-            <SideBar title="Monaco Playground" >
+            <SideBar title="Codemirror Playground" >
                 <div style={{display: "flex", gap: "10px"}}>
                     <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
                     <span>{urlparsed[1]}</span>
@@ -58,21 +38,16 @@ export function Editor({urlparsed, sidinfo}) {
             <div className="content">
                 <div className="content-left">
                     <style children=":root, * {--sb-width: 28%!important;}" />
-                    <Monaco 
-                    height="100%"
-                    width="100%"
-                    onChange={change}
-                    onMount={loadEditor}
-                    theme="airadefault" 
-                    options={{
-                        contextmenu: false,
-                        cursorBlinking: "smooth",
-                        autoIndent: true,
-                        fontSize: "16px",
-                        smoothScrolling: true,
-                        dragAndDrop: true
+                    
+                    <CodeMirror
+                    value="console.log('hello world!');"
+                    height="200px"
+                    theme={myTheme}
+                    extensions={[javascript({ jsx: true })]}
+                    onChange={(value, viewUpdate) => {
+                        console.log('value:', value);
                     }}
-                    defaultLanguage={urlparsed[1]} />
+                    />
                     {
                         // <div className="iframe">
                         //     <div className="url">
