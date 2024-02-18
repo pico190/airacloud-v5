@@ -3,15 +3,12 @@ import { jsxtostr } from "./generalfuncs";
 
 
 export function createContextMenu(contents) {
-    
-    const mousePosition = useMousePosition();
+
     
     var contxtmenu = document.getElementById("contextmenu");
-    contxtmenu.style.left = mousePosition.x + "px"
-    contxtmenu.style.top = mousePosition.y + "px"
     contxtmenu.style.opacity = 1
     contxtmenu.style.pointerEvents = "all"
-    contxtmenu.innerHTML =  jsxtostr(contents)
+    contxtmenu.innerHTML =  jsxtostr(contents + (<Element_ />))
 
     document.addEventListener('click', (event) => {
         if (!contxtmenu.contains(event.target)) {
@@ -21,6 +18,18 @@ export function createContextMenu(contents) {
     });
 }
 
+function Element_() {
+    
+    const mousePosition = useMousePosition();
+
+    var contxtmenu = document.getElementById("contextmenu");
+    contxtmenu.style.left = mousePosition.x + "px"
+    contxtmenu.style.top = mousePosition.y + "px"
+
+    return (
+        <></>
+    )
+}
 export function CmenuElement({icon, title, action, desc}) {
     return (
         <div class="contextmenuelement" onClick={() => {action()}} title={desc}>
