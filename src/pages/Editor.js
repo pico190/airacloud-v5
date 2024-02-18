@@ -78,7 +78,7 @@ export function Editor({urlparsed, sidinfo}) {
                     <style children={`.cm-editor, .cm-editor * {font-size: ${fontsize_}px;}`} id="fontsize" />         
                     <style children={`.cm-editor, .cm-editor * {font-family: ${fontfamily_}px;}`} id="fontfamily" />
                     
-                    <div style={{width: "100%", height: "100%"}} ref={editor} />
+                    <div style={{width: "100%", height: "100%"}} className="cm-theme" ref={editor} />
                     {
                         // <div className="iframe">
                         //     <div className="url">
