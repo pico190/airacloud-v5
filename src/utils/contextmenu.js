@@ -16,25 +16,16 @@ export function createContextMenu(contents) {
             contxtmenu.style.pointerEvents = "none"
         }
     });
-
-    return (
-        <Element_ />
-    )
 }
 
-function Element_() {
-    
+export function CmenuElement({icon, title, action, desc}) {
+
     const mousePosition = useMousePosition();
 
     var contxtmenu = document.getElementById("contextmenu");
     contxtmenu.style.left = mousePosition.x + "px"
     contxtmenu.style.top = mousePosition.y + "px"
 
-    return (
-        <></>
-    )
-}
-export function CmenuElement({icon, title, action, desc}) {
     return (
         <div class="contextmenuelement" onClick={() => {action()}} title={desc}>
             <img src={icon} loading="lazy" alt="" style={{width: "20px"}} /> 
