@@ -537,6 +537,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 15px;
     overflow: hidden;
     padding: 7px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.072)
   }
 
   .contextmenuelement:hover {
