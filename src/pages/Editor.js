@@ -38,11 +38,17 @@ export function Editor({urlparsed, sidinfo}) {
                 <div style={{display: "flex", gap: "10px"}}>
                     <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
                     <span>{urlparsed[1]}</span>
+
+                    <b>Font Size:</b>
+                    <input type="range" id="fontsizeinput" min="10" max="55" value="20" onChange={() => {document.getElementById("fontsize").innerHTML=`.cm-editor, .cm-editor * {font-size: ${document.getElementById("fontsizeinput").value}px;}`}} />
+                    
                 </div>
             </SideBar>
             <div className="content">
                 <div className="content-left">
                     <style children=":root, * {--sb-width: 28%!important;} .content {padding: 20px;}" />
+                    <style children="" id="fontsize" />         
+                    <style children="" id="fontfamily" />
                     
                     <CodeMirror
                     value="console.log('hello world!');"
