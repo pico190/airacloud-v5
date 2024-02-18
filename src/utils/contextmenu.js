@@ -1,31 +1,28 @@
 import { useMousePosition } from "./useMousePosition";
 import { jsxtostr } from "./generalfuncs";
-import React from 'react';
 
-export function createContextMenu(e, contents) {
-    e.preventDefault();
 
-    const [
-        mousePosition,
-        setMousePosition
-      ] = React.useState({ x: null, y: null });
-      React.useEffect(() => {
-        const updateMousePosition = ev => {
-          setMousePosition({ x: ev.clientX, y: ev.clientY });
-        };
-        window.addEventListener('mousemove', updateMousePosition);
-        return () => {
-          window.removeEventListener('mousemove', updateMousePosition);
-        };
-      }, []);
+export function ContextMenu({children, cmenucontent}) {
     
+    //<div id="contextmenu" className="contextmenu" />
     var contxtmenu = document.getElementById("contextmenu");
-    contxtmenu.style.opacity = 1
-    contxtmenu.style.pointerEvents = "all"
-    contxtmenu.style.left = mousePosition.x + "px"
-    contxtmenu.style.top = mousePosition.y + "px"
-    contxtmenu.innerHTML =  jsxtostr(contents)
-    
+    const mousePosition = useMousePosition();
+
+    function eventcmenu(e) {
+        e.preventDefault();
+        contxtmenu.style.opacity = 1
+        contxtmenu.style.pointerEvents = "all"
+        contxtmenu.style.left = mousePosition.x + "px"
+        contxtmenu.style.top = mousePosition.y + "px"
+        contxtmenu.innerHTML = jsxtostr(contents)
+    }
+
+    document.addEventListener('contextmenu', (event) => {
+        if (!contxtmenu.contains(event.target)) {
+            contxtmenu.style.opacity = 0
+            contxtmenu.style.pointerEvents = "none"
+        }
+    });
 
     document.addEventListener('click', (event) => {
         if (!contxtmenu.contains(event.target)) {
@@ -33,6 +30,14 @@ export function createContextMenu(e, contents) {
             contxtmenu.style.pointerEvents = "none"
         }
     });
+
+    return (
+        <>
+        <span onContextMenu={(e) => {eventcmenu(e)}}>
+            {children}
+        </span>
+        </>
+    )
 }
 
 export function CmenuElement({icon, title, action, desc}) {

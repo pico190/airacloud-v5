@@ -9,7 +9,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 
-import { createContextMenu, CmenuElement } from "../utils/contextmenu";
+import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 
@@ -75,10 +75,12 @@ export function Editor({urlparsed, sidinfo}) {
             </SideBar>
             <div className="content">
                     <div className="files" >
-                        <div className="file active" onContextMenu={(e) => {createContextMenu(e, <><CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=food-pizza" title="Pizza" action={() => {alert("click")}} desc="pizzas ricas" /> <CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=animal-cat" title="relleno rellenero" action={() => {alert("click2")}} desc="Gatito miau" /></>)}}>
-                            <img src={'https://'+window.location.host+'/airaicons/'+"react"+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
-                            <b>codemirror.jsx</b>
-                        </div>
+                        <ContextMenu cmenucontent={<><CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=food-pizza" title="Pizza" action={() => {alert("click")}} desc="pizzas ricas" /> <CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=animal-cat" title="relleno rellenero" action={() => {alert("click2")}} desc="Gatito miau" /></>}>
+                                    <div className="file active">
+                                        <img src={'https://'+window.location.host+'/airaicons/'+"react"+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
+                                        <b>codemirror.jsx</b>
+                                    </div>
+                        </ContextMenu>
                     </div>
 
                 <div className="content-left">
