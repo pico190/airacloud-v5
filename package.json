@@ -22,7 +22,8 @@
     
     "js-base64": "3.7.6",
     "jquery": "^3.7.1",
-    "web-vitals": "^3.5.2"
+    "web-vitals": "^3.5.2",
+    "react-redux": "9.1.0"
     
   },
   "scripts": {

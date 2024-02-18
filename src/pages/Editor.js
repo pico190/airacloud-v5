@@ -1,14 +1,15 @@
-import React from 'react';
-import { useEffect, useMemo, useRef } from 'react';
+
+import React, { useEffect, useRef, useState} from "react";
+import { useSelector } from "react-redux";
 
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
 
-import CodeMirror from '@uiw/react-codemirror';
+import CodeMirror, { useCodeMirror } from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
-import { useCodeMirror } from '@uiw/react-codemirror';
+
 
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 
@@ -37,7 +38,7 @@ export function Editor({urlparsed, sidinfo}) {
         var fontfamily_ = "20";
 
         const algorithm  = useSelector(state => state.algorithm); 
-        const code = algorithm.code ? algorithm.code : '//Select an algorithm';
+        const code = algorithm.code ? algorithm.code : "console.log('hello world!');";
     
         const editor = useRef(); 
     
@@ -49,11 +50,12 @@ export function Editor({urlparsed, sidinfo}) {
     
         const { setContainer } = useCodeMirror({
             container: editor.current,
-            extensions: [javascript()],
+            extensions: [javascript({ jsx: true }), color],
             value: codeValue, 
-            theme: oneDark,
+            theme: vscodeDark,
             onChange: handleAlgoChange,
-            height: '100%',
+            height: "100%",
+            width: "100%",
         });
     
         useEffect(() => {
