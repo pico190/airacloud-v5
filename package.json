@@ -1,21 +1,28 @@
 {
   "private": true,
   "dependencies": {
+    
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "@canvasjs/charts": "^3.7.37",
-    "@uiw/react-codemirror": "4.21.21",
-    "@uiw/codemirror-theme-vscode": "4.21.21",
+
+    "@canvasjs/charts": "^3.7.38",
+    
+    "@uiw/react-codemirror": "4.21.22",
+    "@uiw/codemirror-theme-vscode": "4.21.22",
     "@codemirror/lang-javascript": "6.2.1",
-    "@vercel/analytics": "1.1.2",
-    "@vercel/speed-insights": "1.0.9",
+    "@uiw/codemirror-extensions-color": "4.21.22",
+    
+    "@vercel/analytics": "1.2.0",
+    "@vercel/speed-insights": "1.0.10",
+    
     "js-base64": "3.7.6",
     "jquery": "^3.7.1",
     "web-vitals": "^3.5.2"
+    
   },
   "scripts": {
     "start": "react-scripts start",
