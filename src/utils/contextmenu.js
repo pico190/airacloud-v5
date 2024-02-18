@@ -17,12 +17,12 @@ export function ContextMenu({children, cmenucontent}) {
         contxtmenu.innerHTML = jsxtostr(cmenucontent)
     }
 
-    document.addEventListener('contextmenu', (event) => {
-        if (!contxtmenu.contains(event.target)) {
-            contxtmenu.style.opacity = 0
-            contxtmenu.style.pointerEvents = "none"
-        }
-    });
+    // document.addEventListener('contextmenu', (event) => {
+    //     if (!contxtmenu.contains(event.target)) {
+    //         contxtmenu.style.opacity = 0
+    //         contxtmenu.style.pointerEvents = "none"
+    //     }
+    // });
 
     document.addEventListener('click', (event) => {
         if (!contxtmenu.contains(event.target)) {
