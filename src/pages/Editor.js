@@ -37,10 +37,12 @@ export function Editor({urlparsed, sidinfo}) {
         return (
             <>
             <SideBar title="Codemirror Playground" >
-                <div style={{display: "flex", gap: "10px"}}>
-                    <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
-                    <span>{urlparsed[1]}</span>
-                    <div style={{display: "flex", gap: "10px", flexDirection: "colum"}}>
+                    <div style={{display: "flex", gap: "10px"}}>
+                        <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
+                        <span>{urlparsed[1]}</span>
+                    </div>
+                    
+                    <div style={{display: "flex", gap: "10px", flexDirection: "column"}}>
                         <hr />
                         <b>Font Size:</b>
                         <input type="range" id="fontsizeinput" min="10" max="55" value="20" onChange={() => {document.getElementById("fontsize").innerHTML=`.cm-editor, .cm-editor * {font-size: ${document.getElementById("fontsizeinput").value}px;}`}} />
@@ -48,7 +50,6 @@ export function Editor({urlparsed, sidinfo}) {
                         <b>Font Family:</b>
                         <input type="text" id="fontfamilyinput" value="Consolas" placeholder="Introduce una fuente que esté en tu dispositivo." onChange={() => {document.getElementById("fontfamily").innerHTML=`.cm-editor, .cm-editor * {font-family: ${document.getElementById("fontfamilyinput").value}px;}`}} style={{border: "none", outline: 0, color: "black"}} />
                     </div>
-                </div>
             </SideBar>
             <div className="content">
                 <div className="content-left">
