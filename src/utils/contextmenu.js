@@ -25,6 +25,7 @@ export function createContextMenu(e, contents) {
     contxtmenu.style.left = mousePosition.x + "px"
     contxtmenu.style.top = mousePosition.y + "px"
     contxtmenu.innerHTML =  jsxtostr(contents)
+    
 
     document.addEventListener('click', (event) => {
         if (!contxtmenu.contains(event.target)) {
