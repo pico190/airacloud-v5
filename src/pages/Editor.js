@@ -1,6 +1,5 @@
 
 import React, { useEffect, useRef, useState} from "react";
-import { useSelector } from "react-redux";
 
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
@@ -37,8 +36,7 @@ export function Editor({urlparsed, sidinfo}) {
         var fontsize_ = "20";
         var fontfamily_ = "20";
 
-        const algorithm  = useSelector(state => state.algorithm); 
-        const code = algorithm.code ? algorithm.code : "console.log('hello world!');";
+        const code = "console.log('hello world!');";
     
         const editor = useRef(); 
     
