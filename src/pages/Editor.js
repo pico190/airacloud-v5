@@ -14,21 +14,21 @@ import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 
 
 export function Editor({urlparsed, sidinfo}) {
-                                                                                                var projectId
-                                                                                                try {
-                                                                                                    projectId = urlparsed[1];
-                                                                                                    if(projectId.length === 0) {
-                                                                                                        projectId = "none";
-                                                                                                        return (
-                                                                                                            <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
-                                                                                                        )
-                                                                                                    }
-                                                                                                } catch(err) {
-                                                                                                    projectId = "none";
-                                                                                                    return (
-                                                                                                        <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
-                                                                                                    )
-                                                                                                }
+                                                                                                // var projectId
+                                                                                                // try {
+                                                                                                //     projectId = urlparsed[1];
+                                                                                                //     if(projectId.length === 0) {
+                                                                                                //         projectId = "none";
+                                                                                                //         return (
+                                                                                                //             <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
+                                                                                                //         )
+                                                                                                //     }
+                                                                                                // } catch(err) {
+                                                                                                //     projectId = "none";
+                                                                                                //     return (
+                                                                                                //         <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
+                                                                                                //     )
+                                                                                                // }
 
         
 
@@ -36,27 +36,34 @@ export function Editor({urlparsed, sidinfo}) {
         var fontsize_ = "20";
         var fontfamily_ = "20";
 
-        const changeEvent = React.useCallback((val, viewUpdate) => {
-            console.log('val:', val);
-        }, []);
-
-        const editor = useRef();
+        const algorithm  = useSelector(state => state.algorithm); 
+        const code = algorithm.code ? algorithm.code : '//Select an algorithm';
+    
+        const editor = useRef(); 
+    
+        const [ codeValue, setCodeValue ] = useState(code);
+    
+        const handleAlgoChange = (e) => {
+            setCodeValue(e)
+        }
+    
         const { setContainer } = useCodeMirror({
-          container: editor.current,
-          value: "console.log('hello world!');",       
-          height: "100%",
-          width: "100%",
-          theme: {vscodeDark},
-          onChange: changeEvent,
-          extensions: [javascript({ jsx: true }), color],
-          ref: editor,
+            container: editor.current,
+            extensions: [javascript()],
+            value: codeValue, 
+            theme: oneDark,
+            onChange: handleAlgoChange,
+            height: '100%',
         });
-      
+    
         useEffect(() => {
-          if (editor.current) {
-            setContainer(editor.current);
-          }
+            if (editor.current) {
+                setContainer(editor.current);
+            }
         }, [editor.current]);
+    
+    
+    
         return (
             <>
             <SideBar title="Codemirror Playground" >
