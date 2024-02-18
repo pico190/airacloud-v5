@@ -95,7 +95,7 @@ function App() {
 
 
   } // eslint-disable-next-line
-  useEffect(() => { renderize () }, [urlparsed, document.cookie]);
+  useEffect(() => { renderize () }, [urlparsed, window.innerWidth, SwiftlyIDClient, document.cookie, renderize]);
   window.addEventListener("resize", () => { renderize(); })
 
 
