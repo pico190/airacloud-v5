@@ -52,8 +52,8 @@ export function Editor({urlparsed, sidinfo}) {
             value: codeValue, 
             theme: vscodeDark,
             onChange: handleAlgoChange,
-            height: "100%",
-            width: "100%",
+            height: '100%',
+            width: '100%',
         });
     
         useEffect(() => {
