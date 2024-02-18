@@ -1,9 +1,10 @@
 import { useMousePosition } from "./useMousePosition";
 import { jsxtostr } from "./generalfuncs";
 
-const mousePosition = useMousePosition();
 
 export function createContextMenu(contents) {
+    
+    const mousePosition = useMousePosition();
     
     var contxtmenu = document.getElementById("contextmenu");
     contxtmenu.style.left = mousePosition.x + "px"
