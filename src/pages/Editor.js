@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
@@ -7,33 +8,55 @@ import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
-
+import { useCodeMirror } from '@uiw/react-codemirror';
 
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 
 
 export function Editor({urlparsed, sidinfo}) {
-                    var projectId
-                    try {
-                        projectId = urlparsed[1];
-                        if(projectId.length === 0) {
-                            projectId = "none";
-                            return (
-                                <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
-                            )
-                        }
-                    } catch(err) {
-                        projectId = "none";
-                        return (
-                            <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
-                        )
-                    }
+                                                                                                var projectId
+                                                                                                try {
+                                                                                                    projectId = urlparsed[1];
+                                                                                                    if(projectId.length === 0) {
+                                                                                                        projectId = "none";
+                                                                                                        return (
+                                                                                                            <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
+                                                                                                        )
+                                                                                                    }
+                                                                                                } catch(err) {
+                                                                                                    projectId = "none";
+                                                                                                    return (
+                                                                                                        <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
+                                                                                                    )
+                                                                                                }
 
         
 
         // var iframelangs=["html", "php"]
         var fontsize_ = "20";
         var fontfamily_ = "20";
+
+        const changeEvent = React.useCallback((val, viewUpdate) => {
+            console.log('val:', val);
+        }, []);
+
+        const editor = useRef();
+        const { setContainer } = useCodeMirror({
+          container: editor.current,
+          value: "console.log('hello world!');",       
+          height: "100%",
+          width: "100%",
+          theme: {vscodeDark},
+          onChange: changeEvent,
+          extensions: [javascript({ jsx: true }), color],
+          ref: editor,
+        });
+      
+        useEffect(() => {
+          if (editor.current) {
+            setContainer(editor.current);
+          }
+        }, [editor.current]);
         return (
             <>
             <SideBar title="Codemirror Playground" >
@@ -48,14 +71,7 @@ export function Editor({urlparsed, sidinfo}) {
                     <style children={`.cm-editor, .cm-editor * {font-size: ${fontsize_}px;}`} id="fontsize" />         
                     <style children={`.cm-editor, .cm-editor * {font-family: ${fontfamily_}px;}`} id="fontfamily" />
                     
-                    <CodeMirror
-                    value="console.log('hello world!');"
-                    height="100%"
-                    width="100%"
-                    theme={vscodeDark}
-                    onChange={(editor, data, value) => {console.log(editor)}}
-                    extensions={[javascript({ jsx: true }), color]}
-                    />
+                    <div ref={editor} />
                     {
                         // <div className="iframe">
                         //     <div className="url">
