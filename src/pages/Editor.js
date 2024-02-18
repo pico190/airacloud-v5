@@ -41,15 +41,6 @@ export function Editor({urlparsed, sidinfo}) {
                         <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
                         <span>{urlparsed[1]}</span>
                     </div>
-
-                    <div style={{display: "flex", gap: "10px", flexDirection: "column"}}>
-                        <hr />
-                        <b>Font Size:</b>
-                        <input type="range" id="fontsizeinput" min="10" max="55" value="20" onChange={() => {document.getElementById("fontsize").innerHTML=`.cm-editor, .cm-editor * {font-size: ${document.getElementById("fontsizeinput").value}px;}`; ; document.getElementById("fontsizeinput").value = document.getElementById("fontsizeinput").value}} />
-                        <br />
-                        <b>Font Family:</b>
-                        <input type="text" id="fontfamilyinput" value="Consolas" placeholder="Introduce una fuente que esté en tu dispositivo." onChange={() => {document.getElementById("fontfamily").innerHTML=`.cm-editor, .cm-editor * {font-family: ${document.getElementById("fontfamilyinput").value}px;}`; document.getElementById("fontfamilyinput").value = document.getElementById("fontfamilyinput").value}} style={{border: "none", outline: 0, color: "black"}} />
-                    </div>
             </SideBar>
             <div className="content">
                 <div className="content-left">
@@ -62,6 +53,7 @@ export function Editor({urlparsed, sidinfo}) {
                     height="100%"
                     width="100%"
                     theme={vscodeDark}
+                    onChange={(editor, data, value) => {alert(data)}}
                     extensions={[javascript({ jsx: true }), color]}
                     />
                     {
