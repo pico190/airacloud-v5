@@ -1,13 +1,29 @@
 import { useMousePosition } from "./useMousePosition";
 import { jsxtostr } from "./generalfuncs";
+import React from 'react';
 
+export function createContextMenu(e, contents) {
+    e.preventDefault();
 
-export function createContextMenu(contents) {
-
+    const [
+        mousePosition,
+        setMousePosition
+      ] = React.useState({ x: null, y: null });
+      React.useEffect(() => {
+        const updateMousePosition = ev => {
+          setMousePosition({ x: ev.clientX, y: ev.clientY });
+        };
+        window.addEventListener('mousemove', updateMousePosition);
+        return () => {
+          window.removeEventListener('mousemove', updateMousePosition);
+        };
+      }, []);
     
     var contxtmenu = document.getElementById("contextmenu");
     contxtmenu.style.opacity = 1
     contxtmenu.style.pointerEvents = "all"
+    contxtmenu.style.left = mousePosition.x + "px"
+    contxtmenu.style.top = mousePosition.y + "px"
     contxtmenu.innerHTML =  jsxtostr(contents)
 
     document.addEventListener('click', (event) => {
@@ -19,13 +35,6 @@ export function createContextMenu(contents) {
 }
 
 export function CmenuElement({icon, title, action, desc}) {
-
-    const mousePosition = useMousePosition();
-
-    var contxtmenu = document.getElementById("contextmenu");
-    contxtmenu.style.left = mousePosition.x + "px"
-    contxtmenu.style.top = mousePosition.y + "px"
-
     return (
         <div class="contextmenuelement" onClick={() => {action()}} title={desc}>
             <img src={icon} loading="lazy" alt="" style={{width: "20px"}} /> 

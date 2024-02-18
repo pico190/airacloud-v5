@@ -75,7 +75,7 @@ export function Editor({urlparsed, sidinfo}) {
             </SideBar>
             <div className="content">
                     <div className="files" >
-                        <div className="file active" onContextMenu={() => {createContextMenu(<><CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=food-pizza" title="Pizza" action={() => {alert("click")}} desc="pizzas ricas" /> <CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=animal-cat" title="relleno rellenero" action={() => {alert("click2")}} desc="Gatito miau" /></>)}}>
+                        <div className="file active" onContextMenu={(e) => {createContextMenu(e, <><CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=food-pizza" title="Pizza" action={() => {alert("click")}} desc="pizzas ricas" /> <CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=animal-cat" title="relleno rellenero" action={() => {alert("click2")}} desc="Gatito miau" /></>)}}>
                             <img src={'https://'+window.location.host+'/airaicons/'+"react"+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
                             <b>codemirror.jsx</b>
                         </div>
