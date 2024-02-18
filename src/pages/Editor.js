@@ -74,12 +74,12 @@ export function Editor({urlparsed, sidinfo}) {
             </SideBar>
             <div className="content">
                     <div className="files" >
-                        <div className="file" >
+                        <div className="file active" >
                             <img src={'https://'+window.location.host+'/airaicons/'+"react"+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
                             <b>codemirror.jsx</b>
                         </div>
                     </div>
-                    
+
                 <div className="content-left">
                     <style children=":root, * {--sb-width: 28%!important;} .content {padding: 20px;}" />
                     <style children={`.cm-editor, .cm-editor * {font-size: ${fontsize_}px;}`} id="fontsize" />         

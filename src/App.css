@@ -522,9 +522,13 @@ h1, h2, h3, h4, h5, h6 {
   .file {
     display: flex;
     gap: 5px;
-    background-color: #ffffff1f;
     padding: 20px 15px;
     width: fit-content;
     align-items: center;
     cursor: pointer;
+    border-right: 1px solid #ffffff1c;
+  }
+
+  .file.active {
+    background-color: #ffffff0a;
   }
