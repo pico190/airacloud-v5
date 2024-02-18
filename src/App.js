@@ -103,6 +103,7 @@ function App() {
   
   return (
     <>
+      <div id="contextmenu" className="contextmenu" />
       {content}
     </>
   );
