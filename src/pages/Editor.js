@@ -32,6 +32,7 @@ export function Editor({urlparsed, sidinfo}) {
         
 
         // var iframelangs=["html", "php"]
+        var fontsize_ = "20";
         return (
             <>
             <SideBar title="Codemirror Playground" >
@@ -48,7 +49,7 @@ export function Editor({urlparsed, sidinfo}) {
                 <div className="content-left">
                     <style children=":root, * {--sb-width: 28%!important;} .content {padding: 20px;}" />
                     <style children="" id="fontsize" />         
-                    <style children="" id="fontfamily" />
+                    <style children={`.cm-editor, .cm-editor * {font-size: ${fontsize_}px;}`} id="fontfamily" />
                     
                     <CodeMirror
                     value="console.log('hello world!');"
