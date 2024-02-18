@@ -8,7 +8,7 @@ export function createContextMenu(contents) {
     var contxtmenu = document.getElementById("contextmenu");
     contxtmenu.style.opacity = 1
     contxtmenu.style.pointerEvents = "all"
-    contxtmenu.innerHTML =  jsxtostr(contents + (<Element_ />))
+    contxtmenu.innerHTML =  jsxtostr(contents)
 
     document.addEventListener('click', (event) => {
         if (!contxtmenu.contains(event.target)) {
@@ -16,6 +16,10 @@ export function createContextMenu(contents) {
             contxtmenu.style.pointerEvents = "none"
         }
     });
+
+    return (
+        <Element_ />
+    )
 }
 
 function Element_() {
