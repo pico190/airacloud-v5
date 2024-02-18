@@ -533,14 +533,14 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     z-index: 10000000;
     flex-direction: column;
-    background-color: #151313;
+    background-color: #16191e;
     border-radius: 15px;
     overflow: hidden;
     padding: 7px 0px;
   }
 
   .contextmenuelement:hover {
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.053);
   }
   .contextmenuelement {
     padding: 5px 14px;
