@@ -76,7 +76,7 @@ export function Editor({urlparsed, sidinfo}) {
                 <div className="content-left">
                     <style children=":root, * {--sb-width: 28%!important;} .content {padding: 20px;}" />
                     <style children={`.cm-editor, .cm-editor * {font-size: ${fontsize_}px;}`} id="fontsize" />         
-                    <style children={`.cm-editor, .cm-editor * {font-family: ${fontfamily_}px;}`} id="fontfamily" />
+                    <style children={`.cm-editor, .cm-editor * {font-family: ${fontfamily_};}`} id="fontfamily" />
                     
                     <div style={{width: "100%", height: "100%"}} className="cm-theme" ref={editor} />
                     {
