@@ -15,6 +15,7 @@
     "@uiw/codemirror-theme-vscode": "4.21.22",
     "@codemirror/lang-javascript": "6.2.1",
     "@uiw/codemirror-extensions-color": "4.21.22",
+    "@uiw/codemirror-extensions-hyper-link": "4.21.22",
     
     "@vercel/analytics": "1.2.0",
     "@vercel/speed-insights": "1.0.10",

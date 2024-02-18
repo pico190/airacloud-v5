@@ -5,6 +5,10 @@ import { LoadWeb } from '../utils/LoadWeb'
 
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
+import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
+import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
+
+
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 
 
@@ -45,7 +49,7 @@ export function Editor({urlparsed, sidinfo}) {
                     height="100%"
                     width="100%"
                     theme={vscodeDark}
-                    extensions={[javascript({ jsx: true })]}
+                    extensions={[javascript({ jsx: true }), color]}
                     />
                     {
                         // <div className="iframe">
