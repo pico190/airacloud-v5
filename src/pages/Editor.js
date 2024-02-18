@@ -34,7 +34,7 @@ export function Editor({urlparsed, sidinfo}) {
 
         // var iframelangs=["html", "php"]
         var fontsize_ = "20";
-        var fontfamily_ = "20";
+        var fontfamily_ = "Consolas";
 
         const code = "console.log('hello world!');";
     
