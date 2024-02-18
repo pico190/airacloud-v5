@@ -14,7 +14,7 @@ export function ContextMenu({children, cmenucontent}) {
         contxtmenu.style.pointerEvents = "all"
         contxtmenu.style.left = mousePosition.x + "px"
         contxtmenu.style.top = mousePosition.y + "px"
-        contxtmenu.innerHTML = jsxtostr(contents)
+        contxtmenu.innerHTML = jsxtostr(cmenucontent)
     }
 
     document.addEventListener('contextmenu', (event) => {
