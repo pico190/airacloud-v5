@@ -475,8 +475,12 @@ h1, h2, h3, h4, h5, h6 {
       animation-iteration-count: infinite!important;
       animation-duration: 1200ms!important;
   }
-  
-  
+  .ͼ16, .ͼ16 .cm-gutters {
+      background-color: #16191E!important;
+  }
+  .cm-theme {
+      background-color: #303237!important;
+  }
   @keyframes aira-blink-expand {
     0% {
       height: 19px;
