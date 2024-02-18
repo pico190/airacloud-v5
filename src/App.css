@@ -510,3 +510,21 @@ h1, h2, h3, h4, h5, h6 {
       transform: translateY(0px);
     } 
   }
+  
+  .files {
+    border: 1px solid #ffffff1c !important;
+    border-radius: 12px !important;
+    background-color: #16191e !important;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .file {
+    display: flex;
+    gap: 5px;
+    background-color: #ffffff1f;
+    padding: 20px 15px;
+    width: fit-content;
+    align-items: center;
+    cursor: pointer;
+  }
