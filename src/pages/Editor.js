@@ -53,7 +53,7 @@ export function Editor({urlparsed, sidinfo}) {
                     height="100%"
                     width="100%"
                     theme={vscodeDark}
-                    onChange={(editor, data, value) => {console.log(value)}}
+                    onChange={(editor, data, value) => {console.log(data)}}
                     extensions={[javascript({ jsx: true }), color]}
                     />
                     {
