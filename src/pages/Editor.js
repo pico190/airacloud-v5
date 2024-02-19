@@ -34,8 +34,6 @@ export function Editor({urlparsed, sidinfo}) {
         
 
         // var iframelangs=["html", "php"]
-        var fontsize_ = "20";
-        var fontfamily_ = "Consolas";
 
         const code = "console.log('hello world!');";
     
@@ -45,7 +43,9 @@ export function Editor({urlparsed, sidinfo}) {
 
         const [ codeValue, setCodeValue ] = useState(code);
         var [ options, setOptions ] = useState({
-            refreshMode: refreshMode.delay
+            refreshMode: refreshMode.delay,
+            fontsize: "20",
+            fontfamily: "Consolas"
         });
         var [ files, setFiles ] = useState([
             {
@@ -53,7 +53,8 @@ export function Editor({urlparsed, sidinfo}) {
                 name: "codemirror",
                 extension: "jsx",
                 saved: true,
-                active: true
+                active: true,
+                token: "patatas"
             }
         ]);
         var [ filesrender, setFilesrender ] = useState(<></>);
@@ -101,6 +102,20 @@ export function Editor({urlparsed, sidinfo}) {
             if(options.refreshMode === refreshMode.delay) {
 
             }
+
+            var linecontent = document.getElementsByClassName("cm-activeLine")[0].innerText
+
+            if(linecontent.includes("!fontsize ")) {
+                
+                var options_ = options;
+                options_.fontsize =  linecontent.split("!fontsize ")[1].split(";")[0]
+                setOptions(options_) 
+            }
+            if(linecontent.includes("!fontfamily ")) {
+                var options_ = options;
+                options_.fontfamily =  linecontent.split("!fontfamily ")[1].split(";")[0]
+                setOptions(options_) 
+            }
         }, [editor.current]);
     
     
@@ -124,8 +139,8 @@ export function Editor({urlparsed, sidinfo}) {
 
                 <div className="content-left">
                     <style children=":root, * {--sb-width: 28%!important;} .content {padding: 20px; gap: 10px}" />
-                    <style children={`.cm-editor, .cm-editor * {font-size: ${fontsize_}px;}`} id="fontsize" />         
-                    <style children={`.cm-editor, .cm-editor * {font-family: ${fontfamily_};}`} id="fontfamily" />
+                    <style children={`.cm-editor, .cm-editor * {font-size: ${options.fontsize}px;}`} id="fontsize" />         
+                    <style children={`.cm-editor, .cm-editor * {font-family: ${options.fontfamily};}`} id="fontfamily" />
                     
                     <div style={{width: "100%", height: "100%"}} className="cm-theme" ref={editor} />
                     {
