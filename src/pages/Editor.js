@@ -47,15 +47,15 @@ export function Editor({urlparsed, sidinfo}) {
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay
         });
-        var [ files, setFiles ] = useState({
-            0: {
+        var [ files, setFiles ] = useState([
+            {
                 type: "react",
                 name: "codemirror",
                 extension: "jsx",
                 saved: true,
                 active: true
             }
-        });
+        ]);
         var [ filesrender, setFilesrender ] = useState(<></>);
         useEffect(() => {
 
