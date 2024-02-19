@@ -41,7 +41,43 @@ export function Editor({urlparsed, sidinfo}) {
     
         const editor = useRef(); 
     
+        const refreshMode = {delay: 0}
+
         const [ codeValue, setCodeValue ] = useState(code);
+        var [ options, setOptions ] = useState({
+            refreshMode: refreshMode.delay
+        });
+        var [ files, setFiles ] = useState({
+            0: {
+                type: "react",
+                name: "codemirror",
+                extension: "jsx",
+                saved: true,
+                active: true
+            }
+        });
+        var [ filesrender, setFilesrender ] = useState(<></>);
+        useEffect(() => {
+
+            var rendering = <></>
+
+            files.forEach(elem => {
+                rendering += <>
+                    <div className="file active">
+                        <img src={'https://'+window.location.host+'/airaicons/'+elem.type+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
+                        <b>{elem.name}.{elem.extension}</b>
+
+                            <span className="file-saved">
+                                <div className="unsaved-file" {...files.saved ? {style: {opacity: 0}} : void(0)} />
+                            </span>
+                                <span className="file-close">
+                            </span>
+
+                    </div>
+                </>
+            })
+
+        }, [files])
     
         const handleAlgoChange = (e) => {
             setCodeValue(e)
@@ -61,6 +97,10 @@ export function Editor({urlparsed, sidinfo}) {
             if (editor.current) {
                 setContainer(editor.current);
             }
+
+            if(options.refreshMode === refreshMode.delay) {
+
+            }
         }, [editor.current]);
     
     
@@ -76,10 +116,9 @@ export function Editor({urlparsed, sidinfo}) {
             <div className="content">
                     <div className="files" >
                         <ContextMenu cmenucontent={<><CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=food-pizza" title="Pizza" action={() => {alert("click")}} desc="pizzas ricas" /> <CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=animal-cat" title="relleno rellenero" action={() => {alert("click2")}} desc="Gatito miau" /></>}>
-                                    <div className="file active">
-                                        <img src={'https://'+window.location.host+'/airaicons/'+"react"+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
-                                        <b>codemirror.jsx</b>
-                                    </div>
+                                    {
+                                        filesrender
+                                    }
                         </ContextMenu>
                     </div>
 
