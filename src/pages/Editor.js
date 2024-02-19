@@ -119,7 +119,6 @@ export function Editor({urlparsed, sidinfo}) {
         }, [editor.current]);
     
     
-    
         return (
             <>
             <SideBar title="Codemirror Playground" >
