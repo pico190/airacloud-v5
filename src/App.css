@@ -552,8 +552,12 @@ h1, h2, h3, h4, h5, h6 {
 
   .ͼ16 .cm-selectionMatch {
     background-color: #a2a2a259!important;
-    border-radius: 6px;
-  }
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
 
   .ͼ1 .cm-lineNumbers .cm-gutterElement {
     padding-left: 20px!important;
