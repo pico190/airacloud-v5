@@ -129,7 +129,7 @@ export function Editor({urlparsed, sidinfo}) {
                     setOptions(options_) 
                 }
             } catch(err) {
-                return False
+                return false
             }
         }, [editor.current]);
     
