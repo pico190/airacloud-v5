@@ -137,7 +137,7 @@ export function Editor({urlparsed, sidinfo}) {
                     </div>
 
                 <div className="content-left">
-                    <style children=":root, * {--sb-width: 28%!important;} .content {padding: 20px; gap: 10px}" />
+                    <style children=":root, * {--sb-width: 28%!important;} .content {padding: 20px; gap: 10px} .ͼ16.cm-focused .cm-selectionBackground .ͼ16 .cm-selectionLayer .cm-selectionBackground {background: #243047 !important;}" />
                     <style children={`.cm-editor, .cm-editor * {font-size: ${options.fontsize}px;}`} id="fontsize" />         
                     <style children={`.cm-editor, .cm-editor * {font-family: ${options.fontfamily};}`} id="fontfamily" />
                     
