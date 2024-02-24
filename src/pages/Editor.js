@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState} from "react";
 
 import { SideBar } from './editorc/Sidebar'
@@ -86,10 +85,10 @@ export function Editor({urlparsed, sidinfo}) {
     
         const { setContainer } = useCodeMirror({
             container: editor.current,
-            extensions: [javascript({ jsx: true }), color, hyperLink],
+            extensions: [javascript({ jsx: true }), color],
             value: codeValue, 
-            autocomplete: false,
             theme: vscodeDark,
+            autocomplete: false,
             onChange: handleAlgoChange,
             height: '100%',
             width: '100%',
@@ -103,23 +102,19 @@ export function Editor({urlparsed, sidinfo}) {
             if(options.refreshMode === refreshMode.delay) {
 
             }
-            
-            try {
-                var linecontent = document.getElementsByClassName("cm-activeLine")[0].innerText
 
-                if(linecontent.includes("!fontsize ")) {
-                    
-                    var options_ = options;
-                    options_.fontsize =  linecontent.split("!fontsize ")[1].split(";")[0]
-                    setOptions(options_) 
-                }
-                if(linecontent.includes("!fontfamily ")) {
-                    var options_ = options;
-                    options_.fontfamily =  linecontent.split("!fontfamily ")[1].split(";")[0]
-                    setOptions(options_) 
-                }
-            } catch(err) {
-                return false
+            var linecontent = document.getElementsByClassName("cm-activeLine")[0].innerText
+
+            if(linecontent.includes("!fontsize ")) {
+                
+                var options_ = options;
+                options_.fontsize =  linecontent.split("!fontsize ")[1].split(";")[0]
+                setOptions(options_) 
+            }
+            if(linecontent.includes("!fontfamily ")) {
+                var options_ = options;
+                options_.fontfamily =  linecontent.split("!fontfamily ")[1].split(";")[0]
+                setOptions(options_) 
             }
         }, [editor.current]);
     
