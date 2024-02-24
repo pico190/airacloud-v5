@@ -103,7 +103,19 @@ export function Editor({urlparsed, sidinfo}) {
 
             }
 
+            var linecontent = document.getElementsByClassName("cm-activeLine")[0].innerText
 
+            if(linecontent.includes("!fontsize ")) {
+                
+                var options_ = options;
+                options_.fontsize =  linecontent.split("!fontsize ")[1].split(";")[0]
+                setOptions(options_) 
+            }
+            if(linecontent.includes("!fontfamily ")) {
+                var options_ = options;
+                options_.fontfamily =  linecontent.split("!fontfamily ")[1].split(";")[0]
+                setOptions(options_) 
+            }
         }, [editor.current]);
     
     
