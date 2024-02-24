@@ -9,18 +9,19 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
 
-    "@canvasjs/charts": "^3.7.38",
+    "@canvasjs/charts": "^3.7.39",
     
-    "@uiw/react-codemirror": "4.21.22",
-    "@uiw/codemirror-theme-vscode": "4.21.22",
-    "@codemirror/lang-javascript": "6.2.1",
-    "@uiw/codemirror-extensions-color": "4.21.22",
-    "@uiw/codemirror-extensions-hyper-link": "4.21.22",
+    "@uiw/react-codemirror": "4.21.23",
+    "@uiw/codemirror-theme-vscode": "4.21.23",
+    "@codemirror/lang-javascript": "6.2.2",
+    "@uiw/codemirror-extensions-color": "4.21.23",
+    "@uiw/codemirror-extensions-hyper-link": "4.21.23",
+    "@uiw/codemirror-extensions-mentions": "4.21.23",
     
-    "@vercel/analytics": "1.2.0",
+    "@vercel/analytics": "1.2.2",
     "@vercel/speed-insights": "1.0.10",
     
-    "js-base64": "3.7.6",
+    "js-base64": "3.7.7",
     "jquery": "^3.7.1",
     "web-vitals": "^3.5.2"
     

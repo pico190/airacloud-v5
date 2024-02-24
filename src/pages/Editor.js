@@ -8,6 +8,8 @@ import CodeMirror, { useCodeMirror } from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
+import { mentions } from '@uiw/codemirror-extensions-mentions';
+
 
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 
@@ -79,6 +81,14 @@ export function Editor({urlparsed, sidinfo}) {
             })
 
         }, [files])
+        var [ fullautocomplete, setfullautocomplete ] = useState([
+            {label: '<html>'},
+            {label: '<body>'},
+            {label: '<title>'},
+            {label: '<head>'},
+            {label: '<test>'},
+            {label: '<isthisshitworking? fine :D>'},
+        ]);
     
         const handleAlgoChange = (e) => {
             setCodeValue(e)
@@ -86,7 +96,7 @@ export function Editor({urlparsed, sidinfo}) {
     
         const { setContainer } = useCodeMirror({
             container: editor.current,
-            extensions: [javascript({ jsx: true }), color],
+            extensions: [javascript({ jsx: true }), color, hyperLink, mentions(fullautocomplete)],
             value: codeValue, 
             theme: vscodeDark,
             onChange: handleAlgoChange,
