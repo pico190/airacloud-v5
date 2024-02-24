@@ -41,11 +41,6 @@ export function Editor({urlparsed, sidinfo}) {
     
         const refreshMode = {delay: 0}
 
-        var [ fullautocomplete, setFullautocomplete ] = useState([
-            {name:"h1", completion:"<h1>", type:"properties-and-attributes"},
-            {name:"h2", completion:"<h2>", type:"properties-and-attributes"}
-        ]);
-
         const [ codeValue, setCodeValue ] = useState(code);
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay,
