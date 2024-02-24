@@ -8,8 +8,6 @@ import CodeMirror, { useCodeMirror } from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
-import { mentions } from '@uiw/codemirror-extensions-mentions';
-
 
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 
@@ -42,6 +40,11 @@ export function Editor({urlparsed, sidinfo}) {
         const editor = useRef(); 
     
         const refreshMode = {delay: 0}
+
+        var [ fullautocomplete, setFullautocomplete ] = useState([
+            {name:"h1", completion:"<h1>", type:"properties-and-attributes"},
+            {name:"h2", completion:"<h2>", type:"properties-and-attributes"}
+        ]);
 
         const [ codeValue, setCodeValue ] = useState(code);
         var [ options, setOptions ] = useState({
@@ -81,14 +84,6 @@ export function Editor({urlparsed, sidinfo}) {
             })
 
         }, [files])
-        var [ fullautocomplete, setfullautocomplete ] = useState([
-            {label: '<html>'},
-            {label: '<body>'},
-            {label: '<title>'},
-            {label: '<head>'},
-            {label: '<test>'},
-            {label: '<isthisshitworking? fine :D>'},
-        ]);
     
         const handleAlgoChange = (e) => {
             setCodeValue(e)
@@ -96,8 +91,9 @@ export function Editor({urlparsed, sidinfo}) {
     
         const { setContainer } = useCodeMirror({
             container: editor.current,
-            extensions: [javascript({ jsx: true }), color, hyperLink, mentions(fullautocomplete)],
+            extensions: [javascript({ jsx: true }), color, hyperLink],
             value: codeValue, 
+            autocomplete: false,
             theme: vscodeDark,
             onChange: handleAlgoChange,
             height: '100%',
@@ -113,23 +109,18 @@ export function Editor({urlparsed, sidinfo}) {
 
             }
 
-            try {
+            var linecontent = document.getElementsByClassName("cm-activeLine")[0].innerText
 
-                var linecontent = document.getElementsByClassName("cm-activeLine")[0].innerText
-
-                if(linecontent.includes("!fontsize ")) {
-                    
-                    var options_ = options;
-                    options_.fontsize =  linecontent.split("!fontsize ")[1].split(";")[0]
-                    setOptions(options_) 
-                }
-                if(linecontent.includes("!fontfamily ")) {
-                    var options_ = options;
-                    options_.fontfamily =  linecontent.split("!fontfamily ")[1].split(";")[0]
-                    setOptions(options_) 
-                }
-            } catch(err) {
-                return false
+            if(linecontent.includes("!fontsize ")) {
+                
+                var options_ = options;
+                options_.fontsize =  linecontent.split("!fontsize ")[1].split(";")[0]
+                setOptions(options_) 
+            }
+            if(linecontent.includes("!fontfamily ")) {
+                var options_ = options;
+                options_.fontfamily =  linecontent.split("!fontfamily ")[1].split(";")[0]
+                setOptions(options_) 
             }
         }, [editor.current]);
     
