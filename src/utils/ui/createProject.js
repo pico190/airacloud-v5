@@ -36,7 +36,7 @@ export function createProject() {
             </div>
             </div>
 
-    ).replace(`vanillahtml="load"`, `onclick="modalcontainer.innerHTML = ''; modalcontainer.style.display = 'none';"`)
+    ).replace(`vanillahtml="load"`, `onclick="document.getElementById("modal").innerHTML = ''; document.getElementById("modal").style.display = 'none';"`)
 
 
 }
