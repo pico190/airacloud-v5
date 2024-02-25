@@ -13,6 +13,7 @@ body {
 
 :root {
     --sb-width: 30%;
+    --account-height: 70px;
 }
 
 * {
@@ -614,4 +615,38 @@ h1, h2, h3, h4, h5, h6 {
 
   .file:hover .file-close {
     opacity: 1;
+  }
+
+  .account-icon:hover {
+    background-color: rgba(255, 255, 255, .05);
+  }
+  .account-icon:active {
+    transform: scale(0.93);
+  }
+  .account-icon {
+    width: calc(var(--account-height) - 10px);
+    height: calc(var(--account-height) - 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.05s;
+    border-radius: 10px;
+  }
+
+  .account-separator {
+    height: 80%;
+    border-left: 1px solid rgba(255, 255, 255, .11);
+  }
+
+  .account {
+    display: flex;
+    height: var(--account-height);
+    align-items: center;
+    justify-content: center;
+    background-color: #121418;
+    border-top: 1px solid rgba(255, 255, 255, .11);
+    gap: 5px;
+  }
+  .account-icon img {
+    width: calc(var(--account-height) - 35px);
   }

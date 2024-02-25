@@ -12,7 +12,6 @@ import { loadProjects } from './utils/api/loadprojects'
 
 // Pages
 import { Home } from './pages/Home.js'
-import { Stats } from './pages/Stats.js'
 import { Editor } from './pages/Editor.js'
 
 // Temp
@@ -78,9 +77,6 @@ function App() {
           switch (urlparsed[0]) {
             case "home":
               setContent(<Home sidinfo={SwiftlyIDClient} />);
-              break;
-            case "stats":
-              setContent(<Stats />);
               break;
             case "editor":
               setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
