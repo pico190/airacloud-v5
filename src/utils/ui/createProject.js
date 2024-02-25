@@ -9,10 +9,6 @@ export function createProject() {
 
     modalcontainer.style.display = "";
 
-    function hide() {
-        modalcontainer.innerHTML = "";
-        modalcontainer.style.display = "none";
-    }
 
     modalcontainer.innerHTML = jsxtostr(
 
@@ -20,8 +16,8 @@ export function createProject() {
             <div className="modal">
             <div className="modal-title">
                 <h1>Create a project</h1>
-                <div className="close" onClick={() => {hide();}}>
-                    <img width="30" src="http://xploit.men/scdn/?fluenticons&amp;name=dismiss" loading="lazy" alt="" />
+                <div className="close" vanillahtml="load">
+                    <img width="30" src="https://xploit.men/scdn/?fluenticons&amp;name=dismiss" loading="lazy" alt="" />
                 </div>
             </div>
             <div className="modal-form">
@@ -40,7 +36,7 @@ export function createProject() {
             </div>
             </div>
 
-    )
+    ).replace(`vanillahtml="load"`, `onclick={\`modalcontainer.innerHTML = ""; modalcontainer.style.display = "none";\`}`)
 
 
 }
