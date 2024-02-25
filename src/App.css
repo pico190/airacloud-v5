@@ -12,7 +12,7 @@ body {
 }
 
 :root {
-    --sb-width: 30%;
+    --sb-width: 30vw;
     --account-height: 70px;
    
     /* Colors */
@@ -776,6 +776,10 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar {
   animation-name: sidebar;
   animation-duration: 0.6s;
+  background-image: url(https://airacloud-v5-d1.vercel.app/aira.sidebar.svg);
+  background-repeat: no-repeat;
+  background-position-x: -140px;
+  background-position-y: -130px;
 }
 
 .item {
@@ -813,4 +817,14 @@ h1, h2, h3, h4, h5, h6 {
   animation-name: breathe;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+}
+.sidebar::before {
+  content: "";
+  width: var(--sb-width);
+  position: absolute;
+  height: 100vh;
+  background-color: #0000;
+  z-index: -1;
+  left: 0px;
+  backdrop-filter: blur(100px);
 }
