@@ -14,6 +14,8 @@ body {
 :root {
     --sb-width: 30%;
     --account-height: 70px;
+    --primary-blue: #0064C8;
+    --darker-primary-blue: #004993;
 }
 
 * {
@@ -342,7 +344,7 @@ h1, h2, h3, h4, h5, h6 {
   
   .button-primary {
     border-radius: 1000px;
-    background: #0064C8; 
+    background: var(--primary-blue); 
     display: flex;
     width: 270px;
     height: 80px;
@@ -649,4 +651,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   .account-icon img {
     width: calc(var(--account-height) - 35px);
+  }
+
+  .account-icon-active:hover {
+    background-color: var(--darker-primary-blue)!important;
+  }
+  .account-icon-active {
+    background-color: var(--primary-blue);
   }
