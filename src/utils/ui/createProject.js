@@ -7,13 +7,20 @@ export function createProject() {
 
     var modalcontainer = document.getElementById("modal");
 
+    modalcontainer.style.display = "";
+
+    function hide() {
+        modalcontainer.innerHTML = "";
+        modalcontainer.style.display = "none";
+    }
+
     modalcontainer.innerHTML = jsxtostr(
 
 
             <div className="modal">
             <div className="modal-title">
                 <h1>Create a project</h1>
-                <div className="close">
+                <div className="close" onClick={() => {hide();}}>
                     <img width="30" src="http://xploit.men/scdn/?fluenticons&amp;name=dismiss" loading="lazy" alt="" />
                 </div>
             </div>

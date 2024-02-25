@@ -700,13 +700,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 .modal-title {
   display: flex;
-  width: 800px;
+  width: 700px;
   align-items: center;
 }
 .modal-title > .close {
   margin-left: auto;
-  font-size: px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
 }
+
 .modal-title h1 {
   text-decoration: underline;
   text-decoration-color: var(--primary-blue);
@@ -752,4 +758,8 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAYAAACaq43EAAABW0lEQVRIS2NkGCDAOED2MoxaTLeQHxxB/f//fzagl6uuXbvWpq2t/Quf9ydNmsRuaGhY+fz587awsDC8arGZg+LjFy9ecIuLi+8GKny2evXqcKCBf7Fp2r9/P4uCgsIqbm5u8YULF7qVlpZ+JTWOMIL6xIkTfObm5vu+f/9+k5OTM5aRkfEfsqGrVq1iNjY2XsXPzy+3bNky57y8vE+kWgpSjzWON2/eLOLj43Po3r17B5WUlLKAlv8HKQZGBSMwGubJysqaz5o1y66kpOQNOZbitBgksWTJEpno6Ogjp0+fXm5mZlYJEjt79uwEdXV1/3nz5tkCffqEXEvxWgySnD9/vmpsbOxhIJgA8q2FhUU+UMwmOzv7DiWWErQYpAAYj5YRERG7fv/+/X/RokVuqampJyi1lCiLQYqAKdwNZHFUVBQoxVMFDI4ChCpeIdKQUR8TGVCUKxuwoAYArLx5Fcd31vQAAAAASUVORK5CYII=);
   background-position: 100%;
   background-repeat: no-repeat;
+}
+
+.modal-title > .close:hover {
+  background-color: rgba(var(--textrgba), .1);
 }
