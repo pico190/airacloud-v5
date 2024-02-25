@@ -1,4 +1,4 @@
-export function Button({ children, icon, icontype }) {
+export function Button({ children, icon, icontype, onClick }) {
     var iconurl;
     if(icontype === "airaicon") {
         iconurl = `https://`+window.location.host+`/airaicons/${icon}.svg`;
@@ -7,7 +7,7 @@ export function Button({ children, icon, icontype }) {
     }
     
     return (
-        <div className="default-content-button">
+        <div className="default-content-button" onClick={() => {onClick();}}>
             <img src={iconurl} loading="lazy" alt="" width="32px" height="32px" style={{marginRight: "9px"}} />
             <b className="content-button-text">
                 {children}

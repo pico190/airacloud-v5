@@ -5,6 +5,7 @@ import { decode } from 'js-base64';
 
 import { Text } from '../../utils/translates/text.js';
 import { Projects } from './contentc/projects.js';
+import { createProject } from '../../utils/ui/createProject.js';
 
 function Recent() {
     var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
@@ -54,7 +55,7 @@ function Projectssection() {
         <div className="home-section">
                 <font className="home-section-title"><Text id="content.section.projects" /></font>
                 <div className="recent-activity">
-                    <Button icon="folder_create" icontype="fluent" >
+                    <Button icon="folder_create" icontype="fluent" onClick={() => {createProject()}}>
                         <Text id="general.createproject" />
                     </Button>
                 </div>

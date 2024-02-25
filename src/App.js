@@ -101,8 +101,9 @@ function App() {
   
   return (
     <>
-      <div id="contextmenu" className="contextmenu" />
-      {content}
+	<div className="modal-container" style={{display: "none"}} id="modal" />
+	<div id="contextmenu" className="contextmenu" />
+	{content}
     </>
   );
 }
