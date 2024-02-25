@@ -77,20 +77,6 @@ function App() {
           switch (urlparsed[0]) {
             case "home":
               setContent(<Home sidinfo={SwiftlyIDClient} />);
-
-				var boxes = document.querySelectorAll('.item');
-				var delay = 700;
-			
-				function fadeIn(element, delay) {
-					setTimeout(function() {
-						element.style.opacity = 1;
-					}, delay);
-				}
-				
-				for (var i = 0; i < boxes.length; i++) {
-					fadeIn(boxes[i], i * delay);
-				}
-
               break;
             case "editor":
               setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);

@@ -2,6 +2,25 @@ import { decode } from 'js-base64';
 import { gcookie } from '../../../utils/CookieParser';
 
 export function Projects() {
+
+    function animation() {
+        
+
+            var boxes = document.querySelectorAll('.item');
+            var delay = 700;
+        
+            function fadeIn(element, delay) {
+                setTimeout(function() {
+                    element.style.opacity = 1;
+                }, delay);
+            }
+            
+            for (var i = 0; i < boxes.length; i++) {
+                fadeIn(boxes[i], i * delay);
+            }
+        
+    }
+
     var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
     alluserprojects.push({name: "add"})
     var rows = 4;
@@ -38,9 +57,9 @@ export function Projects() {
 }</div>;
 
 return (
-    <>
+    <div onLoad={() => {animation();}}>
         {projectBox}
-    </>
+    </div>
 );
     
                 /* <div className="row">
