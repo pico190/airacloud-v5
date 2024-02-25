@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 100%;
+    height: calc(100% - var(--account-height));
 }
 
 .sb_separator {

@@ -118,13 +118,13 @@ export function SBContent({ sidinfo }) {
     </div>
 
     <div class="account">
-        <div class="account-icon"><img src="http://xploit.men/scdn/?fluenticons&amp;name=person" /></div>
+        <div class="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=person" /></div>
 
         <div class="account-separator"/>
-        <div class="account-icon"><img src="http://xploit.men/scdn/?fluenticons&amp;name=search" /></div>
+        <div class="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=search" /></div>
 
         <div class="account-separator"/>
-        <div class="account-icon"><img src="http://xploit.men/scdn/?fluenticons&amp;name=alert" /></div>
+        <div class="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=alert" /></div>
     </div>
     </>
     )
