@@ -27,7 +27,7 @@ export function Projects() {
                     } else {
                         return (
                             <div class="item item-fill item-add" key={colIndex}>
-                            <img height="60" src="http://xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
+                            <img height="60" src="https://xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
                            </div>
                         )
                     }
