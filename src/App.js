@@ -4,6 +4,7 @@ import { UrlParser } from './utils/UrlParser';
 import { useState, useEffect } from 'react';
 import { console_start, console_info, console_group } from './utils/Console';
 import { LoadWeb } from './utils/LoadWeb'
+import { loadTexts } from './utils/translates/loadTexts'
 
 import $ from 'jquery';
 // Api
@@ -32,6 +33,7 @@ function App() {
                     const result = await StartSwiftlyIDClient();
                     setSwiftlyIDClient(result);
                     loadProjects(result.token);
+                    loadTexts();
 
                     // Annonymous data
                     $.post("https://xploit.men/aira/api/v1/report/notify.php", {

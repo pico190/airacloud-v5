@@ -95,9 +95,6 @@ export function Editor({urlparsed, sidinfo}) {
         });
     
         useEffect(() => {
-            if (editor.current) {
-                setContainer(editor.current);
-            }
 
             if(options.refreshMode === refreshMode.delay) {
 
@@ -113,11 +110,13 @@ export function Editor({urlparsed, sidinfo}) {
                     var options_ = options;
                     options_.fontsize =  linecontent.split("!fontsize ")[1].split(";")[0]
                     setOptions(options_) 
+                    console.log("fontsize")
                 }
                 if(linecontent.includes("!fontfamily ")) {
                     var options_ = options;
                     options_.fontfamily =  linecontent.split("!fontfamily ")[1].split(";")[0]
                     setOptions(options_) 
+                    console.log("fontfamily")
                 }
             }
         }, [editor.current]);
