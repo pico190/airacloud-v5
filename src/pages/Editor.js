@@ -96,6 +96,8 @@ export function Editor({urlparsed, sidinfo}) {
     
         useEffect(() => {
 
+            setContainer(editor.current)
+
             if(options.refreshMode === refreshMode.delay) {
 
             }

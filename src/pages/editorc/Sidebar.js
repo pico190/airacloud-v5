@@ -18,7 +18,6 @@ export function SideBar({ title, children }) {
                 {children}
             </div>
         </div>
-        <img loading="lazy" src={'https://'+window.location.host+'/aira.sidebar.svg'} className="colors-img" alt=""/>
         <SideBarSeparator />
         </>
     )
