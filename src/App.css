@@ -658,4 +658,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .account-icon-active {
     background-color: var(--primary-blue);
+  }.item-add {
+    cursor: pointer !important;
+  }.item-add:hover {
+    background-color: #ffffff10;
   }
