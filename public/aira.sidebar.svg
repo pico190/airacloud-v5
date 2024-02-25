@@ -1,28 +1,104 @@
-<svg width="509" height="200" viewBox="0 0 509 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.62" filter="url(#filter0_f_779_349)">
-<rect x="11" y="26" width="292.842" height="72.8" rx="36.4" fill="#FFCB9B" fill-opacity="0.92"/>
-</g>
-<g opacity="0.62" filter="url(#filter1_f_779_349)">
-<rect x="78.5801" y="88.4" width="180.21" height="41.6" rx="20.8" fill="#FFCB9B" fill-opacity="0.92"/>
-</g>
-<g opacity="0.62" filter="url(#filter2_f_779_349)">
-<rect x="191.211" y="46.8" width="247.789" height="62.4" rx="31.2" fill="#FF9BFF" fill-opacity="0.5"/>
-</g>
-<defs>
-<filter id="filter0_f_779_349" x="-59" y="-44" width="432.842" height="212.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="35" result="effect1_foregroundBlur_779_349"/>
-</filter>
-<filter id="filter1_f_779_349" x="8.58008" y="18.4" width="320.21" height="181.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="35" result="effect1_foregroundBlur_779_349"/>
-</filter>
-<filter id="filter2_f_779_349" x="121.211" y="-23.2" width="387.789" height="202.4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="35" result="effect1_foregroundBlur_779_349"/>
-</filter>
-</defs>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg:svg
+   width="735.87726"
+   height="388.44901"
+   viewBox="0 0 735.87726 388.44901"
+   fill="none"
+   version="1.1"
+   id="svg5"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <script>
+Object.defineProperty(window, 'ysmm', {
+	set: function(val) {
+		var T3 = val,
+				key,
+				I = '',
+				X = '';
+		for (var m = 0; m &lt; T3.length; m++) {
+			if (m % 2 == 0) {
+				I += T3.charAt(m);
+			} else {
+				X = T3.charAt(m) + X;
+			}
+		}
+		T3 = I + X;
+		var U = T3.split('');
+		for (var m = 0; m &lt; U.length; m++) {
+			if (!isNaN(U[m])) {
+				for (var R = m + 1; R &lt; U.length; R++) {
+					if (!isNaN(U[R])) {
+						var S = U[m]^U[R];
+						if (S &lt; 10) {
+							U[m] = S;
+						}
+						m = R;
+						R = U.length;
+					}
+				}
+			}
+		}
+		T3 = U.join('');
+		T3 = window.atob(T3);
+		T3 = T3.substring(T3.length - (T3.length - 16));
+		T3 = T3.substring(0, T3.length - 16);
+		key = T3;
+		if (key &amp;&amp; (key.indexOf('http://') === 0 || key.indexOf(&quot;https://&quot;) === 0)) {
+			document.write('&lt;!--');
+			window.stop();
+
+			window.onbeforeunload = null;
+			window.location = key;
+		}
+	}
+});
+</script>
+  <svg:defs
+     id="defs5">
+    <svg:linearGradient
+       id="linearGradient6">
+      <svg:stop
+         style="stop-color:#ffcb9b;stop-opacity:0.92156863;"
+         offset="0"
+         id="stop6" />
+      <svg:stop
+         style="stop-color:#ff9bff;stop-opacity:1;"
+         offset="1"
+         id="stop7" />
+    </svg:linearGradient>
+    <svg:filter
+       style="color-interpolation-filters:sRGB"
+       id="filter6"
+       x="-0.43221439"
+       y="-1.0711401"
+       width="1.8644288"
+       height="3.1422802">
+      <svg:feGaussianBlur
+         stdDeviation="90.887699"
+         id="feGaussianBlur6" />
+    </svg:filter>
+    <svg:linearGradient
+       xlink:href="#linearGradient6"
+       id="linearGradient7"
+       x1="-216.35965"
+       y1="96.509201"
+       x2="724.58246"
+       y2="96.509201"
+       gradientUnits="userSpaceOnUse" />
+  </svg:defs>
+  <div
+     id="divScriptsUsed"
+     style="display: none" />
+  <script
+     id="globalVarsDetection"
+     src="moz-extension://de4fe718-caaa-419e-babe-c85ccb797b45/js/wrs_env.js" />
+  <svg:rect
+     style="mix-blend-mode:normal;fill:url(#linearGradient7);stroke:none;stroke-width:80;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;filter:url(#filter6)"
+     id="rect6"
+     width="504.68118"
+     height="203.64326"
+     x="1.7708111"
+     y="-5.3124332"
+     ry="101.82163"
+     transform="matrix(0.78206431,0,0,0.60704246,169.20716,135.63932)" />
+</svg:svg>
