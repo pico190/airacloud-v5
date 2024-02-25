@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { gcookie } from "../CookieParser";
 import { decode } from 'js-base64';
 
 export function Text({ id, var1 = "", var1r = "●" }) {
@@ -7,7 +6,7 @@ export function Text({ id, var1 = "", var1r = "●" }) {
 
     var [text, setText] = useState("")
 
-    useState(() => {
+    useEffect(() => {
         setText(langs[id].replace(var1r, var1))
     }, [langs])
 
