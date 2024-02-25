@@ -1,5 +1,4 @@
 import { decode } from 'js-base64';
-import { gcookie } from '../../../utils/CookieParser';
 
 export function Projects() {
 
@@ -21,7 +20,7 @@ export function Projects() {
         
     }
 
-    var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
+    var alluserprojects = JSON.parse(decode(localStorage.getItem("DATA__PROJECTS")));
     alluserprojects.push({name: "add"})
     var rows = 4;
     var columns = 5;

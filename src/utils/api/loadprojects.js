@@ -6,10 +6,7 @@ export function loadProjects(token) {
     const usertoken = token;
 
     function resolve(projects) {
-        let currentDate = new Date();
-        let expiryDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
-
-        document.cookie = "DATA__PROJECTS="+encode(JSON.stringify(projects))+"; SameSite=Strict; Secure; path=/; expires="+expiryDate.toUTCString()+";"
+        localStorage.setItem("DATA__PROJECTS", encode(JSON.stringify(projects)))
     }
     
     $.post(

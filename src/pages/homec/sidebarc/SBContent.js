@@ -1,7 +1,6 @@
 import {useMousePosition} from '../../../utils/useMousePosition'
 import { projectLoadBar } from '../../../utils/projectLoadBar';
 import { decode } from 'js-base64';
-import { gcookie } from '../../../utils/CookieParser';
 
 // Translates
 import { Text } from '../../../utils/translates/text' 
@@ -77,7 +76,7 @@ export function SBContent({ sidinfo }) {
         )
     }
 
-    const alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
+    const alluserprojects = JSON.parse(decode(localStorage.getItem("DATA__PROJECTS")));
     console.log(alluserprojects);
     
 

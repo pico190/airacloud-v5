@@ -1,6 +1,5 @@
 
 import { Button } from './contentc/Buttons'
-import { gcookie } from '../../utils/CookieParser.js';
 import { decode } from 'js-base64';
 
 import { Text } from '../../utils/translates/text.js';
@@ -8,7 +7,7 @@ import { Projects } from './contentc/projects.js';
 import { createProject } from '../../utils/ui/createProject.js';
 
 function Recent() {
-    var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
+    var alluserprojects = JSON.parse(decode(localStorage.getItem("DATA__PROJECTS")));
     var recentactivity = (
         
         <div className="home-section">
@@ -70,7 +69,7 @@ function Projectssection() {
 
 export function Content({ sidinfo }) {
     var content = <><h1 className="contentTitle"><Text id="content.welcome" var1={sidinfo.name} /></h1><Recent sidinfo={sidinfo} /><Projectssection sidinfo={sidinfo} /></>
-    var alluserprojects = JSON.parse(decode(gcookie("DATA__PROJECTS")));
+    var alluserprojects = JSON.parse(decode(localStorage.getItem("DATA__PROJECTS")));
     
     var noprojects_ = "";
 

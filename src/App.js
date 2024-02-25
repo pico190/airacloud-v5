@@ -93,7 +93,7 @@ function App() {
 
 
   } // eslint-disable-next-line
-  useEffect(() => { renderize () }, [urlparsed, SwiftlyIDClient, document.cookie]);
+  useEffect(() => { renderize () }, [urlparsed, SwiftlyIDClient, localStorage]);
   window.addEventListener("resize", () => { renderize(); })
   window.addEventListener("load", () => { document.getElementById("loader").style.opacity = 0; document.getElementById("loader").style.pointerEvents = "none" })
   
