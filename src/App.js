@@ -97,7 +97,20 @@ function App() {
   window.addEventListener("resize", () => { renderize(); })
 
 
-  
+  document.addEventListener("DOMContentLoaded", function() {
+    var boxes = document.querySelectorAll('.item');
+    var delay = 700;
+
+    function fadeIn(element, delay) {
+        setTimeout(function() {
+            element.style.opacity = 1;
+        }, delay);
+    }
+    
+    for (var i = 0; i < boxes.length; i++) {
+        fadeIn(boxes[i], i * delay);
+    }
+});
   
   return (
     <>
