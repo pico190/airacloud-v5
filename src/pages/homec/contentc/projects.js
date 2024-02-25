@@ -7,7 +7,7 @@ export function Projects() {
         
 
             var boxes = document.querySelectorAll('.item');
-            var delay = 700;
+            var delay = 100;
         
             function fadeIn(element, delay) {
                 setTimeout(function() {
