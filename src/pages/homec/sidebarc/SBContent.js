@@ -129,16 +129,19 @@ export function SBContent({ sidinfo }) {
       <ReactTooltip
         id="profile"
         place="top"
+        style={{ opacity: 1, borderRadius: "10px", backgroundColor: "#1a1e24" }}
         content="Account"
       />
       <ReactTooltip
         id="search"
         place="top"
+        style={{ opacity: 1, borderRadius: "10px", backgroundColor: "#1a1e24" }}
         content="Search"
       />
       <ReactTooltip
         id="notifications"
         place="top"
+        style={{ opacity: 1, borderRadius: "10px", backgroundColor: "#1a1e24" }}
         content="Notifications"
       />
     </>
