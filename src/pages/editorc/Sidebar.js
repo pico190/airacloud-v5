@@ -8,7 +8,7 @@ export function SideBar({ title, children }) {
             <div className="SBContent">
                 <div class="aira_sb_title">
                     <div className="aira_logo_small">
-                            <img src={'https://'+window.location.host+'/icon.svg'} loading="lazy" alt=""/>
+                            <img src={'https://'+window.location.host+'/icon.svg'} loading="lazy" alt=""/> {/*https://airacloud-v5-d1.vercel.app/icon.svg'*/}
                             <div className="aira_logo_title">
                                 <span>AiraCloud</span>
                             </div>

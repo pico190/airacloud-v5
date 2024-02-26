@@ -64,7 +64,7 @@ export function Editor({urlparsed, sidinfo}) {
             files.forEach(elem => {
                 rendering += <>
                     <div className="file active">
-                        <img src={'https://'+window.location.host+'/airaicons/'+elem.type+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
+                        <img src={'https://'+window.location.host+'/airaicons/'+elem.type+'.svg'} loading="lazy" alt="" style={{width: "20px"}} /> {/*https://airacloud-v5-d1.vercel.app/airaicons/react.svg'*/}
                         <b>{elem.name}.{elem.extension}</b>
 
                             <span className="file-saved">
@@ -128,7 +128,7 @@ export function Editor({urlparsed, sidinfo}) {
             <>
             <SideBar title="Codemirror Playground" >
                     <div style={{display: "flex", gap: "10px"}}>
-                        <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} />
+                        <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} /> {/*https://airacloud-v5-d1.vercel.app/airaicons/react.svg'*/}
                         <span>{urlparsed[1]}</span>
                     </div>
             </SideBar>

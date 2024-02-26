@@ -1,9 +1,9 @@
 export function Button({ children, icon, icontype, onClick }) {
     var iconurl;
     if(icontype === "airaicon") {
-        iconurl = `https://`+window.location.host+`/airaicons/${icon}.svg`;
+        iconurl = `https://`+window.location.host+`/airaicons/${icon}.svg`; {/*https://airacloud-v5-d1.vercel.app/airaicons/react.svg'*/}
     } else {
-        iconurl = `https://xploit.men/scdn/?fluenticons&name=${icon}&type=fluent&fill=white`;
+        iconurl = `https://xploit.men/scdn/?fluenticons&name=${icon}&type=fluent&fill=white`; 
     }
     
     return (
@@ -13,7 +13,7 @@ export function Button({ children, icon, icontype, onClick }) {
                 {children}
             </b>
             <div className="spacer" />
-            <img src="https://xploit.men/scdn/?fluenticons&name=chevron-right&type=fluent&fill=white" loading="lazy" alt=""/>
+            <img src="https://xploit.men/scdn/?fluenticons&name=chevron-right&type=fluent&fill=white" loading="lazy" alt=""/> 
         </div>
     )
 }

@@ -93,7 +93,7 @@ function App() {
 
 
   } // eslint-disable-next-line
-  useEffect(() => { renderize () }, [urlparsed, SwiftlyIDClient, localStorage]);
+  useEffect(() => { renderize () }, [urlparsed, SwiftlyIDClient, localStorage.getItem("DATA__PROJECTS")]);
   window.addEventListener("resize", () => { renderize(); })
   window.addEventListener("load", () => { document.getElementById("loader").style.opacity = 0; document.getElementById("loader").style.pointerEvents = "none" })
   
@@ -102,7 +102,7 @@ function App() {
 	<div className="modal-container" style={{display: "none"}} id="modal" />
 	<div id="contextmenu" className="contextmenu" />
 	<div className="loader" id="loader">
-		<img src="https://airacloud-v5-d1.vercel.app/icon.svg" loading="lazy" alt="" />
+		<img src={'https://'+window.location.host+'/icon.svg'} loading="lazy" alt="" />  {/*https://airacloud-v5-d1.vercel.app/icon.svg*/}
 	</div>
 	{content}
     </>
