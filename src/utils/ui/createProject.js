@@ -8,6 +8,7 @@ export function createProject() {
     var modalcontainer = document.getElementById("modal");
 
     modalcontainer.style.display = "";
+    modalcontainer.classList.remove("close")
 
 
     modalcontainer.innerHTML = jsxtostr(
@@ -36,7 +37,7 @@ export function createProject() {
             </div>
             </div>
 
-    ).replace(`vanillahtml="load"`, `onclick="document.getElementById('modal').innerHTML = ''; document.getElementById('modal').style.display = 'none';"`)
+    ).replace(`vanillahtml="load"`, `onclick="document.getElementById('modal').innerHTML = ''; document.getElementById('modal').classList.add("close")"`)
 
 
 }
