@@ -341,17 +341,17 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
     background-color: rgba(var(--textrgba), 0.03);
   }
-  .project-box > .item:first-child {
+  .project-grid > .item:first-child {
     border-top-left-radius: 36px;
   }
-  .project-box > .item:last-child {
+  .project-grid > .item:last-child {
     border-top-right-radius: 36px;
   }
 
-  .project-box > .item:first-child {
+  .project-grid > .item:first-child {
     border-bottom-left-radius: 36px;
   }
-  .project-box > .item:last-child {
+  .project-grid > .item:last-child {
     border-bottom-right-radius: 36px;
   }
 
