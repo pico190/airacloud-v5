@@ -22,6 +22,7 @@ body {
     --default-button: #16191E;
     --default-button-hover: #1a1e24;
     --sb-account: #121418;
+    --sb-account-hover: #1e2024;
     --text: white;
     --textrgba: 255, 255, 255;
     --border: #ffffff1c;
@@ -251,6 +252,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .contentTitle {
     font-size: 56px;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-blue);
+    text-decoration-thickness: 1px;
+    text-decoration-line: blink;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
 }
 
 /* AiraLoadBar */
@@ -674,7 +681,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #ffffff10;
   }
 
-  
+  @keyframes modal {
+    from { transform:scale(0); -webkit-transform:scale(0); -moz-transform:scale(0); -ms-transform:scale(0); -o-transform:scale(0); }
+    to { transform:scale(1); -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); }
+  }
 .modal-container {
   background-color: rgba(0, 0, 0, .6);
   position: fixed;
@@ -684,6 +694,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   z-index: 100;
   backdrop-filter: blur(0.84px);
+
+  animation-name: modal;
+  animation-duration: 0.1s;
 }
 .modal {
   background-color: var(--sb-account);
