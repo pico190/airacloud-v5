@@ -37,7 +37,7 @@ export function createProject() {
             </div>
             </div>
 
-    ).replace(`vanillahtml="load"`, `onclick="document.getElementById('modal').innerHTML = ''; document.getElementById('modal').classList.add("close")"`)
+    ).replace(`vanillahtml="load"`, `onclick="document.getElementById('modal').innerHTML = ''; document.getElementById('modal').classList.add('close')"`)
 
 
 }
