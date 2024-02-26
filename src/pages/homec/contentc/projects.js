@@ -22,44 +22,69 @@ export function Projects() {
 
     var alluserprojects = JSON.parse(decode(localStorage.getItem("DATA__PROJECTS")));
     alluserprojects.push({name: "add"})
-    var rows = 4;
-    var columns = 5;
-    var projectBox = <div className="project-box">{
-    Array.from({ length: rows }, (_, rowIndex) => (
-        <div className="row" key={rowIndex}>
-            {
-                Array.from({ length: columns }, (_, colIndex) => {
-                    const index = rowIndex * columns + colIndex;
-                    const item =  alluserprojects[index] || {};
-                    const itemName = item.name || "";
-                    if(itemName!=="add") {
 
-                        var itemIconName = item.type || "txt";
-                        var itemIcon = <img height="86" src={"https://"+window.location.host+"/airaicons/" + itemIconName + ".svg"} loading="lazy" alt=""/>;
-                        var isFill = itemName === "" ? " item-fill" : "";
-                        isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
-                        return <div className={"item" + isFill} key={colIndex}>
+    return (
+        <div onLoad={() => {animation();}} className="project-grid">
+            {
+                alluserprojects.map(item => {
+                     const index = rowIndex * columns + colIndex;
+                     const item =  alluserprojects[index] || {};
+                     const itemName = item.name || "";
+                     if(itemName!=="add") {
+                         var itemIconName = item.type || "txt";
+                         var itemIcon = <img height="86" src={"https:"+window.location.host+"/airaicons/" + itemIconName + ".svg"} loading="lazy" alt=""/>;
+                         var isFill = itemName === "" ? " item-fill" : "";
+                         isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
+                         return <div className={"item" + isFill} key={colIndex}>
                             {itemIcon}
                             <b>{itemName}</b>
-                           </div>;
-                    } else {
-                        return (
+                        </div>;
+                     } else {
+                         return (
                             <div className="item item-fill item-add" key={colIndex}>
-                            <img height="60" src="https://xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
-                           </div>
-                        )
-                    }
+                                <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
+                            </div>
+                         )
+                     }
                 })
             }
         </div>
-    ))
-}</div>;
+    );
 
-return (
-    <div onLoad={() => {animation();}}>
-        {projectBox}
-    </div>
-);
+//     var rows = 4;
+//     var columns = 5;
+//     var projectBox = <div className="project-box">{
+//     Array.from({ length: rows }, (_, rowIndex) => (
+//         <div className="row" key={rowIndex}>
+//             {
+//                 Array.from({ length: columns }, (_, colIndex) => {
+//                     const index = rowIndex * columns + colIndex;
+//                     const item =  alluserprojects[index] || {};
+//                     const itemName = item.name || "";
+//                     if(itemName!=="add") {
+
+//                         var itemIconName = item.type || "txt";
+//                         var itemIcon = <img height="86" src={"https://"+window.location.host+"/airaicons/" + itemIconName + ".svg"} loading="lazy" alt=""/>;
+//                         var isFill = itemName === "" ? " item-fill" : "";
+//                         isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
+//                         return <div className={"item" + isFill} key={colIndex}>
+//                             {itemIcon}
+//                             <b>{itemName}</b>
+//                            </div>;
+//                     } else {
+//                         return (
+//                             <div className="item item-fill item-add" key={colIndex}>
+//                             <img height="60" src="https://xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
+//                            </div>
+//                         )
+//                     }
+//                 })
+//             }
+//         </div>
+//     ))
+// }</div>;
+
+
     
                 /* <div className="row">
                     <div className="item">potatoes</div>
