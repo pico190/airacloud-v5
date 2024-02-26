@@ -9,20 +9,21 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
 
-    "@canvasjs/charts": "^3.7.39",
+    "@canvasjs/charts": "^3.7.40",
     
-    "@uiw/react-codemirror": "4.21.23",
-    "@uiw/codemirror-theme-vscode": "4.21.23",
+    "@uiw/react-codemirror": "4.21.24",
+    "@uiw/codemirror-theme-vscode": "4.21.24",
     "@codemirror/lang-javascript": "6.2.2",
-    "@uiw/codemirror-extensions-color": "4.21.23",
-    "@uiw/codemirror-extensions-hyper-link": "4.21.23",
+    "@uiw/codemirror-extensions-color": "4.21.24",
+    "@uiw/codemirror-extensions-hyper-link": "4.21.24",
     
     "@vercel/analytics": "1.2.2",
     "@vercel/speed-insights": "1.0.10",
     
     "js-base64": "3.7.7",
     "jquery": "^3.7.1",
-    "web-vitals": "^3.5.2"
+    "web-vitals": "^3.5.2",
+    "react-tooltip": "5.26.3"
     
   },
   "scripts": {

@@ -1,6 +1,7 @@
 import {useMousePosition} from '../../../utils/useMousePosition'
 import { projectLoadBar } from '../../../utils/projectLoadBar';
 import { decode } from 'js-base64';
+import { Tooltip as ReactTooltip } from 'react-tooltip'
 
 // Translates
 import { Text } from '../../../utils/translates/text' 
@@ -117,14 +118,29 @@ export function SBContent({ sidinfo }) {
     </div>
 
     <div className="account">
-        <div className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=person" /></div>
+        <div data-tooltip-id="profile" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=person" /></div>
 
         <div className="account-separator"/>
-        <div className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=search" /></div>
+        <div data-tooltip-id="search" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=search" /></div>
 
         <div className="account-separator"/>
-        <div className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=alert" /></div>
+        <div data-tooltip-id="notifications" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=alert" /></div>
     </div>
+      <ReactTooltip
+        id="profile"
+        place="top"
+        content="Account"
+      />
+      <ReactTooltip
+        id="search"
+        place="top"
+        content="Search"
+      />
+      <ReactTooltip
+        id="notifications"
+        place="top"
+        content="Notifications"
+      />
     </>
     )
 }
