@@ -318,6 +318,16 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     user-select: none;
     gap: 10px;
+    float: left;
+    margin: 3px;
+  }
+
+  .item-add img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .item b {
     width: 80%;
@@ -326,36 +336,22 @@ h1, h2, h3, h4, h5, h6 {
   .item:hover {
     background-color: var(--default-button-hover);
   }
-  .row {
-    display: flex;
-    gap: 6px;
-    /*! height: 100px; */
-  }
-  .project-box {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    overflow: hidden;
-    border-radius: 36px;
-    margin-bottom: 15px;
-    margin-top: 4px;
-  }
   .item.item-fill {
     cursor:unset;
     border: 0;
     background-color: rgba(var(--textrgba), 0.03);
   }
-  .project-box > .row:first-child > .item:first-child {
+  .project-box > .item:first-child {
     border-top-left-radius: 36px;
   }
-  .project-box > .row:first-child > .item:last-child {
+  .project-box > .item:last-child {
     border-top-right-radius: 36px;
   }
 
-  .project-box > .row:last-child > .item:first-child {
+  .project-box > .item:first-child {
     border-bottom-left-radius: 36px;
   }
-  .project-box > .row:last-child > .item:last-child {
+  .project-box > .item:last-child {
     border-bottom-right-radius: 36px;
   }
 

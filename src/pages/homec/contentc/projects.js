@@ -30,7 +30,7 @@ export function Projects() {
                      const itemName = item.name || "";
                      if(itemName!=="add") {
                          var itemIconName = item.type || "txt";
-                         var itemIcon = <img height="86" src={"https:"+window.location.host+"/airaicons/" + itemIconName + ".svg"} loading="lazy" alt=""/>;
+                         var itemIcon = <img height="86" src={"https://"+window.location.host+"/airaicons/" + itemIconName + ".svg"} loading="lazy" alt=""/>;
                          var isFill = itemName === "" ? " item-fill" : "";
                          isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
                          return <div className={"item" + isFill} key={item.id}>
