@@ -347,15 +347,6 @@ h1, h2, h3, h4, h5, h6 {
   .project-grid > .item:last-child {
     border-top-right-radius: 36px;
   }
-
-  .project-grid > .item:first-child {
-    border-bottom-left-radius: 36px;
-  }
-  .project-grid > .item:last-child {
-    border-bottom-right-radius: 36px;
-  }
-
-  
   .button-primary {
     border-radius: 1000px;
     background: var(--primary-blue); 
