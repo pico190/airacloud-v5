@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
     width: 14px;
     cursor: e-resize;
-    z-index: 100;
+    z-index: 10;
     position: fixed;  
     height: 100vh;
 }
@@ -669,6 +669,22 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #ffffff10;
   }
 
+  @keyframes animatetop{
+    from{ 
+      bottom: -16px;
+      opacity:0
+    } 
+    to{
+      bottom:0;
+      opacity:1
+    }
+  }
+
+  .contentTitle, .home-section-title {
+    animation-name: animatetop;
+    animation-duration: 0.8s;
+    position: relative;
+  }
   @keyframes modal {
     from { transform:scale(0); -webkit-transform:scale(0); -moz-transform:scale(0); -ms-transform:scale(0); -o-transform:scale(0); }
     to { transform:scale(1); -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); }
@@ -795,7 +811,7 @@ h1, h2, h3, h4, h5, h6 {
   background-position-y: -130px;
 }
 
-.item {
+.animation-box {
   opacity: 0;
 }
 
