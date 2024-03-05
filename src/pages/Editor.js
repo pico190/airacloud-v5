@@ -110,8 +110,8 @@ export function Editor({urlparsed, sidinfo}) {
                 // var linecontent = line.innerText
      
                 // Intelli
-                var token = nearElem(line.children, cursor)
-                console.log(token.innerText);
+                var textToken = nearElem(line.children, cursor)
+                console.log(textToken);
 
             }
 
