@@ -95,13 +95,7 @@ export function Editor({urlparsed, sidinfo}) {
             width: '100%',
         });
     
-        useEffect(() => {
-
-            setContainer(editor.current)
-
-            if(options.refreshMode === refreshMode.delay) {
-
-            }
+        setInterval(() => {
 
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
@@ -115,9 +109,14 @@ export function Editor({urlparsed, sidinfo}) {
 
             }
 
+        }, 100)
+        useEffect(() => {
 
+            setContainer(editor.current)
 
+            if(options.refreshMode === refreshMode.delay) {
 
+            }
             
         }, [editor.current]);
     
