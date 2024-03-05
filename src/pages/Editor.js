@@ -104,28 +104,13 @@ export function Editor({urlparsed, sidinfo}) {
             }
 
             var line = document.getElementsByClassName("cm-activeLine")[0]
+            var cursor = document.getElementsByClassName("cm-cursor")[0]
 
-            if(line!==undefined) {
-                var linecontent = line.innerText
-
-                if(linecontent.includes("!fontsize ")) {
-                    
-                    var options_ = options;
-                    options_.fontsize =  linecontent.split("!fontsize ")[1].split(";")[0]
-                    setOptions(options_) 
-                    console.log("fontsize")
-                }
-                if(linecontent.includes("!fontfamily ")) {
-                    var options_ = options;
-                    options_.fontfamily =  linecontent.split("!fontfamily ")[1].split(";")[0]
-                    setOptions(options_) 
-                    console.log("fontfamily")
-                }
-
-                    
+            if(line!==undefined && cursor!==undefined) {
+                // var linecontent = line.innerText
+     
                 // Intelli
-                    
-                var token = nearElem(line.children, document.getElementsByClassName("cm-cursor")[0])
+                var token = nearElem(line.children, cursor)
                 console.log(token.innerText);
 
             }
