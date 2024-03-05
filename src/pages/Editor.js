@@ -13,6 +13,8 @@ import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { nearElem } from "../utils/generalfuncs";
 
+import $ from 'jquery'
+
 
 export function Editor({urlparsed, sidinfo}) {
                                                                                                 // var projectId
