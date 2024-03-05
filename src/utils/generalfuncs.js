@@ -1,24 +1,26 @@
 import ReactDOMServer from 'react-dom/server';
 import React from 'react';
 
-export function jsxtostr(jsxobj) {
+  export function jsxtostr(jsxobj) {
     return ReactDOMServer.renderToString(jsxobj);
   }
 
-  export function nearElem(colection, elem) {
-    let mindistance = Infinity;
-    let nearelem = null;
-
-    for (let i = 0; i < colection.length; i++) {
-        const actualelem = colection[i];
-
-        const distance = Math.abs(actualelem.offsetTop - elem.offsetTop);
-
-        if (distance < mindistance) {
-            mindistance = distance;
-            nearelem = actualelem;
-        }
-    }
-
-    return nearelem;
-}
+  function findNearestElem(collection, targetRef) {
+    let minDistance = Infinity;
+    let nearest = null;
+  
+    collection.forEach(elem => {
+      const distance = Math.abs(elem.offsetTop - targetRef.offsetTop);
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearest = elem;
+      }
+    });
+  
+    return nearest;
+  }
+  
+  export default function nearElem(collection, targetRef) {
+    const nearestElem = findNearestElem(collection, targetRef);
+    return nearestElem;
+  }
