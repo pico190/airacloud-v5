@@ -121,13 +121,15 @@ export function Editor({urlparsed, sidinfo}) {
                     setOptions(options_) 
                     console.log("fontfamily")
                 }
+
+                    
+                // Intelli
+                    
+                var token = nearElem(line.children, document.getElementsByClassName("cm-cursor")[0])
+                console.log(token.innerText);
+
             }
 
-
-            // Intelli
-                
-            // var token = nearElem(line.children, document.getElementsByClassName("cm-cursor")[0])
-            // console.log(token.innerText);
 
 
 
