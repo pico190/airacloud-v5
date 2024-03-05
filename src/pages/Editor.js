@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState} from "react";
 import { SideBar } from './editorc/Sidebar'
 import { LoadWeb } from '../utils/LoadWeb'
 
+import { encode, decode } from 'js-base64'
+
 import CodeMirror, { useCodeMirror } from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
@@ -102,15 +104,16 @@ export function Editor({urlparsed, sidinfo}) {
 
             var cmtheme = document.getElementsByClassName("cm-theme")[0]
             
+            cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="cm-info">Downloading IntelliSense...</div>`
             if(localStorage.getItem("htmlintelli")) {
-                setReference(JSON.parse(localStorage.getItem("htmlintelli")));
-                cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="info">Updating IntelliSense...</div>`
+                setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
+                cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="cm-info">Updating IntelliSense...</div>`
             }
 
             $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
                 setReference(data);
-                document.getElementById("info").style.display="none"
-                localStorage.setItem("htmlintelli", JSON.stringify(data))
+                document.getElementById("cm-info").style.display="none"
+                localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
             }) 
 
 
