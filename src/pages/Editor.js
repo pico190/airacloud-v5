@@ -108,7 +108,9 @@ export function Editor({urlparsed, sidinfo}) {
             
                 loadIntelli(true)
     
-                cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="cm-info">Downloading IntelliSense...</div>`
+                if(!document.getElementById("cm-info")) {
+                    cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="cm-info">Downloading IntelliSense...</div>`
+                }
                 if(localStorage.getItem("htmlintelli")) {
                     setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
                     document.getElementById("cm-info").innerHTML="Updating IntelliSense..."
