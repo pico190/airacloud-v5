@@ -102,7 +102,7 @@ export function Editor({urlparsed, sidinfo}) {
         });
     
         window.addEventListener("load", () => {
-            if(intelliloaded) {
+            if(intelliloaded===false) {
 
                 var cmtheme = document.getElementsByClassName("cm-theme")[0]
             
