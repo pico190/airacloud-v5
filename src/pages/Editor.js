@@ -98,28 +98,32 @@ export function Editor({urlparsed, sidinfo}) {
             width: '100%',
         });
     
+        window.addEventListener("load", () => {
+
+            var cmtheme = document.getElementsByClassName("cm-theme")[0]
+            
+            if(localStorage.getItem("htmlintelli")) {
+                setReference(JSON.parse(localStorage.getItem("htmlintelli")));
+                cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="info">Updating IntelliSense...</div>`
+            }
+
+            $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
+                setReference(data);
+                document.getElementById("info").style.display="none"
+                localStorage.setItem("htmlintelli", JSON.stringify(data))
+            }) 
+
+
+        })
         setInterval(() => {
 
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
-            var cmtheme = document.getElementsByClassName("cm-theme")[0]
 
             if(line!==undefined && cursor!==undefined) {
                 // var linecontent = line.innerText
      
                 // Intelli
-                                  
-                if(localStorage.getItem("htmlintelli")) {
-                    setReference(JSON.parse(localStorage.getItem("htmlintelli")));
-                    cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="info">Updating IntelliSense...</div>`
-                }
-
-                $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
-                    setReference(data);
-                    document.getElementById("info").style.display="none"
-                    localStorage.setItem("htmlintelli", JSON.stringify(data))
-                }) 
-
 
                 var textToken = nearElem(line.children, cursor)
 
