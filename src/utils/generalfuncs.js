@@ -9,7 +9,7 @@ import React from 'react';
     let minDistance = Infinity;
     let nearest = null;
   
-    collection.forEach(elem => {
+    Array.from(collection).forEach(elem => {
       const distance = Math.abs(elem.offsetTop - targetRef.offsetTop);
       if (distance < minDistance) {
         minDistance = distance;
