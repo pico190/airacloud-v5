@@ -46,6 +46,7 @@ export function Editor({urlparsed, sidinfo}) {
         const refreshMode = {delay: 0}
 
         const [ reference, setReference ] = useState([]);
+        const [ intelliloaded, loadIntelli ] = useState(false);
         const [ codeValue, setCodeValue ] = useState(code);
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay,
@@ -101,21 +102,27 @@ export function Editor({urlparsed, sidinfo}) {
         });
     
         window.addEventListener("load", () => {
+            if(intelliloaded) {
 
-            var cmtheme = document.getElementsByClassName("cm-theme")[0]
+                var cmtheme = document.getElementsByClassName("cm-theme")[0]
             
-            cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="cm-info">Downloading IntelliSense...</div>`
-            if(localStorage.getItem("htmlintelli")) {
-                setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
-                cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="cm-info">Updating IntelliSense...</div>`
+                loadIntelli(true)
+    
+                cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="cm-info">Downloading IntelliSense...</div>`
+                if(localStorage.getItem("htmlintelli")) {
+                    setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
+                    document.getElementById("cm-info").innerHTML="Updating IntelliSense..."
+    
+                }
+    
+                $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
+                    setReference(data);
+                    document.getElementById("cm-info").style.display="none"
+                    localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
+                }) 
+    
+
             }
-
-            $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
-                setReference(data);
-                document.getElementById("cm-info").style.display="none"
-                localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
-            }) 
-
 
         })
         setInterval(() => {
