@@ -27,6 +27,7 @@ body {
     --textrgba: 255, 255, 255;
     --border: #ffffff1c;
     --modal-button: #1D2126;
+    --cm-info-height: 24px;
 }
 
 * {
@@ -425,18 +426,24 @@ h1, h2, h3, h4, h5, h6 {
   .cm-theme {
     border-radius: 12px!important;
     overflow: hidden!important;  
-    border: 1px solid #303237;
+    border: 1px solid rgba(var(--textrgba), .15);
     width: 100%;
     height: 100%;
   }
 
   .cm-editor {
-    border-radius: 12px!important;
     overflow: hidden!important;
     width: 100%;
-    height: 100%;
+    height: calc(100% - var(--cm-info-height));
   }
 
+  .cm-info {
+    background-color: var(--default-button);
+    display: flex;
+    height: var(--cm-info-height);
+    border-top: 1px solid rgba(var(--textrgba), .1);
+    padding-left: 8px;
+  }
   .content-left {
     display: flex;
     gap: 15px;
@@ -859,4 +866,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ͼ16, .ͼ16 .cm-gutters {
   background-color: var(--default-button) !important;
+}
+
+
+.intelli {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+#desc {
+  padding: 10px 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: var(--intelli-width);
+}
+
+.intelliselected:hover {
+  background-color: var(--primary-blue);
+}
+.intellitem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.intelliselected {
+  background-color: var(--darker-primary-blue);
+}
+.intellitem {
+  display: flex;
+  padding: 0px 15px;
+  height: calc(19px * 2);
+  align-items: center;
+  width: var(--intelli-width);
+  gap: 10px;
+  font-family: Consolas, monospace;
+  cursor: pointer;
+}
+
+.intellitem img {
+  width: 20px;
+}
+
+.intelliseparator {
+  display: flex;
+  margin-left: auto;
+  height: fit-content;
+  opacity: 0.5;
 }

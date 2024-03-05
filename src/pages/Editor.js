@@ -41,6 +41,7 @@ export function Editor({urlparsed, sidinfo}) {
     
         const refreshMode = {delay: 0}
 
+        const [ reference, setReference ] = useState([]);
         const [ codeValue, setCodeValue ] = useState(code);
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay,
@@ -99,13 +100,27 @@ export function Editor({urlparsed, sidinfo}) {
 
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
+            var cmtheme = document.getElementsByClassName("cm-theme")[0]
 
             if(line!==undefined && cursor!==undefined) {
                 // var linecontent = line.innerText
      
                 // Intelli
+                                  
+                if(localStorage.getItem("htmlintelli")) {
+                    setReference(JSON.parse(localStorage.getItem("htmlintelli")));
+                    cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="info">Updating IntelliSense...</div>`
+                }
+
+                $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
+                    setReference(data);
+                    document.getElementById("info").style.display="none"
+                    localStorage.setItem("htmlintelli", JSON.stringify(data))
+                }) 
+
+
                 var textToken = nearElem(line.children, cursor)
-                console.log(textToken);
+
 
             }
 
@@ -123,6 +138,11 @@ export function Editor({urlparsed, sidinfo}) {
     
         return (
             <>
+            <div id="intellisense" className="intellisense" >
+                <div id="intelli" />
+                <div id="desc" />
+            </div>
+
             <SideBar title="Codemirror Playground" >
                     <div style={{display: "flex", gap: "10px"}}>
                         <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} /> {/*https://airacloud-v5-d1.vercel.app/airaicons/react.svg'*/}
