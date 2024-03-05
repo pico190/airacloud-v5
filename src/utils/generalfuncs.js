@@ -20,7 +20,7 @@ import React from 'react';
     return nearest;
   }
   
-  export default function nearElem(collection, targetRef) {
+  export function nearElem(collection, targetRef) {
     const nearestElem = findNearestElem(collection, targetRef);
     return nearestElem;
   }
