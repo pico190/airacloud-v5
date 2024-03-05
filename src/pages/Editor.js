@@ -11,6 +11,7 @@ import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
+import { nearElem } from "../utils/generalfuncs";
 
 
 export function Editor({urlparsed, sidinfo}) {
@@ -121,6 +122,16 @@ export function Editor({urlparsed, sidinfo}) {
                     console.log("fontfamily")
                 }
             }
+
+
+            // Intelli
+                
+            var token = nearElem(line.children, document.getElementsByClassName("cm-cursor")[0])
+            console.log(token.innerText);
+
+
+
+            
         }, [editor.current]);
     
     
