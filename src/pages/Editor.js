@@ -126,8 +126,8 @@ export function Editor({urlparsed, sidinfo}) {
 
             // Intelli
                 
-            var token = nearElem(line.children, document.getElementsByClassName("cm-cursor")[0])
-            console.log(token.innerText);
+            // var token = nearElem(line.children, document.getElementsByClassName("cm-cursor")[0])
+            // console.log(token.innerText);
 
 
 
