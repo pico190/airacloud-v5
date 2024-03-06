@@ -46,7 +46,6 @@ export function Editor({urlparsed, sidinfo}) {
 
         // eslint-disable-next-line
         const [ reference, setReference ] = useState([]);
-        const [ lastInput, setLastinput ] = useState("");
         const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
         const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
         var [ options, setOptions ] = useState({
@@ -112,7 +111,8 @@ export function Editor({urlparsed, sidinfo}) {
             }
 
         })
-        
+
+        var lastInput = ""
         setInterval(() => {
 
 
@@ -177,7 +177,7 @@ export function Editor({urlparsed, sidinfo}) {
                             }
                         });
 
-                        setLastinput(textToken.innerText)
+                        lastInput = textToken.innerText
                     }
 
 
