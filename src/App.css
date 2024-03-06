@@ -444,6 +444,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+
+.cm-tooltip-autocomplete {display: none!important;}
+
   .cm-editor {
     overflow: hidden!important;
     width: 100%;
