@@ -135,7 +135,8 @@ export function Editor({urlparsed, sidinfo}) {
                     }
     
                 }) 
-                return nearElem(lineArray, cursor).innerText
+                var nearelm = nearElem(lineArray, cursor)
+                return nearelm ? nearelm.innerText : null
             } else {return false;}
                 
         }
