@@ -166,15 +166,15 @@ export function Editor({urlparsed, sidinfo}) {
         }, 100)
 
         useEffect(() => {
-            var textToken = editorToken;
-            console.log(editorToken)
+            var textToken = editorToken.innerText;
+            console.log(textToken)
 
             if(textToken) {
                 
                 const timer = setTimeout(() => {
                         var desc = "";
                         const content = reference
-                            .filter(element => element.name.startsWith(textToken.innerText))
+                            .filter(element => element.name.startsWith(textToken))
                             .slice(0, 10)
                             .map((element, index) => () => {
                                 desc = element.desc;
@@ -182,7 +182,7 @@ export function Editor({urlparsed, sidinfo}) {
                                 return (
                                 <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
                                     <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
-                                    <span><b>{textToken.innerText}</b>{element.name.replace(textToken.innerText, "")}</span>
+                                    <span><b>{textToken}</b>{element.name.replace(textToken, "")}</span>
                                     <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
                                 </div>
                                 )
