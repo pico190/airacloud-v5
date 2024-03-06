@@ -229,6 +229,9 @@ export function Editor({urlparsed, sidinfo}) {
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
                             value={codeValue}
                             theme={vscodeDarkInit({
+                                settings: {
+                                    background: 'var(--default-button)',
+                                },
                                 styles: [
                                     {tag: "tagName", color: '#4ec9b0'},
                                     {tag: "tagNameStandard", color: '#569cd6'}
