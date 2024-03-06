@@ -992,3 +992,8 @@ img::selection {
 .intelliselected b {
   color: #F4AEFF;
 }
+
+.cm-focused .cm-matchingBracket {
+  outline: 1px solid #ffffff2b!important;
+  background-color: transparent!important;
+}
