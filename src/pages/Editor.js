@@ -130,7 +130,7 @@ export function Editor({urlparsed, sidinfo}) {
             
             Array.from(line.children).forEach(elem => {
 
-                firstarray = elem.classList.contains("cm-matchingBracket") ? elem.children[0] : elem
+                var firstarray = elem.classList.contains("cm-matchingBracket") ? elem.children[0] : elem
                 if(elem.className!=="") {
                     if(elem.localName==="span") {
                         lineArray.push(firstarray)
