@@ -166,10 +166,11 @@ export function Editor({urlparsed, sidinfo}) {
         }, 100)
 
         useEffect(() => {
-            var textToken = editorToken.innerText;
-            console.log(textToken)
+            var textToken_ = editorToken;
 
-            if(textToken) {
+            if(textToken_) {
+                var textToken = textToken_.innerText
+                console.log(textToken)
                 
                 const timer = setTimeout(() => {
                         var desc = "";
