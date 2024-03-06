@@ -115,11 +115,11 @@ export function Editor({urlparsed, sidinfo}) {
         })
 
         
-        var cursor = document.getElementsByClassName("cm-cursor")[0]
 
         // getToken (cursor word)
         function getEditorToken() {
             
+            var cursor = document.getElementsByClassName("cm-cursor")[0]
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var lineArray = [];
             
@@ -149,6 +149,7 @@ export function Editor({urlparsed, sidinfo}) {
             Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
 
             // IntelliBox Position
+            var cursor = document.getElementsByClassName("cm-cursor")[0]
             var intellicontainer = document.getElementById("intellisense")
             var editor = document.getElementsByClassName("cm-editor")[0]
 
@@ -230,7 +231,9 @@ export function Editor({urlparsed, sidinfo}) {
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
                             value={codeValue}
                             theme={vscodeDark}
-                            autocompletion={false}
+                            options={{
+                                autocompletion: false
+                            }}
                         />
                         <div className="cm-info" id="cm-info" children="Download IntelliSense..." />
                     </div>
