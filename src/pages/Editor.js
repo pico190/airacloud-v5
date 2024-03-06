@@ -153,7 +153,6 @@ export function Editor({urlparsed, sidinfo}) {
                 // var linecontent = line.innerText
      
                 // Intelli
-                // eslint-disable-next-line
 
                         console.log(lastInput, "|", textToken.innerText, ">", lastInput!==textToken.innerText)
                     if(lastInput!==textToken.innerText) {
