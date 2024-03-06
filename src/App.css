@@ -934,10 +934,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 span[title="Unfold line"] > img, span[title="Fold line"] > img {
-  transform: translateY(1.5px);
+  transform: translateY(1.5px) scale(0.7);
   user-select: none;
+  -webkit-transform: translateY(1.5px) scale(0.7);
+  -moz-transform: translateY(1.5px) scale(0.7);
+  -ms-transform: translateY(1.5px) scale(0.7);
+  -o-transform: translateY(1.5px) scale(0.7);
+}
+
+
+span[title="Unfold line"], span[title="Fold line"] {
+  opacity: 0;
+  transition-duration: 0.1s;
 }
 
 img::selection {
   background-color: transparent!important;
+}
+
+.cm-gutters:hover span[title="Unfold line"], .cm-gutters:hover span[title="Fold line"] {
+  opacity: 1;
 }
