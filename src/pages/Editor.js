@@ -154,7 +154,7 @@ export function Editor({urlparsed, sidinfo}) {
                                 </div>
                                 `;
                                 if(intelliCount===0) {
-                                    desc.innerHTML = element.desc;
+                                    intdesc.innerHTML = element.desc;
                                 }
                                 setintelliCount(intelliCount + 1)
                             }
