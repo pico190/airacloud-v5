@@ -118,7 +118,7 @@ export function Editor({urlparsed, sidinfo}) {
         
                     $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
                         setReference(data);
-                        cminfo.style.color="transparent"
+                        cminfo.innerHTML=""
                         localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
                     }) 
                 }
