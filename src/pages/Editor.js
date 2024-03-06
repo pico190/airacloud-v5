@@ -220,7 +220,8 @@ export function Editor({urlparsed, sidinfo}) {
                     
                     <div className="editorcontainer">
                         <div id="intellisense" className="intellisense" >
-                            {intelliContent}
+                            <div id="intelli">{intelliContent}</div>
+                            <div id="intellidesc">{intelliDesc}</div>
                         </div>
                         <CodeMirror
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
