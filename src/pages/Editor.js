@@ -124,6 +124,7 @@ export function Editor({urlparsed, sidinfo}) {
             var intellisense = document.getElementById("intellisense")
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
+            var editor = document.getElementsByClassName("cm-editor")[0]
 
             var lineArray = [];
             
@@ -140,7 +141,16 @@ export function Editor({urlparsed, sidinfo}) {
             var textToken = nearElem(lineArray, cursor)
                 
             var intelli = document.getElementById("intelli");
+            var intellicontainer = document.getElementById("intellisense")
             var intdesc = document.getElementById("intellidesc");
+
+            if(!editor.classList.contains("cm-focused")) {
+                intellicontainer.style.display="none"
+            } else {
+                intellicontainer.style.display="flex"
+                intellicontainer.style.left = cursor.offsetLeft + "px"
+                intellicontainer.style.top = cursor.offsetTop + "px"
+            }
 
             if(line && 
                cursor && 
@@ -153,7 +163,7 @@ export function Editor({urlparsed, sidinfo}) {
                 // var linecontent = line.innerText
      
                 // Intelli
-                        
+                
                     console.log(lastInput, "|", textToken.innerText, ">", lastInput!==textToken.innerText)
                     if(lastInput!==textToken.innerText) {
                             
@@ -177,7 +187,7 @@ export function Editor({urlparsed, sidinfo}) {
                                     count++;
                                 }
                             });
-                        }, 5)
+                        }, 2)
 
                         lastInput = textToken.innerText
                     }
@@ -191,10 +201,6 @@ export function Editor({urlparsed, sidinfo}) {
     
         return (
             <>
-            <div id="intellisense" className="intellisense" >
-                <div id="intelli" />
-                <div id="intellidesc" />
-            </div>
 
             <SideBar title="Codemirror Playground" >
                     <div style={{display: "flex", gap: "10px"}}>
@@ -217,6 +223,10 @@ export function Editor({urlparsed, sidinfo}) {
                     <style children={`.cm-editor, .cm-editor * {font-family: var(--editor-font-family);}`} id="fontfamily" />
                     
                     <div className="editorcontainer">
+                        <div id="intellisense" className="intellisense" >
+                            <div id="intelli" />
+                            <div id="intellidesc" />
+                        </div>
                         <CodeMirror
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
                             value={codeValue}

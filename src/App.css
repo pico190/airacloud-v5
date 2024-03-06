@@ -891,6 +891,7 @@ h1, h2, h3, h4, h5, h6 {
   -o-border-radius: 15px;
   overflow: hidden;
   background-color: var(--default-button-hover);
+  transform: translateY(60px);
 }
 
 #intelli {
@@ -923,8 +924,11 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   width: var(--intelli-width);
   gap: 10px;
-  font-family: Consolas, monospace;
+  font-family: Consolas, monospace!important;
   cursor: pointer;
+}
+.intelliitem * {
+  font-family: Consolas, monospace!important;
 }
 
 .intellitem img {
@@ -973,4 +977,11 @@ img::selection {
 
 .cm-gutters::selection, .cm-gutters *::selection {
   background-color: transparent!important;
+}
+
+.intellitem b {
+  color: #84C1FF;
+}
+.intelliselected b {
+  color: #F4AEFF;
 }
