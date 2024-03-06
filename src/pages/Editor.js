@@ -129,9 +129,9 @@ export function Editor({urlparsed, sidinfo}) {
         })
         setInterval(() => {
 
-            Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => {
-                elem.style.background = "#243047"
-            }) 
+            Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.background = "#243047" }) 
+            Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=caret-down" alt="v" loading="lazy">`})
+            Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=caret-right" alt=">" loading="lazy">`})
 
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
