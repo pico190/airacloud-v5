@@ -46,7 +46,7 @@ export function Editor({urlparsed, sidinfo}) {
 
         // eslint-disable-next-line
         const [ reference, setReference ] = useState([]);
-        const [lastInput, setLastInput] = useState('');
+        const [editorToken, seteditorToken] = useState(null);
         const [intelliContent, setIntelliContent] = useState('');
         const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
         const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
@@ -161,17 +161,16 @@ export function Editor({urlparsed, sidinfo}) {
                 intellicontainer.style.top = cursor.offsetTop + "px"
             }
 
+            seteditorToken(getEditorToken());
 
         }, 100)
 
         useEffect(() => {
-            var textToken = getEditorToken();
-            console.log(textToken)
+            var textToken = editorToken;
 
             if(textToken) {
                 
                 const timer = setTimeout(() => {
-                    if (lastInput !== textToken.innerText) {
                         var desc = "";
                         setLastInput(textToken.innerText);
                         const content = reference
@@ -194,12 +193,11 @@ export function Editor({urlparsed, sidinfo}) {
                             <div id="intellidesc" >{desc}</div>
                             </>
                             );
-                    }
                 }, 100);
 
                 return () => clearTimeout(timer);
             }
-        }, [lastInput]);
+        }, [editorToken]);
     
         return (
             <>
