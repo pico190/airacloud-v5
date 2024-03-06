@@ -173,19 +173,18 @@ export function Editor({urlparsed, sidinfo}) {
                     const filteredContent = reference
                         .filter(element => element.name.startsWith(editorToken))
                         .slice(0, 10)
-                        .map((element, index) => (
+                        .map((element, index) => {
+                            if(index === 0) {
+                                setIntelliDesc(element.desc)
+                            }
+
                             <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
                                 <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
                                 <span><b>{editorToken}</b>{element.name.replace(editorToken, "")}</span>
                                 <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
                             </div>
-                        ));
+                        });
                     setIntelliContent(filteredContent);
-                    if (filteredContent.length > 0) {
-                        setIntelliDesc(filteredContent[0].props.children[1].props.children[0].props.children[0].props.children + reference[0].desc);
-                    } else {
-                        setIntelliDesc('');
-                    }
                 } else {
                     setIntelliContent([]);
                     setIntelliDesc('');
