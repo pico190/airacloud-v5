@@ -152,20 +152,14 @@ export function Editor({urlparsed, sidinfo}) {
 
             // Update token
             seteditorToken(getEditorToken());
+            console.log(editorToken)
 
             // IntelliBox Position
             var cursor = document.getElementsByClassName("cm-cursor")[0]
             var intellicontainer = document.getElementById("intellisense")
             var editor = document.getElementsByClassName("cm-editor")[0]
 
-            var referencenames = []
-            reference.forEach(elem => {
-                referencenames.push(elem.name)
-            })
-
-            console.log(editorToken, "/", referencenames.includes(editorToken), "|", referencenames)
-
-            if(!editor.classList.contains("cm-focused") || document.getElementsByClassName("cm-selectionBackground")[0] || referencenames.includes(editorToken)) {
+            if(!editor.classList.contains("cm-focused") || document.getElementsByClassName("cm-selectionBackground")[0]) {
                 intellicontainer.style.display="none"
             } else {
                 intellicontainer.style.display="flex"
