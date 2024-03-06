@@ -952,6 +952,11 @@ img::selection {
   background-color: transparent!important;
 }
 
+
+.cm-gutters {
+  cursor:default;
+}
+
 .cm-gutters:hover span[title="Unfold line"], .cm-gutters:hover span[title="Fold line"] {
   opacity: 1;
 }

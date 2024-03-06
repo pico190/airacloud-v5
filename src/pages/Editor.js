@@ -5,7 +5,7 @@ import { LoadWeb } from '../utils/LoadWeb'
 
 import { encode, decode } from 'js-base64'
 
-import CodeMirror, { useCodeMirror } from '@uiw/react-codemirror';
+import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
@@ -40,8 +40,6 @@ export function Editor({urlparsed, sidinfo}) {
         // var iframelangs=["html", "php"]
 
         const code = "console.log('hello world!');";
-    
-        const editor = useRef(); 
     
         const refreshMode = {delay: 0}
 
@@ -85,21 +83,6 @@ export function Editor({urlparsed, sidinfo}) {
             })
 
         }, [files])
-    
-        const handleAlgoChange = (e) => {
-            setCodeValue(e)
-        }
-    
-        const { setContainer } = useCodeMirror({
-            container: editor.current,
-            extensions: [javascript({ jsx: true }), color],
-            value: codeValue, 
-            theme: vscodeDark,
-            autocomplete: false,
-            onChange: handleAlgoChange,
-            height: '100%',
-            width: '100%',
-        });
     
         window.addEventListener("load", () => {
             if(intelliloaded===false) {
@@ -147,15 +130,6 @@ export function Editor({urlparsed, sidinfo}) {
             }
 
         }, 100)
-        useEffect(() => {
-
-            setContainer(editor.current)
-
-            if(options.refreshMode === refreshMode.delay) {
-
-            }
-            
-        }, [editor.current]);
     
     
         return (
@@ -186,7 +160,12 @@ export function Editor({urlparsed, sidinfo}) {
                     <style children={`.cm-editor, .cm-editor * {font-family: ${options.fontfamily};}`} id="fontfamily" />
                     
                     <div className="editorcontainer">
-                        <div className="cm-theme" ref={editor} />
+                        <CodeMirror
+                            extensions={[javascript({ jsx: true }), color]}
+                            value={codeValue}
+                            theme={vscodeDark}
+                            autocomplete={false}
+                        />
                         <div className="cm-info" id="cm-info" children="Download IntelliSense..." />
                     </div>
                     {
