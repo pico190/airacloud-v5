@@ -132,7 +132,7 @@ export function Editor({urlparsed, sidinfo}) {
 
                 var firstarray = elem.classList.contains("cm-matchingBracket") ? elem.children[0] : elem
                 if(elem.className!=="") {
-                    if(elem.localName==="span" && elem.innerText.length>=2) {
+                    if(elem.localName==="span" && (elem.innerText.includes("<") || elem.innerText.includes(">") || elem.innerText.includes("/"))) {
                         lineArray.push(firstarray)
                     }
                 }

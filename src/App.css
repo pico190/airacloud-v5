@@ -28,6 +28,7 @@ body {
     --border: #ffffff1c;
     --modal-button: #1D2126;
     --cm-info-height: 24px;
+    --intelli-width: calc(80px * 5);
 
     --editor-font-size: 16px;
     --editor-font-family: 'Consolas';
@@ -893,7 +894,7 @@ h1, h2, h3, h4, h5, h6 {
   width: fit-content;
 }
 
-#desc {
+#intellidesc {
   padding: 10px 15px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   width: var(--intelli-width);
