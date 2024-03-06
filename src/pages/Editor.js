@@ -49,8 +49,6 @@ export function Editor({urlparsed, sidinfo}) {
         const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay,
-            fontsize: "20",
-            fontfamily: "Consolas"
         }); // eslint-disable-next-line
         var [ files, setFiles ] = useState([
             {
@@ -158,8 +156,8 @@ export function Editor({urlparsed, sidinfo}) {
 
                 <div className="content-left">
                     <style children=":root, * {--sb-width: 28vw!important;} .content {padding: 20px; gap: 10px} .ͼ16.cm-focused .cm-selectionBackground .ͼ16 .cm-selectionLayer .cm-selectionBackground {background: #243047 !important;}" />
-                    <style children={`.cm-editor, .cm-editor * {font-size: ${options.fontsize}px;}`} id="fontsize" />         
-                    <style children={`.cm-editor, .cm-editor * {font-family: ${options.fontfamily};}`} id="fontfamily" />
+                    <style children={`.cm-editor, .cm-editor * {font-size: var(--editor-font-size);}`} id="fontsize" />         
+                    <style children={`.cm-editor, .cm-editor * {font-family: var(--editor-font-family);}`} id="fontfamily" />
                     
                     <div className="editorcontainer">
                         <CodeMirror

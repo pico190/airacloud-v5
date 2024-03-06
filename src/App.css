@@ -28,6 +28,9 @@ body {
     --border: #ffffff1c;
     --modal-button: #1D2126;
     --cm-info-height: 24px;
+
+    --editor-font-size: 14px;
+    --editor-font-family: 'Consolas';
 }
 
 * {
