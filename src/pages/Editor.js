@@ -135,7 +135,7 @@ export function Editor({urlparsed, sidinfo}) {
                     }
     
                 }) 
-                return nearElem(lineArray, cursor)
+                return nearElem(lineArray, cursor).innerText
             } else {return false;}
                 
         }
@@ -166,10 +166,9 @@ export function Editor({urlparsed, sidinfo}) {
         }, 100)
 
         useEffect(() => {
-            var textToken_ = editorToken;
+            var textToken = editorToken;
 
-            if(textToken_) {
-                var textToken = textToken_.innerText
+            if(textToken) {
                 console.log(textToken)
                 
                 const timer = setTimeout(() => {
