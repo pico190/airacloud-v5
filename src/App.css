@@ -901,6 +901,9 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   overflow: hidden;
   width: fit-content;
+
+  min-height: 380px;
+  overflow-y: scroll;
 }
 
 #intellidesc {

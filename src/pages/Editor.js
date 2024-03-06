@@ -172,7 +172,6 @@ export function Editor({urlparsed, sidinfo}) {
                 if (editorToken) {
                     const filteredContent = reference
                         .filter(element => element.name.startsWith(editorToken))
-                        .slice(0, 10)
                         .map((element, index) => {
                             if(index === 0) {
                                 setIntelliDesc(element.desc)
