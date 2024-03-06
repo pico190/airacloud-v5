@@ -241,12 +241,11 @@ export function Editor({urlparsed, sidinfo}) {
                             theme={vscodeDarkInit({
                                 settings: {
                                     background: 'var(--default-button)',
-                                    gutterBackground: 'var(--default-button)',
-
+                                    gutterBackground: 'var(--default-button)'
                                 },
                                 styles: [
                                     { tag: t.tagName, color: '#4ec9b0' },
-                                    { tag: t.standard(t.tagName), color: '#569cd6' },
+                                    { tag: t.standard(t.tagName), color: '#569cd6' }
                                 ]
                             })}
                             options={{

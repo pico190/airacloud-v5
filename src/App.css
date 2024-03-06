@@ -1009,3 +1009,98 @@ img::selection {
 ._cTagExistent {
   color: #569cd6!important;
 }
+
+:root {
+  /* 
+  - AiraCodeMirror 
+  (You can edit this as you want)
+  */
+
+  /* Editor text content background                            */ --cm-bg:                       var(--default-button);
+  /* Editor background image                                   */ --cm-bg-img:                   none;
+  /* Editor text                                               */ --cm-foreground:             #d7d7d7; 
+  /* Selection color                                           */ --cm-selection:              rgb(36, 48, 71);
+  /* Background of selectionMatch                              */ --cm-selection-match:          transparent;
+  /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
+  /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
+  /* Color of border of line number                            */ --cm-gutter-border:            transparent;
+  /* Color of the selected line number                         */ --cm-gutter-active-foreground: '';
+  /* Background color of the selected line                     */ --cm-lineHighlight:          #ffffff0f;
+  /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
+
+  /* ---------------- Completion Colors */
+  /* Single line comments   */ --cm-line-comment:   #6a9955;
+  /* Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
+  
+  /* Is not used in many places */ --cm-name:    #4ec9b0;
+  /**/                             --cm-labelname: var(--cm-foreground);
+
+  /* At Swiftly Team we don't know what is this */ --cm-namespace: var(--cm-foreground);
+  /**/                                             --cm-macroname: #dcdcaa;
+  
+  /* Types names (null, true, boolean, string) */ --cm-type-definition: #569cd6;
+  /**/                                            --cm-type-name:       #4ec9b0;
+  /**/                                            --cm-type-standard:   #4ec9b0;
+
+  /* Existing html tags (<html>)              */ --cm-tag-name-standard: #569cd6;
+  /* Custom elements or React JSX elements () */ --cm-tag-name:          #4ec9b0;
+
+  /* Variables                                     */ --cm-variable-name:            #9cdcfe;
+  /* Functions and other variable types definition */ --cm-variable-name-definition: #569cd6;
+  /* Functions in use (print())                    */ --cm-variable-name-function:   #dcdcaa;
+
+  /* Property name                  */ --cm-property-name:       #9cdcfe;
+  /* The variable from the property */ --cm-property-definition: #569cd6;
+  /* definition.function()          */ --cm-property-function:   #dcdcaa;
+
+  /* atribute="value" */ --cm-attribute-name: #9cdcfe;
+  /* atribute="value" */ --cm-attribute-value:  var(--cm-string);
+  /* <!DOCTYPE html> */  --cm-document-meta:    rgba(var(--textrgba), .7);
+  /* <html></html> */    --cm-angle-bracket:  #808080;
+
+  /* (In css) .class           */ --cm-classname:         #dcdcaa;
+  /* (In css) .class::constant */ --cm-classname-costant: #569cd6;
+
+  /* Types */   --cm-string:       #ce9178;
+  /**/          --cm-string-special: var(--cm-string);
+  /**/          --cm-literal:        var(--cm-string);
+  /**/          --cm-character:      var(--cm-string);
+  /**/          --cm-number:       #b5cea8;
+  /**/          --cm-integer:        var(--cm-number);
+  /**/          --cm-bool:         #569cd6;
+  /**/          --cm-regexp:       #d16969;
+  /* unknown */ --cm-escape:       #569cd6;
+  /**/          --cm-color:          var(--cm-string);
+  /**/          --cm-url:          #9ce7fe;
+  /* public */  --cm-keyword:      #c586c0;
+  /* this */    --cm-self:         #569cd6;
+  /* null */    --cm-null:         #569cd680;
+  /**/          --cm-atom:         #dcdcaa;
+  /* em, px */  --cm-unit:         #569cd6;
+  /* var, let */--cm-modifier:     #569cd6;
+  /* +, ., = */ --cm-operator:       var(--cm-foreground);
+
+  /* (In md) # */ --cm-heading1: #569cd6dc;
+  /**/            --cm-heading2: #569cd6b5;
+  /**/            --cm-heading3: #569cd693;
+  /**/            --cm-heading4: #569cd67a;
+  /**/            --cm-heading5: #569cd67a;
+  /**/            --cm-heading6: #569cd67a;
+
+  /* =>, < */  --cm-punctuation:      var(--cm-foreground);
+  /* <>, {} */ --cm-bracket:        #ffd700;
+  /* [] */     --cm-square-bracket: #da70d6;
+  /* () */     --cm-paren:          #179fff;
+  
+  /* (In md) Separates */ --cm-md-content-separator: var(--cm-line-comment);
+  /* (In md) Lists */     --cm-md-list:            #6796e6;
+  /* (In md) Quote */     --cm-md-quote:             var(--cm-foreground);
+  /* (In md) Bold */      --cm-md-bold:              var(--cm-foreground);
+  /* (In md) Italic */    --cm-md-emphasis:          rgba(var(--textrgba), .7);
+  /* (In md) Link */      --cm-md-link:              var(--cm-url);
+  /* (In md) Monospace */ --cm-md-monospace:         var(--cm-string);
+  /* (In md) Strike */    --cm-md-strikethrough:     var(--cm-md-link);
+  /* (In md) >>, * */     --cm-md-meta:            #569cd6;
+
+  
+}
