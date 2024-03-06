@@ -46,7 +46,9 @@ export function Editor({urlparsed, sidinfo}) {
 
         // eslint-disable-next-line
         const [ reference, setReference ] = useState([]);
-        const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
+        const [lastInput, setLastInput] = useState('');
+        const [intelliContent, setIntelliContent] = useState('');
+        // const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
         const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay,
@@ -164,36 +166,33 @@ export function Editor({urlparsed, sidinfo}) {
                 // Intelli
                 
                     console.log(lastInput, "|", textToken.innerText, ">", lastInput!==textToken.innerText)
-                    var lastInput = ""
-                    function updateIntelli() {
-                        if (lastInput !== textToken.innerText) {
-                            lastInput = textToken.innerText;
-                            intelli.innerHTML = '';
-                            var count = 0;
-                            reference.forEach(element => {
-                                if (element.name.startsWith(textToken.innerText) && count < 10) {
-                                    intelli.innerHTML += `
-                                        <div class="intellitem ${count === 0 ? "intelliselected" : ""}" id="${element.name}">
-                                            <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt=""/>
-                                            <span><b>${textToken.innerText}</b>${element.name.replace(textToken.innerText, "")}</span>
-                                            <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
-                                        </div>
-                                    `;
-                                    if (count === 0) {
-                                        intdesc.innerHTML = element.desc;
-                                    }
-                                    count++;
-                                }
-                            });
-                        }
-                    }
-                        
-                    updateIntelli();
+                   
+
 
             }
 
         }, 100)
-    
+
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                if (lastInput !== textToken.innerText) {
+                    setLastInput(textToken.innerText);
+                    const content = reference
+                        .filter(element => element.name.startsWith(textToken.innerText))
+                        .slice(0, 10)
+                        .map((element, index) => (
+                            <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
+                                <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
+                                <span><b>{textToken.innerText}</b>{element.name.replace(textToken.innerText, "")}</span>
+                                <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
+                            </div>
+                        ));
+                    setIntelliContent(content);
+                }
+            }, 100);
+
+            return () => clearTimeout(timer);
+        }, [lastInput]);
     
         return (
             <>
@@ -220,8 +219,7 @@ export function Editor({urlparsed, sidinfo}) {
                     
                     <div className="editorcontainer">
                         <div id="intellisense" className="intellisense" >
-                            <div id="intelli" />
-                            <div id="intellidesc" />
+                            {intelliContent}
                         </div>
                         <CodeMirror
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
