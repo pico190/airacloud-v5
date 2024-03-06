@@ -997,3 +997,7 @@ img::selection {
   outline: 1px solid #ffffff2b!important;
   background-color: transparent!important;
 }
+
+.cm-gutter.cm-foldGutter {
+  width: 26px!important;
+}
