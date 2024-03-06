@@ -112,7 +112,6 @@ export function Editor({urlparsed, sidinfo}) {
 
         })
 
-        var lastInput = ""
         setInterval(() => {
 
 
@@ -165,34 +164,31 @@ export function Editor({urlparsed, sidinfo}) {
                 // Intelli
                 
                     console.log(lastInput, "|", textToken.innerText, ">", lastInput!==textToken.innerText)
-                    if(lastInput!==textToken.innerText) {
-                            
-                        intelli.innerHTML = ``;
-
-                        setTimeout(() => {
-                            
-                            var count = 0
+                    var lastInput = ""
+                    function updateIntelli() {
+                        if (lastInput !== textToken.innerText) {
+                            lastInput = textToken.innerText;
+                            intelli.innerHTML = '';
+                            var count = 0;
                             reference.forEach(element => {
                                 if (element.name.startsWith(textToken.innerText) && count < 10) {
                                     intelli.innerHTML += `
-                                    <div class="intellitem ${count===0 ? "intelliselected" : ""}" id="${element.name}">
-                                        <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt="" alt=""/>
-                                        <span><b>${textToken.innerText}</b>${element.name.replace(textToken.innerText, "")}</span>
-                                        <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
-                                    </div>
+                                        <div class="intellitem ${count === 0 ? "intelliselected" : ""}" id="${element.name}">
+                                            <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt=""/>
+                                            <span><b>${textToken.innerText}</b>${element.name.replace(textToken.innerText, "")}</span>
+                                            <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
+                                        </div>
                                     `;
-                                    if(count===0) {
+                                    if (count === 0) {
                                         intdesc.innerHTML = element.desc;
                                     }
                                     count++;
                                 }
                             });
-                        }, 2)
-
-                        lastInput = textToken.innerText
+                        }
                     }
-
-
+                        
+                    updateIntelli();
 
             }
 
