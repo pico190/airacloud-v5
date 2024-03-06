@@ -47,7 +47,8 @@ export function Editor({urlparsed, sidinfo}) {
         // eslint-disable-next-line
         const [ reference, setReference ] = useState([]);
         const [editorToken, seteditorToken] = useState(null);
-        const [intelliContent, setIntelliContent] = useState('');
+        const [intelliContent, setIntelliContent] = useState([]);
+        const [intelliDesc, setIntelliDesc] = useState('');
         const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
         const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
         var [ options, setOptions ] = useState({
@@ -167,37 +168,31 @@ export function Editor({urlparsed, sidinfo}) {
         }, 100)
 
         useEffect(() => {
-            var textToken = editorToken;
-
-            if(textToken) {
-                console.log(textToken)
-                
-                const timer = setTimeout(() => {
-                        var desc = "";
-                        const content = reference
-                            .filter(element => element.name.startsWith(textToken))
-                            .slice(0, 10)
-                            .map((element, index) => () => {
-                                desc = element.desc;
-
-                                return (
-                                <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
-                                    <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
-                                    <span><b>{textToken}</b>{element.name.replace(textToken, "")}</span>
-                                    <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
-                                </div>
-                                )
-                            });
-                        setIntelliContent(
-                            <>
-                            <div id="intelli" >{content}</div>
-                            <div id="intellidesc" >{desc}</div>
-                            </>
-                            );
-                }, 100);
-
-                return () => clearTimeout(timer);
-            }
+            const timer = setTimeout(() => {
+                if (editorToken) {
+                    const filteredContent = reference
+                        .filter(element => element.name.startsWith(editorToken))
+                        .slice(0, 10)
+                        .map((element, index) => (
+                            <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
+                                <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
+                                <span><b>{editorToken}</b>{element.name.replace(editorToken, "")}</span>
+                                <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
+                            </div>
+                        ));
+                    setIntelliContent(filteredContent);
+                    if (filteredContent.length > 0) {
+                        setIntelliDesc(filteredContent[0].props.children[1].props.children[0].props.children[0].props.children + reference[0].desc);
+                    } else {
+                        setIntelliDesc('');
+                    }
+                } else {
+                    setIntelliContent([]);
+                    setIntelliDesc('');
+                }
+            }, 100);
+    
+            return () => clearTimeout(timer);
         }, [editorToken]);
     
         return (
