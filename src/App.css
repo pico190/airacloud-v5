@@ -927,3 +927,17 @@ h1, h2, h3, h4, h5, h6 {
   height: fit-content;
   opacity: 0.5;
 }
+
+.cm-foldPlaceholder {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+span[title="Unfold line"] > img, span[title="Fold line"] > img {
+  transform: translateY(1.5px);
+  user-select: none;
+}
+
+img::selection {
+  background-color: transparent!important;
+}
