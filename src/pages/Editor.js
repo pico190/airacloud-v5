@@ -175,7 +175,7 @@ export function Editor({urlparsed, sidinfo}) {
                         .slice(0, 10)
                         .map((element, index) => {
                             if(index === 0) {
-                                setIntelliDesc
+                                setIntelliDesc(element.desc)
                             }
 
                             return (<div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
