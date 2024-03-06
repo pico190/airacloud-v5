@@ -172,7 +172,6 @@ export function Editor({urlparsed, sidinfo}) {
                 
                 const timer = setTimeout(() => {
                         var desc = "";
-                        setLastInput(textToken.innerText);
                         const content = reference
                             .filter(element => element.name.startsWith(textToken.innerText))
                             .slice(0, 10)
