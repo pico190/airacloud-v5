@@ -155,7 +155,7 @@ export function Editor({urlparsed, sidinfo}) {
             reference.forEach(htmltag => {htmltags.push(htmltag.name)})
 
             document.querySelectorAll("span").forEach(elem => {
-                if(htmltags.includes(elem.innerText) && elem.className.includes("ͼ")) {
+                if(htmltags.includes(elem.innerText) && elem.className.includes("ͼ") && elem.nextElementSibling.innerText.includes(">")) {
                     elem.classList.add("_cTagExistent")
                 }
             })
@@ -163,7 +163,6 @@ export function Editor({urlparsed, sidinfo}) {
             
             // Update token
             seteditorToken(getEditorToken());
-            console.log(editorToken)
 
             // IntelliBox Position
             var cursor = document.getElementsByClassName("cm-cursor")[0]
