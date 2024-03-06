@@ -155,8 +155,9 @@ export function Editor({urlparsed, sidinfo}) {
             reference.forEach(htmltag => {htmltags.push(htmltag.name)})
 
             document.querySelectorAll("span").forEach(elem => {
-                if(htmltags.includes(elem.innerText))
-                elem.classList.add("ͼTagExistent")
+                if(htmltags.includes(elem.innerText) && htmltags.className.includes("ͼ")) {
+                    elem.classList.add("_cTagExistent")
+                }
             })
 
             
