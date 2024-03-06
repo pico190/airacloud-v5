@@ -41,7 +41,7 @@ body {
     --rt-opacity: 1;
 }
 
-*:not(.cm-theme *, .cm-theme) {
+*:not(.editorcontainer *, .editorcontainer) {
   font-family: 'Atkinson Hyperlegible';
   transition-duration: 0.1s;
 }
@@ -453,6 +453,7 @@ h1, h2, h3, h4, h5, h6 {
   .cm-info {
     background-color: var(--default-button);
     display: flex;
+    font-family: 'Atkinson Hyperlegible';
     height: var(--cm-info-height);
     border-top: 1px solid rgba(var(--textrgba), .1);
     padding-left: 8px;
