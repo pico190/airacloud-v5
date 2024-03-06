@@ -139,6 +139,7 @@ export function Editor({urlparsed, sidinfo}) {
 
             }) 
             var textToken = nearElem(lineArray, cursor)
+            console.log(textToken)
                 
             var intelli = document.getElementById("intelli");
             var intdesc = document.getElementById("intellidesc");
