@@ -155,7 +155,7 @@ export function Editor({urlparsed, sidinfo}) {
             var intellicontainer = document.getElementById("intellisense")
             var editor = document.getElementsByClassName("cm-editor")[0]
 
-            if(!editor.classList.contains("cm-focused")) {
+            if(!editor.classList.contains("cm-focused") || document.getElementsByClassName("cm-selectionBackground")[0]) {
                 intellicontainer.style.display="none"
             } else {
                 intellicontainer.style.display="flex"
