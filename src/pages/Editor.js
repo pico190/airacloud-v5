@@ -123,17 +123,20 @@ export function Editor({urlparsed, sidinfo}) {
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var lineArray = [];
             
-            Array.from(line.children).forEach(elem => {
+            if(line) {
 
-                var firstarray = elem.classList.contains("cm-matchingBracket") ? elem.children[0] : elem
-                if(elem.className!=="") {
-                    if(elem.localName==="span" && !elem.innerText.includes("<") && !elem.innerText.includes(">") && !elem.innerText.includes("/")) {
-                        lineArray.push(firstarray)
+                Array.from(line.children).forEach(elem => {
+
+                    var firstarray = elem.classList.contains("cm-matchingBracket") ? elem.children[0] : elem
+                    if(elem.className!=="") {
+                        if(elem.localName==="span" && !elem.innerText.includes("<") && !elem.innerText.includes(">") && !elem.innerText.includes("/")) {
+                            lineArray.push(firstarray)
+                        }
                     }
-                }
-
-            }) 
-            return nearElem(lineArray, cursor)
+    
+                }) 
+                return nearElem(lineArray, cursor)
+            } else {return false;}
                 
         }
 
@@ -163,34 +166,37 @@ export function Editor({urlparsed, sidinfo}) {
         useEffect(() => {
             var textToken = getEditorToken();
 
-            const timer = setTimeout(() => {
-                if (lastInput !== textToken.innerText) {
-                    var desc = "";
-                    setLastInput(textToken.innerText);
-                    const content = reference
-                        .filter(element => element.name.startsWith(textToken.innerText))
-                        .slice(0, 10)
-                        .map((element, index) => () => {
-                            desc = element.desc;
+            if(textToken) {
+                
+                const timer = setTimeout(() => {
+                    if (lastInput !== textToken.innerText) {
+                        var desc = "";
+                        setLastInput(textToken.innerText);
+                        const content = reference
+                            .filter(element => element.name.startsWith(textToken.innerText))
+                            .slice(0, 10)
+                            .map((element, index) => () => {
+                                desc = element.desc;
 
-                            return (
-                            <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
-                                <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
-                                <span><b>{textToken.innerText}</b>{element.name.replace(textToken.innerText, "")}</span>
-                                <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
-                            </div>
-                            )
-                        });
-                    setIntelliContent(
-                        <>
-                        <div id="intelli" >{content}</div>
-                        <div id="intellidesc" >{desc}</div>
-                        </>
-                        );
-                }
-            }, 100);
+                                return (
+                                <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
+                                    <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
+                                    <span><b>{textToken.innerText}</b>{element.name.replace(textToken.innerText, "")}</span>
+                                    <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
+                                </div>
+                                )
+                            });
+                        setIntelliContent(
+                            <>
+                            <div id="intelli" >{content}</div>
+                            <div id="intellidesc" >{desc}</div>
+                            </>
+                            );
+                    }
+                }, 100);
 
-            return () => clearTimeout(timer);
+                return () => clearTimeout(timer);
+            }
         }, [lastInput]);
     
         return (
