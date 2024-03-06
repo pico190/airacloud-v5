@@ -104,24 +104,24 @@ export function Editor({urlparsed, sidinfo}) {
         window.addEventListener("load", () => {
             if(intelliloaded===false) {
 
-                var cmtheme = document.getElementsByClassName("cm-theme")[0]
+                var cminfo = document.getElementById("cm-info")
             
                 loadIntelli(true)
     
-                if(!document.getElementById("cm-info")) {
-                    cmtheme.innerHTML = cmtheme.innerHTML + `<div class="cm-info" id="cm-info">Downloading IntelliSense...</div>`
+                if(cminfo) {
+                    
+                    if(localStorage.getItem("htmlintelli")) {
+                        setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
+                        cminfo.innerHTML="Updating IntelliSense..."
+        
+                    }
+        
+                    $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
+                        setReference(data);
+                        cminfo.style.color="transparent"
+                        localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
+                    }) 
                 }
-                if(localStorage.getItem("htmlintelli")) {
-                    setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
-                    document.getElementById("cm-info").innerHTML="Updating IntelliSense..."
-    
-                }
-    
-                $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
-                    setReference(data);
-                    document.getElementById("cm-info").style.display="none"
-                    localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
-                }) 
     
 
             }
@@ -181,7 +181,10 @@ export function Editor({urlparsed, sidinfo}) {
                     <style children={`.cm-editor, .cm-editor * {font-size: ${options.fontsize}px;}`} id="fontsize" />         
                     <style children={`.cm-editor, .cm-editor * {font-family: ${options.fontfamily};}`} id="fontfamily" />
                     
-                    <div style={{width: "100%", height: "100%"}} className="cm-theme" ref={editor} />
+                    <div className="editorcontainer">
+                        <div style={{width: "100%", height: "100%"}} className="cm-theme" ref={editor} />
+                        <div className="cm-info" id="cm-info" children="Download IntelliSense..." />
+                    </div>
                     {
                         // <div className="iframe">
                         //     <div className="url">
