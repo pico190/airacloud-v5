@@ -166,6 +166,7 @@ export function Editor({urlparsed, sidinfo}) {
 
         useEffect(() => {
             var textToken = getEditorToken();
+            console.log(textToken)
 
             if(textToken) {
                 
