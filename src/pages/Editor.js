@@ -47,7 +47,6 @@ export function Editor({urlparsed, sidinfo}) {
         // eslint-disable-next-line
         const [ reference, setReference ] = useState([]);
         const [ lastInput, setLastinput ] = useState("");
-        const [ intelliCount, setintelliCount ] = useState(0);
         const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
         const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
         var [ options, setOptions ] = useState({
@@ -162,22 +161,22 @@ export function Editor({urlparsed, sidinfo}) {
                     if(lastInput!==textToken.innerText) {
                             
                         intelli.innerHTML = ``;
-                        setintelliCount(0)
+                        var count = 0
 
                         reference.forEach(element => {
-                            if (element.name.startsWith(textToken.innerText) && intelliCount < 10) {
+                            if (element.name.startsWith(textToken.innerText) && count < 10) {
 
                                 intelli.innerHTML += `
-                                <div class="intellitem ${intelliCount===0 ? "intelliselected" : ""}" id="${element.name}">
+                                <div class="intellitem ${count===0 ? "intelliselected" : ""}" id="${element.name}">
                                     <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt="" alt=""/>
                                     <span><b>${textToken.innerText}</b>${element.name.replace(textToken.innerText, "")}</span>
                                     <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
                                 </div>
                                 `;
-                                if(intelliCount===0) {
+                                if(count===0) {
                                     intdesc.innerHTML = element.desc;
                                 }
-                                setintelliCount(intelliCount + 1)
+                                count++;
                             }
                         });
 
