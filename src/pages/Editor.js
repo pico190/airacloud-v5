@@ -114,12 +114,13 @@ export function Editor({urlparsed, sidinfo}) {
 
         })
 
+        
+        var cursor = document.getElementsByClassName("cm-cursor")[0]
+
         // getToken (cursor word)
         function getEditorToken() {
             
             var line = document.getElementsByClassName("cm-activeLine")[0]
-            var cursor = document.getElementsByClassName("cm-cursor")[0]
-
             var lineArray = [];
             
             Array.from(line.children).forEach(elem => {
@@ -147,7 +148,6 @@ export function Editor({urlparsed, sidinfo}) {
             // IntelliBox Position
             var intellicontainer = document.getElementById("intellisense")
             var editor = document.getElementsByClassName("cm-editor")[0]
-
 
             if(!editor.classList.contains("cm-focused")) {
                 intellicontainer.style.display="none"
