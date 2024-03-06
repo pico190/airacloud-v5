@@ -175,14 +175,14 @@ export function Editor({urlparsed, sidinfo}) {
                         .slice(0, 10)
                         .map((element, index) => {
                             if(index === 0) {
-                                setIntelliDesc(element.desc)
+                                setIntelliDesc
                             }
 
-                            <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
+                            return (<div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
                                 <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
                                 <span><b>{editorToken}</b>{element.name.replace(editorToken, "")}</span>
                                 <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
-                            </div>
+                            </div>)
                         });
                     setIntelliContent(filteredContent);
                 } else {
@@ -220,7 +220,7 @@ export function Editor({urlparsed, sidinfo}) {
                     <div className="editorcontainer">
                         <div id="intellisense" className="intellisense" >
                             <div id="intelli">{intelliContent}</div>
-                            <div id="intellidesc">{intelliDesc}</div>
+                            <div id="intellidesc" dangerouslySetInnerHTML={{__html: intelliDesc}}></div>
                         </div>
                         <CodeMirror
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
