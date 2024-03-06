@@ -118,13 +118,13 @@ export function SBContent({ sidinfo }) {
     </div>
 
     <div className="account">
-        <div data-tooltip-id="profile" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=person" /></div>
+        <div data-tooltip-id="profile" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=person" loading="lazy" alt="" /></div>
 
         <div className="account-separator"/>
-        <div data-tooltip-id="search" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=search" /></div>
+        <div data-tooltip-id="search" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=search" loading="lazy" alt="" /></div>
 
         <div className="account-separator"/>
-        <div data-tooltip-id="notifications" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=alert" /></div>
+        <div data-tooltip-id="notifications" className="account-icon"><img src="https://xploit.men/scdn/?fluenticons&amp;name=alert" loading="lazy" alt="" /></div>
     </div>
       <ReactTooltip
         id="profile"

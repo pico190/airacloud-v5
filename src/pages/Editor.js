@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState} from "react";
+import React, { useEffect, useState} from "react";
 
 import { SideBar } from './editorc/Sidebar'
-import { LoadWeb } from '../utils/LoadWeb'
+// import { LoadWeb } from '../utils/LoadWeb'
 
 import { encode, decode } from 'js-base64'
 
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
-import { color, colorView, colorTheme } from '@uiw/codemirror-extensions-color';
-import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
+import { color } from '@uiw/codemirror-extensions-color';
+// import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 
@@ -43,14 +43,15 @@ export function Editor({urlparsed, sidinfo}) {
     
         const refreshMode = {delay: 0}
 
+        // eslint-disable-next-line
         const [ reference, setReference ] = useState([]);
-        const [ intelliloaded, loadIntelli ] = useState(false);
-        const [ codeValue, setCodeValue ] = useState(code);
+        const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
+        const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay,
             fontsize: "20",
             fontfamily: "Consolas"
-        });
+        }); // eslint-disable-next-line
         var [ files, setFiles ] = useState([
             {
                 type: "react",
@@ -60,10 +61,11 @@ export function Editor({urlparsed, sidinfo}) {
                 active: true,
                 token: "patatas"
             }
-        ]);
+        ]); // eslint-disable-next-line
         var [ filesrender, setFilesrender ] = useState(<></>);
         useEffect(() => {
 
+             // eslint-disable-next-line
             var rendering = <></>
 
             files.forEach(elem => {
@@ -123,7 +125,7 @@ export function Editor({urlparsed, sidinfo}) {
                 // var linecontent = line.innerText
      
                 // Intelli
-
+                // eslint-disable-next-line
                 var textToken = nearElem(line.children, cursor)
 
 

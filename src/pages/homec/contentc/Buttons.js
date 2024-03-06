@@ -1,6 +1,6 @@
 export function Button({ children, icon, icontype, onClick }) {
     var iconurl;
-    if(icontype === "airaicon") {
+    if(icontype === "airaicon") {  // eslint-disable-next-line
         iconurl = `https://`+window.location.host+`/airaicons/${icon}.svg`; {/*https://airacloud-v5-d1.vercel.app/airaicons/react.svg'*/}
     } else {
         iconurl = `https://xploit.men/scdn/?fluenticons&name=${icon}&type=fluent&fill=white`; 

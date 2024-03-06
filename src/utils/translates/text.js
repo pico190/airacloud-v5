@@ -7,7 +7,7 @@ export function Text({ id, var1 = "", var1r = "●" }) {
     var [text, setText] = useState("")
 
     useEffect(() => {
-        setText(langs[id].replace(var1r, var1))
+        setText(langs[id].replace(var1r, var1))  // eslint-disable-next-line
     }, [langs])
 
     return (
