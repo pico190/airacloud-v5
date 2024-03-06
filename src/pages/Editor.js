@@ -127,54 +127,53 @@ export function Editor({urlparsed, sidinfo}) {
             var cursor = document.getElementsByClassName("cm-cursor")[0]
 
             var textToken = nearElem(line.children, cursor)
-            console.log(textToken.innerText)
                 
-            // var intelli = document.getElementById("intelli");
-            // var intdesc = document.getElementById("intellidesc");
+            var intelli = document.getElementById("intelli");
+            var intdesc = document.getElementById("intellidesc");
 
-            // if(line!==undefined && 
-            //    cursor!==undefined && 
-            //    intellisense!==undefined &&
-            //    textToken!==undefined &&
+            if(line && 
+               cursor && 
+               intellisense &&
+               textToken &&
 
-            //    intelli!==undefined &&
-            //    intdesc!==undefined 
-            //    ) {
-            //     // var linecontent = line.innerText
+               intelli &&
+               intdesc 
+               ) {
+                // var linecontent = line.innerText
      
-            //     // Intelli
-            //     // eslint-disable-next-line
+                // Intelli
+                // eslint-disable-next-line
 
 
 
-            //         if(lastInput!==textToken) {
+                    if(lastInput!==textToken.innerText) {
                             
-            //             intelli.innerHTML = ``;
-            //             setintelliCount(0)
+                        intelli.innerHTML = ``;
+                        setintelliCount(0)
 
-            //             reference.forEach(element => {
-            //                 if (element.name.startsWith(textToken) && intelliCount < 10) {
+                        reference.forEach(element => {
+                            if (element.name.startsWith(textToken.innerText) && intelliCount < 10) {
 
-            //                     intelli.innerHTML += `
-            //                     <div class="intellitem ${intelliCount===0 ? "intelliselected" : ""}" id="${element.name}">
-            //                         <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt="" alt=""/>
-            //                         <span><b>${textToken}</b>${element.name.replace(textToken, "")}</span>
-            //                         <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
-            //                     </div>
-            //                     `;
-            //                     if(intelliCount===0) {
-            //                         intdesc.innerHTML = element.desc;
-            //                     }
-            //                     setintelliCount(intelliCount + 1)
-            //                 }
-            //             });
+                                intelli.innerHTML += `
+                                <div class="intellitem ${intelliCount===0 ? "intelliselected" : ""}" id="${element.name}">
+                                    <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt="" alt=""/>
+                                    <span><b>${textToken.innerText}</b>${element.name.replace(textToken.innerText, "")}</span>
+                                    <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
+                                </div>
+                                `;
+                                if(intelliCount===0) {
+                                    intdesc.innerHTML = element.desc;
+                                }
+                                setintelliCount(intelliCount + 1)
+                            }
+                        });
 
-            //             setLastinput(textToken)
-            //         }
+                        setLastinput(textToken.innerText)
+                    }
 
 
 
-            // }
+            }
 
         }, 100)
     
