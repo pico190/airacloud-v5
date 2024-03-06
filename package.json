@@ -17,6 +17,7 @@
     "@codemirror/lang-html": "6.4.8",
     "@uiw/codemirror-extensions-color": "4.21.24",
     "@uiw/codemirror-extensions-hyper-link": "4.21.24",
+    "@lezer/highlight": "1.2.0",
     
     "@vercel/analytics": "1.2.2",
     "@vercel/speed-insights": "1.0.10",

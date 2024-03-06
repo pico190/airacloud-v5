@@ -9,11 +9,12 @@ import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { color } from '@uiw/codemirror-extensions-color';
+import { tags as t } from '@lezer/highlight';
 // import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 
-import { vscodeDark } from '@uiw/codemirror-theme-vscode';
+import { vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
 import { nearElem } from "../utils/generalfuncs";
 
 import $ from 'jquery'
@@ -227,7 +228,12 @@ export function Editor({urlparsed, sidinfo}) {
                         <CodeMirror
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
                             value={codeValue}
-                            theme={vscodeDark}
+                            theme={vscodeDarkInit({
+                                styles: [
+                                    {tag: t.tagName, color: '#4ec9b0'},
+                                    {tag: t.tagNameStandard, color: '#569cd6'}
+                                ]
+                            })}
                             options={{
                                 autocompletion: false
                             }}
