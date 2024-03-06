@@ -883,9 +883,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .intellisense {
   position: absolute;
+  z-index: 1000;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
-.intelli {
+#intelli {
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
