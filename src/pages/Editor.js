@@ -151,16 +151,6 @@ export function Editor({urlparsed, sidinfo}) {
             Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
             Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
             
-            var htmltags = []
-            reference.forEach(htmltag => {htmltags.push(htmltag.name)})
-
-            document.querySelectorAll("span").forEach(elem => {
-                if(htmltags.includes(elem.innerText) && elem.className.includes("ͼ") && elem.nextElementSibling.innerText.includes(">")) {
-                    elem.classList.add("_cTagExistent")
-                }
-            })
-
-            
             // Update token
             seteditorToken(getEditorToken());
 
@@ -179,6 +169,17 @@ export function Editor({urlparsed, sidinfo}) {
 
 
         }, 100)
+        setInterval(() => {
+            
+            var htmltags = []
+            reference.forEach(htmltag => {htmltags.push(htmltag.name)})
+
+            document.querySelectorAll("span").forEach(elem => {
+                if(htmltags.includes(elem.innerText) && elem.className.includes("ͼ") && elem.nextElementSibling.innerText.includes(">")) {
+                    elem.classList.add("_cTagExistent")
+                }
+            })
+        }, 1)
 
         useEffect(() => {
             const timer = setTimeout(() => {
