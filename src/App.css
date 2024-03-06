@@ -892,6 +892,8 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   background-color: var(--default-button-hover);
   transform: translateY(60px);
+  display: flex;
+  flex-direction: column;
 }
 
 #intelli {
