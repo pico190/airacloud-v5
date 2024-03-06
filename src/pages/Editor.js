@@ -132,14 +132,13 @@ export function Editor({urlparsed, sidinfo}) {
 
                 var firstarray = elem.classList.contains("cm-matchingBracket") ? elem.children[0] : elem
                 if(elem.className!=="") {
-                    if(elem.localName==="span") {
+                    if(elem.localName==="span" && elem.innerText.length>=2) {
                         lineArray.push(firstarray)
                     }
                 }
 
             }) 
             var textToken = nearElem(lineArray, cursor)
-            console.log(textToken.innerText)
                 
             var intelli = document.getElementById("intelli");
             var intdesc = document.getElementById("intellidesc");
@@ -152,6 +151,7 @@ export function Editor({urlparsed, sidinfo}) {
                intelli &&
                intdesc 
                ) {
+                console.log(textToken.innerText, lineArray)
                 // var linecontent = line.innerText
      
                 // Intelli
