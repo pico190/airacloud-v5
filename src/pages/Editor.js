@@ -163,6 +163,8 @@ export function Editor({urlparsed, sidinfo}) {
                 referencenames.push(elem.name)
             })
 
+            console.log(referencenames.includes(editorToken), "|", referencenames)
+
             if(!editor.classList.contains("cm-focused") || document.getElementsByClassName("cm-selectionBackground")[0] || referencenames.includes(editorToken)) {
                 intellicontainer.style.display="none"
             } else {
