@@ -46,6 +46,8 @@ export function Editor({urlparsed, sidinfo}) {
 
         // eslint-disable-next-line
         const [ reference, setReference ] = useState([]);
+        const [ lastInput, setLastinput ] = useState("");
+        const [ intelliCount, setintelliCount ] = useState(0);
         const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
         const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
         var [ options, setOptions ] = useState({
@@ -111,21 +113,56 @@ export function Editor({urlparsed, sidinfo}) {
             }
 
         })
+        
         setInterval(() => {
+
+
 
             Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
             Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
             Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
 
+            var intellisense = document.getElementById("intellisense")
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
 
-            if(line!==undefined && cursor!==undefined) {
+            if(line!==undefined && cursor!==undefined && intellisense!==undefined) {
                 // var linecontent = line.innerText
      
                 // Intelli
                 // eslint-disable-next-line
-                var textToken = nearElem(line.children, cursor)
+                var textToken = nearElem(line.children, cursor).innerText
+                
+                var intelli = document.getElementById("intelli");
+                var intdesc = document.getElementById("intellidesc");
+
+
+
+                    if(lastInput!==textToken) {
+                            
+                        intelli.innerHTML = ``;
+                        setintelliCount(0)
+
+                        reference.forEach(element => {
+                            if (element.name.startsWith(textToken) && intelliCount < 10) {
+
+                                intelli.innerHTML += `
+                                <div class="intellitem ${intelliCount===0 ? "intelliselected" : ""}" id="${element.name}">
+                                    <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt="" alt=""/>
+                                    <span><b>${textToken}</b>${element.name.replace(textToken, "")}</span>
+                                    <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
+                                </div>
+                                `;
+                                if(intelliCount===0) {
+                                    desc.innerHTML = element.desc;
+                                }
+                                setintelliCount(intelliCount + 1)
+                            }
+                        });
+
+                        setLastinput(textToken)
+                    }
+
 
 
             }
@@ -137,7 +174,7 @@ export function Editor({urlparsed, sidinfo}) {
             <>
             <div id="intellisense" className="intellisense" >
                 <div id="intelli" />
-                <div id="desc" />
+                <div id="intellidesc" />
             </div>
 
             <SideBar title="Codemirror Playground" >
@@ -165,7 +202,7 @@ export function Editor({urlparsed, sidinfo}) {
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
                             value={codeValue}
                             theme={vscodeDark}
-                            autocomplete={false}
+                            autocompletion={false}
                         />
                         <div className="cm-info" id="cm-info" children="Download IntelliSense..." />
                     </div>
