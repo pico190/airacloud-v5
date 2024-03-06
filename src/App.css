@@ -1001,3 +1001,7 @@ img::selection {
 .cm-gutter.cm-foldGutter {
   width: 26px!important;
 }
+
+.ͼTagExistent {
+  color: #569cd6!important;
+}
