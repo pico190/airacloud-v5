@@ -153,29 +153,31 @@ export function Editor({urlparsed, sidinfo}) {
                 // var linecontent = line.innerText
      
                 // Intelli
-
-                        console.log(lastInput, "|", textToken.innerText, ">", lastInput!==textToken.innerText)
+                        
+                    console.log(lastInput, "|", textToken.innerText, ">", lastInput!==textToken.innerText)
                     if(lastInput!==textToken.innerText) {
                             
                         intelli.innerHTML = ``;
-                        var count = 0
 
-                        reference.forEach(element => {
-                            if (element.name.startsWith(textToken.innerText) && count < 10) {
-
-                                intelli.innerHTML += `
-                                <div class="intellitem ${count===0 ? "intelliselected" : ""}" id="${element.name}">
-                                    <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt="" alt=""/>
-                                    <span><b>${textToken.innerText}</b>${element.name.replace(textToken.innerText, "")}</span>
-                                    <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
-                                </div>
-                                `;
-                                if(count===0) {
-                                    intdesc.innerHTML = element.desc;
+                        setTimeout(() => {
+                            
+                            var count = 0
+                            reference.forEach(element => {
+                                if (element.name.startsWith(textToken.innerText) && count < 10) {
+                                    intelli.innerHTML += `
+                                    <div class="intellitem ${count===0 ? "intelliselected" : ""}" id="${element.name}">
+                                        <img src="https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg" alt="" alt=""/>
+                                        <span><b>${textToken.innerText}</b>${element.name.replace(textToken.innerText, "")}</span>
+                                        <div class="intelliseparator"><span>${element.cat !== undefined ? element.cat : ""}</span></div>
+                                    </div>
+                                    `;
+                                    if(count===0) {
+                                        intdesc.innerHTML = element.desc;
+                                    }
+                                    count++;
                                 }
-                                count++;
-                            }
-                        });
+                            });
+                        }, 100)
 
                         lastInput = textToken.innerText
                     }
