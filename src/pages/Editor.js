@@ -127,7 +127,7 @@ export function Editor({urlparsed, sidinfo}) {
             var cursor = document.getElementsByClassName("cm-cursor")[0]
 
             var textToken = nearElem(line.children, cursor)
-            console.log(textToken)
+            console.log(textToken.innerText)
                 
             // var intelli = document.getElementById("intelli");
             // var intdesc = document.getElementById("intellidesc");
