@@ -9,11 +9,12 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
 
-    "@canvasjs/charts": "^3.7.40",
+    "@canvasjs/charts": "^3.7.42",
     
     "@uiw/react-codemirror": "4.21.24",
     "@uiw/codemirror-theme-vscode": "4.21.24",
     "@codemirror/lang-javascript": "6.2.2",
+    "@codemirror/lang-html": "6.4.8",
     "@uiw/codemirror-extensions-color": "4.21.24",
     "@uiw/codemirror-extensions-hyper-link": "4.21.24",
     

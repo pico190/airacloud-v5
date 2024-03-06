@@ -29,7 +29,7 @@ body {
     --modal-button: #1D2126;
     --cm-info-height: 24px;
 
-    --editor-font-size: 14px;
+    --editor-font-size: 16px;
     --editor-font-family: 'Consolas';
 }
 
@@ -962,4 +962,8 @@ img::selection {
 
 .cm-gutters:hover span[title="Unfold line"], .cm-gutters:hover span[title="Fold line"] {
   opacity: 1;
+}
+
+.cm-gutters::selection, .cm-gutters *::selection {
+  background-color: transparent!important;
 }

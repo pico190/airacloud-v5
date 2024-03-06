@@ -7,6 +7,7 @@ import { encode, decode } from 'js-base64'
 
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
+import { html } from '@codemirror/lang-html';
 import { color } from '@uiw/codemirror-extensions-color';
 // import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 
@@ -161,7 +162,7 @@ export function Editor({urlparsed, sidinfo}) {
                     
                     <div className="editorcontainer">
                         <CodeMirror
-                            extensions={[javascript({ jsx: true }), color]}
+                            extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
                             value={codeValue}
                             theme={vscodeDark}
                             autocomplete={false}
