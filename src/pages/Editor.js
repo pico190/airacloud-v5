@@ -150,12 +150,20 @@ export function Editor({urlparsed, sidinfo}) {
             Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
             Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
 
+            // Update token
+            seteditorToken(getEditorToken());
+
             // IntelliBox Position
             var cursor = document.getElementsByClassName("cm-cursor")[0]
             var intellicontainer = document.getElementById("intellisense")
             var editor = document.getElementsByClassName("cm-editor")[0]
 
-            if(!editor.classList.contains("cm-focused") || document.getElementsByClassName("cm-selectionBackground")[0]) {
+            var referencenames = []
+            reference.forEach(elem => {
+                referencenames.push(elem.name)
+            })
+
+            if(!editor.classList.contains("cm-focused") || document.getElementsByClassName("cm-selectionBackground")[0] || referencenames.includes(editorToken)) {
                 intellicontainer.style.display="none"
             } else {
                 intellicontainer.style.display="flex"
@@ -163,7 +171,6 @@ export function Editor({urlparsed, sidinfo}) {
                 intellicontainer.style.top = cursor.offsetTop + "px"
             }
 
-            seteditorToken(getEditorToken());
 
         }, 100)
 
