@@ -129,6 +129,10 @@ export function Editor({urlparsed, sidinfo}) {
         })
         setInterval(() => {
 
+            Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => {
+                elem.style.background = "#243047"
+            }) 
+
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
 
