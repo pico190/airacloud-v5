@@ -169,17 +169,17 @@ export function Editor({urlparsed, sidinfo}) {
 
 
         }, 100)
-        setInterval(() => {
+        // setInterval(() => {
             
-            var htmltags = []
-            reference.forEach(htmltag => {htmltags.push(htmltag.name)})
+        //     var htmltags = []
+        //     reference.forEach(htmltag => {htmltags.push(htmltag.name)})
 
-            document.querySelectorAll("span").forEach(elem => {
-                if(htmltags.includes(elem.innerText) && elem.className.includes("ͼ") && elem.nextElementSibling.innerText.includes(">")) {
-                    elem.classList.add("_cTagExistent")
-                }
-            })
-        }, 1)
+        //     document.querySelectorAll("span").forEach(elem => {
+        //         if(htmltags.includes(elem.innerText) && elem.className.includes("ͼ") && elem.nextElementSibling.innerText.includes(">")) {
+        //             elem.classList.add("_cTagExistent")
+        //         }
+        //     })
+        // }, 1)
 
         useEffect(() => {
             const timer = setTimeout(() => {
@@ -245,8 +245,8 @@ export function Editor({urlparsed, sidinfo}) {
 
                                 },
                                 styles: [
-                                    {tag: "tagName", color: '#4ec9b0'},
-                                    {tag: "tagNameStandard", color: '#569cd6'}
+                                    { tag: t.tagName, color: '#4ec9b0' },
+                                    { tag: t.standard(t.tagName), color: '#569cd6' },
                                 ]
                             })}
                             options={{
