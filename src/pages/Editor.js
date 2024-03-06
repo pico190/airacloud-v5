@@ -48,7 +48,7 @@ export function Editor({urlparsed, sidinfo}) {
         const [ reference, setReference ] = useState([]);
         const [lastInput, setLastInput] = useState('');
         const [intelliContent, setIntelliContent] = useState('');
-        // const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
+        const [ intelliloaded, loadIntelli ] = useState(false); // eslint-disable-next-line
         const [ codeValue, setCodeValue ] = useState(code); // eslint-disable-next-line
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay,
@@ -114,18 +114,11 @@ export function Editor({urlparsed, sidinfo}) {
 
         })
 
-        setInterval(() => {
-
-
-
-            Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
-            Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
-            Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
-
-            var intellisense = document.getElementById("intellisense")
+        // getToken (cursor word)
+        function getEditorToken() {
+            
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
-            var editor = document.getElementsByClassName("cm-editor")[0]
 
             var lineArray = [];
             
@@ -139,11 +132,22 @@ export function Editor({urlparsed, sidinfo}) {
                 }
 
             }) 
-            var textToken = nearElem(lineArray, cursor)
+            return nearElem(lineArray, cursor)
                 
-            var intelli = document.getElementById("intelli");
+        }
+
+        setInterval(() => {
+
+
+            // Details
+            Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
+            Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
+            Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
+
+            // IntelliBox Position
             var intellicontainer = document.getElementById("intellisense")
-            var intdesc = document.getElementById("intellidesc");
+            var editor = document.getElementsByClassName("cm-editor")[0]
+
 
             if(!editor.classList.contains("cm-focused")) {
                 intellicontainer.style.display="none"
@@ -153,41 +157,36 @@ export function Editor({urlparsed, sidinfo}) {
                 intellicontainer.style.top = cursor.offsetTop + "px"
             }
 
-            if(line && 
-               cursor && 
-               intellisense &&
-               textToken &&
-
-               intelli &&
-               intdesc 
-               ) {
-                // var linecontent = line.innerText
-     
-                // Intelli
-                
-                    console.log(lastInput, "|", textToken.innerText, ">", lastInput!==textToken.innerText)
-                   
-
-
-            }
 
         }, 100)
 
         useEffect(() => {
+            var textToken = getEditorToken();
+
             const timer = setTimeout(() => {
                 if (lastInput !== textToken.innerText) {
+                    var desc = "";
                     setLastInput(textToken.innerText);
                     const content = reference
                         .filter(element => element.name.startsWith(textToken.innerText))
                         .slice(0, 10)
-                        .map((element, index) => (
+                        .map((element, index) => () => {
+                            desc = element.desc;
+
+                            return (
                             <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
                                 <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
                                 <span><b>{textToken.innerText}</b>{element.name.replace(textToken.innerText, "")}</span>
                                 <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
                             </div>
-                        ));
-                    setIntelliContent(content);
+                            )
+                        });
+                    setIntelliContent(
+                        <>
+                        <div id="intelli" >{content}</div>
+                        <div id="intellidesc" >{desc}</div>
+                        </>
+                        );
                 }
             }, 100);
 
