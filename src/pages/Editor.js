@@ -126,7 +126,19 @@ export function Editor({urlparsed, sidinfo}) {
             var line = document.getElementsByClassName("cm-activeLine")[0]
             var cursor = document.getElementsByClassName("cm-cursor")[0]
 
-            var textToken = nearElem(line.children, cursor)
+            var lineArray = [];
+            
+            Array.from(line.children).forEach(elem => {
+
+                firstarray = elem.classList.contains("cm-matchingBracket") ? elem.children[0] : elem
+                if(elem.className!=="") {
+                    if(elem.localName==="span") {
+                        lineArray.push(firstarray)
+                    }
+                }
+
+            }) 
+            var textToken = nearElem(lineArray, cursor)
                 
             var intelli = document.getElementById("intelli");
             var intdesc = document.getElementById("intellidesc");
