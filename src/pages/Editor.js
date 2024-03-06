@@ -149,8 +149,7 @@ export function Editor({urlparsed, sidinfo}) {
             Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
             Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
             Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
-            Array.from(document.querySelectorAll('.cm-line')).forEach(elem => {elem.innerHTML = elem.innerHTML.replace(/<span class="cm-matchingBracket"><span class="ͼ1e">\(<\/span><\/span><span class="cm-matchingBracket"><span class="ͼ1e">\)<\/span><\/span>/g, `<span class="cm-matchingBracket"><span class="ͼ1e">()</span></span>`)})
-
+            
             // Update token
             seteditorToken(getEditorToken());
             console.log(editorToken)
