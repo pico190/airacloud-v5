@@ -182,7 +182,7 @@ export function Editor({urlparsed, sidinfo}) {
                     <style children={`.cm-editor, .cm-editor * {font-family: ${options.fontfamily};}`} id="fontfamily" />
                     
                     <div className="editorcontainer">
-                        <div style={{width: "100%", height: "100%"}} className="cm-theme" ref={editor} />
+                        <div className="cm-theme" ref={editor} />
                         <div className="cm-info" id="cm-info" children="Download IntelliSense..." />
                     </div>
                     {
