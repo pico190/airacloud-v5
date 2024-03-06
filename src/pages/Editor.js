@@ -230,8 +230,8 @@ export function Editor({urlparsed, sidinfo}) {
                             value={codeValue}
                             theme={vscodeDarkInit({
                                 styles: [
-                                    {tag: t.tagName, color: '#4ec9b0'},
-                                    {tag: t.tagNameStandard, color: '#569cd6'}
+                                    {tag: "tagName", color: '#4ec9b0'},
+                                    {tag: "tagNameStandard", color: '#569cd6'}
                                 ]
                             })}
                             options={{
