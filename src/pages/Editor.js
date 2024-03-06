@@ -177,7 +177,7 @@ export function Editor({urlparsed, sidinfo}) {
                                     count++;
                                 }
                             });
-                        }, 100)
+                        }, 20)
 
                         lastInput = textToken.innerText
                     }
