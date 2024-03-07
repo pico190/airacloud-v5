@@ -148,9 +148,9 @@ export function Editor({urlparsed, sidinfo}) {
             
             document.querySelectorAll("span").forEach(span => {
                 if(span.innerText===">") {
-                    spanstyle = window.getComputedStyle(span);
-                    cssvarjson = hexToRgb(spanstyle.getPropertyValue('--cm-md-meta'))
-                    cssvar = `rgb(${cssvarjson.r}, ${cssvarjson.g}, ${cssvarjson.b})`
+                    var spanstyle = window.getComputedStyle(span);
+                    var cssvarjson = hexToRgb(spanstyle.getPropertyValue('--cm-md-meta'))
+                    var cssvar = `rgb(${cssvarjson.r}, ${cssvarjson.g}, ${cssvarjson.b})`
                     if(cssvar === spanstyle.color) {
                         span.classList.add("cm-md-quote")
                     }
