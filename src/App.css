@@ -989,10 +989,6 @@ img::selection {
   width: 26px!important;
 }
 
-.cm-editor span {
-  transition-duration: 0.1s;
-}
-
 .cm-spacematch {
   background-color: transparent!important;
 }

@@ -136,10 +136,8 @@ export function Editor({urlparsed, sidinfo}) {
             } else {return false;}
                 
         }
-
         setInterval(() => {
-
-
+            
             // Details
             Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
             Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
@@ -156,6 +154,10 @@ export function Editor({urlparsed, sidinfo}) {
                     }
                 }
             })
+
+        }, 1)
+
+        setInterval(() => {
 
             // Update token
             seteditorToken(getEditorToken());
