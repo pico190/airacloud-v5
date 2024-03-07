@@ -1002,6 +1002,9 @@ img::selection {
 .cm-nonmatchingBracket {
   background-color: transparent!important;
 }
+.cm-md-quote {
+  color: var(--cm-md-quote-meta)!important;
+}
 :root {
   /* 
   - AiraCodeMirror 
@@ -1089,6 +1092,7 @@ img::selection {
   /* (In md) Separates */ --cm-md-content-separator: var(--cm-line-comment);
   /* (In md) Lists */     --cm-md-list:              var(--cm-foreground);
   /* (In md) Quote */     --cm-md-quote:             var(--cm-foreground);
+  /* (In md) Quote */     --cm-md-quote-meta:        #6a9955;
   /* (In md) Bold */      --cm-md-bold:              #6796e6;
   /* (In md) Italic */    --cm-md-emphasis:          rgba(var(--textrgba), .7);
   /* (In md) Link */      --cm-md-link:              var(--cm-url);

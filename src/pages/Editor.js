@@ -19,6 +19,7 @@ import { color } from '@uiw/codemirror-extensions-color';
 import { spaces } from "../utils/generalfuncs";
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 
+import { hexToRgb } from "../utils/generalfuncs";
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 
 import { airatheme } from "../utils/codemirror/airatheme";
@@ -145,6 +146,17 @@ export function Editor({urlparsed, sidinfo}) {
             Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
             Array.from(document.querySelectorAll('.cm-selectionMatch')).forEach(elem => {spaces(elem.innerText) ? elem.classList.add("cm-spacematch") : elem.classList.remove("cm-spacematch")})
             
+            document.querySelectorAll("span").forEach(span => {
+                if(span.innerText===">") {
+                    spanstyle = window.getComputedStyle(span);
+                    cssvarjson = hexToRgb(spanstyle.getPropertyValue('--cm-md-meta'))
+                    cssvar = `rgb(${cssvarjson.r}, ${cssvarjson.g}, ${cssvarjson.b})`
+                    if(cssvar === spanstyle.color) {
+                        span.classList.add("cm-md-quote")
+                    }
+                }
+            })
+
             // Update token
             seteditorToken(getEditorToken());
 
