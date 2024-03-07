@@ -1005,7 +1005,12 @@ img::selection {
 .cm-spacematch {
   background-color: transparent!important;
 }
-
+.cm-nonmatchingBracket span {
+  color: var(--cm-nonMatching)!important;
+}
+.cm-nonmatchingBracket {
+  background-color: transparent!important;
+}
 :root {
   /* 
   - AiraCodeMirror 
@@ -1022,6 +1027,7 @@ img::selection {
   /* Color of border of line number                            */ --cm-gutter-border:            transparent;
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
+  /* Color of not closed tags                                  */ --cm-nonMatching:              #d12e2e;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
 
   /* ---------------- Completion Colors */
