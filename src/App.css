@@ -36,7 +36,6 @@ body {
 
 * {
     box-sizing: border-box;
-    color: var(--text);
     scroll-behavior: smooth;
     --rt-opacity: 1;
 }
@@ -44,6 +43,7 @@ body {
 *:not(.editorcontainer *, .editorcontainer) {
   font-family: 'Atkinson Hyperlegible';
   transition-duration: 0.1s;
+  color: var(--text);
 }
 
 img {
@@ -460,6 +460,7 @@ h1, h2, h3, h4, h5, h6 {
     height: var(--cm-info-height);
     border-top: 1px solid rgba(var(--textrgba), .1);
     padding-left: 8px;
+    color: var(--text);
   }
   .content-left {
     display: flex;
