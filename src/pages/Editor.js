@@ -28,24 +28,6 @@ import $ from 'jquery'
 
 
 export function Editor({urlparsed, sidinfo}) {
-                                                                                                var projectId
-                                                                                                try {
-                                                                                                    projectId = urlparsed[1];
-                                                                                                    if(projectId.length === 0) {
-                                                                                                        projectId = "none";
-                                                                                                        return (
-                                                                                                            <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
-                                                                                                        )
-                                                                                                    }
-                                                                                                } catch(err) {
-                                                                                                    projectId = "none";
-                                                                                                    return (
-                                                                                                        <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
-                                                                                                    )
-                                                                                                }
-
-        
-
         // var iframelangs=["html", "php"]
 
         const code = "console.log('hello world!');";
