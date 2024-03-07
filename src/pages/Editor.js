@@ -14,7 +14,7 @@ import { tags as t } from '@lezer/highlight';
 
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 
-import { vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
+import { airatheme } from "../utils/codemirror/airatheme";
 import { nearElem } from "../utils/generalfuncs";
 
 import $ from 'jquery'
@@ -238,16 +238,7 @@ export function Editor({urlparsed, sidinfo}) {
                         <CodeMirror
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
                             value={codeValue}
-                            theme={vscodeDarkInit({
-                                settings: {
-                                    background: 'var(--default-button)',
-                                    gutterBackground: 'var(--default-button)'
-                                },
-                                styles: [
-                                    { tag: t.tagName, color: '#4ec9b0' },
-                                    { tag: t.standard(t.tagName), color: '#569cd6' }
-                                ]
-                            })}
+                            theme={airatheme}
                             options={{
                                 autocompletion: false
                             }}
