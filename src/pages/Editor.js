@@ -156,17 +156,17 @@ export function Editor({urlparsed, sidinfo}) {
             seteditorToken(getEditorToken());
 
             // IntelliBox Position
-            var cursor = document.getElementsByClassName("cm-cursor")[0]
-            var intellicontainer = document.getElementById("intellisense")
-            var editor = document.getElementsByClassName("cm-editor")[0]
+            // var cursor = document.getElementsByClassName("cm-cursor")[0]
+            // var intellicontainer = document.getElementById("intellisense")
+            // var editor = document.getElementsByClassName("cm-editor")[0]
 
-            if(!editor.classList.contains("cm-focused") || document.getElementsByClassName("cm-selectionBackground")[0] || intelliContent === "") {
-                intellicontainer.style.display="none"
-            } else {
-                intellicontainer.style.display="flex"
-                intellicontainer.style.left = cursor.offsetLeft + "px"
-                intellicontainer.style.top = cursor.offsetTop + "px"
-            }
+            // if(!editor.classList.contains("cm-focused") || document.getElementsByClassName("cm-selectionBackground")[0] || intelliContent === "") {
+            //     intellicontainer.style.display="none"
+            // } else {
+            //     intellicontainer.style.display="flex"
+            //     intellicontainer.style.left = cursor.offsetLeft + "px"
+            //     intellicontainer.style.top = cursor.offsetTop + "px"
+            // }
 
 
         }, 100)

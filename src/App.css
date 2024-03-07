@@ -1045,7 +1045,7 @@ img::selection {
   /* Custom elements or React JSX elements () */ --cm-tag-name:          #4ec9b0;
 
   /* Variables                                     */ --cm-variable-name:            #9cdcfe;
-  /* Functions and other variable types definition */ --cm-variable-name-definition: #569cd6;
+  /* Functions and other variable types definition */ --cm-variable-name-definition: #9cdcfe;
   /* Functions in use (print())                    */ --cm-variable-name-function:   #dcdcaa;
 
   /* Property name                  */ --cm-property-name:       #9cdcfe;
@@ -1054,7 +1054,7 @@ img::selection {
 
   /* atribute="value" */ --cm-attribute-name:  #9cdcfe;
   /* atribute="value" */ --cm-attribute-value: var(--cm-string);
-  /* <!DOCTYPE html> */  --cm-document-meta:   rgba(var(--textrgba), .7);
+  /* <!DOCTYPE html> */  --cm-document-meta:   rgba(var(--textrgba),.3);
   /* <html></html> */    --cm-angle-bracket:   #808080;
 
   /* (In css) .class           */ --cm-classname:         #dcdcaa;
@@ -1102,9 +1102,9 @@ img::selection {
   /* (In md) Strike */    --cm-md-strikethrough:     var(--cm-md-link);
   /* (In md) >>, * */     --cm-md-meta:              #569cd6;
 
-  /* typeof */    --cm-operator-keyword:   #6796e6;
+  /* typeof */    --cm-operator-keyword:   #569cd6;
   /* for, if */   --cm-control-keyword:    #c586c0;
-  /* function */  --cm-definition-keyword: #6796e6;
+  /* function */  --cm-definition-keyword: #569cd6;
   /* import */    --cm-module-keyword:     #c586c0;
 
   
