@@ -72,8 +72,7 @@ export function Editor({urlparsed, sidinfo}) {
                             <span className="file-saved">
                                 <div className="unsaved-file" {...files.saved ? {style: {opacity: 0}} : void(0)} />
                             </span>
-                                <span className="file-close">
-                            </span>
+                                <span className="file-close"><img src="https://xploit.men/scdn/?fluenticons&name=dismiss" width="10px" height="10px" loading="lazy" alt="×" /></span>
 
                     </div>
                 </>)
