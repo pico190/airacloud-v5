@@ -28,21 +28,21 @@ import $ from 'jquery'
 
 
 export function Editor({urlparsed, sidinfo}) {
-                                                                                                // var projectId
-                                                                                                // try {
-                                                                                                //     projectId = urlparsed[1];
-                                                                                                //     if(projectId.length === 0) {
-                                                                                                //         projectId = "none";
-                                                                                                //         return (
-                                                                                                //             <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
-                                                                                                //         )
-                                                                                                //     }
-                                                                                                // } catch(err) {
-                                                                                                //     projectId = "none";
-                                                                                                //     return (
-                                                                                                //         <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
-                                                                                                //     )
-                                                                                                // }
+                                                                                                var projectId
+                                                                                                try {
+                                                                                                    projectId = urlparsed[1];
+                                                                                                    if(projectId.length === 0) {
+                                                                                                        projectId = "none";
+                                                                                                        return (
+                                                                                                            <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
+                                                                                                        )
+                                                                                                    }
+                                                                                                } catch(err) {
+                                                                                                    projectId = "none";
+                                                                                                    return (
+                                                                                                        <LoadWeb url={'https://'+window.location.host+'/notfound.html'} />
+                                                                                                    )
+                                                                                                }
 
         
 
@@ -61,6 +61,9 @@ export function Editor({urlparsed, sidinfo}) {
         var [ options, setOptions ] = useState({
             refreshMode: refreshMode.delay,
         }); // eslint-disable-next-line
+
+        
+        var [ file, setfile ] = useState(window.location.hash.replace("#", "").replace(/\//g, ""));
         var [ files, setFiles ] = useState([
             {
                 type: "react",
@@ -92,6 +95,8 @@ export function Editor({urlparsed, sidinfo}) {
                     </div>
                 </>
             })
+
+            setFilesrender(rendering);
 
         }, [files])
     
