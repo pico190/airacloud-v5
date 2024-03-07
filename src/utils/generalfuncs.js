@@ -23,3 +23,7 @@ import ReactDOMServer from 'react-dom/server';
     const nearestElem = findNearestElem(collection, targetRef);
     return nearestElem;
   }
+
+  export function spaces(text) {
+    return text.trim().length === 0;
+  }

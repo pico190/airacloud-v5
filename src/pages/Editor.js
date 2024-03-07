@@ -9,7 +9,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { color } from '@uiw/codemirror-extensions-color';
-import { tags as t } from '@lezer/highlight';
+import { spaces } from "../utils/generalfuncs";
 // import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
@@ -150,6 +150,7 @@ export function Editor({urlparsed, sidinfo}) {
             Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
             Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
             Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
+            Array.from(document.querySelectorAll('.cm-selectionMatch')).forEach(elem => {spaces(elem.innerText) ? elem.classList.add("cm-spacematch") : elem.classList.remove("cm-spacematch")})
             
             // Update token
             seteditorToken(getEditorToken());
@@ -231,10 +232,10 @@ export function Editor({urlparsed, sidinfo}) {
                     <style children={`.cm-editor, .cm-editor * {font-family: var(--editor-font-family);}`} id="fontfamily" />
                     
                     <div className="editorcontainer">
-                        <div id="intellisense" className="intellisense" >
+                        {/* <div id="intellisense" className="intellisense" >
                             <div id="intelli">{intelliContent}</div>
                             <div id="intellidesc" dangerouslySetInnerHTML={{__html: intelliDesc}}></div>
-                        </div>
+                        </div> */}
                         <CodeMirror
                             extensions={[html({ config:{matchClosingTags: true, autoCloseTags: true } }), color]}
                             value={codeValue}

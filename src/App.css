@@ -584,7 +584,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .ͼ16 .cm-selectionMatch {
-    background-color: #a2a2a259!important;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -979,7 +978,7 @@ img::selection {
 }
 
 .cm-gutters:hover span[title="Unfold line"], .cm-gutters:hover span[title="Fold line"] {
-  opacity: 1;
+  opacity: 0.7;
 }
 
 .cm-gutters::selection, .cm-gutters *::selection {
@@ -1006,8 +1005,8 @@ img::selection {
   transition-duration: 0.1s;
 }
 
-._cTagExistent {
-  color: #569cd6!important;
+.cm-spacematch {
+  background-color: transparent!important;
 }
 
 :root {
@@ -1020,7 +1019,7 @@ img::selection {
   /* Editor background image                                   */ --cm-bg-img:                   none;
   /* Editor text                                               */ --cm-foreground:               #d7d7d7; 
   /* Selection color                                           */ --cm-selection:                rgb(36, 48, 71);
-  /* Background of selectionMatch                              */ --cm-selection-match:          transparent;
+  /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
   /* Color of border of line number                            */ --cm-gutter-border:            transparent;
@@ -1106,7 +1105,7 @@ img::selection {
   /* typeof */    --cm-operator-keyword:   #6796e6;
   /* for, if */   --cm-control-keyword:    #c586c0;
   /* function */  --cm-definition-keyword: #6796e6;
-  /* import */    --cm-module-keyword:     #6796e6;
+  /* import */    --cm-module-keyword:     #c586c0;
 
   
 }
