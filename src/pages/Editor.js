@@ -60,10 +60,11 @@ export function Editor({urlparsed, sidinfo}) {
         useEffect(() => {
 
              // eslint-disable-next-line
-            var rendering = <></>
 
-            files.forEach(elem => {
-                rendering += <>
+            setFilesrender(<>
+            {
+            files.map(elem => {
+                return (<>
                     <div className="file active">
                         <img src={'https://'+window.location.host+'/airaicons/'+elem.type+'.svg'} loading="lazy" alt="" style={{width: "20px"}} /> {/*https://airacloud-v5-d1.vercel.app/airaicons/react.svg'*/}
                         <b>{elem.name}.{elem.extension}</b>
@@ -75,10 +76,10 @@ export function Editor({urlparsed, sidinfo}) {
                             </span>
 
                     </div>
-                </>
-            })
+                </>)
+            })}
+            </>);
 
-            setFilesrender(rendering);
 
         }, [files])
     
