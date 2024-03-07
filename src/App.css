@@ -614,7 +614,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     display: flex;
     position: absolute;
-    right: 36px;
+    right: 35px;
     z-index: 1;
   }
 
