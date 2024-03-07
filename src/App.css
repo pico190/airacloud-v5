@@ -589,7 +589,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
   .ͼ1 .cm-lineNumbers .cm-gutterElement {
-    padding-left: 20px!important;
+    padding-left: var(--cm-gutter-padding)!important;
   }
 
   .file-close > span {
@@ -1028,6 +1028,7 @@ img::selection {
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
   /* Color of not closed tags                                  */ --cm-nonMatching:              #d12e2e;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
+  /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;
 
   /* ---------------- Completion Colors */
   /* Single line comments   */ --cm-line-comment:     #6a9955;

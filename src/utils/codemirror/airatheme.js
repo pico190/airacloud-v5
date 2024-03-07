@@ -16,6 +16,7 @@ export const airatheme = createTheme({
       selectionMatch:         cssvar("selection-match"),
       gutterBackground:       cssvar("gutter-bg"),
       gutterForeground:       cssvar("gutter-fg"),
+      gutterBorder:           '',
       gutterActiveForeground: cssvar("gutter-active-foreground"),
       lineHighlight:          cssvar("lineHighlight"),
     },
