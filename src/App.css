@@ -510,7 +510,8 @@ h1, h2, h3, h4, h5, h6 {
       animation-duration: 1200ms!important;
   }
   .ͼ16, .ͼ16 .cm-gutters {
-      background-color: va(--default-button)!important;
+      background-color: var(--default-button)!important;
+      border-right: 0px solid transparent;
   }
   /* .cm-theme {
       background-color: #303237!important;
@@ -1083,12 +1084,12 @@ img::selection {
   /* var, let */--cm-modifier:       #569cd6;
   /* operators*/--cm-operator:       var(--cm-foreground);
 
-  /* (In md) # */ --cm-heading1: #569cd6;
-  /**/            --cm-heading2: #569cd6dc;
-  /**/            --cm-heading3: #569cd6b5;
-  /**/            --cm-heading4: #569cd693;
-  /**/            --cm-heading5: #569cd67a;
-  /**/            --cm-heading6: #569cd67a;
+  /* (In md) # */ --cm-heading1: var(--cm-md-meta);
+  /**/            --cm-heading2: var(--cm-md-meta);
+  /**/            --cm-heading3: var(--cm-md-meta);
+  /**/            --cm-heading4: var(--cm-md-meta);
+  /**/            --cm-heading5: var(--cm-md-meta);
+  /**/            --cm-heading6: var(--cm-md-meta);
 
   /* =>, < */  --cm-punctuation:    var(--cm-foreground);
   /* <>, {} */ --cm-bracket:        #ffd700;
