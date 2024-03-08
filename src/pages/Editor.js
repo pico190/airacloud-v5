@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { SideBar } from './editorc/Sidebar'
 import { encode, decode } from 'js-base64'
 import CodeMirror from '@uiw/react-codemirror';
+
 import { langs } from '@uiw/codemirror-extensions-langs';
+
 import { color } from '@uiw/codemirror-extensions-color';
 import { inlineSuggestion } from 'codemirror-extension-inline-suggestion';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 import { airatheme } from "../utils/codemirror/airatheme";
 import $ from 'jquery'
+import { nearElem } from "../utils/generalfuncs";
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 import { spaces, hexToRgb } from "../utils/generalfuncs";
 
@@ -17,7 +20,6 @@ export function Editor({ urlparsed, sidinfo }) {
     const [intelliContent, setIntelliContent] = useState([]);
     const [intelliDesc, setIntelliDesc] = useState('');
     const [intelliLoaded, setIntelliLoaded] = useState(false);
-    const [cminfo, setCminfo] = useState("Download IntelliSense...");
     const [files, setFiles] = useState([
         {
             type: "react",
@@ -29,22 +31,48 @@ export function Editor({ urlparsed, sidinfo }) {
         }
     ]);
 
+    
+    setInterval(() => {
+            
+        // Details
+        Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
+        Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" loading="lazy">`})
+        Array.from(document.querySelectorAll('span[title="Unfold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-right" alt=">" loading="lazy">`})
+        Array.from(document.querySelectorAll('.cm-selectionMatch')).forEach(elem => {spaces(elem.innerText) ? elem.classList.add("cm-spacematch") : elem.classList.remove("cm-spacematch")})
+        
+        document.querySelectorAll("span").forEach(span => {
+            if(span.innerText===">") {
+                var spanstyle = window.getComputedStyle(span);
+                var cssvarjson = hexToRgb(spanstyle.getPropertyValue('--cm-md-meta'))
+                var cssvar = `rgb(${cssvarjson.r}, ${cssvarjson.g}, ${cssvarjson.b})`
+                if(cssvar === spanstyle.color) {
+                    span.classList.add("cm-md-quote")
+                }
+            }
+        })
+
+    }, 1)
+
     useEffect(() => {
         const loadIntelliSense = () => {
             if (!intelliLoaded) {
+                const cminfo = document.getElementById("cm-info");
                 setIntelliLoaded(true);
-                if (localStorage.getItem("htmlintelli")) {
-                    setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
-                    setCminfo("Updating IntelliSense...");
+                if (cminfo) {
+                    if (localStorage.getItem("htmlintelli")) {
+                        setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
+                        cminfo.innerHTML = "Updating IntelliSense...";
+                    }
+                    $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
+                        setReference(data);
+                        cminfo.innerHTML = "";
+                        localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
+                    });
                 }
-                $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
-                    setReference(data);
-                    setCminfo("");
-                    localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
-                });
             }
         };
-        loadIntelliSense();
+        window.addEventListener("load", loadIntelliSense);
+        return () => window.removeEventListener("load", loadIntelliSense);
     }, [intelliLoaded]);
 
     useEffect(() => {
@@ -56,13 +84,11 @@ export function Editor({ urlparsed, sidinfo }) {
                         if (index === 0) {
                             setIntelliDesc(element.desc)
                         }
-                        return (
-                            <div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
-                                <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
-                                <span><b>{editorToken}</b>{element.name.replace(editorToken, "")}</span>
-                                <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
-                            </div>
-                        )
+                        return (<div key={element.name} className={`intellitem ${index === 0 ? "intelliselected" : ""}`} id={element.name}>
+                            <img src={`https://xploit.men/scdn/fluenticons/airaduotone/${element.type}.svg`} alt="" />
+                            <span><b>{editorToken}</b>{element.name.replace(editorToken, "")}</span>
+                            <div className="intelliseparator"><span>{element.cat !== undefined ? element.cat : ""}</span></div>
+                        </div>)
                     });
                 setIntelliContent(filteredContent);
             } else {
@@ -74,26 +100,21 @@ export function Editor({ urlparsed, sidinfo }) {
         return () => clearTimeout(timer);
     }, [editorToken, reference]);
 
+    const [projectInfo, setProjectInfo] = useState({});
+    const [initialvalue, setInitialValue] = useState("");
+    const [value, setValue] = useState(initialvalue);
+
     useEffect(() => {
-        $.post("https://xploit.men/aira/api/v1/file/get.php", {
+        $.get("https://xploit.men/aira/api/v1/file/get.php", {
             token: sidinfo.token,
             filetoken: window.location.hash.replace("#", "").replace(/\//g, "")
         }, (data) => {
-            setInitialValue(data.content)
-            var lng = null;
-
-            if (data.lang === "html") { lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }) }
-            if (data.lang === "css") { lng = langs.less() }
-            if (data.lang === "js") { lng = langs.javascript() }
-            if (data.lang === "jsx") { lng = langs.javascript({ config: { jsx: true } }) }
-            if (data.lang === "ts") { lng = langs.javascript({ config: { typescript: true } }) }
-            if (data.lang === "tsx") { lng = langs.javascript({ config: { typescript: true, jsx: true } }) }
-            if (data.lang === "markdown") { lng = langs.markdown() }
-            if (data.lang === "python") { lng = langs.python() }
-            setLang(lng);
+            console.log(data)
+            setInitialValue(decode(data.content))
         })
     }, [])
 
+    langs.html({ config: { matchClosingTags: true, autoCloseTags: true } })
     const onChange = (val) => setValue(val);
 
     useEffect(() => {
@@ -108,7 +129,7 @@ export function Editor({ urlparsed, sidinfo }) {
     const fetchSuggestion = async (state) => {
         return ', hola optix te observo';
     };
-
+      
     const content = (
         <>
             <SideBar title={projectInfo.name} />
@@ -144,7 +165,7 @@ export function Editor({ urlparsed, sidinfo }) {
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
                         />
-                        <div className="cm-info" id="cm-info">{cminfo}</div>
+                        <div className="cm-info" id="cm-info">Download IntelliSense...</div>
                     </div>
                 </div>
             </div>
