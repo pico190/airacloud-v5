@@ -106,7 +106,7 @@ export function Editor({ urlparsed, sidinfo }) {
     const [lang, setLang] = useState();
 
     useEffect(() => {
-        $.get("https://xploit.men/aira/api/v1/file/get.php", {
+        $.post("https://xploit.men/aira/api/v1/file/get.php", {
             token: sidinfo.token,
             filetoken: window.location.hash.replace("#", "").replace(/\//g, "")
         }, (data) => {
