@@ -25,14 +25,14 @@ export function Project({item}) {
                 const isFill = itemName === "" ? " item-fill" : "";
                 const itemIcon = isFill.includes("item-fill") ? null : <img height="86" src={itemIconSrc} loading="lazy" alt=""/>;
                 return (
-                    <div style={style} ref={setNodeRef} {...attributes} {...listeners} className={"item animation-box" + isFill} key={item.id}>
+                    <div key={item.id} style={style} ref={setNodeRef} {...attributes} {...listeners} className={"item animation-box" + isFill} key={item.id}>
                         {itemIcon}
                         <b>{itemName}</b>
                     </div>
                 );
             } else {
                 return (
-                    <div className="item item-fill item-add animation-box" key={item.id}>
+                    <div key={item.id} className="item item-fill item-add animation-box" key={item.id}>
                         <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
                     </div>
                 );

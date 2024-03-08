@@ -2,7 +2,7 @@ import { decode } from 'js-base64';
 import React, {useState} from 'react';
 import {DndContext, closestCenter} from '@dnd-kit/core';
 import {SortableContext, rectSortingStrategy} from '@dnd-kit/sortable';
-import { Project } from 'project'
+import { Project } from './project'
 export function Projects() {
 
     function animation() {
@@ -48,7 +48,7 @@ export function Projects() {
         //     }
         // });
         
-    const handleDragEnd = () => {}
+    const handleDragEnd = () => {console.log("drag end")}
     return (
 
         <div onLoad={() => {animation();}} className="project-grid">
