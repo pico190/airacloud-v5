@@ -14,12 +14,13 @@ import { nearElem } from "../utils/generalfuncs";
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 import { spaces, hexToRgb } from "../utils/generalfuncs";
 
-export function Editor({ urlparsed, sidinfo }) {
+export function Editor({ urlparsed }) {
     const [reference, setReference] = useState([]);
     const [editorToken, setEditorToken] = useState(null);
     const [intelliContent, setIntelliContent] = useState([]);
     const [intelliDesc, setIntelliDesc] = useState('');
     const [intelliLoaded, setIntelliLoaded] = useState(false);
+    const [cminfo, setCminfo] = useState("Download IntelliSense...");
     const [files, setFiles] = useState([
         {
             type: "react",
@@ -56,19 +57,16 @@ export function Editor({ urlparsed, sidinfo }) {
     useEffect(() => {
         const loadIntelliSense = () => {
             if (!intelliLoaded) {
-                const cminfo = document.getElementById("cm-info");
                 setIntelliLoaded(true);
-                if (cminfo) {
                     if (localStorage.getItem("htmlintelli")) {
                         setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
-                        cminfo.innerHTML = "Updating IntelliSense...";
+                        setCminfo("Updating IntelliSense...");
                     }
                     $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
                         setReference(data);
-                        cminfo.innerHTML = "";
+                        setCminfo("");
                         localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
                     });
-                }
             }
         };
         window.addEventListener("load", loadIntelliSense);
@@ -101,20 +99,8 @@ export function Editor({ urlparsed, sidinfo }) {
     }, [editorToken, reference]);
 
     const [projectInfo, setProjectInfo] = useState({});
-    const [initialvalue, setInitialValue] = useState("");
-    const [value, setValue] = useState(initialvalue);
+    const [value, setValue] = useState("");
 
-    useEffect(() => {
-        $.get("https://xploit.men/aira/api/v1/file/get.php", {
-            token: sidinfo.token,
-            filetoken: window.location.hash.replace("#", "").replace(/\//g, "")
-        }, (data) => {
-            console.log(data)
-            setInitialValue(decode(data.content))
-        })
-    }, [])
-
-    langs.html({ config: { matchClosingTags: true, autoCloseTags: true } })
     const onChange = (val) => setValue(val);
 
     useEffect(() => {
@@ -127,8 +113,8 @@ export function Editor({ urlparsed, sidinfo }) {
     }, [urlparsed]);
 
     const fetchSuggestion = async (state) => {
-        return ', hola optix te observo';
-    };
+        return 'hola optix te observo';
+      };
       
     const content = (
         <>
@@ -159,13 +145,13 @@ export function Editor({ urlparsed, sidinfo }) {
                     <style>{":root, * {--sb-width: 28vw!important;} .content {padding: 20px; gap: 10px} .ͼ16.cm-focused .cm-selectionBackground .ͼ16 .cm-selectionLayer .cm-selectionBackground {background: #243047 !important;} .cm-editor, .cm-editor * {font-size: var(--editor-font-size);} .cm-editor, .cm-editor * {font-family: var(--editor-font-family);} .editorcontainer {position: relative;}"}</style>
                     <div className="editorcontainer">
                         <CodeMirror
-                            extensions={[lang, hyperLink, color, inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })]}
-                            value={initialvalue}
+                            extensions={[langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }), hyperLink, color, inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })]}
+                            value={value}
                             theme={airatheme}
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
                         />
-                        <div className="cm-info" id="cm-info">Download IntelliSense...</div>
+                        <div className="cm-info" id="cm-info">{cminfo}</div>
                     </div>
                 </div>
             </div>
