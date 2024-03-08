@@ -16,7 +16,6 @@ export function Project({loadedanimation, item}) {
     const style = {
         transform: CSS.Transform.toString(transform),
         transition,
-        zIndex: 100,
         position: "relative"
     }
 
