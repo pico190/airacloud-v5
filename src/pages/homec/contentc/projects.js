@@ -1,6 +1,6 @@
 import { decode } from 'js-base64';
 import {DndContext} from '@dnd-kit/core';
-import {SortableContext} from '@dnd-kit/sortable';
+import {SortableContext, useSortable} from '@dnd-kit/sortable';
 export function Projects() {
 
     function animation() {
@@ -20,15 +20,26 @@ export function Projects() {
             }
         
     }
-
+      const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+      } = useSortable({id: props.id});
+    
     var alluserprojects = JSON.parse(decode(localStorage.getItem("DATA__PROJECTS")));
     alluserprojects.push({name: "add"})
+    var projects = [];
+    alluserprojects.forEach(project => {
+        projects.push(project.id);
+    })
 
     return (
 
         <div onLoad={() => {animation();}} className="project-grid">
-            <DndContext>
-            <SortableContext>
+            <DndContext id="projects-grid-dnd">
+            <SortableContext items={projects}>
             {
                 alluserprojects.map(item => {
                      const itemName = item.name || "";
@@ -37,14 +48,14 @@ export function Projects() {
                          var itemIcon = <img height="86" src={"https://"+window.location.host+"/airaicons/" + itemIconName + ".svg"} loading="lazy" alt=""/>;
                          var isFill = itemName === "" ? " item-fill" : "";
                          isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
-                         return <div className={"item animation-box" + isFill} key={item.id}>
+                         return <div className={"item animation-box" + isFill} key={item.id} ref={setNodeRef} {...attributes} {...listeners}>
                             {itemIcon}
                             <b>{itemName}</b>
                         </div>;
                      } else {
                          return (
                             <div className="item item-fill item-add animation-box" key={item.id}>
-                                <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
+                                <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" ref={setNodeRef} {...attributes} {...listeners} />
                             </div>
                          )
                      }
