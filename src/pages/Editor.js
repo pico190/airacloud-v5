@@ -14,7 +14,7 @@ import { nearElem } from "../utils/generalfuncs";
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 import { spaces, hexToRgb } from "../utils/generalfuncs";
 
-export function Editor({ urlparsed }) {
+export function Editor({ urlparsed, sidinfo }) {
     const [reference, setReference] = useState([]);
     const [editorToken, setEditorToken] = useState(null);
     const [intelliContent, setIntelliContent] = useState([]);
@@ -101,8 +101,20 @@ export function Editor({ urlparsed }) {
     }, [editorToken, reference]);
 
     const [projectInfo, setProjectInfo] = useState({});
-    const [value, setValue] = useState("");
+    const [initialvalue, setInitialValue] = useState("");
+    const [value, setValue] = useState(initialvalue);
 
+    useEffect(() => {
+        $.get("https://xploit.men/aira/api/v1/file/get.php", {
+            token: sidinfo.token,
+            filetoken: window.location.hash.replace("#", "").replace(/\//g, "")
+        }, (data) => {
+            console.log(data)
+            setInitialValue(decode(data.content))
+        })
+    }, [])
+
+    langs.html({ config: { matchClosingTags: true, autoCloseTags: true } })
     const onChange = (val) => setValue(val);
 
     useEffect(() => {
@@ -115,8 +127,8 @@ export function Editor({ urlparsed }) {
     }, [urlparsed]);
 
     const fetchSuggestion = async (state) => {
-        return 'hola optix te observo';
-      };
+        return ', hola optix te observo';
+    };
       
     const content = (
         <>
@@ -147,8 +159,8 @@ export function Editor({ urlparsed }) {
                     <style>{":root, * {--sb-width: 28vw!important;} .content {padding: 20px; gap: 10px} .ͼ16.cm-focused .cm-selectionBackground .ͼ16 .cm-selectionLayer .cm-selectionBackground {background: #243047 !important;} .cm-editor, .cm-editor * {font-size: var(--editor-font-size);} .cm-editor, .cm-editor * {font-family: var(--editor-font-family);} .editorcontainer {position: relative;}"}</style>
                     <div className="editorcontainer">
                         <CodeMirror
-                            extensions={[langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }), hyperLink, color, inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })]}
-                            value={value}
+                            extensions={[lang, hyperLink, color, inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })]}
+                            value={initialvalue}
                             theme={airatheme}
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
