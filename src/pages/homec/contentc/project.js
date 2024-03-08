@@ -40,7 +40,7 @@ export function Project({loadedanimation, item}) {
             } else {
                 return (
                     <div className={`item item-fill item-add ${loadedanimation==false ? "animation-box" : ""}`} key={item.id}>
-                        <img height="60" src="https://xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
+                        <img src="https://xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
                     </div>
                 );
             }
