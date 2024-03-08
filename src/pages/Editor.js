@@ -223,6 +223,7 @@ export function Editor({urlparsed, sidinfo}) {
 
 
 
+        const [projectInfo, setProjectInfo] = React.useState({});
 
         const [initialValue, setInitialValue] = React.useState("");
         const [value, setValue] = React.useState(initialValue);
@@ -232,14 +233,10 @@ export function Editor({urlparsed, sidinfo}) {
         }, []);
       
 
-        return (
+        const [content, setContent] = (
             <>
 
-            <SideBar title="Codemirror Playground" >
-                    <div style={{display: "flex", gap: "10px"}}>
-                        <img src={'https://'+window.location.host+'/airaicons/'+urlparsed[1]+'.svg'} loading="lazy" alt="" style={{width: "20px"}} /> {/*https://airacloud-v5-d1.vercel.app/airaicons/react.svg'*/}
-                        <span>{urlparsed[1]}</span>
-                    </div>
+            <SideBar title={projectInfo.name} >
             </SideBar>
             <div className="content">
                     <div className="files" >
@@ -282,5 +279,17 @@ export function Editor({urlparsed, sidinfo}) {
                 </div>
             </div>
             </>
-        )
+        );
+
+
+        var projects = JSON.parse(decode(window.localStorage.getItem("DATA__PROJECTS")))
+
+        projects.forEach(project => {
+            if(project.id === urlparsed[1]) {
+                setProjectInfo(project);
+            }
+        })
+
+
+        return (<>{content}</>)
 }
