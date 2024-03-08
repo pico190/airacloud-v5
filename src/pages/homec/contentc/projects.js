@@ -1,5 +1,6 @@
 import { decode } from 'js-base64';
-
+import {DndContext} from '@dnd-kit/core';
+import {SortableContext} from '@dnd-kit/sortable';
 export function Projects() {
 
     function animation() {
@@ -24,7 +25,10 @@ export function Projects() {
     alluserprojects.push({name: "add"})
 
     return (
+
         <div onLoad={() => {animation();}} className="project-grid">
+            <DndContext>
+            <SortableContext>
             {
                 alluserprojects.map(item => {
                      const itemName = item.name || "";
@@ -46,6 +50,8 @@ export function Projects() {
                      }
                 })
             }
+            </SortableContext>
+            </DndContext>
         </div>
     );
 

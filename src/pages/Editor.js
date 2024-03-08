@@ -3,7 +3,7 @@ import { SideBar } from './editorc/Sidebar'
 import { encode, decode } from 'js-base64'
 import CodeMirror from '@uiw/react-codemirror';
 
-import { html } from '@codemirror/lang-html';
+import { langs } from '@uiw/codemirror-extensions-langs';
 
 import { color } from '@uiw/codemirror-extensions-color';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
@@ -119,10 +119,10 @@ export function Editor({ urlparsed }) {
                     <style>{":root, * {--sb-width: 28vw!important;} .content {padding: 20px; gap: 10px} .ͼ16.cm-focused .cm-selectionBackground .ͼ16 .cm-selectionLayer .cm-selectionBackground {background: #243047 !important;} .cm-editor, .cm-editor * {font-size: var(--editor-font-size);} .cm-editor, .cm-editor * {font-family: var(--editor-font-family);} .editorcontainer {position: relative;}"}</style>
                     <div className="editorcontainer">
                         <CodeMirror
-                            extensions={[html({ config: { matchClosingTags: true, autoCloseTags: true } }), hyperLink, color]}
+                            extensions={[langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }), hyperLink, color]}
                             value={value}
                             theme={airatheme}
-                            options={{ autocompletion: false }}
+                            basicSetup={{ autocompletion: false }}
                             onChange={onChange}
                         />
                         <div className="cm-info" id="cm-info">Download IntelliSense...</div>
