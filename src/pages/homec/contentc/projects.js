@@ -33,7 +33,7 @@ export function Projects() {
         const oldIndex = alluserprojects.findIndex(project => project.id === active.id)
         const newIndex = alluserprojects.findIndex(project => project.id === over.id)
 
-        const newOrder = arrayMove(alluserProject, oldIndex, newIndex)
+        const newOrder = arrayMove(alluserprojects, oldIndex, newIndex)
         setuserprojects(newOrder)
 
         // solicitud post
