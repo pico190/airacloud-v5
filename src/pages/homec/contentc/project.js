@@ -17,7 +17,7 @@ export function Project({item}) {
         transform: CSS.Transform.toString(transform),
         transition,
         zIndex: 100,
-        cursor: "grabbing"
+        position: "relative"
     }
 
             const itemName = item.name || "";

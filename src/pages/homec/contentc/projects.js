@@ -5,8 +5,10 @@ import {SortableContext, rectSortingStrategy, arrayMove} from '@dnd-kit/sortable
 import { Project } from './project'
 export function Projects() {
 
+    var [loadedanimation, setloadedanimation] = useState(false)
     function animation() {
         
+        if(!loadedanimation) {
 
             var boxes = document.querySelectorAll('.animation-box');
             var delay = 100;
@@ -23,6 +25,9 @@ export function Projects() {
             for (var i = 0; i < boxes.length; i++) {
                 fadeIn(boxes[i], i * delay);
             }
+
+            setloadedanimation(true);
+        }
         
     }
 
