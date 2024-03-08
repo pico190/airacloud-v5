@@ -39,7 +39,7 @@ export function Projects() {
                         </div>;
                      } else {
                          return (
-                            <div className="item item-fill item-add" key={item.id}>
+                            <div className="item item-fill item-add animation-box" key={item.id}>
                                 <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
                             </div>
                          )
