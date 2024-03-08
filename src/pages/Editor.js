@@ -6,6 +6,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
 
 import { color } from '@uiw/codemirror-extensions-color';
+import { inlineSuggestion } from 'codemirror-extension-inline-suggestion';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 import { airatheme } from "../utils/codemirror/airatheme";
 import $ from 'jquery'
@@ -90,6 +91,10 @@ export function Editor({ urlparsed }) {
         });
     }, [urlparsed]);
 
+    const fetchSuggestion = async (state) => {
+        return 'hola optix te observo';
+      };
+      
     const content = (
         <>
             <SideBar title={projectInfo.name} />
@@ -119,7 +124,7 @@ export function Editor({ urlparsed }) {
                     <style>{":root, * {--sb-width: 28vw!important;} .content {padding: 20px; gap: 10px} .ͼ16.cm-focused .cm-selectionBackground .ͼ16 .cm-selectionLayer .cm-selectionBackground {background: #243047 !important;} .cm-editor, .cm-editor * {font-size: var(--editor-font-size);} .cm-editor, .cm-editor * {font-family: var(--editor-font-family);} .editorcontainer {position: relative;}"}</style>
                     <div className="editorcontainer">
                         <CodeMirror
-                            extensions={[langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }), hyperLink, color]}
+                            extensions={[langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }), hyperLink, color, inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })]}
                             value={value}
                             theme={airatheme}
                             basicSetup={{ autocompletion: false }}

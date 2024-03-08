@@ -17,6 +17,7 @@
     "@uiw/codemirror-extensions-langs": "4.21.24",
     "@uiw/codemirror-extensions-color": "4.21.24",
     "@uiw/codemirror-extensions-hyper-link": "4.21.24",
+    "codemirror-extension-inline-suggestion": "0.0.3",
     "@lezer/highlight": "1.2.0",
 
     "@craco/craco": "7.1.0",
