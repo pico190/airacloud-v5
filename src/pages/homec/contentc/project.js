@@ -7,15 +7,13 @@ export function Project({loadedanimation, item}) {
         attributes,
         listeners,
         setNodeRef,
-        transform,
-        transition
+        transform
     } = useSortable({
         id: item.id
     })
 
     const style = {
         transform: CSS.Transform.toString(transform),
-        transition,
         position: "relative"
     }
 
@@ -42,7 +40,7 @@ export function Project({loadedanimation, item}) {
             } else {
                 return (
                     <div className={`item item-fill item-add ${loadedanimation==false ? "animation-box" : ""}`} key={item.id}>
-                        <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
+                        <img height="60" src="https://xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
                     </div>
                 );
             }

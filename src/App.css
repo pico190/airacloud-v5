@@ -328,6 +328,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 3px;
   }
 
+  @media (min-width:1280px) {.item {width: 19.26%!important;} }
+  @media (min-width:1730px) {.item {width: 13.75%!important;} }
+  @media (min-width:1950px) {.item {width: 19.26%!important;} }
   .item[aria-pressed="true"] {
     transition-duration: 0s !important;
     box-shadow: -10px 10px 20px #000000;

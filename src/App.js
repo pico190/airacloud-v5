@@ -94,7 +94,6 @@ function App() {
 
   } // eslint-disable-next-line
   useEffect(() => { renderize () }, [urlparsed, SwiftlyIDClient, localStorage.getItem("DATA__PROJECTS")]);
-  window.addEventListener("resize", () => { renderize(); })
   window.addEventListener("load", () => { document.getElementById("loader").style.opacity = 0; document.getElementById("loader").style.pointerEvents = "none" })
   
   return (
