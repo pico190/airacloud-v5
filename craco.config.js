@@ -6,7 +6,7 @@ module.exports = {
       add: [
         million.webpack({
           auto: {
-            threshold: 0.05,
+            threshold: 0,
             skip: [],
           },
         }),
