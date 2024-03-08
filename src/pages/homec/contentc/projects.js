@@ -14,6 +14,9 @@ export function Projects() {
             function fadeIn(element, delay) {
                 setTimeout(function() {
                     element.style.opacity = 1;
+                    setTimeout(function() {
+                        element.classList.remove("animation-box")
+                    }, 100);
                 }, delay);
             }
             
