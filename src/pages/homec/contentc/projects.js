@@ -63,7 +63,7 @@ export function Projects() {
             >
             {
                 alluserprojects.map((proyect) => (
-                    <Project item={proyect} />
+                    <Project loadedanimation={loadedanimation} item={proyect} />
                 ))
             }
             </SortableContext>

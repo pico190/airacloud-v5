@@ -1,7 +1,7 @@
 import {useSortable} from '@dnd-kit/sortable'
 import {CSS} from '@dnd-kit/utilities'
 
-export function Project({item}) {
+export function Project({loadedanimation, item}) {
 
     const {
         attributes,
@@ -27,14 +27,14 @@ export function Project({item}) {
                 const isFill = itemName === "" ? " item-fill" : "";
                 const itemIcon = isFill.includes("item-fill") ? null : <img height="86" src={itemIconSrc} loading="lazy" alt=""/>;
                 return (
-                    <div style={style} ref={setNodeRef} {...attributes} {...listeners} className={"item animation-box" + isFill} key={item.id}>
+                    <div style={style} ref={setNodeRef} {...attributes} {...listeners} className={`item ${loadedanimation==false ? "animation-box" : ""}` + isFill} key={item.id}>
                         {itemIcon}
                         <b>{itemName}</b>
                     </div>
                 );
             } else {
                 return (
-                    <div className="item item-fill item-add animation-box" key={item.id}>
+                    <div className={`item item-fill item-add ${loadedanimation==false ? "animation-box" : ""}`} key={item.id}>
                         <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
                     </div>
                 );
