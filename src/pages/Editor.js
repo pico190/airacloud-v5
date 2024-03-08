@@ -12,6 +12,7 @@ import { airatheme } from "../utils/codemirror/airatheme";
 import $ from 'jquery'
 import { nearElem } from "../utils/generalfuncs";
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
+import { spaces, hexToRgb } from "../utils/generalfuncs";
 
 export function Editor({ urlparsed }) {
     const [reference, setReference] = useState([]);
@@ -51,7 +52,7 @@ export function Editor({ urlparsed }) {
         })
 
     }, 1)
-    
+
     useEffect(() => {
         const loadIntelliSense = () => {
             if (!intelliLoaded) {
