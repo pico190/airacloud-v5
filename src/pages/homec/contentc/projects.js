@@ -56,10 +56,6 @@ export function Projects() {
             <SortableContext
                 items={alluserprojects}
                 strategy={rectSortingStrategy}
-                activationConstraint={{
-                    delay: 250,
-                    tolerance: 5,
-                }}
             >
             {
                 alluserprojects.map((proyect) => (

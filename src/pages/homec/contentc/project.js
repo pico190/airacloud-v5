@@ -26,7 +26,15 @@ export function Project({loadedanimation, item}) {
                 const isFill = itemName === "" ? " item-fill" : "";
                 const itemIcon = isFill.includes("item-fill") ? null : <img height="86" src={itemIconSrc} loading="lazy" alt=""/>;
                 return (
-                    <div style={style} ref={setNodeRef} {...attributes} {...listeners} className={`item ${loadedanimation==false ? "animation-box" : ""}` + isFill} key={item.id}>
+                    <div 
+                    style={style} 
+                    ref={setNodeRef} 
+                    activationConstraint={{
+                      delay: 150,
+                      tolerance: 5,
+                    }} 
+                    {...attributes} {...listeners} 
+                    className={`item ${loadedanimation==false ? "animation-box" : ""}` + isFill} key={item.id}>
                         {itemIcon}
                         <b>{itemName}</b>
                     </div>
