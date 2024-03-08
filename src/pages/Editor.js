@@ -14,7 +14,7 @@ import { nearElem } from "../utils/generalfuncs";
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 import { spaces, hexToRgb } from "../utils/generalfuncs";
 
-export function Editor({ urlparsed }) {
+export function Editor({ sidinfo, urlparsed }) {
     const [reference, setReference] = useState([]);
     const [editorToken, setEditorToken] = useState(null);
     const [intelliContent, setIntelliContent] = useState([]);
