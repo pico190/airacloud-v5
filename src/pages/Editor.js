@@ -103,6 +103,7 @@ export function Editor({ urlparsed, sidinfo }) {
     const [projectInfo, setProjectInfo] = useState({});
     const [initialvalue, setInitialValue] = useState("");
     const [value, setValue] = useState(initialvalue);
+    const [lang, setLang] = useState();
 
     useEffect(() => {
         $.get("https://xploit.men/aira/api/v1/file/get.php", {
@@ -111,6 +112,17 @@ export function Editor({ urlparsed, sidinfo }) {
         }, (data) => {
             console.log(data)
             setInitialValue(decode(data.content))
+            var lng = null;
+
+            if(data.lang==="html") {lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } })}
+            if(data.lang==="css") {lng = langs.less()}
+            if(data.lang==="js") {lng = langs.javascript()}
+            if(data.lang==="jsx") {lng = langs.javascript({config: {jsx: true}})}
+            if(data.lang==="ts") {lng = langs.javascript({config: {typescript: true}})}
+            if(data.lang==="tsx") {lng = langs.javascript({config: {typescript: true, jsx: true}})}
+            if(data.lang==="markdown") {lng = langs.markdown()}
+            if(data.lang==="python") {lng = langs.python() }
+            setLang(lng);
         })
     }, [])
 
