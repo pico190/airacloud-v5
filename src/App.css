@@ -1025,7 +1025,7 @@ img::selection {
   /* Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
   
   /* Is not used in many places */ --cm-name:      #4ec9b0;
-  /**/                             --cm-labelname: var(--cm-foreground);
+  /**/                             --cm-label-name: #ce9178;
 
   /* At Swiftly Team we don't know what is this */ --cm-namespace: var(--cm-foreground);
   /**/                                             --cm-macroname: #dcdcaa;
@@ -1051,7 +1051,7 @@ img::selection {
   /* <html></html> */    --cm-angle-bracket:   #808080;
 
   /* (In css) .class           */ --cm-classname:         #dcdcaa;
-  /* (In css) .class::constant */ --cm-classname-constant: #569cd6;
+  /* (In css) .class::constant */ --cm-classname-constant: #c586c0;
 
   /* Types */   --cm-string:         #ce9178;
   /**/          --cm-string-special: var(--cm-string);
@@ -1103,3 +1103,4 @@ img::selection {
 
   
 }
+
