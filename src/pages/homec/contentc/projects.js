@@ -1,6 +1,8 @@
 import { decode } from 'js-base64';
-import {DndContext} from '@dnd-kit/core';
-import {SortableContext, useSortable} from '@dnd-kit/sortable';
+import React, {useState} from 'react';
+import {DndContext, closestCenter} from '@dnd-kit/core';
+import {SortableContext, rectSortingStrategy} from '@dnd-kit/sortable';
+import { Project } from 'project'
 export function Projects() {
 
     function animation() {
@@ -20,51 +22,55 @@ export function Projects() {
             }
         
     }
-    
+
     var alluserprojects = JSON.parse(decode(localStorage.getItem("DATA__PROJECTS")));
     alluserprojects.push({name: "add", id: "add"})
-    var projects = [];
-    alluserprojects.forEach(project => {
-        projects.push(project.id);
-    })
 
+        // alluserprojects.map(item => {
+        //     const itemName = item.name || "";
+        //     if (itemName !== "add") {
+        //         const itemIconName = item.type || "txt";
+        //         const itemIconSrc = `https://${window.location.host}/airaicons/${itemIconName}.svg`;
+        //         const isFill = itemName === "" ? " item-fill" : "";
+        //         const itemIcon = isFill.includes("item-fill") ? null : <img height="86" src={itemIconSrc} loading="lazy" alt=""/>;
+        //         return (
+        //             <div className={"item animation-box" + isFill} key={item.id}>
+        //                 {itemIcon}
+        //                 <b>{itemName}</b>
+        //             </div>
+        //         );
+        //     } else {
+        //         return (
+        //             <div className="item item-fill item-add animation-box" key={item.id}>
+        //                 <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" />
+        //             </div>
+        //         );
+        //     }
+        // });
+        
+    const handleDragEnd = () => {}
     return (
 
         <div onLoad={() => {animation();}} className="project-grid">
-            <DndContext id="projects-grid-dnd">
-            <SortableContext items={projects}>
+        <DndContext
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+        >
+            <SortableContext
+                items={alluserprojects}
+                strategy={rectSortingStrategy}
+                activationConstraint={{
+                    delay: 150,
+                    tolerance: 5,
+                }}
+            >
             {
-                alluserprojects.map(item => {
-                    
-                    const {
-                        attributes,
-                        listeners,
-                        setNodeRef,
-                        transform,
-                        transition,
-                    } = useSortable({id: item.id});
-                    
-                     const itemName = item.name || "";
-                     if(itemName!=="add") {
-                         var itemIconName = item.type || "txt";
-                         var itemIcon = <img height="86" src={"https://"+window.location.host+"/airaicons/" + itemIconName + ".svg"} loading="lazy" alt=""/>;
-                         var isFill = itemName === "" ? " item-fill" : "";
-                         isFill.includes("item-fill") === true ? itemIcon = <></> : void(0);
-                         return <div className={"item animation-box" + isFill} key={item.id} ref={setNodeRef} {...attributes} {...listeners}>
-                            {itemIcon}
-                            <b>{itemName}</b>
-                        </div>;
-                     } else {
-                         return (
-                            <div className="item item-fill item-add animation-box" key={item.id}>
-                                <img height="60" src="https:xploit.men/scdn/?fluenticons&name=add" loading="lazy" alt="Crear proyecto" ref={setNodeRef} {...attributes} {...listeners} />
-                            </div>
-                         )
-                     }
-                })
+                alluserprojects.map((proyect) => (
+                    <Project item={proyect} />
+                ))
             }
             </SortableContext>
-            </DndContext>
+        </DndContext>
         </div>
     );
 
