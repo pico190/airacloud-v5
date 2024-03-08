@@ -20,16 +20,9 @@ export function Projects() {
             }
         
     }
-      const {
-        attributes,
-        listeners,
-        setNodeRef,
-        transform,
-        transition,
-      } = useSortable({id: props.id});
     
     var alluserprojects = JSON.parse(decode(localStorage.getItem("DATA__PROJECTS")));
-    alluserprojects.push({name: "add"})
+    alluserprojects.push({name: "add", id: "add"})
     var projects = [];
     alluserprojects.forEach(project => {
         projects.push(project.id);
@@ -42,6 +35,15 @@ export function Projects() {
             <SortableContext items={projects}>
             {
                 alluserprojects.map(item => {
+                    
+                    const {
+                        attributes,
+                        listeners,
+                        setNodeRef,
+                        transform,
+                        transition,
+                    } = useSortable({id: item.id});
+                    
                      const itemName = item.name || "";
                      if(itemName!=="add") {
                          var itemIconName = item.type || "txt";
