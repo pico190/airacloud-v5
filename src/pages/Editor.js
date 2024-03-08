@@ -115,6 +115,14 @@ export function Editor({ urlparsed }) {
     const fetchSuggestion = async (state) => {
         return 'hola optix te observo';
       };
+
+      useEffect(() => {
+        $.post("https://xploit.men/aira/api/v1/file/get.php", {
+            token: sidinfo.token,
+            filetoken: window.location.hash.replace("#", "").replace(/\//g, "")
+        }, (data) => {console.log(data)})
+      }, [])
+      
       
     const content = (
         <>
