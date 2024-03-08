@@ -126,7 +126,6 @@ export function Editor({ urlparsed, sidinfo }) {
         })
     }, [])
 
-    langs.html({ config: { matchClosingTags: true, autoCloseTags: true } })
     const onChange = (val) => setValue(val);
 
     useEffect(() => {
