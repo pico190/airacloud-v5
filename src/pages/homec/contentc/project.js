@@ -15,7 +15,9 @@ export function Project({item}) {
 
     const style = {
         transform: CSS.Transform.toString(transform),
-        transition
+        transition,
+        zIndex: 100,
+        cursor: "grabbing"
     }
 
             const itemName = item.name || "";
