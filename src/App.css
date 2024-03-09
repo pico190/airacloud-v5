@@ -1038,11 +1038,11 @@ img::selection {
 .rainbow-bracket-violet, .rainbow-bracket-violet > span, .rainbow-bracket-violet > span > span { color: var(--cm-brackets-7)!important; outline: none!important }
 
 .cm-searchMatch {
-  background-color: #623315!important;
+  background-color: #ff63002e !important;
 }
 
 .cm-searchMatch-selected {
-  background-color: #9e6a03!important;
+  background-color: #ff63006e!important;
 }
 
 :root {
