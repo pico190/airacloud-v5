@@ -1016,13 +1016,13 @@ img::selection {
   color: var(--cm-md-quote-meta)!important;
 }
 
-.rainbow-bracket-red,    .rainbow-bracket-red > span,    .rainbow-bracket-red > span > span    { color: var(--cm-brackets-1)!important }
-.rainbow-bracket-orange, .rainbow-bracket-orange > span, .rainbow-bracket-orange > span > span { color: var(--cm-brackets-2)!important }
-.rainbow-bracket-yellow, .rainbow-bracket-yellow > span, .rainbow-bracket-yellow > span > span { color: var(--cm-brackets-3)!important }
-.rainbow-bracket-green,  .rainbow-bracket-green > span,  .rainbow-bracket-green > span > span  { color: var(--cm-brackets-4)!important }
-.rainbow-bracket-blue,   .rainbow-bracket-blue > span,   .rainbow-bracket-blue > span > span   { color: var(--cm-brackets-5)!important }
-.rainbow-bracket-indigo, .rainbow-bracket-indigo > span, .rainbow-bracket-indigo > span > span { color: var(--cm-brackets-6)!important }
-.rainbow-bracket-violet, .rainbow-bracket-violet > span, .rainbow-bracket-violet > span > span { color: var(--cm-brackets-7)!important }
+.rainbow-bracket-red,    .rainbow-bracket-red > span,    .rainbow-bracket-red > span > span    { color: var(--cm-brackets-1)!important; outline: none!important }
+.rainbow-bracket-orange, .rainbow-bracket-orange > span, .rainbow-bracket-orange > span > span { color: var(--cm-brackets-2)!important; outline: none!important }
+.rainbow-bracket-yellow, .rainbow-bracket-yellow > span, .rainbow-bracket-yellow > span > span { color: var(--cm-brackets-3)!important; outline: none!important }
+.rainbow-bracket-green,  .rainbow-bracket-green > span,  .rainbow-bracket-green > span > span  { color: var(--cm-brackets-4)!important; outline: none!important }
+.rainbow-bracket-blue,   .rainbow-bracket-blue > span,   .rainbow-bracket-blue > span > span   { color: var(--cm-brackets-5)!important; outline: none!important }
+.rainbow-bracket-indigo, .rainbow-bracket-indigo > span, .rainbow-bracket-indigo > span > span { color: var(--cm-brackets-6)!important; outline: none!important }
+.rainbow-bracket-violet, .rainbow-bracket-violet > span, .rainbow-bracket-violet > span > span { color: var(--cm-brackets-7)!important; outline: none!important }
 
 :root {
   /* 
