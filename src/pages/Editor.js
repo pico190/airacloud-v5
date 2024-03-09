@@ -22,14 +22,14 @@ export function Editor({ sidinfo, urlparsed }) {
     const [intelliLoaded, setIntelliLoaded] = useState(false);
     const [cminfo, setCminfo] = useState("Download IntelliSense...");
     const [files, setFiles] = useState([
-        {
-            type: "react",
-            name: "codemirror",
-            extension: "jsx",
-            saved: true,
-            active: true,
-            token: "patatas"
-        }
+        // {
+        //     type: "react",
+        //     name: "codemirror",
+        //     extension: "jsx",
+        //     saved: true,
+        //     active: true,
+        //     token: "patatas"
+        // }
     ]);
 
     
@@ -147,7 +147,27 @@ export function Editor({ sidinfo, urlparsed }) {
             filetoken: filetoken
         }, (files) => {
             console.log(files);
-            
+
+            var fles = []
+                    // {
+        //     type: "react",
+        //     name: "codemirror",
+        //     extension: "jsx",
+        //     saved: true,
+        //     active: true,
+        //     token: "patatas"
+        // }
+            files.forEach((file, index) => {
+                fles.push({
+                    type: file.lang,
+                    name: file.name,
+                    extension: file.format,
+                    saved: false,
+                    active: index === 0 ? true : false,
+                    token: file.filetoken
+                })
+            })
+
             var data = files.find(item => item.filetoken === filetoken);
 
             var content = decode(data.content);
