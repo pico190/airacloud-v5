@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spacer {
-    width: 100%;
+    width: 0px;
 }
 
 .home-section {
@@ -159,8 +159,7 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
   overflow: clip;
   text-overflow: ellipsis;
-  width: fit-content;
-  max-width: 90%;
+  width: 100%;
 }
 
 .sb_sect_tileContainer {
@@ -252,8 +251,7 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: clip;
-    width: fit-content;  
-    max-width: 80%;
+    width: 100%;  
 }
 
 

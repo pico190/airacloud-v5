@@ -12,7 +12,6 @@ export function Button({ children, icon, icontype, onClick }) {
             <b className="content-button-text">
                 {children}
             </b>
-            <div className="spacer" />
             <img src="https://xploit.men/scdn/?fluenticons&name=chevron-right&type=fluent&fill=white" loading="lazy" alt=""/> 
         </div>
     )
