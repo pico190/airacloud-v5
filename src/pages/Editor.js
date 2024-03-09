@@ -150,7 +150,7 @@ export function Editor({ sidinfo, urlparsed }) {
             project: projectInfo.id
         }, (files) => {
             var fles = []
-            files.forEach((file, index) => {
+            files.forEach((file) => {
                 fles.push({
                     type: file.lang,
                     name: file.name,
@@ -163,7 +163,7 @@ export function Editor({ sidinfo, urlparsed }) {
 
             setFiles(fles);
         })
-      }, [projectInfo])
+      }, [projectInfo, window.location.hash])
 
       useEffect(() => {
         $.post("https://xploit.men/aira/api/v1/file/get.php", {
@@ -205,7 +205,11 @@ export function Editor({ sidinfo, urlparsed }) {
             console.log(data.lang, "|", lng)
             setLang(lng);
         })
-      }, [filetoken])
+      }, [filetoken, window.location.hash])
+
+      useEffect(() => {
+        setFileToken(window.location.hash.replace("#", "").replace(/\//g, ""));
+      }, [window.location.hash, window.location])
       
       
     const content = (
