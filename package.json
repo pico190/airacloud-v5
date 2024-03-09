@@ -20,6 +20,7 @@
     "codemirror-extension-inline-suggestion": "0.0.3",
     "rainbowbrackets": "2.0.2",
     "@lezer/highlight": "1.2.0",
+    "@replit/codemirror-indentation-markers": "6.5.0",
 
     "@craco/craco": "7.1.0",
     "million": "3.0.6",

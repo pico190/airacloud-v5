@@ -7,6 +7,7 @@ import { langs } from '@uiw/codemirror-extensions-langs';
 import { href } from "../utils/generalfuncs";
 import rainbowBrackets from 'rainbowbrackets'   
 import { color } from '@uiw/codemirror-extensions-color';
+import { indentationMarkers } from '@replit/codemirror-indentation-markers';
 import { inlineSuggestion } from 'codemirror-extension-inline-suggestion';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 import { airatheme } from "../utils/codemirror/airatheme";
@@ -114,6 +115,7 @@ export function Editor({ sidinfo, urlparsed }) {
                 [
                     hyperLink, 
                     color, 
+                    indentationMarkers(),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
@@ -124,6 +126,7 @@ export function Editor({ sidinfo, urlparsed }) {
                     lang,
                     hyperLink, 
                     color, 
+                    indentationMarkers(),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
