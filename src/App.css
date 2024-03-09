@@ -1016,20 +1016,13 @@ img::selection {
   color: var(--cm-md-quote-meta)!important;
 }
 
-.rainbow-bracket-red { color: var(--cm-brackets-1)!important }
-.rainbow-bracket-red > span { color: var(--cm-brackets-1)!important }
-.rainbow-bracket-orange { color: var(--cm-brackets-2)!important }
-.rainbow-bracket-orange > span { color: var(--cm-brackets-2)!important }
-.rainbow-bracket-yellow { color: var(--cm-brackets-3)!important }
-.rainbow-bracket-yellow > span { color: var(--cm-brackets-3)!important }
-.rainbow-bracket-green { color: var(--cm-brackets-4)!important }
-.rainbow-bracket-green > span { color: var(--cm-brackets-4)!important }
-.rainbow-bracket-blue { color: var(--cm-brackets-5)!important }
-.rainbow-bracket-blue > span { color: var(--cm-brackets-5)!important }
-.rainbow-bracket-indigo { color: var(--cm-brackets-6)!important }
-.rainbow-bracket-indigo > span { color: var(--cm-brackets-6)!important }
-.rainbow-bracket-violet { color: var(--cm-brackets-7)!important }
-.rainbow-bracket-violet > span { color: var(--cm-brackets-7)!important }
+.rainbow-bracket-red,    .rainbow-bracket-red > span,    .rainbow-bracket-red > span > span    { color: var(--cm-brackets-1)!important }
+.rainbow-bracket-orange, .rainbow-bracket-orange > span, .rainbow-bracket-orange > span > span { color: var(--cm-brackets-2)!important }
+.rainbow-bracket-yellow, .rainbow-bracket-yellow > span, .rainbow-bracket-yellow > span > span { color: var(--cm-brackets-3)!important }
+.rainbow-bracket-green,  .rainbow-bracket-green > span,  .rainbow-bracket-green > span > span  { color: var(--cm-brackets-4)!important }
+.rainbow-bracket-blue,   .rainbow-bracket-blue > span,   .rainbow-bracket-blue > span > span   { color: var(--cm-brackets-5)!important }
+.rainbow-bracket-indigo, .rainbow-bracket-indigo > span, .rainbow-bracket-indigo > span > span { color: var(--cm-brackets-6)!important }
+.rainbow-bracket-violet, .rainbow-bracket-violet > span, .rainbow-bracket-violet > span > span { color: var(--cm-brackets-7)!important }
 
 :root {
   /* 
@@ -1121,7 +1114,7 @@ img::selection {
   --cm-brackets-4: #02b3be;
   --cm-brackets-5: #8ac55f;
   --cm-brackets-6: #aab2c1;
-  --cm-brackets-7: #3baff5;
+  --cm-brackets-7: #02b3be;
   
   /* (In md) Separates */ --cm-md-content-separator: var(--cm-line-comment);
   /* (In md) Lists */     --cm-md-list:              var(--cm-foreground);
