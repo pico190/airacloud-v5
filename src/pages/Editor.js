@@ -148,24 +148,23 @@ export function Editor({ sidinfo, urlparsed }) {
         $.post("https://xploit.men/aira/api/v1/file/get.php", {
             token: sidinfo.token,
             filetoken: filetoken
-        }, (files) => {
-            console.log(files);
+        }, (file) => {
 
-            var fles = []
-            files.forEach((file, index) => {
-                fles.push({
-                    type: file.lang,
-                    name: file.name,
-                    extension: file.format,
-                    saved: false,
-                    active: index === 0 ? true : false,
-                    token: file.filetoken
-                })
-            })
+            // var fles = []
+            // files.forEach((file, index) => {
+            //     fles.push({
+            //         type: file.lang,
+            //         name: file.name,
+            //         extension: file.format,
+            //         saved: false,
+            //         active: index === 0 ? true : false,
+            //         token: file.filetoken
+            //     })
+            // })
 
-            setFiles(fles);
+            // setFiles(fles);
 
-            var data = files.find(item => item.filetoken === filetoken);
+            var data = file[0];
 
             var content = decode(data.content);
 
@@ -182,6 +181,7 @@ export function Editor({ sidinfo, urlparsed }) {
             else if (data.lang === "markdown") { lng = langs.markdown() }
             else if (data.lang === "python") { lng = langs.python() }
             else if (data.lang === "json") { lng = langs.json() }
+            else if (data.lang === "php") { lng = langs.php() }
             else { lng = null }
             console.log(data.lang, "|", lng)
             setLang(lng);
