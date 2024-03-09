@@ -4,6 +4,7 @@ import { encode, decode } from 'js-base64'
 import CodeMirror from '@uiw/react-codemirror';
 
 import { langs } from '@uiw/codemirror-extensions-langs';
+import { href } from "../utils/generalfuncs";
 
 import { color } from '@uiw/codemirror-extensions-color';
 import { inlineSuggestion } from 'codemirror-extension-inline-suggestion';
@@ -198,7 +199,7 @@ export function Editor({ sidinfo, urlparsed }) {
                         </>
                     }>
                         {files.map(elem => (
-                            <div className="file active" key={elem.name}>
+                            <div className={`file${elem.active ? " active" : ""}`} key={elem.id} id={elem.id} onClick={() => {href("#/"+elem.id+"/")}}>
                                 <img src={`https://${window.location.host}/airaicons/${elem.type}.svg`} loading="lazy" alt="" style={{ width: "20px" }} />
                                 <b>{elem.name}.{elem.extension}</b>
                                 <span className="file-saved">

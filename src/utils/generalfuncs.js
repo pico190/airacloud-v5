@@ -18,6 +18,10 @@ import ReactDOMServer from 'react-dom/server';
   
     return nearest;
   }
+
+  export function href(url) {
+    window.location.replace(url);
+  }
   
   export function nearElem(collection, targetRef) {
     const nearestElem = findNearestElem(collection, targetRef);
