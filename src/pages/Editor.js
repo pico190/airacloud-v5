@@ -5,7 +5,7 @@ import CodeMirror from '@uiw/react-codemirror';
 
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { href } from "../utils/generalfuncs";
-
+import rainbowBrackets from 'rainbowbrackets'   
 import { color } from '@uiw/codemirror-extensions-color';
 import { inlineSuggestion } from 'codemirror-extension-inline-suggestion';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
@@ -112,6 +112,7 @@ export function Editor({ sidinfo, urlparsed }) {
                 [
                     hyperLink, 
                     color, 
+                    rainbowbrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -121,6 +122,7 @@ export function Editor({ sidinfo, urlparsed }) {
                     lang,
                     hyperLink, 
                     color, 
+                    rainbowbrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )

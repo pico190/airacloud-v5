@@ -1015,6 +1015,22 @@ img::selection {
 .cm-md-quote {
   color: var(--cm-md-quote-meta)!important;
 }
+
+.rainbow-bracket-red { color: var(--cm-brackets-1) }
+.rainbow-bracket-red > span { color: var(--cm-brackets-1) }
+.rainbow-bracket-orange { color: var(--cm-brackets-2) }
+.rainbow-bracket-orange > span { color: var(--cm-brackets-2) }
+.rainbow-bracket-yellow { color: var(--cm-brackets-3) }
+.rainbow-bracket-yellow > span { color: var(--cm-brackets-3) }
+.rainbow-bracket-green { color: var(--cm-brackets-4) }
+.rainbow-bracket-green > span { color: var(--cm-brackets-4) }
+.rainbow-bracket-blue { color: var(--cm-brackets-5) }
+.rainbow-bracket-blue > span { color: var(--cm-brackets-5) }
+.rainbow-bracket-indigo { color: var(--cm-brackets-6) }
+.rainbow-bracket-indigo > span { color: var(--cm-brackets-6) }
+.rainbow-bracket-violet { color: var(--cm-brackets-7) }
+.rainbow-bracket-violet > span { color: var(--cm-brackets-7) }
+
 :root {
   /* 
   - AiraCodeMirror 
@@ -1095,9 +1111,17 @@ img::selection {
   /**/            --cm-heading6: var(--cm-md-meta);
 
   /* =>, < */  --cm-punctuation:    var(--cm-foreground);
-  /* <>, {} */ --cm-bracket:        #ffd700;
-  /* [] */     --cm-square-bracket: #da70d6;
-  /* () */     --cm-paren:          #179fff;
+  /* <>, {} */ --cm-bracket:        var(--cm-foreground);
+  /* [] */     --cm-square-bracket: var(--cm-foreground);
+  /* () */     --cm-paren:          var(--cm-foreground);
+
+  --cm-brackets-1: #3aa8eb;
+  --cm-brackets-2: #e6b86b;
+  --cm-brackets-3: #ce6adf;
+  --cm-brackets-4: #02b3be;
+  --cm-brackets-5: #8ac55f;
+  --cm-brackets-6: #aab2c1;
+  --cm-brackets-7: #3baff5;
   
   /* (In md) Separates */ --cm-md-content-separator: var(--cm-line-comment);
   /* (In md) Lists */     --cm-md-list:              var(--cm-foreground);
@@ -1114,6 +1138,9 @@ img::selection {
   /* for, if */   --cm-control-keyword:    #c586c0;
   /* function */  --cm-definition-keyword: #569cd6;
   /* import */    --cm-module-keyword:     #c586c0;
+
+
+
 
   
 }
