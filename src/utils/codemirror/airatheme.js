@@ -67,7 +67,7 @@ export const airatheme = createTheme({
       { tag: t.number,            color: cssvar("number") },
       { tag: t.integer,           color: cssvar("integer") },
       { tag: t.float,             color: cssvar("float") },
-      { tag: t.bool,              color: cssvar("float") },
+      { tag: t.bool,              color: cssvar("bool") },
       { tag: t.regexp,            color: cssvar("regexp") },
       { tag: t.escape,            color: cssvar("escape") },
       { tag: t.color,             color: cssvar("color") },
