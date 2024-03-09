@@ -152,13 +152,15 @@ export function Editor({ sidinfo, urlparsed }) {
             var lng = null;
 
             if (data.lang === "html") { lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }) }
-            if (data.lang === "css") { lng = langs.less() }
-            if (data.lang === "js") { lng = langs.javascript() }
-            if (data.lang === "jsx") { lng = langs.javascript({ config: { jsx: true } }) }
-            if (data.lang === "ts") { lng = langs.javascript({ config: { typescript: true } }) }
-            if (data.lang === "tsx") { lng = langs.javascript({ config: { typescript: true, jsx: true } }) }
-            if (data.lang === "markdown") { lng = langs.markdown() }
-            if (data.lang === "python") { lng = langs.python() }
+            else if (data.lang === "css") { lng = langs.less() }
+            else if (data.lang === "js") { lng = langs.javascript() }
+            else if (data.lang === "jsx") { lng = langs.javascript({ config: { jsx: true } }) }
+            else if (data.lang === "ts") { lng = langs.javascript({ config: { typescript: true } }) }
+            else if (data.lang === "tsx") { lng = langs.javascript({ config: { typescript: true, jsx: true } }) }
+            else if (data.lang === "markdown") { lng = langs.markdown() }
+            else if (data.lang === "python") { lng = langs.python() }
+            else { lng = null }
+            console.log(data.lang, "|", lng)
             setLang(lng);
         })
       }, [])
