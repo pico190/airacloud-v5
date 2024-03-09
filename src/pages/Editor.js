@@ -145,6 +145,7 @@ export function Editor({ sidinfo, urlparsed }) {
       };
 
       useEffect(() => {
+        console.log("update 3");
         $.post("https://xploit.men/aira/api/v1/file/all.php", {
             token: sidinfo.token,
             project: projectInfo.id
@@ -166,6 +167,7 @@ export function Editor({ sidinfo, urlparsed }) {
       }, [projectInfo, window.location.hash])
 
       useEffect(() => {
+        console.log("update 2");
         $.post("https://xploit.men/aira/api/v1/file/get.php", {
             token: sidinfo.token,
             filetoken: filetoken
@@ -208,6 +210,7 @@ export function Editor({ sidinfo, urlparsed }) {
       }, [filetoken, window.location.hash])
 
       useEffect(() => {
+        console.log("update 1");
         setFileToken(window.location.hash.replace("#", "").replace(/\//g, ""));
       }, [window.location.hash, window.location])
       
