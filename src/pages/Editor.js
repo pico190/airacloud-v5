@@ -102,7 +102,7 @@ export function Editor({ sidinfo, urlparsed }) {
     const [initialValue, setinitialValue] = useState("");
     const [cmvalue, setcmvalue] = useState("");
     const [lang, setLang] = useState(null);
-    const [extensions, setExtensions] = useState(null);
+    const [extensionsarray, setExtensions] = useState(null);
 
     useEffect(() => {
         if(lang === null) {
