@@ -101,6 +101,29 @@ export function Editor({ sidinfo, urlparsed }) {
     const [projectInfo, setProjectInfo] = useState({});
     const [initialValue, setinitialValue] = useState("");
     const [cmvalue, setcmvalue] = useState("");
+    const [lang, setLang] = useState(null);
+    const [extensions, setExtensions] = useState(null);
+
+    useEffect(() => {
+        if(lang === null) {
+            setExtensions(
+                [
+                    hyperLink, 
+                    color, 
+                    inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
+                ]
+            )
+        } else {
+            setExtensions(
+                [
+                    lang,
+                    hyperLink, 
+                    color, 
+                    inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
+                ]
+            )
+        }
+    }, [lang])
 
     const onChange = (val) => setcmvalue(val);
 
@@ -114,14 +137,30 @@ export function Editor({ sidinfo, urlparsed }) {
     }, [urlparsed]);
 
     const fetchSuggestion = async (state) => {
-        return 'hola optix te observo';
+        return ', hola optix te observo';
       };
 
       useEffect(() => {
         $.post("https://xploit.men/aira/api/v1/file/get.php", {
             token: sidinfo.token,
             filetoken: window.location.hash.replace("#", "").replace(/\//g, "")
-        }, (data) => {console.log(data)})
+        }, (data) => {
+            console.log(data);
+            
+            setinitialValue(data.content)
+            setcmvalue(data.content)
+            var lng = null;
+
+            if (data.lang === "html") { lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }) }
+            if (data.lang === "css") { lng = langs.less() }
+            if (data.lang === "js") { lng = langs.javascript() }
+            if (data.lang === "jsx") { lng = langs.javascript({ config: { jsx: true } }) }
+            if (data.lang === "ts") { lng = langs.javascript({ config: { typescript: true } }) }
+            if (data.lang === "tsx") { lng = langs.javascript({ config: { typescript: true, jsx: true } }) }
+            if (data.lang === "markdown") { lng = langs.markdown() }
+            if (data.lang === "python") { lng = langs.python() }
+            setLang(lng);
+        })
       }, [])
       
       
@@ -154,7 +193,7 @@ export function Editor({ sidinfo, urlparsed }) {
                     <style>{":root, * {--sb-width: 28vw!important;} .content {padding: 20px; gap: 10px} .ͼ16.cm-focused .cm-selectionBackground .ͼ16 .cm-selectionLayer .cm-selectionBackground {background: #243047 !important;} .cm-editor, .cm-editor * {font-size: var(--editor-font-size);} .cm-editor, .cm-editor * {font-family: var(--editor-font-family);} .editorcontainer {position: relative;}"}</style>
                     <div className="editorcontainer">
                         <CodeMirror
-                            extensions={[langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }), hyperLink, color, inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })]}
+                            extensions={extensionsarray}
                             value={initialValue}
                             theme={airatheme}
                             basicSetup={{ autocompletion: false }}
