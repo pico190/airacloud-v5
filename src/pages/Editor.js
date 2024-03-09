@@ -150,8 +150,10 @@ export function Editor({ sidinfo, urlparsed }) {
             
             var data = files.find(item => item.filetoken === filetoken);
 
-            setinitialValue(data.content)
-            setcmvalue(data.content)
+            var content = decode(data.content);
+
+            setinitialValue(content)
+            setcmvalue(content)
             var lng = null;
 
             if (data.lang === "html") { lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }) }
