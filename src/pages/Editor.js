@@ -252,12 +252,16 @@ export function Editor({ sidinfo, urlparsed }) {
                                 {lang.language.name}
                             </div>
                             {
-                                document.querySelector(".file.active").innerText.split(".")[0] === "package" ? 
-                                (
-                                    <div className="cm-info-right">
-                                        Version Lens
-                                    </div>
-                                ) :
+                                document.querySelector(".file.active") ? 
+                                        document.querySelector(".file.active").innerText.split(".")[0] === "package" ? 
+                                        (
+                                            <div className="cm-info-right">
+                                                Version Lens
+                                            </div>
+                                        ) :
+                                        (<></>)
+                                
+                                :
                                 (<></>)
                             }
                         </div>
