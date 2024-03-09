@@ -1015,6 +1015,19 @@ img::selection {
 .cm-md-quote {
   color: var(--cm-md-quote-meta)!important;
 }
+.cm-info-right {
+  height: 100%;
+  border-left: 1px solid rgba(var(--textrgba),.1);
+  padding: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cm-info-right:first-child {
+  margin-left: auto;
+  
+}
 
 .rainbow-bracket-red,    .rainbow-bracket-red > span,    .rainbow-bracket-red > span > span    { color: var(--cm-brackets-1)!important; outline: none!important }
 .rainbow-bracket-orange, .rainbow-bracket-orange > span, .rainbow-bracket-orange > span > span { color: var(--cm-brackets-2)!important; outline: none!important }

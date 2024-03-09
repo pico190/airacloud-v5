@@ -206,7 +206,6 @@ export function Editor({ sidinfo, urlparsed }) {
             else if (data.lang === "json") { lng = langs.json() }
             else if (data.lang === "php") { lng = langs.php() }
             else { lng = null }
-            console.log(data.lang, "|", lng)
             setLang(lng);
         })
       }, [filetoken])      
@@ -247,7 +246,21 @@ export function Editor({ sidinfo, urlparsed }) {
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
                         />
-                        <div className="cm-info" id="cm-info">{cminfo}</div>
+                        <div className="cm-info" id="cm-info">
+                            {cminfo}
+                            <div className="cm-info-right">
+                                {lang.language.name}
+                            </div>
+                            {
+                                document.querySelector(".file.active").innerText.split(".")[0] === "package" ? 
+                                (
+                                    <div className="cm-info-right">
+                                        Version Lens
+                                    </div>
+                                ) :
+                                (<></>)
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
