@@ -112,7 +112,7 @@ export function Editor({ sidinfo, urlparsed }) {
                 [
                     hyperLink, 
                     color, 
-                    rainbowbrackets(),
+                    rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -122,7 +122,7 @@ export function Editor({ sidinfo, urlparsed }) {
                     lang,
                     hyperLink, 
                     color, 
-                    rainbowbrackets(),
+                    rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
