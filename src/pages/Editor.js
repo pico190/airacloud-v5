@@ -145,10 +145,31 @@ export function Editor({ sidinfo, urlparsed }) {
       };
 
       useEffect(() => {
+        $.post("https://xploit.men/aira/api/v1/file/all.php", {
+            token: sidinfo.token,
+            project: projectInfo.id
+        }, (files) => {
+            var fles = []
+            files.forEach((file, index) => {
+                fles.push({
+                    type: file.lang,
+                    name: file.name,
+                    extension: file.format,
+                    saved: false,
+                    active: index === 0 ? true : false,
+                    token: file.filetoken
+                })
+            })
+
+            setFiles(fles);
+        })
+      }, [])
+
+      useEffect(() => {
         $.post("https://xploit.men/aira/api/v1/file/get.php", {
             token: sidinfo.token,
             filetoken: filetoken
-        }, (file) => {
+        }, (data) => {
 
             // var fles = []
             // files.forEach((file, index) => {
@@ -163,8 +184,6 @@ export function Editor({ sidinfo, urlparsed }) {
             // })
 
             // setFiles(fles);
-
-            var data = file[0];
 
             var content = decode(data.content);
 
@@ -186,7 +205,7 @@ export function Editor({ sidinfo, urlparsed }) {
             console.log(data.lang, "|", lng)
             setLang(lng);
         })
-      }, [window.location.hash])
+      }, [])
       
       
     const content = (
