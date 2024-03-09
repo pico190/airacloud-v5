@@ -156,7 +156,7 @@ export function Editor({ sidinfo, urlparsed }) {
                     name: file.name,
                     extension: file.format,
                     saved: false,
-                    active: index === 0 ? true : false,
+                    active: filetoken === file.filetoken,
                     token: file.filetoken
                 })
             })
