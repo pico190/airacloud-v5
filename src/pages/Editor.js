@@ -163,7 +163,7 @@ export function Editor({ sidinfo, urlparsed }) {
 
             setFiles(fles);
         })
-      }, [])
+      }, [projectInfo])
 
       useEffect(() => {
         $.post("https://xploit.men/aira/api/v1/file/get.php", {
@@ -205,7 +205,7 @@ export function Editor({ sidinfo, urlparsed }) {
             console.log(data.lang, "|", lng)
             setLang(lng);
         })
-      }, [])
+      }, [filetoken])
       
       
     const content = (
