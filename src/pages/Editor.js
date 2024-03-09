@@ -178,6 +178,7 @@ export function Editor({ sidinfo, urlparsed }) {
             else if (data.lang === "tsx") { lng = langs.javascript({ config: { typescript: true, jsx: true } }) }
             else if (data.lang === "markdown") { lng = langs.markdown() }
             else if (data.lang === "python") { lng = langs.python() }
+            else if (data.lang === "json") { lng = langs.json() }
             else { lng = null }
             console.log(data.lang, "|", lng)
             setLang(lng);
