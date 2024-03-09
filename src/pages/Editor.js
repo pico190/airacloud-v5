@@ -138,7 +138,7 @@ export function Editor({ sidinfo, urlparsed }) {
     }, [urlparsed]);
 
     const fetchSuggestion = async (state) => {
-        return ' frio suelo para la burra';
+        return ', hola optix te observo';
       };
 
       useEffect(() => {
