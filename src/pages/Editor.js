@@ -221,7 +221,7 @@ export function Editor({ sidinfo, urlparsed }) {
                                         <CmenuElement icon="https://xploit.men/scdn/?fluenticons&name=animal-cat" title="relleno rellenero" action={() => { alert("click2") }} desc="Gatito miau" />
                                     </>
                                 }>
-                                    <div className={`file${elem.active ? " active" : ""}`} key={elem.id} id={elem.id} onClick={() => {href("#/"+elem.id+"/")}}>
+                                    <div className={`file${elem.active ? " active" : ""}`} key={elem.token} id={elem.token} onClick={() => {href("#/"+elem.token+"/")}}>
                                         <img src={`https://${window.location.host}/airaicons/${elem.type}.svg`} loading="lazy" alt="" style={{ width: "20px" }} />
                                         <b>{elem.name}.{elem.extension}</b>
                                         <span className="file-saved">
