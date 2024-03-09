@@ -99,9 +99,10 @@ export function Editor({ sidinfo, urlparsed }) {
     }, [editorToken, reference]);
 
     const [projectInfo, setProjectInfo] = useState({});
-    const [value, setValue] = useState("");
+    const [initialValue, setinitialValue] = useState("");
+    const [cmvalue, setcmvalue] = useState("");
 
-    const onChange = (val) => setValue(val);
+    const onChange = (val) => setcmvalue(val);
 
     useEffect(() => {
         const projects = JSON.parse(decode(window.localStorage.getItem("DATA__PROJECTS")));
@@ -154,7 +155,7 @@ export function Editor({ sidinfo, urlparsed }) {
                     <div className="editorcontainer">
                         <CodeMirror
                             extensions={[langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }), hyperLink, color, inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })]}
-                            value={value}
+                            value={initialValue}
                             theme={airatheme}
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
