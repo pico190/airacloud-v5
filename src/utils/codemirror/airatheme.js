@@ -6,7 +6,7 @@ function cssvar(name) {
 }
 
 export const airatheme = createTheme({
-    dark: 'dark',
+    theme: 'dark',
     settings: {
       background:             cssvar("bg"),
       backgroundImage:        cssvar("bg-img"),
