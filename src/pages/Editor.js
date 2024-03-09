@@ -182,7 +182,7 @@ export function Editor({ sidinfo, urlparsed }) {
             console.log(data.lang, "|", lng)
             setLang(lng);
         })
-      }, [])
+      }, [window.location.hash])
       
       
     const content = (
