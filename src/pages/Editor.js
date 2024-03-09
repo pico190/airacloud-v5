@@ -103,6 +103,7 @@ export function Editor({ sidinfo, urlparsed }) {
     const [cmvalue, setcmvalue] = useState("");
     const [lang, setLang] = useState(null);
     const [extensionsarray, setExtensions] = useState(null);
+    const [filetoken, setFileToken] = useState(window.location.hash.replace("#", "").replace(/\//g, ""));
 
     useEffect(() => {
         if(lang === null) {
@@ -143,10 +144,12 @@ export function Editor({ sidinfo, urlparsed }) {
       useEffect(() => {
         $.post("https://xploit.men/aira/api/v1/file/get.php", {
             token: sidinfo.token,
-            filetoken: window.location.hash.replace("#", "").replace(/\//g, "")
-        }, (data) => {
-            console.log(data);
+            filetoken: filetoken
+        }, (files) => {
+            console.log(files);
             
+            var data = files.find(item => item.filetoken === filetoken);
+
             setinitialValue(data.content)
             setcmvalue(data.content)
             var lng = null;
