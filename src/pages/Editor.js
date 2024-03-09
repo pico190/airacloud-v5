@@ -249,7 +249,7 @@ export function Editor({ sidinfo, urlparsed }) {
                         <div className="cm-info" id="cm-info">
                             {cminfo}
                             <div className="cm-info-right">
-                                {lang.language.name}
+                                {lang ? lang.language.name : <></>}
                             </div>
                             {
                                 document.querySelector(".file.active") ? 
