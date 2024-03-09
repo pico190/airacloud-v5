@@ -115,7 +115,14 @@ export function Editor({ sidinfo, urlparsed }) {
                 [
                     hyperLink, 
                     color, 
-                    indentationMarkers(),
+                    indentationMarkers({
+                        colors: {
+                            light: '#00000024',
+                            dark: '#FFFFFF24',
+                            activeLight: '#0000004F',
+                            activeDark: '#FFFFFF4F',
+                        }
+                    }),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
