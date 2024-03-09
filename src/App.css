@@ -1016,20 +1016,20 @@ img::selection {
   color: var(--cm-md-quote-meta)!important;
 }
 
-.rainbow-bracket-red { color: var(--cm-brackets-1) }
-.rainbow-bracket-red > span { color: var(--cm-brackets-1) }
-.rainbow-bracket-orange { color: var(--cm-brackets-2) }
-.rainbow-bracket-orange > span { color: var(--cm-brackets-2) }
-.rainbow-bracket-yellow { color: var(--cm-brackets-3) }
-.rainbow-bracket-yellow > span { color: var(--cm-brackets-3) }
-.rainbow-bracket-green { color: var(--cm-brackets-4) }
-.rainbow-bracket-green > span { color: var(--cm-brackets-4) }
-.rainbow-bracket-blue { color: var(--cm-brackets-5) }
-.rainbow-bracket-blue > span { color: var(--cm-brackets-5) }
-.rainbow-bracket-indigo { color: var(--cm-brackets-6) }
-.rainbow-bracket-indigo > span { color: var(--cm-brackets-6) }
-.rainbow-bracket-violet { color: var(--cm-brackets-7) }
-.rainbow-bracket-violet > span { color: var(--cm-brackets-7) }
+.rainbow-bracket-red { color: var(--cm-brackets-1)!important }
+.rainbow-bracket-red > span { color: var(--cm-brackets-1)!important }
+.rainbow-bracket-orange { color: var(--cm-brackets-2)!important }
+.rainbow-bracket-orange > span { color: var(--cm-brackets-2)!important }
+.rainbow-bracket-yellow { color: var(--cm-brackets-3)!important }
+.rainbow-bracket-yellow > span { color: var(--cm-brackets-3)!important }
+.rainbow-bracket-green { color: var(--cm-brackets-4)!important }
+.rainbow-bracket-green > span { color: var(--cm-brackets-4)!important }
+.rainbow-bracket-blue { color: var(--cm-brackets-5)!important }
+.rainbow-bracket-blue > span { color: var(--cm-brackets-5)!important }
+.rainbow-bracket-indigo { color: var(--cm-brackets-6)!important }
+.rainbow-bracket-indigo > span { color: var(--cm-brackets-6)!important }
+.rainbow-bracket-violet { color: var(--cm-brackets-7)!important }
+.rainbow-bracket-violet > span { color: var(--cm-brackets-7)!important }
 
 :root {
   /* 
