@@ -52,6 +52,8 @@ export function Editor({ sidinfo, urlparsed }) {
                 }
             }
         })
+        
+        setFileToken(window.location.hash.replace("#", "").replace(/\//g, ""));
 
     }, 1)
 
@@ -164,7 +166,7 @@ export function Editor({ sidinfo, urlparsed }) {
 
             setFiles(fles);
         })
-      }, [projectInfo, window.location.hash])
+      }, [projectInfo, filetoken])
 
       useEffect(() => {
         console.log("update 2");
@@ -207,13 +209,7 @@ export function Editor({ sidinfo, urlparsed }) {
             console.log(data.lang, "|", lng)
             setLang(lng);
         })
-      }, [filetoken, window.location.hash])
-
-      useEffect(() => {
-        console.log("update 1");
-        setFileToken(window.location.hash.replace("#", "").replace(/\//g, ""));
-      }, [window.location.hash, window.location])
-      
+      }, [filetoken])      
       
     const content = (
         <>
