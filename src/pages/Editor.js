@@ -149,14 +149,6 @@ export function Editor({ sidinfo, urlparsed }) {
             console.log(files);
 
             var fles = []
-                    // {
-        //     type: "react",
-        //     name: "codemirror",
-        //     extension: "jsx",
-        //     saved: true,
-        //     active: true,
-        //     token: "patatas"
-        // }
             files.forEach((file, index) => {
                 fles.push({
                     type: file.lang,
@@ -167,6 +159,8 @@ export function Editor({ sidinfo, urlparsed }) {
                     token: file.filetoken
                 })
             })
+
+            setFiles(fles);
 
             var data = files.find(item => item.filetoken === filetoken);
 
