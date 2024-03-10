@@ -828,6 +828,30 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(var(--textrgba), .1);
 }
 
+.modal-form .modal-continue-button {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+}
+
+.aira-primary-act-btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 32px;
+    padding-right: 32px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border-radius: 100%;
+    background-color: var(--primary-blue);
+    cursor: pointer;
+}
+
+.aira-primary-act-btn:hover {
+    background-color: var(--darker-primary-blue);
+}   
+
 @keyframes sidebar {
   from {
     left: calc(0vw - var(--sb-width))
