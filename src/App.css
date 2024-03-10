@@ -828,7 +828,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(var(--textrgba), .1);
 }
 
-.modal-form .modal-continue-button {
+.modal-continue-button {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -841,11 +841,14 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 32px;
     padding-right: 32px;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     color: white;
-    border-radius: 100%;
+    border-radius: 1000px;
     background-color: var(--primary-blue);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .aira-primary-act-btn:hover {
