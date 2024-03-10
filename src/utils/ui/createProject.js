@@ -44,7 +44,13 @@ export function createProject() {
                         <option value="private">Private</option>
                         <option value="invite">Invite-only</option>
                     </select>
-                </div>	
+                </div>
+                <div className="modal-continue-button">
+                    <button type="submit" className="aira-primary-act-btn">
+                        Next
+                        <img src="https://xploit.men/scdn/?fluenticons&amp;name=chevron_right" loading="lazy" alt="" width="30"/>
+                    </button>
+                </div>
             </div>
             </div>
 
