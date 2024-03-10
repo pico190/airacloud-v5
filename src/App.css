@@ -63,12 +63,14 @@ h1, h2, h3, h4, h5, h6 {
 .home-section {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-top: 15px;
+    /* 5; 15; */
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .home-section-title {
     font-size: 30px; 
+    line-height: 30px;
     /* text-decoration: underline; 
     text-decoration-thickness: 0.1px;
     text-decoration-color: rgba(var(--textrgba), 0.568); */
@@ -262,6 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .contentTitle {
+    /*
     font-size: 56px;
     text-decoration: underline;
     text-decoration-color: var(--primary-blue);
@@ -269,6 +272,9 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration-line: blink;
     text-decoration-line: underline;
     text-decoration-style: solid;
+    */
+    font-size: 60px;
+    line-height: 60px;
 }
 
 /* AiraLoadBar */
