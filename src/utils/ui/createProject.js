@@ -27,12 +27,23 @@ export function createProject() {
                     <input placeholder="Name your project..." />
                 </div>
                 <div className="modal-form-input">
-                    <img src="https://xploit.men/scdn/?fluenticons&amp;name=text" loading="lazy" alt="" width="30" />
-                    <select></select>
+                    <img src="https://xploit.men/scdn/?fluenticons&amp;name=code" loading="lazy" alt="" width="30" />
+                    <select>
+                        <option value="" disabled selected>Choose your language...</option>
+                        <option value="htmlcssjs">HTML, CSS & JS</option>
+                        <option value="py">Python</option>
+                        <option value="lua">Lua</option>
+                        <option value="js">JavaScript</option>
+                        <option value="bf">BrainFuck</option>
+                    </select>
                 </div>
                 <div className="modal-form-input">
-                    <img src="https://xploit.men/scdn/?fluenticons&amp;name=text" loading="lazy" alt="" width="30"/>
-                    <select></select>
+                    <img src="https://xploit.men/scdn/?fluenticons&amp;name=globe" loading="lazy" alt="" width="30"/>
+                    <select>
+                        <option value="public" selected>Public</option>
+                        <option value="private">Private</option>
+                        <option value="invite">Invite-only</option>
+                    </select>
                 </div>	
             </div>
             </div>
