@@ -11,7 +11,7 @@ export function projectLoadBar(projectName) {
     }, 200)
 
     // Pro Tips
-    var protips = ["This is a pro tip", "I like carrot", "Optix is obtuse", "Anal sex"]
+    var protips = ["This is a pro tip", "I like carrot", "Optix is obtuse", "AiraCloud v6 cominj sun"]
     var firstphrase = "Loading your project, <b>"+projectName+"</b>...";
     var span = document.getElementById("loadingProtip");
     span.innerHTML = firstphrase
