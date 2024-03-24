@@ -1265,71 +1265,71 @@ img::selection {
 
   /* Editor text content background                            */ --cm-bg:                       var(--default-button);
   /* Editor background image                                   */ --cm-bg-img:                   none;
-  /* Editor text                                               */ --cm-foreground:               invert(#d7d7d7); 
+  /* Editor text                                               */ --cm-foreground:               #d7d7d7; 
   /* Selection color                                           */ --cm-selection:                rgb(36, 48, 71);
-  /* Background of selectionMatch                              */ --cm-selection-match:          invert(#ffffff0a);
+  /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
-  /* Background color of the selected line                     */ --cm-lineHighlight:            invert(#ffffff0f);
-  /* Color of not closed tags                                  */ --cm-nonMatching:              invert(#d12e2e);
+  /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
+  /* Color of not closed tags                                  */ --cm-nonMatching:              #d12e2e;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;
 
   /* ---------------- Completion Colors */
-  /* Single line comments   */ --cm-line-comment:     invert(#6a9955);
+  /* Single line comments   */ --cm-line-comment:     #008000;
   /* Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
   
-  /* Is not used in many places */ --cm-name:      invert(#4ec9b0);
-  /**/                             --cm-label-name: invert(#ce9178);
+  /* Is not used in many places */ --cm-name:      #a31515;
+  /**/                             --cm-label-name: #a31515;
 
   /* At Swiftly Team we don't know what is this */ --cm-namespace: var(--cm-foreground);
-  /**/                                             --cm-macroname: invert(#dcdcaa);
+  /**/                                             --cm-macroname: #dcdcaa;
   
-  /* Types names (null, true, boolean, string) */ --cm-type-definition: invert(#569cd6);
-  /**/                                            --cm-type-name:       invert(#4ec9b0);
-  /**/                                            --cm-type-standard:   invert(#4ec9b0);
+  /* Types names (null, true, boolean, string) */ --cm-type-definition: #0000ff;
+  /**/                                            --cm-type-name:       #a31515;
+  /**/                                            --cm-type-standard:   #a31515;
 
-  /* Existing html tags (<html>)              */ --cm-tag-name-standard: invert(#569cd6);
-  /* Custom elements or React JSX elements () */ --cm-tag-name:          invert(#4ec9b0);
+  /* Existing html tags (<html>)              */ --cm-tag-name-standard: #a31515;
+  /* Custom elements or React JSX elements () */ --cm-tag-name:          #a31515;
 
-  /* Variables                                     */ --cm-variable-name:            invert(#9cdcfe);
-  /* Functions and other variable types definition */ --cm-variable-name-definition: invert(#9cdcfe);
-  /* Functions in use (print())                    */ --cm-variable-name-function:   invert(#dcdcaa);
+  /* Variables                                     */ --cm-variable-name:            #e50000;
+  /* Functions and other variable types definition */ --cm-variable-name-definition: #e50000;
+  /* Functions in use (print())                    */ --cm-variable-name-function:   var(--cm-foreground);
 
-  /* Property name                  */ --cm-property-name:       invert(#9cdcfe);
-  /* The variable from the property */ --cm-property-definition: invert(#569cd6);
-  /* definition.function()          */ --cm-property-function:   invert(#dcdcaa);
+  /* Property name                  */ --cm-property-name:       #e50000;
+  /* The variable from the property */ --cm-property-definition: #0000ff;
+  /* definition.function()          */ --cm-property-function:   var(--cm-foreground);
 
-  /* atribute="value" */ --cm-attribute-name:  invert(#9cdcfe);
+  /* atribute="value" */ --cm-attribute-name:  #e50000;
   /* atribute="value" */ --cm-attribute-value: var(--cm-string);
   /* <!DOCTYPE html> */  --cm-document-meta:   rgba(var(--textrgba),.3);
-  /* <html></html> */    --cm-angle-bracket:   invert(#808080);
+  /* <html></html> */    --cm-angle-bracket:   #444444;
 
-  /* (In css) .class           */ --cm-classname:         invert(#dcdcaa);
-  /* (In css) .class::constant */ --cm-classname-constant: invert(#c586c0);
+  /* (In css) .class           */ --cm-classname:         #dcdcaa;
+  /* (In css) .class::constant */ --cm-classname-constant: #c586c0;
 
-  /* Types */   --cm-string:         invert(#ce9178);
+  /* Types */   --cm-string:         #a31515;
   /**/          --cm-string-special: var(--cm-string);
   /**/          --cm-literal:        var(--cm-string);
   /**/          --cm-character:      var(--cm-string);
-  /**/          --cm-number:         invert(#b5cea8);
+  /**/          --cm-number:         #098658;
   /**/          --cm-integer:        var(--cm-number);
   /**/          --cm-float:          var(--cm-number);
-  /**/          --cm-bool:           invert(#569cd6);
-  /**/          --cm-regexp:         invert(#d16969);
-  /* unknown */ --cm-escape:         invert(#569cd6);
+  /**/          --cm-bool:           #0000ff;
+  /**/          --cm-regexp:         #070606;
+  /* unknown */ --cm-escape:         #0000ff;
   /**/          --cm-color:          var(--cm-string);
-  /**/          --cm-url:            invert(#9ce7fe);
-  /* public */  --cm-keyword:        invert(#c586c0);
-  /* this */    --cm-self:           invert(#569cd6);
-  /* null */    --cm-null:           invert(#569cd680);
-  /**/          --cm-atom:           invert(#dcdcaa);
-  /* em, px */  --cm-unit:           invert(#569cd6);
-  /* var, let */--cm-modifier:       invert(#569cd6);
+  /**/          --cm-url:            #24373d;
+  /* public */  --cm-keyword:        #0000ff;
+  /* this */    --cm-self:           #0000ff;
+  /* null */    --cm-null:           #0000ff80;
+  /**/          --cm-atom:           var(--cm-foreground);
+  /* em, px */  --cm-unit:           #0000ff;
+  /* var, let */--cm-modifier:       #0000ff;
   /* operators*/--cm-operator:       var(--cm-foreground);
 
-  /* (In md) invert(# */ --cm-heading1: var(--cm-md-meta);
+  /* (In md) # */ --cm-heading1: var(--cm-md-meta);
   /**/            --cm-heading2: var(--cm-md-meta);
   /**/            --cm-heading3: var(--cm-md-meta);
   /**/            --cm-heading4: var(--cm-md-meta);
@@ -1341,29 +1341,28 @@ img::selection {
   /* [] */     --cm-square-bracket: var(--cm-foreground);
   /* () */     --cm-paren:          var(--cm-foreground);
 
-  --cm-brackets-1: invert(#3aa8eb);
-  --cm-brackets-2: invert(#e6b86b);
-  --cm-brackets-3: invert(#ce6adf);
-  --cm-brackets-4: invert(#02b3be);
-  --cm-brackets-5: invert(#8ac55f);
-  --cm-brackets-6: invert(#aab2c1);
-  --cm-brackets-7: invert(#02b3be);
+  --cm-brackets-1: #0431fa;
+  --cm-brackets-2: #319331;
+  --cm-brackets-3: #7b3814;
+  --cm-brackets-4: #391041;
+  --cm-brackets-5: #00363a;
+  --cm-brackets-6: #3e4146;
+  --cm-brackets-7: #391041;
   
   /* (In md) Separates */ --cm-md-content-separator: var(--cm-line-comment);
   /* (In md) Lists */     --cm-md-list:              var(--cm-foreground);
   /* (In md) Quote */     --cm-md-quote:             var(--cm-foreground);
-  /* (In md) Quote */     --cm-md-quote-meta:        invert(#6a9955);
-  /* (In md) Bold */      --cm-md-bold:              invert(#6796e6);
+  /* (In md) Quote */     --cm-md-quote-meta:        #0451a5;
+  /* (In md) Bold */      --cm-md-bold:              #000080;
   /* (In md) Italic */    --cm-md-emphasis:          rgba(var(--textrgba), .7);
   /* (In md) Link */      --cm-md-link:              var(--cm-url);
   /* (In md) Monospace */ --cm-md-monospace:         var(--cm-string);
   /* (In md) Strike */    --cm-md-strikethrough:     var(--cm-md-link);
-  /* (In md) >>, * */     --cm-md-meta:              invert(#569cd6);
+  /* (In md) >>, * */     --cm-md-meta:              #0451a5;
 
-  /* typeof */    --cm-operator-keyword:   invert(#569cd6);
-  /* for, if */   --cm-control-keyword:    invert(#c586c0);
-  /* function */  --cm-definition-keyword: invert(#569cd6);
-  /* import */    --cm-module-keyword:     invert(#c586c0);
+  /* typeof */    --cm-operator-keyword:   #0000ff;
+  /* for, if */   --cm-control-keyword:    #0000ff;
+  /* function */  --cm-definition-keyword: #0000ff;
+  /* import */    --cm-module-keyword:     #0000ff;
   
 }
-
