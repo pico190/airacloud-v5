@@ -104,16 +104,16 @@ export function EditorNoCookie({ urlparsed }) {
     return (
         <>
                         <svg style={{display: "none"}} id="svgroundcorner" children={`
+
 <defs>
-  <filter id="selection-goo">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur>
-    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  
-                                                    0 1 0 0 0  
-                                                    0 0 1 0 0  
-                                                    0 0 0 19 -9" result="goo"></feColorMatrix>
-    <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
-  </filter>
+<filter id="selection-goo">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"></feGaussianBlur>
+  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+  <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+</filter>
 </defs>
+<rect x="0" y="0" width="100" height="100" rx="20" ry="20" fill="white" filter="url(#selection-goo)"></rect>
+
 
                         `} />
                         <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none; border-radius: 0px;}" />
