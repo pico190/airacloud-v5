@@ -1108,16 +1108,16 @@ img::selection {
   filter: url(#selection-goo);
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track, *::-webkit-scrollbar-track {
   background: #15171d;
 }
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb {
   background: #717275;
 }
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover, *::-webkit-scrollbar-thumb:hover {
   background: #57585c; 
 }
-::-webkit-scrollbar-thumb:active {
+::-webkit-scrollbar-thumb:active, *::-webkit-scrollbar-thumb:active {
   background: #434549; 
 }
 
