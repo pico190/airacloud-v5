@@ -1155,7 +1155,7 @@ img::selection {
 
   /* Editor text content background                            */ --cm-bg:                       var(--default-button);
   /* Editor background image                                   */ --cm-bg-img:                   none;
-  /* Editor text                                               */ --cm-foreground:               #d7d7d7; 
+  /* Editor text                                               */ --cm-foreground:               #161616; 
   /* Selection color                                           */ --cm-selection:                rgb(36, 48, 71);
   /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
@@ -1263,10 +1263,10 @@ img::selection {
   (You can edit this as you want)
   */
 
-  /* Editor text content background                            */ --cm-bg:                       var(--default-button);
+  /* Editor text content background                            */ --cm-bg:                       #e0dcdc;
   /* Editor background image                                   */ --cm-bg-img:                   none;
-  /* Editor text                                               */ --cm-foreground:               #d7d7d7; 
-  /* Selection color                                           */ --cm-selection:                rgb(36, 48, 71);
+  /* Editor text                                               */ --cm-foreground:               #1f1f1f; 
+  /* Selection color                                           */ --cm-selection:                #96a3bd ;
   /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
