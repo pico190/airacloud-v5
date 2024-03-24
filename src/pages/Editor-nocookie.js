@@ -47,7 +47,13 @@ export function EditorNoCookie({ urlparsed }) {
         // urlparsed[2] => codigo base64 que es el contenido
         console.log(urlparsed, "\\", urlparsed[1], "\\", urlparsed[2], "\\", decode(urlparsed[2]))
         setLang(langLoader(urlparsed[1], langs))
-        setinitialValue(decode(urlparsed[2]))
+        var value;
+        try {
+            value = decode(urlparsed[2])
+        } catch(err) {
+            value = "Base64 Decoding Error"
+        }
+        setinitialValue(value)
     }, [urlparsed])
 
     // IntelliSense
@@ -113,7 +119,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     return (
         <>
-                        <style children="* {--editor-font-size: 46px;}" />
+                        <style children="* {--editor-font-size: 2vw;}" />
                         <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}
