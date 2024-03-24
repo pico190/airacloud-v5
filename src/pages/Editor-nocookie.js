@@ -103,6 +103,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     return (
         <>
+                        <svg style="display: none;" id="svgroundcorner" />
                         <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none; border-radius: 0px;}" />
                         <style id="langstyle" />
                         <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} classList="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />

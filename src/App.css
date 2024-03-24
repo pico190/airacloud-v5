@@ -1104,6 +1104,10 @@ img::selection {
   opacity: 1;
 }
 
+.cm-selectionLayer {
+  filter: url(#selection-goo);
+}
+
 :root {
   /* 
   - AiraCodeMirror 
