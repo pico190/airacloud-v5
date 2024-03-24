@@ -105,7 +105,7 @@ export function EditorNoCookie({ urlparsed }) {
         <>
                         <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none; border-radius: 0px;}" />
                         <style id="langstyle" />
-                        <img src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" style={{ width:"7vw", position: "fixed", zIndex: 10000, right: "10px", bottom: "10px", opacity: "0.5"}} />
+                        <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} classList="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />
                         <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}

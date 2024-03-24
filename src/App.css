@@ -1090,6 +1090,20 @@ img::selection {
   background-color: #ff63006e!important;
 }
 
+.editor-nocookie-watermark {
+  width: 7vw;
+  position: fixed;
+  z-index: 10000;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.editor-nocookie-watermark:hover {
+  opacity: 1;
+}
+
 :root {
   /* 
   - AiraCodeMirror 
