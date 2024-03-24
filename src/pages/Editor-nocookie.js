@@ -120,7 +120,7 @@ export function EditorNoCookie({ urlparsed }) {
     return (
         <>
                         <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none; border-radius: 0px;}" />
-                        <img src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" style={{ position: "fixed", zIndex: 10000, right: "10px", bottom: "10px", opacity: "0.5"}} />
+                        <img src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" style={{ width:"7vw", position: "fixed", zIndex: 10000, right: "10px", bottom: "10px", opacity: "0.5"}} />
                         <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}
