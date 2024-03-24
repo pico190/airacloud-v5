@@ -14,7 +14,6 @@ import { airatheme } from "../utils/codemirror/airatheme";
 import $ from 'jquery'
 import { nearElem } from "../utils/generalfuncs";
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
-import { spaces, hexToRgb } from "../utils/generalfuncs";
 import langLoader from "../utils/codemirror/langloader";
 
 export function Editor({ sidinfo, urlparsed }) {

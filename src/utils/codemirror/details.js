@@ -1,3 +1,6 @@
+
+import { spaces, hexToRgb } from "../generalfuncs";
+
 export function loadDetails() {
             // Details
             Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
