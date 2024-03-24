@@ -48,10 +48,11 @@ export function EditorNoCookie({ urlparsed }) {
         console.log(urlparsed, "\\", urlparsed[1], "\\", urlparsed[2], "\\", decode(urlparsed[2]))
         setLang(langLoader(urlparsed[1], langs))
         var value;
+        var errormsg = "Base64 Decoding Error"
         try {
-            value = decode(urlparsed[2])
+            value = decode(urlparsed[2] ? urlparsed[2] : encode(errormsg))
         } catch(err) {
-            value = "Base64 Decoding Error"
+            value = errormsg
         }
         setinitialValue(value)
     }, [urlparsed])

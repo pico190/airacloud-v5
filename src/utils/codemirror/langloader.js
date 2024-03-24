@@ -12,6 +12,7 @@ export default function langLoader(lang, langs) {
     else if (lang === "python") { lng = langs.python() }
     else if (lang === "json") { lng = langs.json() }
     else if (lang === "php") { lng = langs.php() }
+    else if (lang === "java") { lng = langs.java() }
     else { lng = null }
     return lng;
 }
