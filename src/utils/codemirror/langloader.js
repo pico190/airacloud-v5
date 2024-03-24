@@ -1,8 +1,10 @@
+import { decode } from 'js-base64'
+
 export default function langLoader(lang, langs) {
 
     var lng = null;
     var marketplace = JSON.parse(decode(localStorage.getItem("DATA__MARKETPLACE")));
-    
+    console.log(marketplace)
     
     if (lang === "html") { 
         var htmlconfig = { matchClosingTags: true, autoCloseTags: true, nestedLanguages: [] }
