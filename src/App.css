@@ -498,7 +498,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .cm-info {
-    background-color: var(--default-button);
+    background-color: var(--cm-bg);
     display: flex;
     font-family: 'Atkinson Hyperlegible';
     height: var(--cm-info-height);
@@ -534,7 +534,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .ͼ16 .cm-cursor, .ͼ16 .cm-dropCursor {
-    border-left: 2px solid #c6c6c6!important;
+    border-left: 2px solid var(--cm-cursor)!important;
     transition-duration: 0.1s;
   }
 
@@ -554,7 +554,7 @@ h1, h2, h3, h4, h5, h6 {
       animation-duration: 1200ms!important;
   }
   .ͼ16, .ͼ16 .cm-gutters {
-      background-color: var(--default-button)!important;
+      background-color: var(--cm-bg)!important;
       border-right: 0px solid transparent;
   }
   /* .cm-theme {
@@ -1154,8 +1154,9 @@ img::selection {
   */
 
   /* Editor text content background                            */ --cm-bg:                       var(--default-button);
+  /* Editor cursor color                                       */ --cm-cursor:                   #c6c6c6;
   /* Editor background image                                   */ --cm-bg-img:                   none;
-  /* Editor text                                               */ --cm-foreground:               #161616; 
+  /* Editor text                                               */ --cm-foreground:               #e6e6e6; 
   /* Selection color                                           */ --cm-selection:                rgb(36, 48, 71);
   /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
@@ -1264,6 +1265,7 @@ img::selection {
   */
 
   /* Editor text content background                            */ --cm-bg:                       #e0dcdc;
+  /* Editor cursor color                                       */ --cm-cursor:                   #000000c7;
   /* Editor background image                                   */ --cm-bg-img:                   none;
   /* Editor text                                               */ --cm-foreground:               #1f1f1f; 
   /* Selection color                                           */ --cm-selection:                #96a3bd ;
