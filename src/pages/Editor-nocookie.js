@@ -49,7 +49,7 @@ export function EditorNoCookie({ urlparsed }) {
         // urlparsed[2] => codigo base64 que es el contenido
         setLang(langLoader(urlparsed[1]))
         setinitialValue(decode(urlparsed[2]))
-    }, [urlparsed])
+    }, [])
 
     // IntelliSense
     useEffect(() => {
@@ -103,15 +103,16 @@ export function EditorNoCookie({ urlparsed }) {
         }
     }, [lang])
 
-    const onChange = (val) => setcmvalue(val);
+    const onChange = (val) => {
+        window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
+    };
 
 
     var content = decode(data.content);
 
     setinitialValue(content)
-    setcmvalue(content)
     setLang(langLoader(data, langs));
-    const content = (
+    return (
         <>
                         <CodeMirror
                             extensions={extensionsarray}
@@ -122,6 +123,4 @@ export function EditorNoCookie({ urlparsed }) {
                         />
         </>
     );
-
-    return <>{content}</>;
 }
