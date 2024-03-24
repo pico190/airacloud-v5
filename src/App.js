@@ -76,7 +76,7 @@ function App() {
       if (urlparsed[0].includes("?")) {
         return true;
       } else if (urlparsed[0] === "" || urlparsed[0] === undefined || urlparsed[0] === null) {
-        window.location.href = "/home/";
+        window.location.href = 'https://'+window.location.host+'/home/';
       } else {
 
         if(SwiftlyIDClient!=="") {
@@ -87,6 +87,13 @@ function App() {
             case "editor":
               setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
               break;
+            default:
+              setContent(<LoadWeb url={'https://'+window.location.host+'/notfound.html'} />);
+              break;
+          }
+        } else {
+          // Webs can load without swiftly id
+          switch (urlparsed[0]) {
             case "editor-nocookie":
               setContent(<EditorNoCookie urlparsed={urlparsed} />)
               break;
@@ -97,12 +104,13 @@ function App() {
         }
       }
     } catch(error) {
-      window.location.href = "/home/";
+      window.location.href = 'https://'+window.location.host+'/home/';
     }
 
 
   } // eslint-disable-next-line
   useEffect(() => { renderize () }, [urlparsed, SwiftlyIDClient, localStorage.getItem("DATA__PROJECTS")]);
+  useEffect(() => { renderize () }, [])
   window.addEventListener("load", () => { document.getElementById("loader").style.opacity = 0; document.getElementById("loader").style.pointerEvents = "none" })
   
   return (
