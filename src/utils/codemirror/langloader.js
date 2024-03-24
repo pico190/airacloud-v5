@@ -2,7 +2,7 @@ export default function langLoader(lang, langs) {
 
     var lng = null;
     
-    if (lang === "html") { lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }) }
+    if (lang === "html") { lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }); document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" }
     else if (lang === "css") { lng = langs.less() }
     else if (lang === "js") { lng = langs.javascript() }
     else if (lang === "jsx") { lng = langs.jsx() }

@@ -236,6 +236,7 @@ export function Editor({ sidinfo, urlparsed }) {
                 </div>
                 <div className="content-left">
                     <style>{":root, * {--sb-width: 28vw!important;} .content {padding: 20px; gap: 10px} .ͼ16.cm-focused .cm-selectionBackground .ͼ16 .cm-selectionLayer .cm-selectionBackground {background: #243047 !important;} .cm-editor, .cm-editor * {font-size: var(--editor-font-size);} .cm-editor, .cm-editor * {font-family: var(--editor-font-family);} .editorcontainer {position: relative;}"}</style>
+                    <style id="langstyle" />
                     <div className="editorcontainer">
                         <CodeMirror
                             extensions={extensionsarray}
