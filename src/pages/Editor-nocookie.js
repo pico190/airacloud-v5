@@ -117,7 +117,12 @@ export function EditorNoCookie({ urlparsed }) {
                             </defs>
 
                         </svg>
-                        <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none; border-radius: 0px;}" />
+                        <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none;
+  border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;}" />
                         <style id="langstyle" />
                         <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} className="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />
                         <CodeMirror
