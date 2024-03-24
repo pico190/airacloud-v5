@@ -1,6 +1,7 @@
 import { decode } from 'js-base64';
 import { pythonLanguage } from "@codemirror/lang-python";
 import { jsonLanguage } from "@codemirror/lang-json";
+import { html, CompletionContext } from "@codemirror/lang-html";
 
 export default function langLoader(lang, langs) {
 
@@ -9,8 +10,12 @@ export default function langLoader(lang, langs) {
     console.log(marketplace)
     
     if (lang === "html") { 
-        var htmlconfig = { matchClosingTags: true, autoCloseTags: true, nestedLanguages: [] }
-
+        var htmlconfig = {
+            matchClosingTags: true,
+            autoCloseTags: true,
+            nestedLanguages: []
+        };
+        
         if(marketplace.pyscript) {
             console.log("patata")
             htmlconfig.nestedLanguages.push({
@@ -22,7 +27,7 @@ export default function langLoader(lang, langs) {
                 parser: jsonLanguage
             })
         }
-        lng = langs.html({ config: htmlconfig }); 
+        lng = html({ config: htmlconfig }); 
         document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" 
     }
     else if (lang === "css") { lng = langs.less() }
