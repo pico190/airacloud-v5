@@ -103,13 +103,15 @@ export function EditorNoCookie({ urlparsed }) {
 
     return (
         <>
-                        <svg style={{display: "none"}} id="svgroundcorner" children={`<defs>
-                                <filter id="selection-goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"></feGaussianBlur>
+                        <svg style={{display: "none"}} id="svgroundcorner" children={`
+                            <defs>
+                              <filter id="selection-goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur>
                                 <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
                                 <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
-                                </filter>
-                            </defs>`} />
+                              </filter>
+                            </defs>
+                        `} />
                         <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none; border-radius: 0px;}" />
                         <style id="langstyle" />
                         <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} className="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />
