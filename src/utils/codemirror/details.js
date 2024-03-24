@@ -36,4 +36,4 @@ export function loadDetails() {
 //                         span.classList.add("cm-italic")
 //                     }
 //             })
-// }
+}
