@@ -113,8 +113,27 @@ function App() {
   useEffect(() => { renderize () }, [])
   window.addEventListener("load", () => { document.getElementById("loader").style.opacity = 0; document.getElementById("loader").style.pointerEvents = "none" })
   
-  // Dark Mode
-  document.body.setAttribute("data-color-scheme", "dark");
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const handleChange = (e) => {
+      var mode = e.matches ? 'dark' : 'light'
+
+      if(mode === "dark") {
+        document.body.setAttribute("data-color-scheme", "dark");
+      }
+      if(mode === "light") {
+        document.body.setAttribute("data-color-scheme", "light");
+      }
+    };
+
+    darkModeMediaQuery.addEventListener('change', handleChange);
+    
+    setTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
+
+    // Limpia el listener cuando el componente se desmonta
+    return () => darkModeMediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   return (
     <>
