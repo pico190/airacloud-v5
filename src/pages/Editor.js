@@ -15,6 +15,7 @@ import $ from 'jquery'
 import { nearElem } from "../utils/generalfuncs";
 import { CmenuElement, ContextMenu } from "../utils/contextmenu";
 import { spaces, hexToRgb } from "../utils/generalfuncs";
+import langLoader from "../utils/codemirror/langloader";
 
 export function Editor({ sidinfo, urlparsed }) {
     const [reference, setReference] = useState([]);
@@ -201,22 +202,9 @@ export function Editor({ sidinfo, urlparsed }) {
 
             var content = decode(data.content);
 
-            setinitialValue(content)
-            setcmvalue(content)
-            var lng = null;
-
-            if (data.lang === "html") { lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }) }
-            else if (data.lang === "css") { lng = langs.less() }
-            else if (data.lang === "js") { lng = langs.javascript() }
-            else if (data.lang === "jsx") { lng = langs.javascript({ config: { jsx: true } }) }
-            else if (data.lang === "ts") { lng = langs.javascript({ config: { typescript: true } }) }
-            else if (data.lang === "tsx") { lng = langs.javascript({ config: { typescript: true, jsx: true } }) }
-            else if (data.lang === "markdown") { lng = langs.markdown() }
-            else if (data.lang === "python") { lng = langs.python() }
-            else if (data.lang === "json") { lng = langs.json() }
-            else if (data.lang === "php") { lng = langs.php() }
-            else { lng = null }
-            setLang(lng);
+            setinitialValue(content);
+            setcmvalue(content);
+            setLang(langLoader(data.lang, langs));
         })
       }, [filetoken])      
       

