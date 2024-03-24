@@ -8,7 +8,7 @@ export default function langLoader(lang, langs) {
     else if (lang === "jsx") { lng = langs.jsx() }
     else if (lang === "ts") { lng = langs.typescript() }
     else if (lang === "tsx") { lng = langs.tsx() }
-    else if (lang === "markdown") { lng = langs.markdown() }
+    else if (lang === "markdown") { lng = langs.markdown(); document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" }
     else if (lang === "python") { lng = langs.python() }
     else if (lang === "json") { lng = langs.json() }
     else if (lang === "php") { lng = langs.php() }
