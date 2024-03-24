@@ -38,8 +38,8 @@ export const airatheme = createTheme({
       { tag: t.typeName,               color: cssvar("type-name") },
       { tag: t.standard(t.typeName),   color: cssvar("type-standard") },
 
-      { tag: t.tagName,             color: cssvar("tag-name-standard") },
-      { tag: t.standard(t.tagName), color: cssvar("tag-name") },
+      { tag: t.tagName,             color: cssvar("tag-name") },
+      { tag: t.standard(t.tagName), color: cssvar("tag-name-standard") },
 
       { tag: t.variableName,               color: cssvar("variable-name") },
       { tag: t.definition(t.variableName), color: cssvar("variable-name-definition") },
