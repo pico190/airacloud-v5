@@ -55,10 +55,12 @@ function App() {
   var [content, setContent] = useState()
 
   useEffect(() => {
-    console_start();
-    console_group("Swiftly Client ID Loaded");
-    console.log(SwiftlyIDClient);
-    console.groupEnd();
+    if(!urlparsed.includes("editor-nocookie")) {
+      console_start();
+      console_group("Swiftly Client ID Loaded");
+      console.log(SwiftlyIDClient);
+      console.groupEnd();
+    }
   }, [SwiftlyIDClient]);
 
   useEffect(() => {
