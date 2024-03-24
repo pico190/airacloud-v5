@@ -18,4 +18,14 @@ export function loadDetails() {
                     }
                 }
             })
+
+            
+            document.querySelectorAll("span").forEach(span => {
+                    var spanstyle = window.getComputedStyle(span);
+                    var cssvarjson = hexToRgb(spanstyle.getPropertyValue('--cm-md-bold'))
+                    var cssvar = `rgb(${cssvarjson.r}, ${cssvarjson.g}, ${cssvarjson.b})`
+                    if(cssvar === spanstyle.color) {
+                        span.classList.add("bold")
+                    }
+            })
 }

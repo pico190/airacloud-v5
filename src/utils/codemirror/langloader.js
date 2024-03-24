@@ -18,6 +18,7 @@ export default function langLoader(lang, langs) {
     else if (lang === "sql") { lng = langs.sql() }
     else if (lang === "rust") { lng = langs.rust() }
     else if (lang === "lua") { lng = langs.lua() }
+    else if (lang === "angular") { lng = langs.angular() }
     else { lng = null }
     return lng;
 }

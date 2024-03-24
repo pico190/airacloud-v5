@@ -946,7 +946,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(100px);
 }
 .ͼ16, .ͼ16 .cm-gutters {
-  background-color: var(--default-button) !important;
+  background-color: var(--cm-bg) !important;
 }
 
 .intellisense {
@@ -1145,6 +1145,10 @@ img::selection {
 
 [data-color-scheme="light"], [data-color-scheme="light"] * {
   color-scheme: light;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 [data-color-scheme="dark"] * {
