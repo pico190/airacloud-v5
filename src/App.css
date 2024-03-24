@@ -1121,6 +1121,14 @@ img::selection {
   background: #434549; 
 }
 
+[data-color-scheme="dark"], [data-color-scheme="dark"] * {
+  color-scheme: dark;
+}
+
+[data-color-scheme="light"], [data-color-scheme="light"] * {
+  color-scheme: light;
+}
+
 :root {
   /* 
   - AiraCodeMirror 

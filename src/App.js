@@ -113,6 +113,9 @@ function App() {
   useEffect(() => { renderize () }, [])
   window.addEventListener("load", () => { document.getElementById("loader").style.opacity = 0; document.getElementById("loader").style.pointerEvents = "none" })
   
+  // Dark Mode
+  document.body.setAttribute("data-color-scheme", "dark");
+
   return (
     <>
 	<div className="modal-container" style={{display: "none"}} id="modal" />
