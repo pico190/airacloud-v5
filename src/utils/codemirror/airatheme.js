@@ -81,10 +81,10 @@ export const airatheme = createTheme({
       { tag: t.operator,          color: cssvar("operator") },
       
       { tag: t.heading,  color: cssvar("foreground") },
-      { tag: t.heading1, color: cssvar("heading1") },
-      { tag: t.heading2, color: cssvar("heading2") },
-      { tag: t.heading3, color: cssvar("heading3") },
-      { tag: t.heading4, color: cssvar("heading4") },
+      { tag: t.heading1, color: cssvar("heading1"), fontSize: "calc(var(--editor-font-size) + 10px)" },
+      { tag: t.heading2, color: cssvar("heading2"), fontSize: "calc(var(--editor-font-size) + 7px)" },
+      { tag: t.heading3, color: cssvar("heading3"), fontSize: "calc(var(--editor-font-size) + 4px)" },
+      { tag: t.heading4, color: cssvar("heading4"), fontSize: "calc(var(--editor-font-size) + 1px)" },
       { tag: t.heading5, color: cssvar("heading5") },
       { tag: t.heading6, color: cssvar("heading6") },
 
