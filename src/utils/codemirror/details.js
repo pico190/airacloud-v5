@@ -33,7 +33,7 @@ export function loadDetails() {
                     var cssvarjson = hexToRgb(spanstyle.getPropertyValue('--cm-md-emphasis'))
                     var cssvar = `rgb(${cssvarjson.r}, ${cssvarjson.g}, ${cssvarjson.b})`
                     if(cssvar === spanstyle.color) {
-                        span.classList.add("italic")
+                        span.classList.add("cm-italic")
                     }
             })
 }
