@@ -14,11 +14,11 @@ export default function langLoader(lang, langs) {
         if(marketplace.pyscript) {
             console.log("patata")
             htmlconfig.nestedLanguages.push({
-                tag: 'py-script',
+                tag: 'pyscript',
                 parser: pythonLanguage
             })
             htmlconfig.nestedLanguages.push({
-                tag: 'py-config',
+                tag: 'pyconfig',
                 parser: jsonLanguage
             })
         }
