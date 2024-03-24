@@ -1150,6 +1150,9 @@ img::selection {
 .bold {
   font-weight: bold;
 }
+.italic {
+  font-style: italic;
+}
 
 [data-color-scheme="dark"] * {
   /* 
@@ -1248,8 +1251,8 @@ img::selection {
   /* (In md) Lists */     --cm-md-list:              var(--cm-foreground);
   /* (In md) Quote */     --cm-md-quote:             var(--cm-foreground);
   /* (In md) Quote */     --cm-md-quote-meta:        #6a9955;
-  /* (In md) Bold */      --cm-md-bold:              #6796e6;
-  /* (In md) Italic */    --cm-md-emphasis:          rgba(var(--textrgba), .7);
+  /* (In md) Bold */      --cm-md-bold:              #6393e6;
+  /* (In md) Italic */    --cm-md-emphasis:          rgba(233, 234, 255, 0.7);
   /* (In md) Link */      --cm-md-link:              var(--cm-url);
   /* (In md) Monospace */ --cm-md-monospace:         var(--cm-string);
   /* (In md) Strike */    --cm-md-strikethrough:     var(--cm-md-link);
