@@ -12,6 +12,7 @@ export default function langLoader(lang, langs) {
         var htmlconfig = { matchClosingTags: true, autoCloseTags: true, nestedLanguages: [] }
 
         if(marketplace.pyscript) {
+            console.log("patata")
             htmlconfig.nestedLanguages.push({
                 tag: 'py-script',
                 parser: pythonLanguage
