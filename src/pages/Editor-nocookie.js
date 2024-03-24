@@ -113,6 +113,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     return (
         <>
+                        <style children="* {--editor-font-size: 46px;}" />
                         <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}

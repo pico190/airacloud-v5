@@ -35,6 +35,10 @@ body {
     --editor-font-family: 'Consolas';
 }
 
+.editorcontainer *, .editorcontainer {
+  font-size: var(--editor-font-size);
+}
+
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
