@@ -13,5 +13,5 @@ export default function langLoader(lang, langs) {
     else if (lang === "json") { lng = langs.json() }
     else if (lang === "php") { lng = langs.php() }
     else { lng = null }
-    return lng
+    return lng;
 }
