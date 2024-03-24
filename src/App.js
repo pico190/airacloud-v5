@@ -117,16 +117,12 @@ function App() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     
     const handleChange = (e) => {
-      var mode = e.matches ? 'dark' : 'light'
-
-      if(mode === "dark") {
-        document.body.setAttribute("data-color-scheme", "dark");
-      }
-      if(mode === "light") {
-        document.body.setAttribute("data-color-scheme", "light");
-      }
+      const mode = e.matches ? 'dark' : 'light';
+      document.body.setAttribute("data-color-scheme", mode);
     };
 
+    handleChange(darkModeMediaQuery); // Comprueba el tema preferido al cargar la página
+    
     darkModeMediaQuery.addEventListener('change', handleChange);
     
     return () => darkModeMediaQuery.removeEventListener('change', handleChange);
