@@ -114,11 +114,18 @@ export function EditorNoCookie({ urlparsed }) {
     return (
         <>
                         <CodeMirror
+                            className="editorcontainer"
                             extensions={extensionsarray}
                             value={initialValue}
                             theme={airatheme}
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
+                            style={{
+                                height: "100%",
+                                width: "100%",
+                                border: "none",
+                                borderRadius: "0px!important"
+                            }}
                         />
         </>
     );
