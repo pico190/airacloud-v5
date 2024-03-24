@@ -1108,6 +1108,23 @@ img::selection {
   filter: url(#selection-goo);
 }
 
+::-webkit-scrollbar-track {
+  background: #15171d;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #717275;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #57585c; 
+}
+::-webkit-scrollbar-thumb:active {
+  background: #434549; 
+}
+
 :root {
   /* 
   - AiraCodeMirror 
