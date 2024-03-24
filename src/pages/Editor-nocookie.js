@@ -45,7 +45,6 @@ export function EditorNoCookie({ urlparsed }) {
     useEffect(() => {
         // urlparsed[1] => lang
         // urlparsed[2] => codigo base64 que es el contenido
-        console.log(urlparsed, "\\", urlparsed[1], "\\", urlparsed[2], "\\", decode(urlparsed[2]))
         setLang(langLoader(urlparsed[1], langs))
         var value;
         var errormsg = "Base64 Decoding Error"
