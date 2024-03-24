@@ -38,8 +38,6 @@ export function EditorNoCookie({ urlparsed }) {
                 }
             }
         })
-        
-        setFileToken(window.location.hash.replace("#", "").replace(/\//g, ""));
 
     }, 1)
 
@@ -69,6 +67,11 @@ export function EditorNoCookie({ urlparsed }) {
         return () => window.removeEventListener("load", loadIntelliSense);
     }, [intelliLoaded]);
 
+
+    
+    const fetchSuggestion = async (state) => {
+        return '';
+    };
 
     // Lang Updater
     useEffect(() => {
@@ -107,11 +110,6 @@ export function EditorNoCookie({ urlparsed }) {
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
     };
 
-
-    var content = decode(data.content);
-
-    setinitialValue(content)
-    setLang(langLoader(data, langs));
     return (
         <>
                         <CodeMirror
