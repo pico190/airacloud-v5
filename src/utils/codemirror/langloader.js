@@ -1,4 +1,6 @@
-import { decode } from 'js-base64'
+import { decode } from 'js-base64';
+import { pythonLanguage } from "@codemirror/lang-python";
+import { jsonLanguage } from "@codemirror/lang-json";
 
 export default function langLoader(lang, langs) {
 
@@ -12,11 +14,11 @@ export default function langLoader(lang, langs) {
         if(marketplace.pyscript) {
             htmlconfig.nestedLanguages.push({
                 tag: 'py-script',
-                parser: langs.python()
+                parser: pythonLanguage
             })
             htmlconfig.nestedLanguages.push({
                 tag: 'py-config',
-                parser: langs.json()
+                parser: jsonLanguage
             })
         }
         lng = langs.html({ config: htmlconfig }); 
