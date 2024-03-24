@@ -129,9 +129,6 @@ function App() {
 
     darkModeMediaQuery.addEventListener('change', handleChange);
     
-    setTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
-
-    // Limpia el listener cuando el componente se desmonta
     return () => darkModeMediaQuery.removeEventListener('change', handleChange);
   }, []);
 
