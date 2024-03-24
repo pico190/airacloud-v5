@@ -119,7 +119,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     return (
         <>
-                        <style children="* {--editor-font-size: 2vw;}" />
+                        <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none; border-radius: 0px;}" />
                         <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}
@@ -129,9 +129,7 @@ export function EditorNoCookie({ urlparsed }) {
                             onChange={onChange}
                             style={{
                                 height: "100%",
-                                width: "100%",
-                                border: "none",
-                                borderRadius: "0px!important"
+                                width: "100%"
                             }}
                         />
         </>
