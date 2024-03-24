@@ -1,8 +1,25 @@
 export default function langLoader(lang, langs) {
 
     var lng = null;
+    var marketplace = JSON.parse(decode(localStorage.getItem("DATA__MARKETPLACE")));
     
-    if (lang === "html") { lng = langs.html({ config: { matchClosingTags: true, autoCloseTags: true } }); document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" }
+    
+    if (lang === "html") { 
+        var htmlconfig = { matchClosingTags: true, autoCloseTags: true, nestedLanguages: [] }
+
+        if(marketplace.pyscript) {
+            htmlconfig.nestedLanguages.push({
+                tag: 'py-script',
+                parser: langs.python()
+            })
+            htmlconfig.nestedLanguages.push({
+                tag: 'py-config',
+                parser: langs.json()
+            })
+        }
+        lng = langs.html({ config: htmlconfig }); 
+        document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" 
+    }
     else if (lang === "css") { lng = langs.less() }
     else if (lang === "js") { lng = langs.javascript() }
     else if (lang === "jsx") { lng = langs.jsx() }
@@ -18,7 +35,7 @@ export default function langLoader(lang, langs) {
     else if (lang === "sql") { lng = langs.sql() }
     else if (lang === "rust") { lng = langs.rust() }
     else if (lang === "lua") { lng = langs.lua() }
-    else if (lang === "angular") { lng = langs.angular() }
+    else if (lang === "angular") { lng = langs.angular(); document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" }
     else { lng = null }
     return lng;
 }
