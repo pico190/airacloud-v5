@@ -6,7 +6,11 @@ import { html, CompletionContext } from "@codemirror/lang-html";
 export default function langLoader(lang, langs) {
 
     var lng = null;
-    var marketplace = JSON.parse(decode(localStorage.getItem("DATA__MARKETPLACE")));
+    try {
+        var marketplace = JSON.parse(decode(localStorage.getItem("DATA__MARKETPLACE")));
+    } catch(err) {
+        var marketplace = {}
+    }
     console.log(marketplace)
     
     if (lang === "html") { 
