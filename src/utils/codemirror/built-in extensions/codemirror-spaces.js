@@ -1,4 +1,4 @@
-export const codemirrorSpaces = () => {
+export function spaceMarkExtension() {
   return {
     // Agregar un marcador al editor
     decorations: (state) => {
@@ -31,4 +31,4 @@ export const codemirrorSpaces = () => {
       return decorations;
     },
   };
-};
+}
