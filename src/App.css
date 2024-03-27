@@ -1285,16 +1285,22 @@ img::selection {
   
 }
 
+.ͼ1 span[data-color] {
+  transform: scale(1.3);
+  margin-left: 4px;
+  outline: 1px solid var(--cm-foreground);
+}
+
 [data-color-scheme="light"] * {
   /* 
   - AiraCodeMirror 
   (You can edit this as you want)
   */
 
-  /* Editor text content background                            */ --cm-bg:                       #e0dcdc;
+  /* Editor text content background                            */ --cm-bg:                       #e5e8f0;
   /* Editor cursor color                                       */ --cm-cursor:                   #000000c7;
   /* Editor background image                                   */ --cm-bg-img:                   none;
-  /* Editor text                                               */ --cm-foreground:               #1f1f1f; 
+  /* Editor text                                               */ --cm-foreground:               #070606; 
   /* Selection color                                           */ --cm-selection:                #96a3bd ;
   /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
@@ -1306,92 +1312,92 @@ img::selection {
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;
 
   /* ---------------- Completion Colors */
-  /* Single line comments   */ --cm-line-comment:     #008000;
+  /* Single line comments   */ --cm-line-comment:     #a0a1a7;
   /* Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
   
-  /* Is not used in many places */ --cm-name:      #a31515;
-  /**/                             --cm-label-name: #a31515;
+  /* Is not used in many places */ --cm-name:      #0098dd;
+  /**/                             --cm-label-name: #0098dd;
 
   /* At Swiftly Team we don't know what is this */ --cm-namespace: var(--cm-foreground);
   /**/                                             --cm-macroname: #dcdcaa;
   
-  /* Types names (null, true, boolean, string) */ --cm-type-definition: #0000ff;
-  /**/                                            --cm-type-name:       #a31515;
-  /**/                                            --cm-type-standard:   #a31515;
+  /* Types names (null, true, boolean, string) */ --cm-type-definition: #0098dd;
+  /**/                                            --cm-type-name:       #0098dd;
+  /**/                                            --cm-type-standard:   #0098dd;
 
-  /* Existing html tags (<html>)              */ --cm-tag-name-standard: #a31515;
-  /* Custom elements or React JSX elements () */ --cm-tag-name:          #a31515;
+  /* Existing html tags (<html>)              */ --cm-tag-name-standard: #275fe4;
+  /* Custom elements or React JSX elements () */ --cm-tag-name:          #d52753;
 
-  /* Variables                                     */ --cm-variable-name:            #e50000;
-  /* Functions and other variable types definition */ --cm-variable-name-definition: #e50000;
-  /* Functions in use (print())                    */ --cm-variable-name-function:   var(--cm-foreground);
+  /* Variables                                     */ --cm-variable-name:            var(--cm-foreground);
+  /* Functions and other variable types definition */ --cm-variable-name-definition: #0098dd;
+  /* Functions in use (print())                    */ --cm-variable-name-function:   #23974a;
 
-  /* Property name                  */ --cm-property-name:       #e50000;
-  /* The variable from the property */ --cm-property-definition: #0000ff;
-  /* definition.function()          */ --cm-property-function:   var(--cm-foreground);
+  /* Property name                  */ --cm-property-name:       #a05a48;
+  /* The variable from the property */ --cm-property-definition: #c5a332;
+  /* definition.function()          */ --cm-property-function:   #23974a;
 
-  /* atribute="value" */ --cm-attribute-name:  #e50000;
+  /* atribute="value" */ --cm-attribute-name:  #df631c;
   /* atribute="value" */ --cm-attribute-value: var(--cm-string);
   /* <!DOCTYPE html> */  --cm-document-meta:   rgba(var(--textrgba),.3);
   /* <html></html> */    --cm-angle-bracket:   #444444;
 
-  /* (In css) .class           */ --cm-classname:         #dcdcaa;
-  /* (In css) .class::constant */ --cm-classname-constant: #c586c0;
+  /* (In css) .class           */ --cm-classname:         #7a82da;
+  /* (In css) .class::constant */ --cm-classname-constant: #df631c;
 
-  /* Types */   --cm-string:         #a31515;
+  /* Types */   --cm-string:         #c5a332;
   /**/          --cm-string-special: var(--cm-string);
   /**/          --cm-literal:        var(--cm-string);
   /**/          --cm-character:      var(--cm-string);
-  /**/          --cm-number:         #098658;
+  /**/          --cm-number:         #ce33c0;
   /**/          --cm-integer:        var(--cm-number);
   /**/          --cm-float:          var(--cm-number);
-  /**/          --cm-bool:           #0000ff;
-  /**/          --cm-regexp:         #070606;
-  /* unknown */ --cm-escape:         #0000ff;
+  /**/          --cm-bool:           #0098dd;
+  /**/          --cm-regexp:         #a05a48;
+  /* unknown */ --cm-escape:         #0098dd;
   /**/          --cm-color:          var(--cm-string);
   /**/          --cm-url:            #24373d;
-  /* public */  --cm-keyword:        #0000ff;
-  /* this */    --cm-self:           #0000ff;
+  /* public */  --cm-keyword:        #0098dd;
+  /* this */    --cm-self:           #0098dd;
   /* null */    --cm-null:           #0000ff80;
-  /**/          --cm-atom:           var(--cm-foreground);
-  /* em, px */  --cm-unit:           #0000ff;
-  /* var, let */--cm-modifier:       #0000ff;
+  /**/          --cm-atom:           #823ff1;
+  /* em, px */  --cm-unit:           #0098dd;
+  /* var, let */--cm-modifier:       #0098dd;
   /* operators*/--cm-operator:       var(--cm-foreground);
 
-  /* (In md) # */ --cm-heading1: var(--cm-md-meta);
-  /**/            --cm-heading2: var(--cm-md-meta);
-  /**/            --cm-heading3: var(--cm-md-meta);
-  /**/            --cm-heading4: var(--cm-md-meta);
-  /**/            --cm-heading5: var(--cm-md-meta);
-  /**/            --cm-heading6: var(--cm-md-meta);
+  /* (In md) # */ --cm-heading1: #c5a332;
+  /**/            --cm-heading2: #c5a332;
+  /**/            --cm-heading3: #c5a332;
+  /**/            --cm-heading4: #c5a332;
+  /**/            --cm-heading5: #c5a332;
+  /**/            --cm-heading6: #c5a332;
 
   /* =>, < */  --cm-punctuation:    var(--cm-foreground);
   /* <>, {} */ --cm-bracket:        var(--cm-foreground);
   /* [] */     --cm-square-bracket: var(--cm-foreground);
   /* () */     --cm-paren:          var(--cm-foreground);
 
-  --cm-brackets-1: #0431fa;
-  --cm-brackets-2: #319331;
-  --cm-brackets-3: #7b3814;
-  --cm-brackets-4: #391041;
-  --cm-brackets-5: #00363a;
-  --cm-brackets-6: #3e4146;
-  --cm-brackets-7: #391041;
+  --cm-brackets-1: #1fc255;
+  --cm-brackets-2: #a557ff;
+  --cm-brackets-3: #0ab6ff;
+  --cm-brackets-4: #ffa023;
+  --cm-brackets-5: #0e91a8;
+  --cm-brackets-6: #f067f0;
+  --cm-brackets-7: #ffa023;
   
   /* (In md) Separates */ --cm-md-content-separator: var(--cm-line-comment);
   /* (In md) Lists */     --cm-md-list:              var(--cm-foreground);
-  /* (In md) Quote */     --cm-md-quote:             var(--cm-foreground);
+  /* (In md) Quote */     --cm-md-quote:             #823ff1;
   /* (In md) Quote */     --cm-md-quote-meta:        #0451a5;
-  /* (In md) Bold */      --cm-md-bold:              #000080;
+  /* (In md) Bold */      --cm-md-bold:              var(--cm-foreground);
   /* (In md) Italic */    --cm-md-emphasis:          rgba(var(--textrgba), .7);
   /* (In md) Link */      --cm-md-link:              var(--cm-url);
   /* (In md) Monospace */ --cm-md-monospace:         var(--cm-string);
   /* (In md) Strike */    --cm-md-strikethrough:     var(--cm-md-link);
-  /* (In md) >>, * */     --cm-md-meta:              #0451a5;
+  /* (In md) >>, * */     --cm-md-meta:              #7a82da;
 
-  /* typeof */    --cm-operator-keyword:   #0000ff;
-  /* for, if */   --cm-control-keyword:    #0000ff;
-  /* function */  --cm-definition-keyword: #0000ff;
-  /* import */    --cm-module-keyword:     #0000ff;
+  /* typeof */    --cm-operator-keyword:   #0098dd;
+  /* for, if */   --cm-control-keyword:    #0098dd;
+  /* function */  --cm-definition-keyword: #0098dd;
+  /* import */    --cm-module-keyword:     #0098dd;
   
 }
