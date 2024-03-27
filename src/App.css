@@ -1147,6 +1147,10 @@ img::selection {
   color-scheme: light;
 }
 
+.cm-dropCursor {
+  border-left: 2px dashed var(--cm-cursor)!important;
+}
+
 [data-color-scheme="dark"] * {
   /* 
   - AiraCodeMirror 
