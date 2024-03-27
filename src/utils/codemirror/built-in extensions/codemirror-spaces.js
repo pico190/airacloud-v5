@@ -32,5 +32,3 @@ export const codemirrorSpaces = () => {
     },
   };
 };
-
-export default spaceMarkExtension;
