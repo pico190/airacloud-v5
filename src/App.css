@@ -1321,15 +1321,15 @@ img::selection {
   /* At Swiftly Team we don't know what is this */ --cm-namespace: var(--cm-foreground);
   /**/                                             --cm-macroname: #dcdcaa;
   
-  /* Types names (null, true, boolean, string) */ --cm-type-definition: #d52753;
-  /**/                                            --cm-type-name:       #0098dd;
-  /**/                                            --cm-type-standard:   #a05a48;
+  /* Types names (null, true, boolean, string) */ --cm-type-definition: #df631c;
+  /**/                                            --cm-type-name:       #d52753;
+  /**/                                            --cm-type-standard:   #0098dd;
 
   /* Existing html tags (<html>)              */ --cm-tag-name-standard: #275fe4;
   /* Custom elements or React JSX elements () */ --cm-tag-name:          #d52753;
 
   /* Variables                                     */ --cm-variable-name:            var(--cm-foreground);
-  /* Functions and other variable types definition */ --cm-variable-name-definition: #0098dd;
+  /* Functions and other variable types definition */ --cm-variable-name-definition: #d52753;
   /* Functions in use (print())                    */ --cm-variable-name-function:   #23974a;
 
   /* Property name                  */ --cm-property-name:       #a05a48;
@@ -1362,7 +1362,7 @@ img::selection {
   /**/          --cm-atom:           #823ff1;
   /* em, px */  --cm-unit:           #0098dd;
   /* var, let */--cm-modifier:       #0098dd;
-  /* operators*/--cm-operator:       #7a82da;
+  /* operators*/--cm-operator:       rgba(var(--textrgba),.8);
 
   /* (In md) # */ --cm-heading1: #c5a332;
   /**/            --cm-heading2: #c5a332;
