@@ -13,7 +13,7 @@ import $ from 'jquery'
 import { spaces, hexToRgb } from "../utils/generalfuncs";
 import langLoader from "../utils/codemirror/langloader";
 import { loadDetails } from "../utils/codemirror/details";
-import { codemirrorSpaces } from "../utils/codemirror/built-in extensions/codemirror-spaces";
+import { spaceMarkExtension } from "../utils/codemirror/built-in extensions/codemirror-spaces";
 
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 import { keymap } from '@codemirror/view';
@@ -84,7 +84,7 @@ export function EditorNoCookie({ urlparsed }) {
                             activeDark: '#FFFFFF4F',
                         }
                     }),
-                    codemirrorSpaces,
+                    spaceMarkExtension,
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
@@ -96,7 +96,7 @@ export function EditorNoCookie({ urlparsed }) {
                     hyperLink, 
                     color, 
                     keymap.of(vscodeKeymap),
-                    codemirrorSpaces,
+                    spaceMarkExtension,
                     indentationMarkers(),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
