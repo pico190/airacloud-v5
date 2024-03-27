@@ -6,12 +6,6 @@ body, html {
     overflow-x: hidden;
 }
 
-
-.cm-dropCursor {
-  border-left: 2px dotted var(--cm-cursor)!important;
-}
-
-
 body {
     height: 100vh;
     background-color: var(--background);
@@ -539,8 +533,13 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
   }
 
-  .ͼ16 .cm-cursor, .ͼ16 .cm-dropCursor {
+  .ͼ16 .cm-cursor {
     border-left: 2px solid var(--cm-cursor)!important;
+    transition-duration: 0.1s;
+  }
+
+  .cm-dropCursor {
+    border-left: 2px dotted var(--cm-cursor)!important;
     transition-duration: 0.1s;
   }
 
@@ -1151,10 +1150,6 @@ img::selection {
 
 [data-color-scheme="light"], [data-color-scheme="light"] * {
   color-scheme: light;
-}
-
-.cm-dropCursor {
-  border-left: 2px dotted var(--cm-cursor)!important;
 }
 
 [data-color-scheme="dark"] * {
