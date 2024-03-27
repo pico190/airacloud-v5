@@ -1117,8 +1117,8 @@ img::selection {
   width: 7vw;
   position: fixed;
   z-index: 10000;
-  right: 10px;
-  bottom: 10px;
+  right: 20px;
+  bottom: 20px;
   opacity: 0.5;
   cursor: pointer;
 }
