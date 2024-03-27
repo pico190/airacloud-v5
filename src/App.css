@@ -1154,7 +1154,7 @@ img::selection {
 
 
 * {
-  --firefox-selection-border-radius: 3px
+  --firefox-selection-border-radius: 5px
 }
 
 @-moz-document url-prefix() {
@@ -1163,7 +1163,7 @@ img::selection {
     border-top-right-radius: var(--firefox-selection-border-radius);
   }
   .cm-selectionBackground:nth-of-type(3) {
-    border-top-left-radius: var(--firefox-selection-border-radius);
+    border-bottom-left-radius: var(--firefox-selection-border-radius);
     border-bottom-right-radius: var(--firefox-selection-border-radius);
   }
   .cm-selectionBackground:nth-of-type(2) {
