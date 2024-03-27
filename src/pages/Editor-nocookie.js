@@ -84,7 +84,7 @@ export function EditorNoCookie({ urlparsed }) {
                             activeDark: '#FFFFFF4F',
                         }
                     }),
-                    spaceMarkExtension,
+                    spaceMarkExtension(),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
@@ -96,7 +96,7 @@ export function EditorNoCookie({ urlparsed }) {
                     hyperLink, 
                     color, 
                     keymap.of(vscodeKeymap),
-                    spaceMarkExtension,
+                    spaceMarkExtension(),
                     indentationMarkers(),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
