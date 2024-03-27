@@ -1301,7 +1301,7 @@ img::selection {
   /* Editor cursor color                                       */ --cm-cursor:                   #000000c7;
   /* Editor background image                                   */ --cm-bg-img:                   none;
   /* Editor text                                               */ --cm-foreground:               #070606; 
-  /* Selection color                                           */ --cm-selection:                #96a3bd52;
+  /* Selection color                                           */ --cm-selection:                #ccd2e0 ;
   /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
