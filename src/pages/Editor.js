@@ -197,6 +197,9 @@ export function Editor({ sidinfo, urlparsed }) {
         document.getElementById("loader").style.pointerEvents = "none" 
         console.log(view, "|", state);
     };
+    const editorupdate = (viewUpdate) => { 
+        console.log(viewUpdate);
+    };
     
     const content = (
         <>
