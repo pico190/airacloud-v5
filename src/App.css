@@ -1301,7 +1301,7 @@ img::selection {
   /* Editor cursor color                                       */ --cm-cursor:                   #000000c7;
   /* Editor background image                                   */ --cm-bg-img:                   none;
   /* Editor text                                               */ --cm-foreground:               #070606; 
-  /* Selection color                                           */ --cm-selection:                #96a3bd ;
+  /* Selection color                                           */ --cm-selection:                #96a3bd52;
   /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
@@ -1321,9 +1321,9 @@ img::selection {
   /* At Swiftly Team we don't know what is this */ --cm-namespace: var(--cm-foreground);
   /**/                                             --cm-macroname: #dcdcaa;
   
-  /* Types names (null, true, boolean, string) */ --cm-type-definition: #0098dd;
+  /* Types names (null, true, boolean, string) */ --cm-type-definition: #d52753;
   /**/                                            --cm-type-name:       #0098dd;
-  /**/                                            --cm-type-standard:   #0098dd;
+  /**/                                            --cm-type-standard:   #a05a48;
 
   /* Existing html tags (<html>)              */ --cm-tag-name-standard: #275fe4;
   /* Custom elements or React JSX elements () */ --cm-tag-name:          #d52753;
@@ -1362,7 +1362,7 @@ img::selection {
   /**/          --cm-atom:           #823ff1;
   /* em, px */  --cm-unit:           #0098dd;
   /* var, let */--cm-modifier:       #0098dd;
-  /* operators*/--cm-operator:       var(--cm-foreground);
+  /* operators*/--cm-operator:       #7a82da;
 
   /* (In md) # */ --cm-heading1: #c5a332;
   /**/            --cm-heading2: #c5a332;
