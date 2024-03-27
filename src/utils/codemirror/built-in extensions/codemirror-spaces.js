@@ -1,23 +1,23 @@
-export function spaceMarkExtension() {
+export const spaceMarkExtension = () => {
   return {
-    // Decorations function to add space marks to the editor
+    // Agregar un marcador al editor
     decorations: (state) => {
       const decorations = [];
       const selection = state.selection;
 
-      // Loop through each line in the selection
+      // Recorrer cada línea de la selección
       for (let i = selection.from; i <= selection.to; i++) {
         const line = state.doc.line(i);
         const lineLength = line.length;
 
-        // Add a space mark for each space in the line
+        // Agregar un marcador por cada espacio en la línea
         for (let j = 0; j < lineLength; j++) {
           if (line.charAt(j) === ' ') {
             decorations.push({
-              // Position of the space mark
+              // Posición del marcador
               from: i * lineLength + j,
               to: i * lineLength + j + 1,
-              // Style of the space mark
+              // Estilo del marcador
               mark: {
                 attributes: {
                   class: 'space-mark',
@@ -31,4 +31,4 @@ export function spaceMarkExtension() {
       return decorations;
     },
   };
-}
+};
