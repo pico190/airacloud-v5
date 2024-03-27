@@ -191,6 +191,13 @@ export function Editor({ sidinfo, urlparsed }) {
         })
       }, [filetoken])      
       
+      
+    const mount = (view, state) => { 
+        document.getElementById("loader").style.opacity = 0; 
+        document.getElementById("loader").style.pointerEvents = "none" 
+        console.log(view, "|", state);
+    };
+    
     const content = (
         <>
             <SideBar title={projectInfo.name} />
@@ -225,6 +232,7 @@ export function Editor({ sidinfo, urlparsed }) {
                             extensions={extensionsarray}
                             value={initialValue}
                             theme={airatheme}
+                            onCreateEditor={mount}
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
                         />

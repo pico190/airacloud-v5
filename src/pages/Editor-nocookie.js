@@ -106,6 +106,12 @@ export function EditorNoCookie({ urlparsed }) {
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
     };
 
+    const mount = (view, state) => { 
+        document.getElementById("loader").style.opacity = 0; 
+        document.getElementById("loader").style.pointerEvents = "none" 
+        console.log(view, "|", state);
+    };
+    
     return (
         <>
                         <svg style={{display: "none"}} id="svgroundcorner">
@@ -134,6 +140,7 @@ export function EditorNoCookie({ urlparsed }) {
                             className="editorcontainer"
                             extensions={extensionsarray}
                             value={initialValue}
+                            onCreateEditor={mount}
                             theme={airatheme}
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
