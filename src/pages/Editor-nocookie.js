@@ -14,6 +14,9 @@ import { spaces, hexToRgb } from "../utils/generalfuncs";
 import langLoader from "../utils/codemirror/langloader";
 import { loadDetails } from "../utils/codemirror/details";
 
+import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
+import { keymap } from '@codemirror/view';
+
 export function EditorNoCookie({ urlparsed }) {
     const [reference, setReference] = useState([]);
     const [intelliLoaded, setIntelliLoaded] = useState(false);
@@ -71,6 +74,7 @@ export function EditorNoCookie({ urlparsed }) {
                 [
                     hyperLink, 
                     color, 
+                    keymap.of(vscodeKeymap),
                     indentationMarkers({
                         colors: {
                             light: '#00000024',
@@ -89,6 +93,7 @@ export function EditorNoCookie({ urlparsed }) {
                     lang,
                     hyperLink, 
                     color, 
+                    keymap.of(vscodeKeymap),
                     indentationMarkers(),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
