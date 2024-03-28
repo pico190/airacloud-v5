@@ -1303,7 +1303,7 @@ img::selection {
 }
 
 .errorline {
-  background-color: var(--cm-errorLineBg);
+  background-color: var(--cm-errorLineBg)!important;
 }
 .errorlinegutter::after {
   content: "";
