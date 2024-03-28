@@ -125,7 +125,7 @@ export function EditorNoCookie({ urlparsed }) {
         }, 1);
     
         return () => clearInterval(interval);
-      }, []);
+      }, [errors]);
       
     setInterval(() => {
         loadDetails();
