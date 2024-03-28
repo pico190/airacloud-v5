@@ -1305,6 +1305,14 @@ img::selection {
 .errorline {
   background-color: var(--cm-errorLineBg);
 }
+.errorlinegutter::after {
+  content: "";
+  width: 26px;
+  background-color: var(--cm-errorLineBg);
+  position: fixed;
+  height: calc(var(--editor-font-size) + 10px);
+  margin-left: 3px;
+}
 
 [data-color-scheme="light"] .foldicon {
   filter: invert(1);
