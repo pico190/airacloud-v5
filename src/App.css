@@ -1317,15 +1317,15 @@ img::selection {
   /* Single line comments   */ --cm-line-comment:     #a0a1a7;
   /* <Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
   
-  /* Is not used in many places */ --cm-name:      #0098dd;
-  /**/                             --cm-label-name: #0098dd;
+  /* Is not used in many places */ --cm-name:      #007cb5;
+  /**/                             --cm-label-name: #007cb5;
 
   /* At Swiftly Team we don't know what is this */ --cm-namespace: var(--cm-foreground);
   /**/                                             --cm-macroname: #dcdcaa;
   
   /* Types names (null, true, boolean, string) */ --cm-type-definition: #df631c;
   /**/                                            --cm-type-name:       #d52753;
-  /**/                                            --cm-type-standard:   #0098dd;
+  /**/                                            --cm-type-standard:   #007cb5;
 
   /* Existing html tags (<html>)              */ --cm-tag-name-standard: #275fe4;
   /* Custom elements or React JSX elements () */ --cm-tag-name:          #d52753;
@@ -1353,17 +1353,17 @@ img::selection {
   /**/          --cm-number:         #ce33c0;
   /**/          --cm-integer:        var(--cm-number);
   /**/          --cm-float:          var(--cm-number);
-  /**/          --cm-bool:           #0098dd;
+  /**/          --cm-bool:           #007cb5;
   /**/          --cm-regexp:         #a05a48;
-  /* unknown */ --cm-escape:         #0098dd;
+  /* unknown */ --cm-escape:         #007cb5;
   /**/          --cm-color:          var(--cm-string);
   /**/          --cm-url:            #24373d;
-  /* public */  --cm-keyword:        #0098dd;
-  /* this */    --cm-self:           #0098dd;
+  /* public */  --cm-keyword:        #007cb5;
+  /* this */    --cm-self:           #007cb5;
   /* null */    --cm-null:           #0000ff80;
   /**/          --cm-atom:           #823ff1;
-  /* em, px */  --cm-unit:           #0098dd;
-  /* var, let */--cm-modifier:       #0098dd;
+  /* em, px */  --cm-unit:           #007cb5;
+  /* var, let */--cm-modifier:       #007cb5;
   /* operators*/--cm-operator:       rgba(var(--textrgba),.8);
 
   /* (In md) # */ --cm-heading1: #c5a332;
@@ -1397,9 +1397,9 @@ img::selection {
   /* (In md) Strike */    --cm-md-strikethrough:     var(--cm-md-link);
   /* (In md) >>, * */     --cm-md-meta:              #7a82da;
 
-  /* typeof */    --cm-operator-keyword:   #0098dd;
-  /* for, if */   --cm-control-keyword:    #0098dd;
-  /* function */  --cm-definition-keyword: #0098dd;
-  /* import */    --cm-module-keyword:     #0098dd;
+  /* typeof */    --cm-operator-keyword:   #007cb5;
+  /* for, if */   --cm-control-keyword:    #007cb5;
+  /* function */  --cm-definition-keyword: #007cb5;
+  /* import */    --cm-module-keyword:     #007cb5;
   
 }
