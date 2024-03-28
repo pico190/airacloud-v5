@@ -22,7 +22,7 @@ export function loadDetails() {
 
             // Minimap
             $(document).ready(function() {
-                scrollbehavior = document.getElementById("scrollbehavior");
+                var scrollbehavior = document.getElementById("scrollbehavior");
                 
                 $('#tuElemento').mousedown(function() {
                     scrollbehavior.innerHTML = `
