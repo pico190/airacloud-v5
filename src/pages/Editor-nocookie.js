@@ -119,12 +119,13 @@ export function EditorNoCookie({ urlparsed }) {
         console.log(errors);
     }, [errors])
 
-    useEffect(() => {
+    setInterval(() => {
         loadDetails();
         lintmsg(errors);
-    })
+    }, 1)
 
     const onChange = (val) => {
+        setErrors([])
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
         window.parent.postMessage(val, "*");
 
