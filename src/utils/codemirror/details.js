@@ -21,10 +21,9 @@ export function loadDetails() {
             })
 
             // Minimap
-            $(document).ready(function() {
                 var scrollbehavior = document.getElementById("scrollbehavior");
                 
-                $('#tuElemento').mousedown(function() {
+                $('.cm-minimap-overlay').mousedown(function() {
                     scrollbehavior.innerHTML = `
                     * {
                       --scroll-behavior: unset!important;
@@ -32,14 +31,12 @@ export function loadDetails() {
                     `
                 });
                 
-                $('#tuElemento').mouseup(function() {
+                $('.cm-minimap-overlay').mouseup(function() {
                     scrollbehavior.innerHTML = `
                     * {
                       --scroll-behavior: smooth!important;
                     }`
                 });
-                
-            });
 
 //             document.querySelectorAll("span").forEach(span => {
 //                     var spanstyle = window.getComputedStyle(span);
