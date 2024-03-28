@@ -176,7 +176,7 @@ export function EditorNoCookie({ urlparsed }) {
                                 width: "100%"
                             }}
                         />
-                        <div id="errorline" 
+                        {/* <div id="errorline" 
                             style={{ 
                                 position: "absolute", 
                                 backgroundColor: "var(--cm-errorLineBg)",
@@ -187,7 +187,7 @@ export function EditorNoCookie({ urlparsed }) {
                                 transitionDuration: "0ms",
                                 pointerEvents: "none"
                             }} 
-                            />
+                            /> */}
         </>
     );
 }

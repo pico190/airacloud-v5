@@ -1302,6 +1302,10 @@ img::selection {
   outline: 1px solid var(--cm-foreground);
 }
 
+.errorline {
+  background-color: var(--cm-errorLineBg);
+}
+
 [data-color-scheme="light"] .foldicon {
   filter: invert(1);
 }
@@ -1322,6 +1326,7 @@ img::selection {
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
+  /* Error line background                                     */ --cm-errorLineBg:              #f04d4d33;
   /* Color of not closed tags                                  */ --cm-nonMatching:              #d12e2e;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;

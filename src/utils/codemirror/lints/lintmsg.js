@@ -5,10 +5,8 @@ export function lintmsg(errors) {
         Array.from(document.querySelector(".cm-content").children).forEach((line, index) => {
             errors.forEach(error => {
                 if(error.line == index+1) {
-                    var errorline = document.getElementById("errorline");
-
-                    errorline.style.top = line.getBoundingClientRect().top + "px";
-                    errorline.style.height = line.offsetHeight + "px"
+                    
+                    line.classList.add("errorline")
                     
                     console.log(line.innerText)
                 }
