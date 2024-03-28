@@ -86,7 +86,7 @@ export function EditorNoCookie({ urlparsed }) {
                         return {
                         create: createMinimap,
                         displayText: 'characters',
-                        showOverlay: 'always',
+                        showOverlay: 'mouse-over',
                         }
                     }),
                     rainbowBrackets(),
@@ -104,7 +104,7 @@ export function EditorNoCookie({ urlparsed }) {
                         return {
                             create: createMinimap,
                             displayText: 'characters',
-                            showOverlay: 'always'
+                            showOverlay: 'mouse-over'
                         }
                     }),
                     indentationMarkers(),
