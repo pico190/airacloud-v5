@@ -68,6 +68,11 @@ export function EditorNoCookie({ urlparsed }) {
         return '';
     };
 
+    let createMinimap = (v) => {
+        const dom = document.createElement('div');
+        return { dom }
+      }
+      
     // Lang Updater
     useEffect(() => {
         if(lang === null) {
@@ -79,11 +84,9 @@ export function EditorNoCookie({ urlparsed }) {
                     indentationMarkers(),
                     showMinimap.compute(['doc'], (state) => {
                         return {
-                        create,
-                        /* optional */
+                        createMinimap,
                         displayText: 'blocks',
                         showOverlay: 'always',
-                        gutters: [ { 1: '#00FF00', 2: '#00FF00' } ],
                         }
                     }),
                     rainbowBrackets(),
@@ -99,7 +102,7 @@ export function EditorNoCookie({ urlparsed }) {
                     keymap.of(vscodeKeymap),
                     showMinimap.compute(['doc'], (state) => {
                         return {
-                            create,
+                            createMinimap,
                             displayText: 'blocks',
                             showOverlay: 'always'
                         }
