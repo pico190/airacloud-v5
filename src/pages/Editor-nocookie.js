@@ -118,7 +118,7 @@ export function EditorNoCookie({ urlparsed }) {
     useEffect(() => {
         console.log(errors);
     }, [errors])
-    
+
     setInterval(() => {
         loadDetails();
         lintmsg(errors);
@@ -175,6 +175,16 @@ export function EditorNoCookie({ urlparsed }) {
                                 width: "100%"
                             }}
                         />
+                        <div id="errorline" 
+                            style={{ 
+                                position: "absolute", 
+                                backgroundColor: "var(--cm-errorLineBg)",
+                                width: "100%",
+                                height: "0px",
+                                left: "0px",
+                                top: "0px"
+                            }} 
+                            />
         </>
     );
 }
