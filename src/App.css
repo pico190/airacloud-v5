@@ -1325,77 +1325,77 @@ img::selection {
   --indent-marker-active-bg-color: #00000073;
 
   /* ---------------- Completion Colors */
-  /* Single line comments   */ --cm-line-comment:     #a0a1a7;
+  /* Single line comments   */ --cm-line-comment:     #8E908C;
   /* <Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
   
-  /* Is not used in many places */ --cm-name:      #007cb5;
-  /**/                             --cm-label-name: #007cb5;
+  /* Is not used in many places */ --cm-name:      #C82829;
+  /**/                             --cm-label-name: #C82829;
 
   /* At Swiftly Team we don't know what is this */ --cm-namespace: var(--cm-foreground);
-  /**/                                             --cm-macroname: #dcdcaa;
+  /**/                                             --cm-macroname: var(--cm-foreground);
   
-  /* Types names (null, true, boolean, string) */ --cm-type-definition: #df631c;
-  /**/                                            --cm-type-name:       #d52753;
+  /* Types names (null, true, boolean, string) */ --cm-type-definition: #C99E00;
+  /**/                                            --cm-type-name:       #C99E00;
   /**/                                            --cm-type-standard:   #007cb5;
 
   /* Existing html tags (<html>)              */ --cm-tag-name-standard: #275fe4;
   /* Custom elements or React JSX elements () */ --cm-tag-name:          #d52753;
 
-  /* Variables                                     */ --cm-variable-name:            var(--cm-foreground);
-  /* Functions and other variable types definition */ --cm-variable-name-definition: #d52753;
+  /* Variables                                     */ --cm-variable-name:            #C82829;
+  /* Functions and other variable types definition */ --cm-variable-name-definition: #4271AE;
   /* Functions in use (print())                    */ --cm-variable-name-function:   #23974a;
 
-  /* Property name                  */ --cm-property-name:       #a05a48;
-  /* The variable from the property */ --cm-property-definition: #c5a332;
+  /* Property name                  */ --cm-property-name:       #C82829;
+  /* The variable from the property */ --cm-property-definition: #4271AE;
   /* definition.function()          */ --cm-property-function:   #23974a;
 
-  /* atribute="value" */ --cm-attribute-name:  #df631c;
+  /* atribute="value" */ --cm-attribute-name:  #C82829;
   /* atribute="value" */ --cm-attribute-value: var(--cm-string);
   /* <!DOCTYPE html> */  --cm-document-meta:   rgba(var(--textrgba),.3);
   /* <html></html> */    --cm-angle-bracket:   #444444;
 
-  /* (In css) .class           */ --cm-classname:         #7a82da;
-  /* (In css) .class::constant */ --cm-classname-constant: #df631c;
+  /* (In css) .class           */ --cm-classname:         #C99E00;
+  /* (In css) .class::constant */ --cm-classname-constant: #C82829;
 
-  /* Types */   --cm-string:         #c5a332;
+  /* Types */   --cm-string:         #718C00;
   /**/          --cm-string-special: var(--cm-string);
   /**/          --cm-literal:        var(--cm-string);
   /**/          --cm-character:      var(--cm-string);
-  /**/          --cm-number:         #ce33c0;
+  /**/          --cm-number:         #F5871F;
   /**/          --cm-integer:        var(--cm-number);
   /**/          --cm-float:          var(--cm-number);
-  /**/          --cm-bool:           #007cb5;
+  /**/          --cm-bool:           #F5871F;
   /**/          --cm-regexp:         #a05a48;
   /* unknown */ --cm-escape:         #007cb5;
   /**/          --cm-color:          var(--cm-string);
   /**/          --cm-url:            #24373d;
-  /* public */  --cm-keyword:        #007cb5;
+  /* public */  --cm-keyword:        #8959A8;
   /* this */    --cm-self:           #007cb5;
-  /* null */    --cm-null:           #0000ff80;
+  /* null */    --cm-null:           #F5871F80;
   /**/          --cm-atom:           #823ff1;
   /* em, px */  --cm-unit:           #007cb5;
   /* var, let */--cm-modifier:       #007cb5;
-  /* operators*/--cm-operator:       rgba(var(--textrgba),.8);
+  /* operators*/--cm-operator:       rgba(var(--textrgba),.9);
 
-  /* (In md) # */ --cm-heading1: #c5a332;
-  /**/            --cm-heading2: #c5a332;
-  /**/            --cm-heading3: #c5a332;
-  /**/            --cm-heading4: #c5a332;
-  /**/            --cm-heading5: #c5a332;
-  /**/            --cm-heading6: #c5a332;
+  /* (In md) # */ --cm-heading1: #007cb5;
+  /**/            --cm-heading2: #007cb5;
+  /**/            --cm-heading3: #007cb5;
+  /**/            --cm-heading4: #007cb5;
+  /**/            --cm-heading5: #007cb5;
+  /**/            --cm-heading6: #007cb5;
 
   /* =>, < */  --cm-punctuation:    var(--cm-foreground);
   /* <>, {} */ --cm-bracket:        var(--cm-foreground);
   /* [] */     --cm-square-bracket: var(--cm-foreground);
   /* () */     --cm-paren:          var(--cm-foreground);
 
-  --cm-brackets-1: #1fc255;
-  --cm-brackets-2: #a557ff;
-  --cm-brackets-3: #0ab6ff;
-  --cm-brackets-4: #ffa023;
-  --cm-brackets-5: #0e91a8;
-  --cm-brackets-6: #f067f0;
-  --cm-brackets-7: #ffa023;
+  --cm-brackets-1: #086326;
+  --cm-brackets-2: #3f1470;
+  --cm-brackets-3: #003b55;
+  --cm-brackets-4: #683d04;
+  --cm-brackets-5: #005543;
+  --cm-brackets-6: #691469;
+  --cm-brackets-7: #683d04;
   
   /* (In md) Separates */ --cm-md-content-separator: var(--cm-line-comment);
   /* (In md) Lists */     --cm-md-list:              var(--cm-foreground);

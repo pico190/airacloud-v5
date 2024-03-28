@@ -68,7 +68,7 @@ export function EditorNoCookie({ urlparsed }) {
         return '';
     };
 
-    let createMinimap = (v) => {
+    let createMinimap = () => {
         const dom = document.createElement('div');
         return { dom }
       }
@@ -84,7 +84,7 @@ export function EditorNoCookie({ urlparsed }) {
                     indentationMarkers(),
                     showMinimap.compute(['doc'], (state) => {
                         return {
-                        createMinimap,
+                        create: createMinimap,
                         displayText: 'blocks',
                         showOverlay: 'always',
                         }
@@ -102,7 +102,7 @@ export function EditorNoCookie({ urlparsed }) {
                     keymap.of(vscodeKeymap),
                     showMinimap.compute(['doc'], (state) => {
                         return {
-                            createMinimap,
+                            create: createMinimap,
                             displayText: 'blocks',
                             showOverlay: 'always'
                         }
