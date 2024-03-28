@@ -113,16 +113,21 @@ export function EditorNoCookie({ urlparsed }) {
         }
     }, [lang])
 
-    var [ errors, setErrors ] = useState({})
-    let errs = errors
 
     useEffect(() => {
         console.log(errors);
     }, [errors])
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            lintmsg(erros);
+        }, 1);
+    
+        return () => clearInterval(interval);
+      }, []);
+      
     setInterval(() => {
         loadDetails();
-        lintmsg(errs);
     }, 1)
 
     const onChange = (val) => {
