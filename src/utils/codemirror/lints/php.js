@@ -101,6 +101,7 @@ export default function phpLinter(fullcode, setErrors) {
                         const targetLine = lineAround;
                         const linefound = findNearestString(fullcode, targetString, targetLine);
                         rsponsesyntax.line = linefound.line + 2;
+                        rsponsesyntax.codelines = fullcode.split("\n");
 
                         // Get the index of the second occurrence of the error character within the code
                         var indexchar = rsponsesyntax.message.split("'")[1].split("'")[0];
