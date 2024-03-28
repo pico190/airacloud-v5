@@ -1,5 +1,6 @@
 
 import { spaces, hexToRgb } from "../generalfuncs";
+import $ from 'jquery'
 
 export function loadDetails() {
             // Details
@@ -18,6 +19,27 @@ export function loadDetails() {
                     }
                 }
             })
+
+            // Minimap
+            $(document).ready(function() {
+                scrollbehavior = document.getElementById("scrollbehavior");
+                
+                $('#tuElemento').mousedown(function() {
+                    scrollbehavior.innerHTML = `
+                    * {
+                      --scroll-behavior: unset!important;
+                    }
+                    `
+                });
+                
+                $('#tuElemento').mouseup(function() {
+                    scrollbehavior.innerHTML = `
+                    * {
+                      --scroll-behavior: smooth!important;
+                    }`
+                });
+                
+            });
 
 //             document.querySelectorAll("span").forEach(span => {
 //                     var spanstyle = window.getComputedStyle(span);

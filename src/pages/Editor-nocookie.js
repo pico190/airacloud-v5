@@ -85,7 +85,7 @@ export function EditorNoCookie({ urlparsed }) {
                     showMinimap.compute(['doc'], (state) => {
                         return {
                         create: createMinimap,
-                        displayText: 'blocks',
+                        displayText: 'characters',
                         showOverlay: 'always',
                         }
                     }),
@@ -103,7 +103,7 @@ export function EditorNoCookie({ urlparsed }) {
                     showMinimap.compute(['doc'], (state) => {
                         return {
                             create: createMinimap,
-                            displayText: 'blocks',
+                            displayText: 'characters',
                             showOverlay: 'always'
                         }
                     }),
@@ -148,6 +148,7 @@ export function EditorNoCookie({ urlparsed }) {
   -ms-border-radius: 0px !important;
   -o-border-radius: 0px !important;}" />
                         <style id="langstyle" />
+                        <style id="scrollbehavior" />
                         <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} className="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />
                         <CodeMirror
                             className="editorcontainer"
