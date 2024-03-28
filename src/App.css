@@ -1197,6 +1197,7 @@ img::selection {
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
   /* Color of not closed tags                                  */ --cm-nonMatching:              #d12e2e;
+  /* Error line background                                     */ --cm-errorLineBg:              #f04d4d33;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;
 

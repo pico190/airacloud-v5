@@ -120,6 +120,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     useEffect(() => {
         console.log(errors);
+        lintmsg(errors);
     }, [errors])
 
     const onChange = (val) => {
