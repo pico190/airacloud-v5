@@ -21,6 +21,7 @@
     "@uiw/codemirror-extensions-langs": "4.21.25",
     "@replit/codemirror-vscode-keymap": "6.0.2",
     "@codemirror/view": "6.26.0",
+    "@replit/codemirror-minimap": "0.0.0",
     "@uiw/codemirror-extensions-color": "4.21.25",
     "@uiw/codemirror-extensions-hyper-link": "4.21.25",
     "codemirror-extension-inline-suggestion": "0.0.3",

@@ -13,6 +13,7 @@ import $ from 'jquery'
 import { spaces, hexToRgb } from "../utils/generalfuncs";
 import langLoader from "../utils/codemirror/langloader";
 import { loadDetails } from "../utils/codemirror/details";
+import { showMinimap } from "@replit/codemirror-minimap"
 
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 import { keymap } from '@codemirror/view';
@@ -75,12 +76,14 @@ export function EditorNoCookie({ urlparsed }) {
                     hyperLink, 
                     color, 
                     keymap.of(vscodeKeymap),
-                    indentationMarkers({
-                        colors: {
-                            light: '#00000024',
-                            dark: '#FFFFFF24',
-                            activeLight: '#0000004F',
-                            activeDark: '#FFFFFF4F',
+                    indentationMarkers(),
+                    showMinimap.compute(['doc'], (state) => {
+                        return {
+                        create,
+                        /* optional */
+                        displayText: 'blocks',
+                        showOverlay: 'always',
+                        gutters: [ { 1: '#00FF00', 2: '#00FF00' } ],
                         }
                     }),
                     rainbowBrackets(),
@@ -94,6 +97,13 @@ export function EditorNoCookie({ urlparsed }) {
                     hyperLink, 
                     color, 
                     keymap.of(vscodeKeymap),
+                    showMinimap.compute(['doc'], (state) => {
+                        return {
+                            create,
+                            displayText: 'blocks',
+                            showOverlay: 'always'
+                        }
+                    }),
                     indentationMarkers(),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
