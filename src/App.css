@@ -1063,8 +1063,8 @@ img::selection {
 }
 
 .cm-focused .cm-matchingBracket {
-  outline: 1px solid #ffffff2b!important;
-  background-color: transparent!important;
+  outline: 1px solid var(--cm-selection-match-border)!important;
+  background-color: var(--cm-selection-match)!important;
 }
 
 .cm-gutter.cm-foldGutter {
@@ -1186,6 +1186,7 @@ img::selection {
   /* Editor text                                               */ --cm-foreground:               #e6e6e6; 
   /* Selection color                                           */ --cm-selection:                rgb(36, 48, 71);
   /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
+  /* Border of selectionMatch                                  */ --cm-selection-match-border:   #ffffff2b;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
@@ -1302,7 +1303,8 @@ img::selection {
   /* Editor background image                                   */ --cm-bg-img:                   none;
   /* Editor text                                               */ --cm-foreground:               #070606; 
   /* Selection color                                           */ --cm-selection:                #ccd2e0 ;
-  /* Background of selectionMatch                              */ --cm-selection-match:          #ffffff0a;
+  /* Background of selectionMatch                              */ --cm-selection-match:          #0000000a;
+  /* Border of selectionMatch                                  */ --cm-selection-match-border:   #0000002b;
   /* Background of lineNumbers (defaults to editor background) */ --cm-gutter-bg:                var(--cm-bg);
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
@@ -1313,7 +1315,7 @@ img::selection {
 
   /* ---------------- Completion Colors */
   /* Single line comments   */ --cm-line-comment:     #a0a1a7;
-  /* Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
+  /* <Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
   
   /* Is not used in many places */ --cm-name:      #0098dd;
   /**/                             --cm-label-name: #0098dd;
