@@ -21,6 +21,7 @@ export function loadDetails() {
             })
 
             // Minimap
+            if (navigator.userAgent.indexOf("Firefox") == -1) {
                 var scrollbehavior = document.getElementById("scrollbehavior");
                 
                 $('.cm-minimap-overlay').mousedown(function() {
@@ -37,6 +38,7 @@ export function loadDetails() {
                       --scroll-behavior: smooth!important;
                     }`
                 });
+            } 
 
 //             document.querySelectorAll("span").forEach(span => {
 //                     var spanstyle = window.getComputedStyle(span);
