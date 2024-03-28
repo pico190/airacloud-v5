@@ -2,6 +2,7 @@ import { jsxtostr } from "../../generalfuncs"
 
 export function lintmsg(errors) {
     try {
+        console.log(errors);
         Array.from(document.querySelector(".cm-content").children).forEach((line, index) => {
             
             errors.forEach(error => {
