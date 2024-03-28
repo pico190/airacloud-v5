@@ -119,10 +119,10 @@ export function EditorNoCookie({ urlparsed }) {
         console.log(errors);
     }, [errors])
 
-    setInterval(() => {
+    useEffect(() => {
         loadDetails();
         lintmsg(errors);
-    }, 1)
+    })
 
     const onChange = (val) => {
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
@@ -182,7 +182,9 @@ export function EditorNoCookie({ urlparsed }) {
                                 width: "100%",
                                 height: "0px",
                                 left: "0px",
-                                top: "0px"
+                                top: "0px",
+                                transitionDuration: "0ms",
+                                pointerEvents: "none"
                             }} 
                             />
         </>
