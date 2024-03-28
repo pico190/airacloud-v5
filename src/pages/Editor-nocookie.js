@@ -26,10 +26,6 @@ export function EditorNoCookie({ urlparsed }) {
     const [initialValue, setinitialValue] = useState("");
     const [lang, setLang] = useState(null);
     const [extensionsarray, setExtensions] = useState(null);
-    
-    setInterval(() => {
-        loadDetails();
-    }, 1)
 
     // Format: https://airaurl/editor-nocookie/lang/base64editorcontent
     useEffect(() => {
@@ -121,8 +117,12 @@ export function EditorNoCookie({ urlparsed }) {
 
     useEffect(() => {
         console.log(errors);
-        lintmsg(errors);
     }, [errors])
+    
+    setInterval(() => {
+        loadDetails();
+        lintmsg(errors);
+    }, 1)
 
     const onChange = (val) => {
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
