@@ -1292,6 +1292,9 @@ img::selection {
   outline: 1px solid var(--cm-foreground);
 }
 
+[data-color-scheme="light"] .foldicon {
+  filter: invert(1);
+}
 [data-color-scheme="light"] * {
   /* 
   - AiraCodeMirror 
