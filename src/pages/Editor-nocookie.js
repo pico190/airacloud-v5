@@ -15,6 +15,7 @@ import langLoader from "../utils/codemirror/langloader";
 import { loadDetails } from "../utils/codemirror/details";
 import { showMinimap } from "@replit/codemirror-minimap"
 import phpLinter from "../utils/codemirror/lints/php";
+import { lintmsg } from "../utils/codemirror/lints/lintmsg";
 
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 import { keymap } from '@codemirror/view';
