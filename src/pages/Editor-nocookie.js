@@ -136,6 +136,8 @@ export function EditorNoCookie({ urlparsed }) {
         document.getElementById("loader").style.opacity = 0; 
         document.getElementById("loader").style.pointerEvents = "none" 
         console.log(view, "|", state);
+
+        phpLinter(initialValue, setErrors);
     };
     
     return (
