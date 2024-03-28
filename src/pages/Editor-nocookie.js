@@ -113,6 +113,7 @@ export function EditorNoCookie({ urlparsed }) {
         }
     }, [lang])
 
+    var [ errors, setErrors ] = useState([])
 
     useEffect(() => {
         console.log(errors);
@@ -120,7 +121,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            lintmsg(erros);
+            lintmsg(errors);
         }, 1);
     
         return () => clearInterval(interval);
