@@ -122,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
 .colors-img {
     position: absolute;
     z-index: -1;
@@ -1195,6 +1196,10 @@ img::selection {
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;
 
+  
+  --indent-marker-bg-color: #ffffff2f;
+  --indent-marker-active-bg-color: #ffffff3b;
+  
   /* ---------------- Completion Colors */
   /* Single line comments   */ --cm-line-comment:     #6a9955;
   /* Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
@@ -1315,6 +1320,9 @@ img::selection {
   /* Color of not closed tags                                  */ --cm-nonMatching:              #d12e2e;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;
+
+  --indent-marker-bg-color: #00000050;
+  --indent-marker-active-bg-color: #00000073;
 
   /* ---------------- Completion Colors */
   /* Single line comments   */ --cm-line-comment:     #a0a1a7;
