@@ -25,8 +25,8 @@ export function lintmsg(errors) {
                     
                 } else {
                     
-                    line.classList.add("errorline")
-                    line.classList.add("errorlinegutter")
+                    line.classList.remove("errorline")
+                    line.classList.remove("errorlinegutter")
                 }
             })
         })
