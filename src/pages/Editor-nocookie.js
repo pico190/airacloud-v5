@@ -117,6 +117,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     const onChange = (val) => {
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
+        window.parent.postMessage(val, "*");
     };
 
     const mount = (view, state) => { 
