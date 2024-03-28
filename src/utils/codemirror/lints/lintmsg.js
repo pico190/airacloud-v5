@@ -8,7 +8,6 @@ export function lintmsg(errors) {
                     
                     line.classList.add("errorline")
                     
-                    console.log(line.innerText)
                 }
             })
         })
@@ -19,7 +18,6 @@ export function lintmsg(errors) {
                     line.classList.add("errorline")
                     line.classList.add("errorlinegutter")
                     
-                    console.log(line.innerText)
                 }
             })
         })
