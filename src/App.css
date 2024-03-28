@@ -1324,6 +1324,7 @@ img::selection {
   --indent-marker-bg-color: #00000050;
   --indent-marker-active-bg-color: #00000073;
 
+  
   /* ---------------- Completion Colors */
   /* Single line comments   */ --cm-line-comment:     #8E908C;
   /* <Multiple line comments */ --cm-multiple-comment: var(--cm-line-comment);
