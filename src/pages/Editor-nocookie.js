@@ -118,7 +118,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     var [ errors, setErrors ] = useState({})
 
-    useState(() => {
+    useEffect(() => {
         console.log(errors);
     }, [errors])
 
@@ -126,7 +126,7 @@ export function EditorNoCookie({ urlparsed }) {
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
         window.parent.postMessage(val, "*");
 
-        phpLinter(val, setErrors)
+        phpLinter(val, setErrors);
     };
 
     const mount = (view, state) => { 
