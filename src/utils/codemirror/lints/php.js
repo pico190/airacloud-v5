@@ -10,32 +10,18 @@ import { console_info, console_group } from '../../Console';
 /**
  * Function to find the nearest string to a target string in a given text
  * @param {string} targetString - The text/line to search within
- * @param {number} lineNumber - Line for search around
+ * @param {number} lineNumber - If there is no line found returns lineNumber
  * @param {string} text - The full code to search in
  * @returns {integer} - Number
  */
 function findNearestString(targetString, lineNumber, text) {
-    // Divide el texto en líneas
-    const lines = text.split('\n');
-
-    // Asegúrate de que el número de línea esté dentro de los límites
-    if (lineNumber < 1 || lineNumber > lines.length) {
-        return lineNumber; // Devuelve el número de línea original
-    }
-
-    // Busca el índice de la primera aparición del targetString en la línea especificada
-    const index = lines[lineNumber - 1].indexOf(targetString);
-
-    // Si no se encuentra el targetString en la línea, devuelve el número de línea original
-    if (index === -1) {
-        return lineNumber;
-    }
-
-    // Calcula la distancia desde el targetString hasta el inicio de la línea
-    const distanceFromStart = Math.abs(index - (lines[lineNumber - 1].length / 2));
-
-    // Devuelve la línea más cercana al targetString
-    return distanceFromStart <= 1 ? lineNumber : lineNumber + 1; // Corregido: suma 1 en lugar de restar 1
+    var lines = text.split("\n");
+    lines.forEach((line, index) => {
+        if(line.includes(targetString)) {
+            return index;
+        }
+    })
+    return lineNumber;
 }
   
 
@@ -107,7 +93,7 @@ export default function phpLinter(fullcode, setErrors) {
                         console.log("fullCode:", fullcode);
                         console.groupEnd();
                         var linefound = findNearestString(targetString, targetLine, fullcode);
-                        rsponsesyntax.line = linefound;
+                        rsponsesyntax.line = linefound+1;
                         rsponsesyntax.codelines = fullcode.split("\n");
 
                         // Get the index of the second occurrence of the error character within the code
