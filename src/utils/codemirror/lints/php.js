@@ -5,7 +5,7 @@ Swiftly Open Source
 
 import $ from 'jquery'; // Importing jQuery library
 import { encode } from 'js-base64'; // Importing encode function from js-base64 library
-import { console_info } from '../../Console';
+import { console_info, console_group } from '../../Console';
 
 /**
  * Function to find the nearest string to a target string in a given text
