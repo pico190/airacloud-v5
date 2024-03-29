@@ -108,7 +108,7 @@ export function EditorNoCookie({ urlparsed }) {
                     }),
                     rainbowBrackets(),
                     classname({
-                        add: classNameExtension
+                        add: (lineNumber) => {return classNameExtension(lineNumber)}
                     }),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
@@ -131,7 +131,7 @@ export function EditorNoCookie({ urlparsed }) {
                     }),
                     rainbowBrackets(),
                     classname({
-                        add: classNameExtension
+                        add: (lineNumber) => {return classNameExtension(lineNumber)}
                     }),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
