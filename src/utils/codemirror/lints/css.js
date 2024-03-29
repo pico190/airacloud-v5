@@ -10763,7 +10763,7 @@ const rules = {
     "display-property-grouping": 1,
     "duplicate-properties": 1,
     "empty-rules": 1,
-    "known-properties": 1,
+    "known-properties": 0,
 
     // Compatibility
     "adjoining-classes": 1,
@@ -10778,28 +10778,28 @@ const rules = {
     "bulletproof-font-face": 1,
 
     // Performance
-    "font-faces": 1,
-    "import": 1,
-    "duplicate-background-images": 1,
-    "regex-selectors": 1,
-    "universal-selector": 1,
-    "unqualified-attributes": 1,
-    "zero-units": 1,
-    "overqualified-elements": 1,
-    "shorthand": 1,
+    "font-faces": 0,
+    "import": 0,
+    "duplicate-background-images": 0,
+    "regex-selectors": 0,
+    "universal-selector": 0,
+    "unqualified-attributes": 0,
+    "zero-units": 0,
+    "overqualified-elements": 0,
+    "shorthand": 0,
 
     // Maintainability & Duplication
-    "floats": 1,
-    "font-sizes": 1,
-    "ids": 1,
-    "important": 1,
+    "floats": 0,
+    "font-sizes": 0,
+    "ids": 0,
+    "important": 0,
 
     // Accessibility
-    "outline-none": 1,
+    "outline-none": 0,
 
     // OOCSS
-    "qualified-headings": 1,
-    "unique-headings": 1,
+    "qualified-headings": 0,
+    "unique-headings": 0,
   }
 
   

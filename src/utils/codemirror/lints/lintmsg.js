@@ -22,7 +22,7 @@ export function lintmsg(errors) {
                     color: var(--cm-${type}-gutter)!important;
                 }
                 .cm-line:nth-of-type(${(error.line) + ""})::after {
-                    content: "         ${error.message}"!important;
+                    content: "       ${error.message}"!important;
                     position: absolute;
                     top: 0px;
                     color: var(--cm-${type}-gutter)!important;
