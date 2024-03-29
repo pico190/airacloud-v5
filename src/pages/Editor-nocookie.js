@@ -16,7 +16,6 @@ import { loadDetails } from "../utils/codemirror/details";
 import { showMinimap } from "@replit/codemirror-minimap"
 import phpLinter from "../utils/codemirror/lints/php";
 import { lintmsg } from "../utils/codemirror/lints/lintmsg";
-import { classname } from '@uiw/codemirror-extensions-classname';
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 import { keymap } from '@codemirror/view';
 import { console_info, console_warn, console_group } from "../utils/Console";
@@ -104,16 +103,6 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classname({
-                        add: (lineNumber) => {
-                            errors.forEach(error => {
-                                console.log(error.line, lineNumber)
-                                if(error.line === lineNumber) {
-                                    return 'errorline'
-                                }
-                            })
-                        }
-                    }),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -134,16 +123,6 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classname({
-                        add: (lineNumber) => {
-                            errors.forEach(error => {
-                                console.log(error.line, lineNumber)
-                                if(error.line === lineNumber) {
-                                    return 'errorline'
-                                }
-                            })
-                        }
-                    }),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )

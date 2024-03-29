@@ -30,7 +30,6 @@
     "@uiw/codemirror-extensions-langs": "4.21.25",
     "@uiw/codemirror-extensions-color": "4.21.25",
     "@uiw/codemirror-extensions-hyper-link": "4.21.25",
-    "@uiw/codemirror-extensions-classname": "4.21.25",
     
     "@lezer/highlight": "1.2.0",
 
