@@ -86,9 +86,6 @@ export function EditorNoCookie({ urlparsed }) {
       
 
       
-    var [classNameExtension, setClassNameExtension] = useState(() => {});
-
-
     // Lang Updater
     useEffect(() => {
         if(lang === null) {
@@ -144,7 +141,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     useEffect(() => {
       console.log("Errors detected:", errors);
-      lintmsg(errors, setClassNameExtension);
+      lintmsg(errors);
     }, [errors]);
   
   

@@ -1,12 +1,11 @@
 
 
-export function lintmsg(errors, setClassNameExtension) {
+export function lintmsg(errors) {
     // try {
         
     
         let cssgenerated = ``;
 
-        var errorlines = [] 
 
         errors.forEach((error, index) => {
                 console.log(error, "\\", errors)
@@ -19,18 +18,10 @@ export function lintmsg(errors, setClassNameExtension) {
                 }`;
                 errorlines.push(error.line);
         });
-
-        setClassNameExtension((lineNumber) => {
-            if(errorlines.includes(lineNumber)) {
-                return 'errorline'
-            } else {
-                return 'airaeditor-line'
-            }
-        });
         
         console.log("CSS 1 > ", cssgenerated);
         
-        var cssresult = `
+        var cssresult = `${cssgenerated}
         .errorline::before {
             content: "0";
             height: ${document.querySelector(".cm-line") ? document.querySelector(".cm-line").offsetHeight + "" : 0 + ""}px;
