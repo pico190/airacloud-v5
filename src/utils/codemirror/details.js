@@ -30,7 +30,7 @@ export function loadDetails() {
                             break;
 
                         case "select":
-                            button.style.display = "none";;
+                            button.style.display = "none";
                             break;
 
                         case "replace":
