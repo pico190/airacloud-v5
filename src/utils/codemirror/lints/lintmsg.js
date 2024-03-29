@@ -16,7 +16,6 @@ export function lintmsg(errors) {
                 .errorline:nth-of-type(${(index + 1) + ""})::after {
                     content: "${error.message}"!important;
                 }`;
-                errorlines.push(error.line);
         });
         
         console.log("CSS 1 > ", cssgenerated);
