@@ -1376,6 +1376,10 @@ img::selection {
 [data-color-scheme="light"] .foldicon {
   filter: invert(1);
 }
+.cm-lineNumbers > .cm-gutterElement {
+  display: flex;
+  align-items: center;
+}
 [data-color-scheme="light"] * {
   /* 
   - AiraCodeMirror 

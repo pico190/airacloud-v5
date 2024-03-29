@@ -1,7 +1,7 @@
 
 
 export function lintmsg(errors) {
-    // try {
+    try {
         
     
         var cssgenerated = ``;
@@ -70,7 +70,7 @@ export function lintmsg(errors) {
         
         linterElement.innerHTML = cssgenerated;
         
-    // } catch(err) {
-    //     return false;
-    // }
+    } catch(err) {
+        return false;
+    }
 }
