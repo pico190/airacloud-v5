@@ -86,7 +86,7 @@ export function EditorNoCookie({ urlparsed }) {
       
 
       
-    var [classNameExtension, setClassNameExtension] = useState({
+    var [classNameExtension, setClassNameExtension] = useState(classname({
         add: (lineNumber) => {
           if (lineNumber === 1) {
             return 'errorline';
@@ -95,9 +95,8 @@ export function EditorNoCookie({ urlparsed }) {
             return 'errorline';
           }
         },
-      });
+      }));
 
-    var classnameext = classname({...classNameExtension})
 
     // Lang Updater
     useEffect(() => {

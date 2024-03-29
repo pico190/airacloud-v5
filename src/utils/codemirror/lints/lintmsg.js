@@ -1,10 +1,11 @@
 
+import { classname } from '@uiw/codemirror-extensions-classname';
 
 export function lintmsg(errors, setClassNameExtension, classNameExtension) {
     try {
         
         let cssgenerated = ``;
-        setClassNameExtension({
+        setClassNameExtension(classname({
             add: (lineNumber) => {
                 errors.forEach((error, index) => {
                     if (lineNumber === error.line) {
@@ -20,7 +21,7 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
                     }
                 });
             },
-        });
+        }));
         
         console.log("CSS 1 > ", cssgenerated);
         
