@@ -139,25 +139,13 @@ export function EditorNoCookie({ urlparsed }) {
     }, [lang, classNameExtension])
 
     const [errors, setErrors] = useState([]);
-    const [lintInterval, setLintInterval] = useState(null);
   
 
     useEffect(() => {
-      console.log(errors);
+      console.log("Errors detected:", errors);
+      lintmsg(errors, setClassNameExtension, classNameExtension);
     }, [errors]);
   
-    useEffect(() => {
-      if (lintInterval) {
-        clearInterval(lintInterval);
-      }
-      console.log("UseState: ", errors);
-      const intervalId = setInterval(() => {
-        lintmsg(errors, setClassNameExtension, classNameExtension);
-      }, 1000); // Adjust the interval time as needed
-      setLintInterval(intervalId);
-  
-      return () => clearInterval(intervalId);
-    }, [errors]);
   
     useEffect(() => {
       const intervalId = setInterval(() => {

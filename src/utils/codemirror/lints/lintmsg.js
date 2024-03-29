@@ -4,7 +4,7 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
     try {
         
         let cssgenerated = ``;
-        var classnmextension = {
+        setClassNameExtension({
             add: (lineNumber) => {
                 errors.forEach((error, index) => {
                     if (lineNumber === error.line) {
@@ -19,11 +19,7 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
                     }
                 });
             },
-        };
-        
-        if (classnmextension !== classNameExtension) {
-            setClassNameExtension(classnmextension);
-        }
+        });
         
         console.log("CSS 1 > ", cssgenerated);
         
