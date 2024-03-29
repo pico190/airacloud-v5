@@ -1,3 +1,6 @@
+
+import { classname } from '@uiw/codemirror-extensions-classname';
+
 export function lintmsg(errors, setClassNameExtension) {
     try {
         errors.forEach(error => {

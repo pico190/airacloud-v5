@@ -16,7 +16,7 @@ import { loadDetails } from "../utils/codemirror/details";
 import { showMinimap } from "@replit/codemirror-minimap"
 import phpLinter from "../utils/codemirror/lints/php";
 import { lintmsg } from "../utils/codemirror/lints/lintmsg";
-
+import { classname } from '@uiw/codemirror-extensions-classname';
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 import { keymap } from '@codemirror/view';
 import { console_info, console_warn, console_group } from "../utils/Console";
