@@ -87,8 +87,15 @@ export function EditorNoCookie({ urlparsed }) {
 
       
     var [classNameExtension, setClassNameExtension] = useState({
-        add: () => {},
-    });
+        add: (lineNumber) => {
+          if (lineNumber === 1) {
+            return 'errorline';
+          }
+          if (lineNumber === 5) {
+            return 'errorline';
+          }
+        },
+      });
 
     var classnameext = classname({...classNameExtension})
 
