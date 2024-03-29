@@ -3,53 +3,61 @@ import { spaces, hexToRgb } from "../generalfuncs";
 import $ from 'jquery'
 
 export function loadDetails() {
-            var search = document.querySelector(".cm-search");
+
+    try {
+
+        var search = document.querySelector(".cm-search");
           
-            var next = search.querySelector('button[name=next]')
-            var prev = search.querySelector('button[name=prev]')
+        var next = search.querySelector('button[name=next]')
+        var prev = search.querySelector('button[name=prev]')
 
 
-            var pdr = next.parentNode;
-            var sh = prev.nextSibling;
-            pdr.insertBefore(prev, next);
-            pdr.insertBefore(next, sh);
+        var pdr = next.parentNode;
+        var sh = prev.nextSibling;
+        pdr.insertBefore(prev, next);
+        pdr.insertBefore(next, sh);
 
-            search.querySelectorAll("button").forEach(button => {
+        
+        search.querySelectorAll("button").forEach(button => {
                     
-                    var iconcolor = "white";
-                    if(document.body.getAttribute("data-color-scheme")==="light") {
-                        iconcolor = "black"
-                    }
-                    switch(button.name) {
-                        case "next":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-down&fill=${iconcolor}&type=outline" alt="⬇" loading="lazy">`;
-                            break;
+            var iconcolor = "white";
+            if(document.body.getAttribute("data-color-scheme")==="light") {
+                iconcolor = "black"
+            }
+            switch(button.name) {
+                case "next":
+                    button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-down&fill=${iconcolor}&type=outline" alt="⬇" loading="lazy">`;
+                    break;
 
-                        case "prev":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-up&fill=${iconcolor}&type=outline" alt="⬆" loading="lazy">`;
-                            break;
+                case "prev":
+                    button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-up&fill=${iconcolor}&type=outline" alt="⬆" loading="lazy">`;
+                    break;
 
-                        case "select":
-                            button.style.display = "none";
-                            break;
+                case "select":
+                    button.style.display = "none";
+                    break;
 
-                        case "replace":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tab&fill=${iconcolor}" alt="⤴" loading="lazy">`;
-                            break;
-
-
-                        case "replaceAll":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tabs&fill=${iconcolor}" alt="🔄" loading="lazy">`;
-                            break;
+                case "replace":
+                    button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tab&fill=${iconcolor}" alt="⤴" loading="lazy">`;
+                    break;
 
 
-                        case "close":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=dismiss&fill=${iconcolor}" alt="❌" loading="lazy">`;
-                            break;
+                case "replaceAll":
+                    button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tabs&fill=${iconcolor}" alt="🔄" loading="lazy">`;
+                    break;
 
 
-                    }
-            })
+                case "close":
+                    button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=dismiss&fill=${iconcolor}" alt="❌" loading="lazy">`;
+                    break;
+
+
+            }
+    })
+    } catch(err) {
+        return false;
+    }
+
 
             // Details
             // Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
