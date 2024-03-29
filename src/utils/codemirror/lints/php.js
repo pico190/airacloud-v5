@@ -35,7 +35,7 @@ function findNearestString(targetString, lineNumber, text) {
     const distanceFromStart = Math.abs(index - (lines[lineNumber - 1].length / 2));
 
     // Devuelve la línea más cercana al targetString
-    return distanceFromStart <= 1 ? lineNumber : lineNumber - 1;
+    return distanceFromStart <= 1 ? lineNumber : lineNumber + 1; // Corregido: suma 1 en lugar de restar 1
 }
   
 
