@@ -167,6 +167,9 @@ export function EditorNoCookie({ urlparsed }) {
         lint(val);
 
     };
+    const onUpdate = () => {
+        lintmsg(errors);
+    };
 
     const mount = (view, state) => { 
         document.getElementById("loader").style.opacity = 0; 
@@ -210,6 +213,7 @@ export function EditorNoCookie({ urlparsed }) {
                             theme={airatheme}
                             basicSetup={{ autocompletion: false }}
                             onChange={onChange}
+                            onUpdate={onUpdate}
                             style={{
                                 height: "100%",
                                 width: "100%"
