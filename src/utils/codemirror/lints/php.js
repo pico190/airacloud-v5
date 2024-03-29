@@ -98,7 +98,7 @@ export default function phpLinter(fullcode, setErrors) {
         if (encodedCode.length > 0) {
             // Send POST request to PHP code checker API
             const request = $.post("https://phpcodechecker.com/api/?base64", { code: encodedCode }, (data) => {
-                try {
+                // try {
                     const response = JSON.parse(data);
                     if (response.hasOwnProperty('syntax')) {
                         console_info("PHP Linter > Errors detected");
@@ -136,9 +136,9 @@ export default function phpLinter(fullcode, setErrors) {
                         console.log(rsponsesyntax);
                         console.groupEnd();
                     }
-                } catch (err) {
-                    return false;
-                }
+                // } catch (err) {
+                //     return false;
+                // }
                 currentRequests.splice(currentRequests.indexOf(request), 1);
 
                 // Set errors when all requests are completed
