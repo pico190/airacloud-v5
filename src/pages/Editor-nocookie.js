@@ -153,7 +153,7 @@ export function EditorNoCookie({ urlparsed }) {
         if(phplint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
             phpLinter(val, setErrors);
         }
-        var csslint = ["css"];
+        var csslint = ["css", "less"];
         if(csslint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
             cssLinter(val, setErrors);
         }

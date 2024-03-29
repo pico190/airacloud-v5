@@ -10810,8 +10810,6 @@ const rules = {
  */
 export default function cssLinter(fullcode, setErrors) {
     var lintverification = CSSLint.verify(fullcode, rules);
-    console.log(
-        lintverification   
-    )
+    console.log(lintverification)
     setErrors(lintverification)
 }
