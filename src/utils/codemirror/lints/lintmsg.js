@@ -17,7 +17,7 @@ export function lintmsg(errors) {
                     background-color: var(--cm-errorLineBg);
                 }
                 .cm-line:nth-of-type(${(index + 1) + ""})::after {
-                    content: "          ${error.message}"!important;
+                    content: "         ${error.message}"!important;
                 }`;
         });
         
