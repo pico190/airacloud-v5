@@ -26,7 +26,7 @@ export function lintmsg(errors, setClassNameExtension) {
         var cssresult = `
         .errorline::before {
             content: "0";
-            height: ${document.querySelector(".cm-line").offsetHeight}px;
+            height: ${document.querySelector(".cm-line") ? document.querySelector(".cm-line").offsetHeight + "" : 0 + ""}px;
             width: 100%;
             background-color: var(--cm-errorLineBg);
             position: absolute;
