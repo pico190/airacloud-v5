@@ -88,7 +88,9 @@ export function EditorNoCookie({ urlparsed }) {
       
     var [classNameExtension, setClassNameExtension] = useState({
         add: () => {},
-      });
+    });
+
+    var classnameext = classname({...classNameExtension})
 
 
     // Lang Updater
@@ -109,7 +111,7 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classname(classNameExtension),
+                    classnameext,
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -120,8 +122,8 @@ export function EditorNoCookie({ urlparsed }) {
                     lang,
                     hyperLink, 
                     color, 
-                    classname(classNameExtension),
                     keymap.of(vscodeKeymap),
+                    indentationMarkers(),
                     showMinimap.compute(['doc'], (state) => {
                         return {
                             create: createMinimap,
@@ -129,9 +131,8 @@ export function EditorNoCookie({ urlparsed }) {
                             showOverlay: 'mouse-over'
                         }
                     }),
-                    indentationMarkers(),
                     rainbowBrackets(),
-                    classNameExtension,
+                    classnameext,
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
