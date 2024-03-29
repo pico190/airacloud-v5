@@ -116,7 +116,7 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classnameext,
+                    classNameExtension,
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -137,7 +137,7 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classnameext,
+                    classNameExtension,
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
