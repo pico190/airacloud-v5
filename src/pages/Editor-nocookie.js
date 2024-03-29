@@ -90,8 +90,7 @@ export function EditorNoCookie({ urlparsed }) {
         add: (lineNumber) => {
           if (lineNumber === 1) {
             return 'errorline';
-          }
-          if (lineNumber === 5) {
+          } else if (lineNumber === 5) {
             return 'errorline';
           }
         },

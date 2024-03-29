@@ -5,23 +5,23 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
     try {
         
         let cssgenerated = ``;
-        setClassNameExtension(classname({
-            add: (lineNumber) => {
-                errors.forEach((error, index) => {
-                    if (lineNumber === error.line) {
-                        console.log(error, "\\", errors)
-                        return 'errorline'
-                        // cssgenerated += `
-                        // .errorline:nth-of-type(${(index + 1) + ""})::before {
-                        //     content: "${error.line + ""}"!important;
-                        // }
-                        // .errorline:nth-of-type(${(index + 1) + ""})::after {
-                        //     content: "${error.message}"!important;
-                        // }`;
-                    }
-                });
-            },
-        }));
+        // setClassNameExtension(classname({
+        //     add: (lineNumber) => {
+        //         errors.forEach((error, index) => {
+        //             if (lineNumber === error.line) {
+        //                 console.log(error, "\\", errors)
+        //                 return 'errorline'
+        //                 // cssgenerated += `
+        //                 // .errorline:nth-of-type(${(index + 1) + ""})::before {
+        //                 //     content: "${error.line + ""}"!important;
+        //                 // }
+        //                 // .errorline:nth-of-type(${(index + 1) + ""})::after {
+        //                 //     content: "${error.message}"!important;
+        //                 // }`;
+        //             }
+        //         });
+        //     },
+        // }));
         
         console.log("CSS 1 > ", cssgenerated);
         
