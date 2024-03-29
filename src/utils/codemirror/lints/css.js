@@ -10811,5 +10811,15 @@ const rules = {
 export default function cssLinter(fullcode, setErrors) {
     var lintverification = CSSLint.verify(fullcode, rules);
     console.log(lintverification)
-    setErrors(lintverification)
+    var result = []
+    lintverification.messages.forEach(message => {
+        result.push({
+            line: message.line,
+            index: message.col,
+            code: message.evidence,
+            message: message.message,
+            type: message.type,
+            codelines: fullcode.split("\n")
+        })
+    })
 }
