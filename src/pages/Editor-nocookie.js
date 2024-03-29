@@ -114,18 +114,24 @@ export function EditorNoCookie({ urlparsed }) {
     }, [lang])
 
     var [ errors, setErrors ] = useState([])
-
+    var [ lintInterval, setLintInterval ] = useState()
     useEffect(() => {
         console.log(errors);
     }, [errors])
 
     useEffect(() => {
-        const interval = setInterval(() => {
+        try {
+            clearInterval(lintInterval);
+        } catch(err) {
+          return false;
+        }
+        console.log(errors)
+        setLintInterval(setInterval(() => {
             lintmsg(errors);
-        }, 1);
+        }, 1))
     
         return () => clearInterval(interval);
-      }, [errors]);
+      }, [errors, lintInterval]);
       
     setInterval(() => {
         loadDetails();
