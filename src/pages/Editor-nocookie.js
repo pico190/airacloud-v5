@@ -19,6 +19,7 @@ import { lintmsg } from "../utils/codemirror/lints/lintmsg";
 
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 import { keymap } from '@codemirror/view';
+import { console_info, console_warn, console_group } from "../utils/Console";
 
 export function EditorNoCookie({ urlparsed }) {
     const [reference, setReference] = useState([]);
@@ -36,7 +37,11 @@ export function EditorNoCookie({ urlparsed }) {
         var errormsg = "Base64 Decoding Error"
         try {
             value = decode(urlparsed[2] ? urlparsed[2] : encode(errormsg))
+            console_group("B64 Editor Content Loaded");
+            console.log(value);
+            console.groupEnd();
         } catch(err) {
+            console_warn("Error loading B64 Editor content");
             value = errormsg
         }
         setinitialValue(value)
@@ -46,14 +51,22 @@ export function EditorNoCookie({ urlparsed }) {
     useEffect(() => {
         const loadIntelliSense = () => {
             if (!intelliLoaded) {
-                setIntelliLoaded(true);
-                    if (localStorage.getItem("htmlintelli")) {
-                        setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
+                try {
+                    var htmlintelli = ["php", "html", "jsx"];
+                    if(htmlintelli.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+                        setIntelliLoaded(true);
+                        if (localStorage.getItem("htmlintelli")) {
+                            setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
+                        }
+                        $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
+                            setReference(data);
+                            localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
+                        });
+                        console_info("HTML IntelliSense Loaded");
                     }
-                    $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
-                        setReference(data);
-                        localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
-                    });
+                } catch(err) {
+                    return true;
+                }
             }
         };
         window.addEventListener("load", loadIntelliSense);
@@ -125,7 +138,7 @@ export function EditorNoCookie({ urlparsed }) {
         } catch(err) {
             return false;
         }
-        console.log(errors)
+        console.log("UseState: ", errors)
         setLintInterval(setInterval(() => {
             lintmsg(errors);
         }, 1))
@@ -142,7 +155,12 @@ export function EditorNoCookie({ urlparsed }) {
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
         window.parent.postMessage(val, "*");
 
-        phpLinter(val, setErrors);
+        var phplint = ["php"];
+        if(phplint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+            phpLinter(val, setErrors);
+        }
+
+
     };
 
     const mount = (view, state) => { 
