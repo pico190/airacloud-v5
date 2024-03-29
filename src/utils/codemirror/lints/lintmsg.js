@@ -1,33 +1,31 @@
-import { useState } from 'react'
+
 
 export function lintmsg(errors, setClassNameExtension, classNameExtension) {
     try {
         
-        var [ cssgenerated, setCssGenerated ] = useState(``) 
+        var cssgenerated = ``;
         var classnmextension = {
             add: (lineNumber) => {
                 errors.forEach((error, index) => {
-
                     if (lineNumber === error.line) {
-                        var cssgnrtdustate = cssgenerated + ""
-                        setCssGenerated(
-                            cssgnrtdustate + `
-                            .errorline:nth-of-type(${(index + 1) + ""})::before {
-                                content: "${error.line + ""}"!important;
-                            }
-                            .errorline:nth-of-type(${(index + 1) + ""})::after {
-                                content: "${error.message}"!important;
-                            }`
-                        )
-                        return 'errorline';
+                        cssgenerated = cssgenerated + `
+                        .errorline:nth-of-type(${(index + 1) + ""})::before {
+                            content: "${error.line + ""}"!important;
+                        }
+                        .errorline:nth-of-type(${(index + 1) + ""})::after {
+                            content: "${error.message}"!important;
+                        }`;
                     }
-                })
+                });
             },
-        }
-        if(classnmextension !== classNameExtension) {
+        };
+        
+        if (classnmextension !== classNameExtension) {
             setClassNameExtension(classnmextension);
         }
-        console.log("CSS 1 > ", cssgenerated)
+        
+        console.log("CSS 1 > ", cssgenerated);
+        
         var cssresult = `${cssgenerated}
         .errorline::before {
             content: "0";
@@ -43,11 +41,15 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
             text-align: right;
             padding-right: 28px;
             box-sizing: border-box;
-          }`
-
-        if(!document.getElementById("linter").innerHTML === cssresult) {
-            document.getElementById("linter").innerHTML = cssresult
+        }`;
+        
+        var linterElement = document.getElementById("linter");
+        
+        if (linterElement.innerHTML !== cssresult) {
+            linterElement.innerHTML = cssresult;
         }
+        
+        
     } catch(err) {
         return false;
     }
