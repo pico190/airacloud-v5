@@ -14,13 +14,14 @@ export function lintmsg(errors, setClassNameExtension) {
             })
             cssgenerated = cssgenerated + `
             .errorline:nth-of-type(${(index + 1) + ""})::before {
-                content: "${error.line + ""}";
+                content: "${error.line + ""}"!important;
             }`
         })
         
         document.getElementById("linter").innerHTML = `
         ${cssgenerated}
         .errorline::before {
+            content : "0";
             height: ${document.querySelector(".cm-line").offsetHeight}px;
             width: 100%;
             background-color: var(--cm-errorLineBg);
