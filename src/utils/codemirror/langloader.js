@@ -34,7 +34,7 @@ export default function langLoader(lang, langs) {
         lng = html({ config: htmlconfig }); 
         document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" 
     }
-    else if (lang === "css") { lng = langs.less() }
+    else if (lang === "css") { lng = langs.less(); document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" }
     else if (lang === "js") { lng = langs.javascript() }
     else if (lang === "jsx") { lng = langs.jsx() }
     else if (lang === "ts") { lng = langs.typescript() }

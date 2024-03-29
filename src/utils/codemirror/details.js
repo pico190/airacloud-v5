@@ -16,14 +16,17 @@ export function loadDetails() {
 
             search.querySelectorAll("button").forEach(button => {
                     
-                
+                    var iconcolor = "white";
+                    if(document.body.getAttribute("data-color-scheme")==="light") {
+                        iconcolor = "black"
+                    }
                     switch(button.name) {
                         case "next":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-down&fill=white&type=outline" alt="⬇" loading="lazy">`;
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-down&fill=${iconcolor}&type=outline" alt="⬇" loading="lazy">`;
                             break;
 
                         case "prev":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-up&fill=white&type=outline" alt="⬆" loading="lazy">`;
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-up&fill=${iconcolor}&type=outline" alt="⬆" loading="lazy">`;
                             break;
 
                         case "select":
@@ -31,17 +34,17 @@ export function loadDetails() {
                             break;
 
                         case "replace":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tab&fill=white" alt="⤴" loading="lazy">`;
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tab&fill=${iconcolor}" alt="⤴" loading="lazy">`;
                             break;
 
 
                         case "replaceAll":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tabs&fill=white" alt="🔄" loading="lazy">`;
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tabs&fill=${iconcolor}" alt="🔄" loading="lazy">`;
                             break;
 
 
                         case "close":
-                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=dismiss&fill=white" alt="❌" loading="lazy">`;
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=dismiss&fill=${iconcolor}" alt="❌" loading="lazy">`;
                             break;
 
 
