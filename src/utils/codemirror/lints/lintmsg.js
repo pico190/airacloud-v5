@@ -46,10 +46,10 @@ export function lintmsg(errors) {
                     document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((line, index) => {
                         if(line.offsetTop === gutterTop) {
                             cssgenerated += `
-                            .cm-line:nth-of-type(${index}) {
+                            .cm-line:nth-of-type(${index + 1}) {
                                 background-color: var(--cm-${type}LineBg)!important;
                             }
-                            .cm-line:nth-of-type(${index})::after {
+                            .cm-line:nth-of-type(${index + 1})::after {
                                 content: "       ${error.message}"!important;
                                 position: absolute;
                                 top: 0px;
