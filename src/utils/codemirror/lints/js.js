@@ -7,7 +7,7 @@ Swiftly Open Source
  * @param {string} fullcode - The full JS code to be linted
  * @param {function} setErrors - Function to set syntax errors
  */
-export default function phpLinter(fullcode, setErrors) {
+export default function jsLinter(fullcode, setErrors) {
     // Abort ongoing requests before making new ones
     currentRequests.forEach(request => request.abort());
     currentRequests = [];

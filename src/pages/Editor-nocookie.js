@@ -20,7 +20,7 @@ import { keymap } from '@codemirror/view';
 import { console_info, console_warn, console_group } from "../utils/Console";
 import phpLinter from "../utils/codemirror/lints/php";
 import cssLinter from "../utils/codemirror/lints/css";
-            
+import jsLinter from "../utils/codemirror/lints/js";
 
 export function EditorNoCookie({ urlparsed }) {
     const [reference, setReference] = useState([]);
@@ -157,6 +157,12 @@ export function EditorNoCookie({ urlparsed }) {
         if(csslint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
             cssLinter(val, setErrors);
         }
+        var jslint = ["js", "jsx"];
+        if(jslint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+            jsLinter(val, setErrors);
+        }
+
+        
     }
 
     const onChange = (val) => {
