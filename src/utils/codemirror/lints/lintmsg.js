@@ -1,26 +1,23 @@
 
 
-export function lintmsg(errors, setClassNameExtension, classNameExtension) {
-    try {
+export function lintmsg(errors, setClassNameExtension) {
+    // try {
         
         let cssgenerated = ``;
         setClassNameExtension((lineNumber) => {
-                // errors.forEach((error, index) => {
-                //     if (lineNumber === error.line) {
-                //         console.log(error, "\\", errors)
-                //         return 'errorline'
-                //         // cssgenerated += `
-                //         // .errorline:nth-of-type(${(index + 1) + ""})::before {
-                //         //     content: "${error.line + ""}"!important;
-                //         // }
-                //         // .errorline:nth-of-type(${(index + 1) + ""})::after {
-                //         //     content: "${error.message}"!important;
-                //         // }`;
-                //     }
-                // });
-                if(lineNumber == 10) {
-                    return 'errorline'
-                }
+                errors.forEach((error, index) => {
+                    if (lineNumber === error.line) {
+                        console.log(error, "\\", errors)
+                        return 'errorline'
+                        // cssgenerated += `
+                        // .errorline:nth-of-type(${(index + 1) + ""})::before {
+                        //     content: "${error.line + ""}"!important;
+                        // }
+                        // .errorline:nth-of-type(${(index + 1) + ""})::after {
+                        //     content: "${error.message}"!important;
+                        // }`;
+                    }
+                });
             },
         );
         
@@ -81,7 +78,7 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
         
         linterElement.innerHTML = cssresult;
         
-    } catch(err) {
-        return false;
-    }
+    // } catch(err) {
+    //     return false;
+    // }
 }

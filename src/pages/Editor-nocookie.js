@@ -144,7 +144,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     useEffect(() => {
       console.log("Errors detected:", errors);
-      lintmsg(errors, setClassNameExtension, classNameExtension);
+      lintmsg(errors, setClassNameExtension);
     }, [errors]);
   
   
