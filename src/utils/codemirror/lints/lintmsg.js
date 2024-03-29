@@ -4,23 +4,25 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
     try {
         
         let cssgenerated = ``;
-        setClassNameExtension({
-            add: (lineNumber) => {
-                errors.forEach((error, index) => {
-                    if (lineNumber === error.line) {
-                        console.log(error, "\\", errors)
-                        return 'errorline'
-                        // cssgenerated += `
-                        // .errorline:nth-of-type(${(index + 1) + ""})::before {
-                        //     content: "${error.line + ""}"!important;
-                        // }
-                        // .errorline:nth-of-type(${(index + 1) + ""})::after {
-                        //     content: "${error.message}"!important;
-                        // }`;
-                    }
-                });
+        setClassNameExtension((lineNumber) => {
+                // errors.forEach((error, index) => {
+                //     if (lineNumber === error.line) {
+                //         console.log(error, "\\", errors)
+                //         return 'errorline'
+                //         // cssgenerated += `
+                //         // .errorline:nth-of-type(${(index + 1) + ""})::before {
+                //         //     content: "${error.line + ""}"!important;
+                //         // }
+                //         // .errorline:nth-of-type(${(index + 1) + ""})::after {
+                //         //     content: "${error.message}"!important;
+                //         // }`;
+                //     }
+                // });
+                if(lineNumber == 10) {
+                    return 'errorline'
+                }
             },
-        });
+        );
         
         console.log("CSS 1 > ", cssgenerated);
         

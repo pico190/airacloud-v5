@@ -86,9 +86,7 @@ export function EditorNoCookie({ urlparsed }) {
       
 
       
-    var [classNameExtension, setClassNameExtension] = useState({
-        add: () => {},
-      });
+    var [classNameExtension, setClassNameExtension] = useState(() => {});
 
 
     // Lang Updater
@@ -109,7 +107,9 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classname(classNameExtension),
+                    classname({
+                        add: classNameExtension
+                    }),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -130,7 +130,9 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classname(classNameExtension),
+                    classname({
+                        add: classNameExtension
+                    }),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
