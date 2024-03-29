@@ -8,6 +8,7 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
             add: (lineNumber) => {
                 errors.forEach((error, index) => {
                     if (lineNumber === error.line) {
+                        console.log(error, "\\", errors)
                         return 'errorline'
                         // cssgenerated += `
                         // .errorline:nth-of-type(${(index + 1) + ""})::before {
@@ -76,10 +77,7 @@ export function lintmsg(errors, setClassNameExtension, classNameExtension) {
         
         var linterElement = document.getElementById("linter");
         
-        if (linterElement.innerHTML !== cssresult) {
-            linterElement.innerHTML = cssresult;
-        }
-        
+        linterElement.innerHTML = cssresult;
         
     } catch(err) {
         return false;
