@@ -32,20 +32,20 @@ function findNearestString(lineToFind, lineNumber, fullCode) {
     }
 
     let closestLine = -1;
-    let distance = Infinity;
+    let minDistance = Infinity;
 
     // Find the closest line that contains the searched code within the specified range
     for (let i = Math.max(0, lineWithArgument - lineNumber); i < Math.min(lines.length, lineWithArgument + lineNumber); i++) {
         if (lines[i].includes(lineToFind)) {
             const currentDistance = Math.abs(i - lineWithArgument);
-            if (currentDistance < distance) {
-                distance = currentDistance;
+            if (currentDistance < minDistance) {
+                minDistance = currentDistance;
                 closestLine = i;
             }
         }
     }
 
-    return closestLine === -1 ? lineNumber : closestLine;
+    return closestLine === -1 ? lineNumber : closestLine + 1; // Adjusted to return the correct line number
 }
   
 
