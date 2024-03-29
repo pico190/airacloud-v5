@@ -10809,7 +10809,9 @@ const rules = {
  * @param {function} setErrors - Function to set syntax errors
  */
 export default function cssLinter(fullcode, setErrors) {
+    var lintverification = CSSLint.verify(fullcode, rules);
     console.log(
-        CSSLint.verify(fullcode, rules)
+        lintverification   
     )
+    setErrors(lintverification)
 }
