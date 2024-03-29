@@ -45,7 +45,7 @@ function findNearestString(lineToFind, lineNumber, fullCode) {
         }
     }
 
-    return closestLine === -1 ? lineNumber : closestLine + 1; // Adjusted to return the correct line number
+    return closestLine === -1 ? lineNumber : closestLine + 3; // Adjusted to return the correct line number
 }
   
 
