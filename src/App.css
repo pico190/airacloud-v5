@@ -1221,7 +1221,7 @@ img::selection {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-.cm-search input:active { 
+.cm-search input:focus { 
   background-color: rgba(var(--textrgba), 0.08) !important;
 }
 
