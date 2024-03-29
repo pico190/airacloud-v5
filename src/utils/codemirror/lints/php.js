@@ -16,6 +16,7 @@ import { console_info, console_group } from '../../Console';
  */
 function findNearestString(targetString, lineNumber, text) {
     var lines = text.split("\n");
+    console.log(targetString, text, lines);
     lines.forEach((line, index) => {
         if(line.includes(targetString)) {
             return index;
