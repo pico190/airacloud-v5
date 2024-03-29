@@ -22,7 +22,16 @@ export function lintmsg(errors) {
                     position: absolute;
                     top: 0px;
                     color: var(--cm-error-gutter)!important;
-                }`;
+                }
+                .cm-gutterElement:nth-of-type(${(error.line + 1) + ""})::after {
+                    content: "";
+                    position: absolute;
+                    right: 0px;
+                    height: ${document.querySelector(".cm-line") ? document.querySelector(".cm-line").offsetHeight + "px" : "calc(var(--editor-font-size) + 1vh)"};
+                    background-color: var(--cm-errorLineBg);
+                    width: 30px;
+                  }
+                `;
         });
         
         console.log("CSS 1 > ", cssgenerated);
