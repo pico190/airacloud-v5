@@ -3,23 +3,30 @@
 export function lintmsg(errors, setClassNameExtension) {
     // try {
         
+    
         let cssgenerated = ``;
+
+        var errorlines = [] 
+
+        errors.forEach((error, index) => {
+                console.log(error, "\\", errors)
+                cssgenerated += `
+                .errorline:nth-of-type(${(index + 1) + ""})::before {
+                    content: "${error.line + ""}"!important;
+                }
+                .errorline:nth-of-type(${(index + 1) + ""})::after {
+                    content: "${error.message}"!important;
+                }`;
+                errorlines.push(error.line);
+        });
+
         setClassNameExtension((lineNumber) => {
-                errors.forEach((error, index) => {
-                    if (lineNumber === error.line) {
-                        console.log(error, "\\", errors)
-                        return 'errorline'
-                        // cssgenerated += `
-                        // .errorline:nth-of-type(${(index + 1) + ""})::before {
-                        //     content: "${error.line + ""}"!important;
-                        // }
-                        // .errorline:nth-of-type(${(index + 1) + ""})::after {
-                        //     content: "${error.message}"!important;
-                        // }`;
-                    }
-                });
-            },
-        );
+            if(errorlines.includes(lineNumber)) {
+                return 'errorline'
+            } else {
+                return 'airaeditor-line'
+            }
+        });
         
         console.log("CSS 1 > ", cssgenerated);
         
