@@ -15,39 +15,38 @@ import { console_info, console_group } from '../../Console';
  * @returns {integer} - Number
  */
 function findNearestString(lineToFind, lineNumber, fullCode) {
-  // Convert the full code into an array of lines
-  const lines = fullCode.split('\n');
-
-  // Find the line where the function argument is located
-  let lineWithArgument = -1;
-  for (let i = 0; i < lines.length; i++) {
-    if (lines[i].includes(lineNumber.toString())) {
-      lineWithArgument = i;
-      break;
-    }
-  }
-
-  // If the line with the argument is not found, return -1
-  if (lineWithArgument === -1) {
-    return -1;
-  }
-
-  // Find the closest line that contains the searched code
-  let closestLine = -1;
-  let distance = Infinity;
-  for (let i = lineWithArgument; i < lines.length; i++) {
-    if (lines[i].includes(lineToFind)) {
-      const currentDistance = Math.abs(i - lineWithArgument);
-      if (currentDistance < distance) {
-        distance = currentDistance;
-        closestLine = i;
+    const lines = fullCode.split('\n');
+    let lineWithArgument = -1;
+    
+    // Find the line where the function argument is located
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].includes(lineNumber.toString())) {
+        lineWithArgument = i;
+        break;
       }
     }
+  
+    if (lineWithArgument === -1) {
+      return -1;
+    }
+  
+    let closestLine = -1;
+    let distance = Infinity;
+  
+    // Find the closest line that contains the searched code
+    for (let i = lineWithArgument; i < lines.length; i++) {
+      if (lines[i].includes(lineToFind)) {
+        const currentDistance = Math.abs(i - lineWithArgument);
+        if (currentDistance < distance) {
+          distance = currentDistance;
+          closestLine = i;
+        }
+      }
+    }
+  
+    return closestLine;
   }
-
-  // Return the number of the closest line
-  return closestLine;
-}
+  
 
 /**
  * Function to get the index of the second occurrence of stringA within stringB
@@ -111,6 +110,11 @@ export default function phpLinter(fullcode, setErrors) {
                         console_info("PHP Linter > Finding Line");
                         const targetString = rsponsesyntax.code;
                         const targetLine = lineAround;
+                        console_group("PHP Linter > Finding Line [Context]");
+                        console.log("lineString:", targetString);
+                        console.log("lineNumber:", targetLine);
+                        console.log("fullCode:", fullcode);
+                        console.groupEnd();
                         const linefound = findNearestString(fullcode, targetString, targetLine);
                         rsponsesyntax.line = linefound;
                         rsponsesyntax.codelines = fullcode.split("\n");
