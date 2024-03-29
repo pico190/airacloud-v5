@@ -86,7 +86,7 @@ export function EditorNoCookie({ urlparsed }) {
       
 
       
-    var [classNameExtension, setClassNameExtension] = useState(classname({
+    var [classNameExtension, setClassNameExtension] = useState({
         add: (lineNumber) => {
           if (lineNumber === 1) {
             return 'errorline';
@@ -94,7 +94,7 @@ export function EditorNoCookie({ urlparsed }) {
             return 'errorline';
           }
         },
-      }));
+      });
 
 
     // Lang Updater
@@ -115,7 +115,7 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classNameExtension,
+                    classname(classNameExtension),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -136,7 +136,7 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
-                    classNameExtension,
+                    classname(classNameExtension),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
