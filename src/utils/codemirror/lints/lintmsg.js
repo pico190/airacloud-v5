@@ -17,7 +17,7 @@ export function lintmsg(errors) {
                 .cm-line:nth-of-type(${(error.line) + ""}) {
                     background-color: var(--cm-${type}LineBg)!important;
                 }
-                .cm-gutterElement:nth-of-type(${(error.line + 1) + ""}) {
+                .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(error.line + 1) + ""}) {
                     background-color: var(--cm-${type}LineBg)!important;
                     color: var(--cm-${type}-gutter)!important;
                 }
@@ -27,7 +27,7 @@ export function lintmsg(errors) {
                     top: 0px;
                     color: var(--cm-${type}-gutter)!important;
                 }
-                .cm-gutterElement:nth-of-type(${(error.line + 1) + ""})::after {
+                .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(error.line + 1) + ""})::after {
                     content: "";
                     position: absolute;
                     right: 0px;
