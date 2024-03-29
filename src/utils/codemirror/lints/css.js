@@ -10822,4 +10822,5 @@ export default function cssLinter(fullcode, setErrors) {
             codelines: fullcode.split("\n")
         })
     })
+    setErrors(result);
 }

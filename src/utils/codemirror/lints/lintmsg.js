@@ -38,8 +38,6 @@ export function lintmsg(errors) {
                 `;
         });
         
-        console.log("CSS 1 > ", cssgenerated);
-        
         
         var linterElement = document.getElementById("linter");
         
