@@ -18,34 +18,44 @@ export function lintmsg(errors) {
                 })
                 if(!stop) {
 
-                    console.log(error, "\\", errors)
                     var type = "error"
                     if(error.type === "warning") {
                         type = "warn"
                     }
-                    cssgenerated += `
-                    .cm-line:nth-of-type(${(error.line) + ""}) {
-                        background-color: var(--cm-${type}LineBg)!important;
-                    }
-                    .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(error.line + 1) + ""}) {
-                        background-color: var(--cm-${type}LineBg)!important;
-                        color: var(--cm-${type}-gutter)!important;
-                    }
-                    .cm-line:nth-of-type(${(error.line) + ""})::after {
-                        content: "       ${error.message}"!important;
-                        position: absolute;
-                        top: 0px;
-                        color: var(--cm-${type}-gutter)!important;
-                    }
-                    .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(error.line + 1) + ""})::after {
-                        content: "";
-                        position: absolute;
-                        right: 0px;
-                        height: ${document.querySelector(".cm-line") ? document.querySelector(".cm-line").offsetHeight + "px" : "calc(var(--editor-font-size) + 1vh)"};
-                        background-color: var(--cm-${type}LineBg);
-                        width: 30px;
-                      }
-                    `;
+
+                    document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((gutter, index) => {
+                        if(parseInt(gutter.innerText) === error.line) {
+                            cssgenerated += `
+                            .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(index + 2) + ""}) {
+                                background-color: var(--cm-${type}LineBg)!important;
+                                color: var(--cm-${type}-gutter)!important;
+                            }
+                            .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(index + 2) + ""})::after {
+                                content: "";
+                                position: absolute;
+                                right: 0px;
+                                height: ${document.querySelector(".cm-line") ? document.querySelector(".cm-line").offsetHeight + "px" : "calc(var(--editor-font-size) + 1vh)"};
+                                background-color: var(--cm-${type}LineBg);
+                                width: 30px;
+                              }
+                            `;
+                        }     
+                    })
+                    document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((line, index) => {
+                        if(parseInt(gutter.innerText) === error.line) {
+                            cssgenerated += `
+                            .cm-line:nth-of-type(${index + 1}) {
+                                background-color: var(--cm-${type}LineBg)!important;
+                            }
+                            .cm-line:nth-of-type(${index + 1})::after {
+                                content: "       ${error.message}"!important;
+                                position: absolute;
+                                top: 0px;
+                                color: var(--cm-${type}-gutter)!important;
+                            }
+                            `;
+                        }     
+                    })
                 }
         });
         
