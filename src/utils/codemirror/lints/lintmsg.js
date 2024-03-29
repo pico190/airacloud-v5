@@ -3,18 +3,19 @@
 export function lintmsg(errors, setClassNameExtension, classNameExtension) {
     try {
         
-        var cssgenerated = ``;
+        let cssgenerated = ``;
         var classnmextension = {
             add: (lineNumber) => {
                 errors.forEach((error, index) => {
                     if (lineNumber === error.line) {
-                        cssgenerated = cssgenerated + `
+                        cssgenerated += `
                         .errorline:nth-of-type(${(index + 1) + ""})::before {
                             content: "${error.line + ""}"!important;
                         }
                         .errorline:nth-of-type(${(index + 1) + ""})::after {
                             content: "${error.message}"!important;
                         }`;
+                        return 'errorline'
                     }
                 });
             },
