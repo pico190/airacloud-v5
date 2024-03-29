@@ -87,6 +87,7 @@ export function EditorNoCookie({ urlparsed }) {
     // Lang Updater
     useEffect(() => {
         if(lang === null) {
+            console_info("Extensions Loaded")
             setExtensions(
                 [
                     hyperLink, 
@@ -105,6 +106,7 @@ export function EditorNoCookie({ urlparsed }) {
                 ]
             )
         } else {
+            console_info("Extensions Loaded")
             setExtensions(
                 [
                     lang,
@@ -126,29 +128,33 @@ export function EditorNoCookie({ urlparsed }) {
         }
     }, [lang])
 
-    var [ errors, setErrors ] = useState([])
-    var [ lintInterval, setLintInterval ] = useState()
+    const [errors, setErrors] = useState([]);
+    const [lintInterval, setLintInterval] = useState(null);
+  
     useEffect(() => {
-        console.log(errors);
-    }, [errors])
-
+      console.log(errors);
+    }, [errors]);
+  
     useEffect(() => {
-        try {
-            clearInterval(lintInterval);
-        } catch(err) {
-            return false;
-        }
-        console.log("UseState: ", errors)
-        setLintInterval(setInterval(() => {
-            lintmsg(errors);
-        }, 1))
-    
-        return () => clearInterval(lintInterval);
-      }, [errors]);
-      
-    setInterval(() => {
+      if (lintInterval) {
+        clearInterval(lintInterval);
+      }
+      console.log("UseState: ", errors);
+      const intervalId = setInterval(() => {
+        lintmsg(errors);
+      }, 1000); // Adjust the interval time as needed
+      setLintInterval(intervalId);
+  
+      return () => clearInterval(intervalId);
+    }, [errors]);
+  
+    useEffect(() => {
+      const intervalId = setInterval(() => {
         loadDetails();
-    }, 1)
+      }, 1000); // Adjust the interval time as needed
+  
+      return () => clearInterval(intervalId);
+    }, []);
 
     const onChange = (val) => {
         setErrors([])

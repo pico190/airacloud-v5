@@ -5,6 +5,7 @@ Swiftly Open Source
 
 import $ from 'jquery'; // Importing jQuery library
 import { encode } from 'js-base64'; // Importing encode function from js-base64 library
+import { console_info } from '../../Console';
 
 /**
  * Function to find the nearest string to a target string in a given text
@@ -82,7 +83,7 @@ export default function phpLinter(fullcode, setErrors) {
     currentRequests.forEach(request => request.abort());
     currentRequests = [];
 
-    const errorArray = []; // Array to store syntax errors
+    var errorArray = []; // Array to store syntax errors
 
     var phpdetections = [];
 
@@ -101,12 +102,13 @@ export default function phpLinter(fullcode, setErrors) {
                 try {
                     const response = JSON.parse(data);
                     if (response.hasOwnProperty('syntax')) {
-                        console.log("Funciona")
+                        console_info("PHP Linter > Errors detected");
                         var rsponsesyntax = response.syntax
                         var line = rsponsesyntax.message.split("line ")
                         var lineAround = parseInt(line[line.length - 1])
 
                         // Find the nearest line in the original code
+                        console_info("PHP Linter > Finding Line");
                         const targetString = rsponsesyntax.code;
                         const targetLine = lineAround;
                         const linefound = findNearestString(fullcode, targetString, targetLine);
@@ -114,14 +116,18 @@ export default function phpLinter(fullcode, setErrors) {
                         rsponsesyntax.codelines = fullcode.split("\n");
 
                         // Get the index of the second occurrence of the error character within the code
+                        console_info("PHP Linter > Finding Index");
                         var indexchar = rsponsesyntax.message.split("'")[1].split("'")[0];
                         rsponsesyntax.index = getStringIndex(indexchar, rsponsesyntax.code);
 
                         // Format and push the error message
+                        console_info("PHP Linter > Parsing Error");
                         var messageparse = rsponsesyntax.message.replace("Parse error: ", "").split(" on line")[0].replace(" in your code", "")
                         rsponsesyntax.message = messageparse.charAt(0).toUpperCase() + messageparse.slice(1);
                         errorArray.push(rsponsesyntax);
-                        console.log("Resultado 3678543q:", rsponsesyntax)
+                        console_group("PHP Linter > Result");
+                        console.log(rsponsesyntax);
+                        console.groupEnd();
                     }
                 } catch (err) {
                     return false;
