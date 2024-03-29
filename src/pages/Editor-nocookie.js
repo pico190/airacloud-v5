@@ -123,7 +123,7 @@ export function EditorNoCookie({ urlparsed }) {
         try {
             clearInterval(lintInterval);
         } catch(err) {
-          return false;
+            return false;
         }
         console.log(errors)
         setLintInterval(setInterval(() => {
@@ -131,7 +131,7 @@ export function EditorNoCookie({ urlparsed }) {
         }, 1))
     
         return () => clearInterval(lintInterval);
-      }, [errors, lintInterval]);
+      }, [errors]);
       
     setInterval(() => {
         loadDetails();
