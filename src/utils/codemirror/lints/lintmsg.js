@@ -1,29 +1,33 @@
 
 
-export function lintmsg(errors, setClassNameExtension) {
+export function lintmsg(errors, setClassNameExtension, classNameExtension) {
     try {
         
         var cssgenerated = ``
-        errors.forEach((error, index) => {
-            setClassNameExtension({
-                add: (lineNumber) => {
+        var classnmextension = {
+            add: (lineNumber) => {
+                errors.forEach((error, index) => {
+
                     if (lineNumber === error.line) {
+                        cssgenerated = cssgenerated + `
+                        .errorline:nth-of-type(${(index + 1) + ""})::before {
+                            content: "${error.line + ""}"!important;
+                        }
+                        .errorline:nth-of-type(${(index + 1) + ""})::after {
+                            content: "${error.message}"!important;
+                        }`
                         return 'errorline';
                     }
-                },
-            })
-            cssgenerated = cssgenerated + `
-            .errorline:nth-of-type(${(index + 1) + ""})::before {
-                content: "${error.line + ""}"!important;
-            }
-            .errorline:nth-of-type(${(index + 1) + ""})::after {
-                content: "${error.message}"!important;
-            }`
-        })
-        
+                })
+            },
+        }
+        if(classnmextension !== classNameExtension) {
+            setClassNameExtension(classnmextension);
+        }
+        console.log("CSS 1 > ", cssgenerated)
         var cssresult = `${cssgenerated}
         .errorline::before {
-            content : "0";
+            content: "0";
             height: ${document.querySelector(".cm-line").offsetHeight}px;
             width: 100%;
             background-color: var(--cm-errorLineBg);
@@ -32,7 +36,7 @@ export function lintmsg(errors, setClassNameExtension) {
             z-index: 1000;
             font-family: var(--editor-font-family);
             font-size: var(--editor-font-family);
-            color: var(--cm-error-gutter)
+            color: var(--cm-error-gutter);
             text-align: right;
             padding-right: 28px;
             box-sizing: border-box;

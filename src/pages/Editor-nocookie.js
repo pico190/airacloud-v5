@@ -152,7 +152,7 @@ export function EditorNoCookie({ urlparsed }) {
       }
       console.log("UseState: ", errors);
       const intervalId = setInterval(() => {
-        lintmsg(errors, setClassNameExtension);
+        lintmsg(errors, setClassNameExtension, classNameExtension);
       }, 1000); // Adjust the interval time as needed
       setLintInterval(intervalId);
   
