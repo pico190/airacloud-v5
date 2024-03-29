@@ -105,7 +105,14 @@ export function EditorNoCookie({ urlparsed }) {
                     }),
                     rainbowBrackets(),
                     classname({
-                        add: (lineNumber) => {return classNameExtension(lineNumber)}
+                        add: (lineNumber) => {
+                            errors.forEach(error => {
+                                console.log(error.line, lineNumber)
+                                if(error.line === lineNumber) {
+                                    return 'errorline'
+                                }
+                            })
+                        }
                     }),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
@@ -128,13 +135,20 @@ export function EditorNoCookie({ urlparsed }) {
                     }),
                     rainbowBrackets(),
                     classname({
-                        add: (lineNumber) => {return classNameExtension(lineNumber)}
+                        add: (lineNumber) => {
+                            errors.forEach(error => {
+                                console.log(error.line, lineNumber)
+                                if(error.line === lineNumber) {
+                                    return 'errorline'
+                                }
+                            })
+                        }
                     }),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
         }
-    }, [lang, classNameExtension])
+    }, [lang])
 
     const [errors, setErrors] = useState([]);
   
