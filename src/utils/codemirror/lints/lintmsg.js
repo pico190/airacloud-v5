@@ -1,21 +1,24 @@
-
+import { useState } from 'react'
 
 export function lintmsg(errors, setClassNameExtension, classNameExtension) {
     try {
         
-        var cssgenerated = ``
+        var [ cssgenerated, setCssGenerated ] = useState(``) 
         var classnmextension = {
             add: (lineNumber) => {
                 errors.forEach((error, index) => {
 
                     if (lineNumber === error.line) {
-                        cssgenerated = cssgenerated + `
-                        .errorline:nth-of-type(${(index + 1) + ""})::before {
-                            content: "${error.line + ""}"!important;
-                        }
-                        .errorline:nth-of-type(${(index + 1) + ""})::after {
-                            content: "${error.message}"!important;
-                        }`
+                        var cssgnrtdustate = cssgenerated + ""
+                        setCssGenerated(
+                            cssgnrtdustate + `
+                            .errorline:nth-of-type(${(index + 1) + ""})::before {
+                                content: "${error.line + ""}"!important;
+                            }
+                            .errorline:nth-of-type(${(index + 1) + ""})::after {
+                                content: "${error.message}"!important;
+                            }`
+                        )
                         return 'errorline';
                     }
                 })
