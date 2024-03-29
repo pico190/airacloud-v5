@@ -94,7 +94,7 @@ export default function phpLinter(fullcode, setErrors) {
                         console.log("fullCode:", fullcode);
                         console.groupEnd();
                         var linefound = findNearestString(targetString, targetLine, fullcode);
-                        rsponsesyntax.line = linefound+3;
+                        rsponsesyntax.line = linefound+2;
                         rsponsesyntax.codelines = fullcode.split("\n");
 
                         // Get the index of the second occurrence of the error character within the code
