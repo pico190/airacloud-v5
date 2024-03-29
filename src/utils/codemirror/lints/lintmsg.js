@@ -13,6 +13,9 @@ export function lintmsg(errors) {
                 .errorline:nth-of-type(${(index + 1) + ""})::before {
                     content: "${error.line + ""}"!important;
                 }
+                .errorline:nth-of-type(${(index + 1) + ""}) {
+                    background-color: red;
+                }
                 .errorline:nth-of-type(${(index + 1) + ""})::after {
                     content: "${error.message}"!important;
                 }`;
