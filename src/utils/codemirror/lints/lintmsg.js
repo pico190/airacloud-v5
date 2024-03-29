@@ -23,6 +23,7 @@ export function lintmsg(errors) {
                         type = "warn"
                     }
 
+                    var gutterTop = 0;
                     document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((gutter, index) => {
                         if(parseInt(gutter.innerText) === error.line) {
                             cssgenerated += `
@@ -39,10 +40,11 @@ export function lintmsg(errors) {
                                 width: 30px;
                               }
                             `;
+                            gutterTop = gutter.offsetTop;
                         }     
                     })
                     document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((line, index) => {
-                        if(parseInt(gutter.innerText) === error.line) {
+                        if(line.offsetTop === gutterTop) {
                             cssgenerated += `
                             .cm-line:nth-of-type(${index + 1}) {
                                 background-color: var(--cm-${type}LineBg)!important;
