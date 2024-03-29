@@ -42,7 +42,7 @@ export default function langLoader(lang, langs) {
     else if (lang === "markdown") { lng = langs.markdown(); document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" }
     else if (lang === "python") { lng = langs.python() }
     else if (lang === "json") { lng = langs.json() }
-    else if (lang === "php") { lng = langs.php() }
+    else if (lang === "php") { lng = langs.php(); document.getElementById("langstyle").innerHTML = "* {--cm-tag-name: var(--cm-tag-name-standard)!important;}" }
     else if (lang === "java") { lng = langs.java() }
     else if (lang === "swift") { lng = langs.swift() }
     else if (lang === "kotlin") { lng = langs.kotlin() }

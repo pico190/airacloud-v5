@@ -1196,6 +1196,51 @@ img::selection {
   margin-left: 3px;
 }
 
+.cm-search {
+	top: 5px;
+	right: 5px;
+	position: fixed;
+	z-index: 1000;
+}
+
+.cm-search, .cm-search * {
+  font-family: 'Atkinson Hyperlegible'!important;
+  color: var(--text);
+}
+
+.cm-search input {
+  outline: 0!important;
+  border: 1px solid rgba(var(--textrgba), 0.05) !important;
+  background-color: rgba(var(--textrgba), 0.05) !important;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.cm-search input:active { 
+  background-color: rgba(var(--textrgba), 0.08) !important;
+}
+
+.cm-search button {
+  background: none !important;
+  border: 0px solid transparent !important;
+  padding: 5px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.cm-search button:hover {
+  background-color: rgba(var(--textrgba), 0.08) !important;
+}
+
+
 [data-color-scheme="dark"] * {
   /* 
   - AiraCodeMirror 
@@ -1214,6 +1259,7 @@ img::selection {
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
   /* Color of not closed tags                                  [DISCARDED - Linter does the work] */
+  /* Background Color of Search panel                          */ --cm-search:                   var(--sb-account-hover);
   /* Color of gutter line error text                           */ --cm-error-gutter:             #FF9C9C;
   /* Error line background                                     */ --cm-errorLineBg:              #422327;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
@@ -1336,6 +1382,7 @@ img::selection {
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
   /* Error line background                                     */ --cm-errorLineBg:              #e7c9cf;
   /* Color of not closed tags                                  [DISCARDED - Linter does the work] */
+  /* Background Color of Search panel                          */ --cm-search:                   var(--sb-account-hover);
   /* Color of gutter line error text                           */ --cm-error-gutter:             #FF9C9C;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;

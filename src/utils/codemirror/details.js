@@ -3,6 +3,35 @@ import { spaces, hexToRgb } from "../generalfuncs";
 import $ from 'jquery'
 
 export function loadDetails() {
+            var search = document.querySelector(".cm-search");
+
+            search.querySelectorAll("button").forEach(button => {
+                    switch(button.name) {
+                        case "next":
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-down&fill=white&type=outline" alt="⬇" loading="lazy">`;
+                            break;
+
+                        case "prev":
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=arrow-up&fill=white&type=outline" alt="⬆" loading="lazy">`;
+                            break;
+
+                        case "select":
+                            button.style.display = "none";;
+                            break;
+
+                        case "replace":
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tab&fill=white" alt="⤴" loading="lazy">`;
+                            break;
+
+
+                        case "replaceAll":
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=tabs&fill=white" alt="🔄" loading="lazy">`;
+                            break;
+
+
+                    }
+            })
+
             // Details
             // Array.from(document.getElementsByClassName("cm-selectionBackground")).forEach(elem => { elem.style.setProperty('background', '#243047', 'important'); }) 
             Array.from(document.querySelectorAll('span[title="Fold line"]')).forEach(elem => {elem.innerHTML=`<img src="https://xploit.men/scdn/?fluenticons&name=chevron-down" alt="v" class="foldicon" loading="lazy">`})
