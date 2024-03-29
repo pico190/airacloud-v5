@@ -10,7 +10,7 @@ export function lintmsg(errors) {
         errors.forEach((error, index) => {
                 console.log(error, "\\", errors)
                 var type = "error"
-                if(error.type === "warn") {
+                if(error.type === "warning") {
                     type = "warn"
                 }
                 cssgenerated += `
