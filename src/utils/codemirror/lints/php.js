@@ -27,7 +27,7 @@ function findNearestString(lineToFind, lineNumber, fullCode) {
     }
   
     if (lineWithArgument === -1) {
-      return -1;
+      return lineNumber;
     }
   
     let closestLine = -1;
