@@ -16,36 +16,37 @@ import { console_info, console_group } from '../../Console';
  */
 function findNearestString(lineToFind, lineNumber, fullCode) {
     const lines = fullCode.split('\n');
-    let lineWithArgument = -1;
     
     // Find the line where the function argument is located
+    let lineWithArgument = -1;
     for (let i = 0; i < lines.length; i++) {
-      if (lines[i].includes(lineNumber.toString())) {
-        lineWithArgument = i;
-        break;
-      }
+        if (lines[i].includes(lineNumber.toString())) {
+            lineWithArgument = i;
+            break;
+        }
     }
-  
+
+    // If the line with the argument is not found, return the original lineNumber
     if (lineWithArgument === -1) {
-      return lineNumber;
+        return lineNumber;
     }
-  
+
     let closestLine = -1;
     let distance = Infinity;
-  
-    // Find the closest line that contains the searched code
-    for (let i = lineWithArgument; i < lines.length; i++) {
-      if (lines[i].includes(lineToFind)) {
-        const currentDistance = Math.abs(i - lineWithArgument);
-        if (currentDistance < distance) {
-          distance = currentDistance;
-          closestLine = i;
+
+    // Find the closest line that contains the searched code within the specified range
+    for (let i = Math.max(0, lineWithArgument - lineNumber); i < Math.min(lines.length, lineWithArgument + lineNumber); i++) {
+        if (lines[i].includes(lineToFind)) {
+            const currentDistance = Math.abs(i - lineWithArgument);
+            if (currentDistance < distance) {
+                distance = currentDistance;
+                closestLine = i;
+            }
         }
-      }
     }
-  
-    return closestLine;
-  }
+
+    return closestLine === -1 ? lineNumber : closestLine;
+}
   
 
 /**
