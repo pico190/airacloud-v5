@@ -26,37 +26,37 @@ export function lintmsg(errors, setClassNameExtension) {
         var cssresult = `
         
         .errorline:nth-of-type(1)::before {
-            content: "${errors[0].line + ""}";
+            content: "${errors[0].line ? errors[0].line : "0" + ""}";
         }
         .errorline:nth-of-type(2)::before {
-            content: "${errors[1].line + ""}";
+            content: "${errors[1].line ? errors[1].line : "0" + ""}";
         }
         .errorline:nth-of-type(3)::before {
-            content: "${errors[2].line + ""}";
+            content: "${errors[2].line ? errors[2].line : "0" + ""}";
         }
         .errorline:nth-of-type(4)::before {
-            content: "${errors[3].line + ""}";
+            content: "${errors[3].line ? errors[3].line : "0" + ""}";
         }
         .errorline:nth-of-type(5)::before {
-            content: "${errors[4].line + ""}";
+            content: "${errors[4].line ? errors[4].line : "0" + ""}";
         }
         .errorline:nth-of-type(6)::before {
-            content: "${errors[5].line + ""}";
+            content: "${errors[5].line ? errors[5].line : "0" + ""}";
         }
         .errorline:nth-of-type(7)::before {
-            content: "${errors[6].line + ""}";
+            content: "${errors[6].line ? errors[6].line : "0" + ""}";
         }
         .errorline:nth-of-type(8)::before {
-            content: "${errors[7].line + ""}";
+            content: "${errors[7].line ? errors[7].line : "0" + ""}";
         }
         .errorline:nth-of-type(9)::before {
-            content: "${errors[8].line + ""}";
+            content: "${errors[8].line ? errors[8].line : "0" + ""}";
         }
         .errorline:nth-of-type(10)::before {
-            content: "${errors[9].line + ""}";
+            content: "${errors[9].line ? errors[9].line : "0" + ""}";
         }
         .errorline:nth-of-type(11)::before {
-            content: "${errors[10].line + ""}";
+            content: "${errors[10].line ? errors[10].line : "0" + ""}";
         }
         .errorline::before {
             content: "0";
