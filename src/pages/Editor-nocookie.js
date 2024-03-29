@@ -92,7 +92,6 @@ export function EditorNoCookie({ urlparsed }) {
 
     var classnameext = classname({...classNameExtension})
 
-
     // Lang Updater
     useEffect(() => {
         if(lang === null) {
@@ -212,6 +211,7 @@ export function EditorNoCookie({ urlparsed }) {
   -ms-border-radius: 0px !important;
   -o-border-radius: 0px !important;}" />
                         <style id="langstyle" />
+                        <style id="linter" />
                         <style id="scrollbehavior" />
                         <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} className="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />
                         <CodeMirror
