@@ -115,12 +115,9 @@ export default function phpLinter(fullcode, setErrors) {
                         console.log("lineNumber:", targetLine);
                         console.log("fullCode:", fullcode);
                         console.groupEnd();
-                        var linefound = findNearestString(fullcode, targetString, targetLine);
-                        console_info("PHP Linter > Crash detected here? [1]");
+                        var linefound = findNearestString(targetString, targetLine, fullcode);
                         rsponsesyntax.line = linefound;
-                        console_info("PHP Linter > Crash detected here? [2]");
                         rsponsesyntax.codelines = fullcode.split("\n");
-                        console_info("PHP Linter > Crash detected here? [3]");
 
                         // Get the index of the second occurrence of the error character within the code
                         console_info("PHP Linter > Finding Index");
