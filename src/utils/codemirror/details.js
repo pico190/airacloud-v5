@@ -4,21 +4,13 @@ import $ from 'jquery'
 
 export function loadDetails() {
             var search = document.querySelector(".cm-search");
-            
-            // Obtener el padre común de los elementos
-            
-            // Obtener el siguiente hermano de elemento2
-            
-            // Mover elemento2 antes de elemento1
-            
-            // Mover elemento1 después del siguiente hermano de elemento2
-
+          
             var next = search.querySelector('button[name=next]')
             var prev = search.querySelector('button[name=prev]')
 
 
             var pdr = next.parentNode;
-            var sh = elemento2.nextSibling;
+            var sh = prev.nextSibling;
             pdr.insertBefore(prev, next);
             pdr.insertBefore(next, sh);
 
