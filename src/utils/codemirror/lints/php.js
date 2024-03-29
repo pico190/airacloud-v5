@@ -101,6 +101,7 @@ export default function phpLinter(fullcode, setErrors) {
                 try {
                     const response = JSON.parse(data);
                     if (response.hasOwnProperty('syntax')) {
+                        console.log("Funciona")
                         var rsponsesyntax = response.syntax
                         var line = rsponsesyntax.message.split("line ")
                         var lineAround = parseInt(line[line.length - 1])
@@ -120,6 +121,7 @@ export default function phpLinter(fullcode, setErrors) {
                         var messageparse = rsponsesyntax.message.replace("Parse error: ", "").split(" on line")[0].replace(" in your code", "")
                         rsponsesyntax.message = messageparse.charAt(0).toUpperCase() + messageparse.slice(1);
                         errorArray.push(rsponsesyntax);
+                        console.log("Resultado 3678543q:", rsponsesyntax)
                     }
                 } catch (err) {
                     return false;
