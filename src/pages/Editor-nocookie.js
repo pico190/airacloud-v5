@@ -130,7 +130,7 @@ export function EditorNoCookie({ urlparsed }) {
             lintmsg(errors);
         }, 1))
     
-        return () => clearInterval(interval);
+        return () => clearInterval(lintInterval);
       }, [errors, lintInterval]);
       
     setInterval(() => {
