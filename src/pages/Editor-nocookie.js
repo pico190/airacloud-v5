@@ -14,11 +14,13 @@ import { spaces, hexToRgb } from "../utils/generalfuncs";
 import langLoader from "../utils/codemirror/langloader";
 import { loadDetails } from "../utils/codemirror/details";
 import { showMinimap } from "@replit/codemirror-minimap"
-import phpLinter from "../utils/codemirror/lints/php";
 import { lintmsg } from "../utils/codemirror/lints/lintmsg";
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 import { keymap } from '@codemirror/view';
 import { console_info, console_warn, console_group } from "../utils/Console";
+import phpLinter from "../utils/codemirror/lints/php";
+import cssLinter from "../utils/codemirror/lints/css";
+            
 
 export function EditorNoCookie({ urlparsed }) {
     const [reference, setReference] = useState([]);
@@ -146,16 +148,23 @@ export function EditorNoCookie({ urlparsed }) {
       return () => clearInterval(intervalId);
     }, []);
 
+    function lint(val) {
+        var phplint = ["php"];
+        if(phplint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+            phpLinter(val, setErrors);
+        }
+        var csslint = ["css"];
+        if(csslint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+            cssLinter(val, setErrors);
+        }
+    }
+
     const onChange = (val) => {
         setErrors([])
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
         window.parent.postMessage(val, "*");
 
-        var phplint = ["php"];
-        if(phplint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
-            phpLinter(val, setErrors);
-        }
-
+        lint(val);
 
     };
 
@@ -164,7 +173,7 @@ export function EditorNoCookie({ urlparsed }) {
         document.getElementById("loader").style.pointerEvents = "none" 
         console.log(view, "|", state);
 
-        phpLinter(initialValue, setErrors);
+        lint(initialValue);
     };
     
     return (
