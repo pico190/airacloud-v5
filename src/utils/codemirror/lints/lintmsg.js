@@ -43,13 +43,17 @@ export function lintmsg(errors) {
                             gutterTop = gutter.offsetTop;
                         }     
                     })
+                    var lineNumbersSum = 1;
+                    if(document.querySelector("cm-content").firstChild.classList.includes("cm-gap")) {
+                        lineNumbersSum = 2
+                    }
                     document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((line, index) => {
                         if(line.offsetTop === gutterTop) {
                             cssgenerated += `
-                            .cm-line:nth-of-type(${index + 1}) {
+                            .cm-line:nth-of-type(${index + lineNumbersSum}) {
                                 background-color: var(--cm-${type}LineBg)!important;
                             }
-                            .cm-line:nth-of-type(${index + 1})::after {
+                            .cm-line:nth-of-type(${index + lineNumbersSum})::after {
                                 content: "       ${error.message}"!important;
                                 position: absolute;
                                 top: 0px;

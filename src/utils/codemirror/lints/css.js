@@ -10766,16 +10766,16 @@ const rules = {
     "known-properties": 0,
 
     // Compatibility
-    "adjoining-classes": 1,
-    "box-sizing": 1,
-    "compatible-vendor-prefixes": 1,
-    "gradients": 1,
-    "text-indent": 1,
-    "vendor-prefix": 1,
-    "fallback-colors": 1,
-    "star-property-hack": 1,
-    "underscore-property-hack": 1,
-    "bulletproof-font-face": 1,
+    "adjoining-classes": 0,
+    "box-sizing": 0,
+    "compatible-vendor-prefixes": 0,
+    "gradients": 0,
+    "text-indent": 0,
+    "vendor-prefix": 0,
+    "fallback-colors": 0,
+    "star-property-hack": 0,
+    "underscore-property-hack": 0,
+    "bulletproof-font-face": 0,
 
     // Performance
     "font-faces": 0,
