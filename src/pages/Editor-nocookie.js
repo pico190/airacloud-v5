@@ -84,6 +84,13 @@ export function EditorNoCookie({ urlparsed }) {
         return { dom }
       }
       
+
+      
+    var [classNameExtension, setClassNameExtension] = useState(classname({
+        add: () => {},
+      }));
+
+
     // Lang Updater
     useEffect(() => {
         if(lang === null) {
@@ -102,6 +109,7 @@ export function EditorNoCookie({ urlparsed }) {
                         }
                     }),
                     rainbowBrackets(),
+                    classNameExtension,
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -122,6 +130,7 @@ export function EditorNoCookie({ urlparsed }) {
                     }),
                     indentationMarkers(),
                     rainbowBrackets(),
+                    classNameExtension,
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
             )
@@ -131,6 +140,7 @@ export function EditorNoCookie({ urlparsed }) {
     const [errors, setErrors] = useState([]);
     const [lintInterval, setLintInterval] = useState(null);
   
+
     useEffect(() => {
       console.log(errors);
     }, [errors]);
@@ -141,7 +151,7 @@ export function EditorNoCookie({ urlparsed }) {
       }
       console.log("UseState: ", errors);
       const intervalId = setInterval(() => {
-        lintmsg(errors);
+        lintmsg(errors, setClassNameExtension);
       }, 1000); // Adjust the interval time as needed
       setLintInterval(intervalId);
   
