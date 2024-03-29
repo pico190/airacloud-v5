@@ -1213,7 +1213,8 @@ img::selection {
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
-  /* Color of not closed tags                                  */ --cm-nonMatching:              #d12e2e;
+  /* Color of not closed tags                                  [DISCARDED - Linter does the work] */
+  /* Color of gutter line error text                           */ --cm-error-gutter:             #FF9C9C;
   /* Error line background                                     */ --cm-errorLineBg:              #422327;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;
@@ -1334,7 +1335,8 @@ img::selection {
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
   /* Error line background                                     */ --cm-errorLineBg:              #e7c9cf;
-  /* Color of not closed tags                                  */ --cm-nonMatching:              #d12e2e;
+  /* Color of not closed tags                                  [DISCARDED - Linter does the work] */
+  /* Color of gutter line error text                           */ --cm-error-gutter:             #FF9C9C;
   /* Text content default color                                */ --cm-content:                  var(--cm-foreground);
   /* Left padding for gutter                                   */ --cm-gutter-padding:           10px;
 

@@ -22,6 +22,7 @@ export function lintmsg(errors, setClassNameExtension) {
             z-index: 1000;
             font-family: var(--editor-font-family);
             font-size: var(--editor-font-family);
+            color: var(--cm-error-gutter)
             text-align: right;
             padding-right: 28px;
             box-sizing: border-box;
