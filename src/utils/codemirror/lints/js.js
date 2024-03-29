@@ -1,7 +1,11 @@
+import $ from 'jquery'
+
 /*
 Swiftly Open Source
 - You can use this as you want
 */
+
+let currentRequests = [];
 /**
  * Function to lint JS code and identify syntax errors
  * @param {string} fullcode - The full JS code to be linted
