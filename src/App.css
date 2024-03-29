@@ -1197,10 +1197,13 @@ img::selection {
 }
 
 .cm-search {
-	top: 5px;
-	right: 5px;
-	position: fixed;
-	z-index: 1000;
+  top: 5px !important;
+  right: 5px !important;
+  position: fixed !important;
+  z-index: 1000 !important;
+  background-color: var(--cm-search);
+  border-radius: 10px;
+  box-shadow: var(--cm-bg) 0px 8px 10px;
 }
 
 .cm-search, .cm-search * {
@@ -1235,6 +1238,14 @@ img::selection {
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
 }
+
+.cm-search button[name=close] {
+  height: fit-content;
+  width: fit-content;
+  margin-right: 10px !important;
+  margin-top: 10px !important;
+}
+
 
 .cm-search button:hover {
   background-color: rgba(var(--textrgba), 0.08) !important;

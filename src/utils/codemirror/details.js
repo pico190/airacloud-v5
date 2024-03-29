@@ -29,6 +29,11 @@ export function loadDetails() {
                             break;
 
 
+                        case "close":
+                            button.innerHTML = `<img width="20px" src="https://xploit.men/scdn/?fluenticons&name=dismiss&fill=white" alt="❌" loading="lazy">`;
+                            break;
+
+
                     }
             })
 
