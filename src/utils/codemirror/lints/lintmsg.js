@@ -27,11 +27,11 @@ export function lintmsg(errors) {
                     document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((gutter, index) => {
                         if(parseInt(gutter.innerText) === error.line) {
                             cssgenerated += `
-                            .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(index + 2) + ""}) {
+                            .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(index + 1) + ""}) {
                                 background-color: var(--cm-${type}LineBg)!important;
                                 color: var(--cm-${type}-gutter)!important;
                             }
-                            .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(index + 2) + ""})::after {
+                            .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(index + 1) + ""})::after {
                                 content: "";
                                 position: absolute;
                                 right: 0px;
@@ -46,10 +46,10 @@ export function lintmsg(errors) {
                     document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((line, index) => {
                         if(line.offsetTop === gutterTop) {
                             cssgenerated += `
-                            .cm-line:nth-of-type(${index + 1}) {
+                            .cm-line:nth-of-type(${index}) {
                                 background-color: var(--cm-${type}LineBg)!important;
                             }
-                            .cm-line:nth-of-type(${index + 1})::after {
+                            .cm-line:nth-of-type(${index})::after {
                                 content: "       ${error.message}"!important;
                                 position: absolute;
                                 top: 0px;
