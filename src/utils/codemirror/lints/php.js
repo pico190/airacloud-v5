@@ -123,7 +123,7 @@ export default function phpLinter(fullcode, setErrors) {
                         // Get the index of the second occurrence of the error character within the code
                         console_info("PHP Linter > Finding Index");
                         var indexchar = rsponsesyntax.message.split("'")[1].split("'")[0];
-                        rsponsesyntax.index = getStringIndex(indexchar, rsponsesyntax.code);
+                        rsponsesyntax.index = getStringIndex(indexchar, rsponsesyntax.codelines[rsponsesyntax.line - 1]);
 
                         // Format and push the error message
                         console_info("PHP Linter > Parsing Error");
