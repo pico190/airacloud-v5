@@ -224,7 +224,7 @@ export function EditorNoCookie({ urlparsed }) {
                             value={initialValue}
                             onCreateEditor={mount}
                             theme={airatheme}
-                            basicSetup={{ autocompletion: false }}
+                            basicSetup={{}}
                             onChange={onChange}
                             onUpdate={onUpdate}
                             style={{
