@@ -74,7 +74,9 @@ export function lintmsg(errors) {
         
         var linterElement = document.getElementById("linter") ? document.getElementById("linter") : null;
         
-        linterElement ? linterElement.innerHTML = cssgenerated : false;
+        if(linterElement) {
+            linterElement.innerHTML = cssgenerated
+        }
         
     // } catch(err) {
     //     return false;
