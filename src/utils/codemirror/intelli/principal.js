@@ -7,7 +7,7 @@ export function loadIntelli(intelli) {
 
     var editorToken = nearElem(document.querySelector(".cm-activeLine").querySelectorAll("*"), cursor)
 
-    intellisense.innerHTML = "<h1>"+editorToken+"</h1>";
+    intellisense.innerHTML = "<h1>"+editorToken.innerText+"</h1>";
     intellisense.style.left = (cursor.offsetLeft - 3) + "px";
     intellisense.style.top = (cursor.offsetTop - 20) + "px";
 
