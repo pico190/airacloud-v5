@@ -153,16 +153,19 @@ export function EditorNoCookie({ urlparsed }) {
     }, []);
 
     function lint(val) {
+        function editorislang(array) {
+            return array.includes(document.querySelector(".cm-content").getAttribute("data-language"))
+        }
         var phplint = ["php"];
-        if(phplint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+        if(editorislang(phplint)) {
             phpLinter(val, setErrors);
         }
         var csslint = ["css", "less"];
-        if(csslint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+        if(editorislang(csslint)) {
             cssLinter(val, setErrors);
         }
         var jslint = ["js", "jsx", "javascript"];
-        if(jslint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+        if(editorislang(jslint)) {
             jsLinter(val, setErrors);
         }
 
