@@ -16,14 +16,14 @@ import { console_info, console_group } from '../../Console';
  */
 function findNearestString(targetString, lineNumber, text) {
     var lines = text.split("\n");
-    console.log(targetString, text, lines);
+    var retrn = lineNumber
     lines.forEach((line, index) => {
         if(line.includes(targetString)) {
-            console.log(line, index, index + 2);
-            return index + 2;
+            console.log(line, index, index + 1);
+            retrn = index + 1;
         }
     })
-    return lineNumber;
+    return retrn;
 }
   
 
