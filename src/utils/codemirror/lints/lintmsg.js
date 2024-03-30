@@ -46,19 +46,19 @@ export function lintmsg(errors) {
                             }     
                         })
                     }
-                    var lineNumbersSum = 1;
+                    var lineNumbersSum = 0;
                     if(document.querySelector("cm-content") ? document.querySelector("cm-content").firstChild.classList.includes("cm-gap") : false) {
-                        lineNumbersSum = 2
+                        lineNumbersSum = 1
                     }
                     var line = document.querySelectorAll(".cm-line") ? document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement") : false
                     if(line) {
                         line.forEach((line, index) => {
                             if(line.offsetTop === gutterTop) {
                                 cssgenerated += `
-                                .cm-line:nth-of-type(${index + lineNumbersSum}) {
+                                .cm-line:nth-of-type(${index - lineNumbersSum}) {
                                     background-color: var(--cm-${type}LineBg)!important;
                                 }
-                                .cm-line:nth-of-type(${index + lineNumbersSum})::after {
+                                .cm-line:nth-of-type(${index - lineNumbersSum})::after {
                                     content: "       ${error.message}"!important;
                                     position: absolute;
                                     top: 0px;
