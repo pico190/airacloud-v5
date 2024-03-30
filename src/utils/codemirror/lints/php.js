@@ -19,8 +19,8 @@ function findNearestString(targetString, lineNumber, text) {
     console.log(targetString, text, lines);
     lines.forEach((line, index) => {
         if(line.includes(targetString)) {
-            return index + 2;
             console.log(line, index, index + 2);
+            return index + 2;
         }
     })
     return lineNumber;
