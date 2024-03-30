@@ -84,6 +84,8 @@ export function EditorNoCookie({ urlparsed }) {
         const dom = document.createElement('div');
         return { dom }
       }
+
+      var [ minimaplines, setMinimapLines ] = useState([])
       
 
       
@@ -102,6 +104,7 @@ export function EditorNoCookie({ urlparsed }) {
                         create: createMinimap,
                         displayText: 'characters',
                         showOverlay: 'mouse-over',
+                        gutters: minimaplines
                         }
                     }),
                     rainbowBrackets(),
@@ -121,7 +124,8 @@ export function EditorNoCookie({ urlparsed }) {
                         return {
                             create: createMinimap,
                             displayText: 'characters',
-                            showOverlay: 'mouse-over'
+                            showOverlay: 'mouse-over',
+                            gutters: minimaplines
                         }
                     }),
                     rainbowBrackets(),
@@ -136,7 +140,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     useEffect(() => {
       console.log("Errors detected:", errors);
-      lintmsg(errors);
+      lintmsg(errors, setMinimapLines);
     }, [errors]);
   
   

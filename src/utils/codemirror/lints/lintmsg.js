@@ -1,10 +1,11 @@
 
 
-export function lintmsg(errors) {
+export function lintmsg(errors, setMinimapLines) {
     // try {
         
     
         var cssgenerated = ``;
+        var minimaplnes = {}
 
 
         errors.forEach((error, index) => {
@@ -42,13 +43,14 @@ export function lintmsg(errors) {
                                     width: 30px;
                                   }
                                 `;
+                                minimaplnes[index] = `var(--cm-${type}LineBg)`
                                 gutterTop = gutter.offsetTop;
                             }     
                         })
                     }
                     var lineNumbersSum = 0;
                     if(document.querySelector("cm-content") ? document.querySelector("cm-content").firstChild.classList.includes("cm-gap") : false) {
-                        lineNumbersSum = 1
+                        lineNumbersSum = 0
                     }
                     var line = document.querySelectorAll(".cm-line") ? document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement") : false
                     if(line) {
@@ -77,6 +79,8 @@ export function lintmsg(errors) {
         if(linterElement) {
             linterElement.innerHTML = cssgenerated
         }
+
+        setMinimapLines([ minimaplnes ])
         
     // } catch(err) {
     //     return false;
