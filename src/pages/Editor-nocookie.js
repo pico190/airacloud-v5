@@ -21,6 +21,7 @@ import { console_info, console_warn, console_group } from "../utils/Console";
 import phpLinter from "../utils/codemirror/lints/php";
 import cssLinter from "../utils/codemirror/lints/css";
 import jsLinter from "../utils/codemirror/lints/js";
+import {CompletionContext} from "@codemirror/autocomplete"
 
 export function EditorNoCookie({ urlparsed }) {
     const [reference, setReference] = useState([]);
