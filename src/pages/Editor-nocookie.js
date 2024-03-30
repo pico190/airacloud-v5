@@ -161,7 +161,7 @@ export function EditorNoCookie({ urlparsed }) {
         if(csslint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
             cssLinter(val, setErrors);
         }
-        var jslint = ["js", "jsx"];
+        var jslint = ["js", "jsx", "javascript"];
         if(jslint.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
             jsLinter(val, setErrors);
         }

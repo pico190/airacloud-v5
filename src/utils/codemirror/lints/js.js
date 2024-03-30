@@ -15,6 +15,7 @@ export default function jsLinter(fullcode, setErrors) {
     // Abort ongoing requests before making new ones
     currentRequests.forEach(request => request.abort());
     currentRequests = [];
+    console.log("Funciona")
 
     var errorArray = []; // Array to store syntax errors
 
