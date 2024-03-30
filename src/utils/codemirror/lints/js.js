@@ -29,7 +29,8 @@ export default function jsLinter(fullcode, setErrors) {
 
     // Iterate over detected PHP code blocks
             // Send POST request to PHP code checker API
-            const request = $.post("https://validatejavascript.com/api/lint", {
+            const request = $.post("http://lintapi.free.nf/", {
+                api: "js",
                 code:fullcode,
                 rules: {
                     "array-bracket-spacing": [
