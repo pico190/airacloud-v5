@@ -24,7 +24,7 @@ export function lintmsg(errors) {
                     }
 
                     var gutterTop = 0;
-                    document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((gutter, index) => {
+                    document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement") ? document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((gutter, index) => {
                         if(parseInt(gutter.innerText) === error.line) {
                             cssgenerated += `
                             .cm-lineNumbers > .cm-gutterElement:nth-of-type(${(index + 1) + ""}) {
@@ -42,12 +42,12 @@ export function lintmsg(errors) {
                             `;
                             gutterTop = gutter.offsetTop;
                         }     
-                    })
+                    }) : false
                     var lineNumbersSum = 1;
-                    if(document.querySelector("cm-content").firstChild.classList.includes("cm-gap")) {
+                    if(document.querySelector("cm-content") ? document.querySelector("cm-content").firstChild.classList.includes("cm-gap") : false) {
                         lineNumbersSum = 2
                     }
-                    document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((line, index) => {
+                    document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement") ? document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement").forEach((line, index) => {
                         if(line.offsetTop === gutterTop) {
                             cssgenerated += `
                             .cm-line:nth-of-type(${index + lineNumbersSum}) {
@@ -61,14 +61,14 @@ export function lintmsg(errors) {
                             }
                             `;
                         }     
-                    })
+                    }) : false
                 }
         });
         
         
-        var linterElement = document.getElementById("linter");
+        var linterElement = document.getElementById("linter") ? document.getElementById("linter") : null;
         
-        linterElement.innerHTML = cssgenerated;
+        linterElement ? linterElement.innerHTML = cssgenerated : false;
         
     // } catch(err) {
     //     return false;
