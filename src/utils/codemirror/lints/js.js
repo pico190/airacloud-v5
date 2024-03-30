@@ -29,7 +29,7 @@ export default function jsLinter(fullcode, setErrors) {
 
     // Iterate over detected PHP code blocks
             // Send POST request to PHP code checker API
-            const request = $.post("https://lintapi.free.nf/", {
+            const request = $.post("https://lintapi.free.nf/?i=1", {
                 api: "js",
                 code:fullcode,
                 rules: {
