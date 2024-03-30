@@ -6,6 +6,9 @@ export function loadIntelli(intelli) {
     var cursor = document.querySelector(".cm-cursor-primary");
 
     var elementsline = document.querySelector(".cm-activeLine").querySelectorAll('[class*="ͼ"]')
+    elementsline.forEach(element => {
+        
+    })
     var editorToken = nearElem(elementsline, cursor)
     console.log(elementsline)
 
