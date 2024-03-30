@@ -1556,6 +1556,6 @@ export default function jsLinter(fullcode, setErrors) {
                 if (currentRequests.length === 0) {
                     // setErrors(errorArray);
                 }
-            });
+            }, "json");
             currentRequests.push(request);
 }
