@@ -22,6 +22,7 @@ import phpLinter from "../utils/codemirror/lints/php";
 import cssLinter from "../utils/codemirror/lints/css";
 import jsLinter from "../utils/codemirror/lints/js";
 import {CompletionContext} from "@codemirror/autocomplete"
+import { loadIntelli } from "../utils/codemirror/intelli/principal";
 
 export function EditorNoCookie({ urlparsed }) {
     const [reference, setReference] = useState([]);
@@ -54,7 +55,7 @@ export function EditorNoCookie({ urlparsed }) {
         const loadIntelliSense = () => {
             if (!intelliLoaded) {
                 try {
-                    var htmlintelli = ["php", "html", "jsx"];
+                    var htmlintelli = ["php", "html", "jsx", "javascript"];
                     if(htmlintelli.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
                         setIntelliLoaded(true);
                         if (localStorage.getItem("htmlintelli")) {
@@ -145,13 +146,10 @@ export function EditorNoCookie({ urlparsed }) {
     }, [errors]);
   
   
-    useEffect(() => {
-      const intervalId = setInterval(() => {
+    setInterval(() => {
         loadDetails();
-      }, 1000); // Adjust the interval time as needed
-  
-      return () => clearInterval(intervalId);
-    }, []);
+        loadIntelli();
+      }, 1);
 
     function lint(val) {
         function editorislang(array) {
@@ -219,6 +217,7 @@ export function EditorNoCookie({ urlparsed }) {
                         <style id="linter" />
                         <style id="scrollbehavior" />
                         <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} className="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />
+                        <div id="intellisense" className="intellisense" />
                         <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}
