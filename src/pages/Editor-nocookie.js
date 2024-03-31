@@ -22,6 +22,7 @@ import { console_info, console_warn, console_group, console_error } from "../uti
 import phpLinter from "../utils/codemirror/lints/php";
 import cssLinter from "../utils/codemirror/lints/css";
 import jsLinter from "../utils/codemirror/lints/js";
+import jsonLinter from "../utils/codemirror/lints/json";
 import {CompletionContext} from "@codemirror/autocomplete"
 import { loadIntelli } from "../utils/codemirror/intelli/principal";
 import { saveToCache, retrieveFromCache } from "../utils/cache";
