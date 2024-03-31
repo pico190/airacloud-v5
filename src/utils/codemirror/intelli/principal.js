@@ -3,9 +3,10 @@ import { nearElem } from "../../generalfuncs";
 export function loadIntelli(intelli) {
     var intellisense = document.getElementById("intellisense");
 
+    var editor = document.querySelector(".cm-editor")
     var cursor = document.querySelector(".cm-cursor-primary");
 
-    if(cursor.style.display!=="none") {
+    if(editor.classList.contains("cm-focused")) {
 
         var elementsline = document.querySelector(".cm-activeLine").querySelectorAll('[class*="ͼ"]')
         var editorToken = nearElem(elementsline, cursor)
