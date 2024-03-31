@@ -12,7 +12,12 @@ export function loadIntelli(intelli) {
         var editorToken = nearElem(elementsline, cursor)
         console.log(elementsline)
     
-        intellisense.innerHTML = "<h1>"+editorToken.innerText+"</h1>";
+        intellisense.innerHTML = ``;
+        intellisense.innerHTML += `<div class="intellitem"><b>${editorToken.innerText}</b></div>`;
+        intellisense.innerHTML += `<div class="intellitem"><b>${editorToken.innerText}</b></div>`;
+        intellisense.innerHTML += `<div class="intellitem"><b>${editorToken.innerText}</b></div>`;
+        intellisense.innerHTML += `<div class="intellitem"><b>${editorToken.innerText}</b></div>`;
+        intellisense.innerHTML += `<div class="intellitem"><b>${editorToken.innerText}</b></div>`;
         intellisense.style.left = (cursor.getBoundingClientRect().left - 3) + "px";
         intellisense.style.top = (cursor.getBoundingClientRect().top - 20) + "px";
     
