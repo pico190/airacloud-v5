@@ -2,7 +2,7 @@ import { decode } from 'js-base64';
 import { pythonLanguage } from "@codemirror/lang-python";
 import { jsonLanguage } from "@codemirror/lang-json";
 import { html, CompletionContext } from "@codemirror/lang-html";
-import { properties } from "@codemirror/legacy-modes/mode/properties.js";
+import { properties } from "@codemirror/legacy-modes/mode/properties";
 
 export default function langLoader(lang, langs) {
 
