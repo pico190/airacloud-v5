@@ -80,7 +80,7 @@ export function lintmsg(errors, setMinimapLines) {
             linterElement.innerHTML = cssgenerated
         }
 
-        setMinimapLines([ {...minimaplnes} ])
+        // setMinimapLines([ {...minimaplnes} ])
         
     // } catch(err) {
     //     return false;
