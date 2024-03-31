@@ -27,7 +27,7 @@ export function SBContent({ sidinfo }) {
                         <img width="44px" src={'https://'+window.location.host+'/icon.svg'} loading="lazy" alt="" style={{height: "fit-content"}}/>
                         <span>
                             <font style={{fontSize: "26px", color: "#C3C3C4"}}><b>AiraCloud</b> <Text id="sb.down.release" var1="1.0" var1r="0.0" /></font>
-                            <br /><font style={{fontSize: "16px", color: "#4B4C4F"}}><Text id="sb.down.engine" var1="v5.4.3" var1r="v0.0" /></font>
+                            <br /><font style={{fontSize: "16px", color: "#4B4C4F"}}><Text id="sb.down.engine" var1="v5.4.4" var1r="v0.0" /></font>
                             {/* <br /><font style={{fontSize: "16px", opacity: "0.25"}}><Text id="sb.down.lastupdate" var1="0 seconds" />  <u><Text id="sb.down.lastupdate1" /></u></font> */}
                             <br /><font style={{fontSize: "16px", color: "#878889"}}>(c) 2024 <b>Aira</b> / Made with <img alt="" loading="lazy" src="https://xploit.men/scdn/heart.svg" width="15px" height="15px" style={{transform: "translateY(15%)"}} /> by Swiftly</font>
                         </span>
