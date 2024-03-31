@@ -5,12 +5,17 @@ export function loadIntelli(intelli) {
 
     var cursor = document.querySelector(".cm-cursor-primary");
 
-    var elementsline = document.querySelector(".cm-activeLine").querySelectorAll('[class*="ͼ"]')
-    var editorToken = nearElem(elementsline, cursor)
-    console.log(elementsline)
+    if(cursor.style.display!=="none") {
 
-    intellisense.innerHTML = "<h1>"+editorToken.innerText+"</h1>";
-    intellisense.style.left = (cursor.getBoundingClientRect().left - 3) + "px";
-    intellisense.style.top = (cursor.getBoundingClientRect().top - 20) + "px";
-
+        var elementsline = document.querySelector(".cm-activeLine").querySelectorAll('[class*="ͼ"]')
+        var editorToken = nearElem(elementsline, cursor)
+        console.log(elementsline)
+    
+        intellisense.innerHTML = "<h1>"+editorToken.innerText+"</h1>";
+        intellisense.style.left = (cursor.getBoundingClientRect().left - 3) + "px";
+        intellisense.style.top = (cursor.getBoundingClientRect().top - 20) + "px";
+    
+    } else {
+        intellisense.innerHTML = ""
+    }
 }
