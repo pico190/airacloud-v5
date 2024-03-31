@@ -188,7 +188,7 @@ export function EditorNoCookie({ urlparsed }) {
             jsLinter(val, setErrors);
         }
         var jsonlint = ["json"];
-        if(editorislang(csslint)) {
+        if(editorislang(jsonlint)) {
             jsonLinter(val, setErrors);
         }
 
