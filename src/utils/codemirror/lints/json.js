@@ -16,7 +16,7 @@ export default function jsonLinter(fullcode, setErrors) {
             line: parseInt(line),
             index: parseInt(index),
             code: fullcode.split("\n")[line-1],
-            message: err.message,
+            message: err.message.split("at line")[0].replace(" in object", "."),
             type: 'error',
             codelines: fullcode.split("\n")
         })
