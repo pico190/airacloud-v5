@@ -23,6 +23,7 @@ import cssLinter from "../utils/codemirror/lints/css";
 import jsLinter from "../utils/codemirror/lints/js";
 import {CompletionContext} from "@codemirror/autocomplete"
 import { loadIntelli } from "../utils/codemirror/intelli/principal";
+import { saveToCache, retrieveFromCache } from "../utils/cache";
 
 export function EditorNoCookie({ urlparsed }) {
     const [reference, setReference] = useState([]);
@@ -58,13 +59,26 @@ export function EditorNoCookie({ urlparsed }) {
                     var htmlintelli = ["php", "html", "jsx", "javascript"];
                     if(htmlintelli.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
                         setIntelliLoaded(true);
-                        if (localStorage.getItem("htmlintelli")) {
-                            setReference(JSON.parse(decode(localStorage.getItem("htmlintelli"))));
-                        }
-                        $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
-                            setReference(data);
-                            localStorage.setItem("htmlintelli", encode(JSON.stringify(data)))
-                        });
+                        retrieveFromCache('/intellisense-html.txt')
+                            .then(function(response) {
+                                if (response) {
+                                    setReference(JSON.parse(decode(response)));
+                                } else { 
+                                    $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
+                                        saveToCache('/intellisense-html.txt', encode(JSON.stringify(data)))
+                                        .then(function() {
+                                          console.log('Archivo guardado en caché');
+                                        })
+                                        .catch(function(error) {
+                                          console.error('Error al guardar en caché:', error);
+                                        });    
+                                        setReference(data);
+                                    });
+                                }
+                            })
+                            .catch(function(error) {
+                                console.error('Error al obtener de caché:', error);
+                            });
                         console_info("HTML IntelliSense Loaded");
                     }
                 } catch(err) {
