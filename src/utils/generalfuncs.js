@@ -4,19 +4,25 @@ import ReactDOMServer from 'react-dom/server';
     return ReactDOMServer.renderToString(jsxobj);
   }
 
-  function findNearestElem(collection, targetRef) {
+  function findNearestElem(elementsArray, element) {
     let minDistance = Infinity;
-    let nearest = null;
+    let nearestElement = null;
   
-    Array.from(collection).forEach(elem => {
-      const distance = calculateDistance(elem, targetRef);
-      if (distance < minDistance) {
-        minDistance = distance;
-        nearest = elem;
+    for (let i = 0; i < elementsArray.length; i++) {
+      const currentElement = elementsArray[i];
+      if (currentElement.parentElement && currentElement.parentElement.classList.contains("cm-activeLine")) {
+        const rect1 = element.getBoundingClientRect();
+        const rect2 = currentElement.getBoundingClientRect();
+        const distance = Math.hypot(rect1.top - rect2.top, rect1.left - rect2.left);
+  
+        if (distance < minDistance) {
+          minDistance = distance;
+          nearestElement = currentElement;
+        }
       }
-    });
+    }
   
-    return nearest;
+    return nearestElement;
   }
   
   function calculateDistance(elem, targetRef) {
