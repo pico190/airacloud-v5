@@ -16,7 +16,8 @@ import { loadDetails } from "../utils/codemirror/details";
 import { showMinimap } from "@replit/codemirror-minimap"
 import { lintmsg } from "../utils/codemirror/lints/lintmsg";
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
-import { keymap } from '@codemirror/view';
+import { Prec } from "@codemirror/state";
+import { keymap } from "@codemirror/view";
 import { console_info, console_warn, console_group, console_error } from "../utils/Console";
 import phpLinter from "../utils/codemirror/lints/php";
 import cssLinter from "../utils/codemirror/lints/css";
@@ -24,6 +25,7 @@ import jsLinter from "../utils/codemirror/lints/js";
 import {CompletionContext} from "@codemirror/autocomplete"
 import { loadIntelli } from "../utils/codemirror/intelli/principal";
 import { saveToCache, retrieveFromCache } from "../utils/cache";
+import { continueKeymap } from "@valtown/codemirror-continue";
 
 export function EditorNoCookie({ urlparsed }) {
     const [reference, setReference] = useState([]);
@@ -125,6 +127,7 @@ export function EditorNoCookie({ urlparsed }) {
                         gutters: minimaplines
                         }
                     }),
+                    Prec.high(keymap.of(continueKeymap)),
                     rainbowBrackets(),
                     inlineSuggestion({ fetchFn: fetchSuggestion, delay: 1000, })
                 ]
