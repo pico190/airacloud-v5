@@ -13,8 +13,8 @@ export default function jsonLinter(fullcode, setErrors) {
         var index = err.message.split("column")[1].split("of")[0].trim()
 
         result.push({
-            line: line,
-            index: index,
+            line: parseInt(line),
+            index: parseInt(index),
             code: fullcode.split("\n")[line-1],
             message: err.message,
             type: 'error',
