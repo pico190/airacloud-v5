@@ -186,6 +186,10 @@ export function EditorNoCookie({ urlparsed }) {
         if(editorislang(jslint)) {
             jsLinter(val, setErrors);
         }
+        var jsonlint = ["json"];
+        if(editorislang(csslint)) {
+            jsonLinter(val, setErrors);
+        }
 
         
     }
