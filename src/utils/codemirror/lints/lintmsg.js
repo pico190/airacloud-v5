@@ -61,7 +61,7 @@ export function lintmsg(errors, setMinimapLines) {
                                     background-color: var(--cm-${type}LineBg)!important;
                                 }
                                 .cm-line:nth-of-type(${index + lineNumbersSum})::after {
-                                    content: "       ${error.message}"!important;
+                                    content: " >> ${error.message}"!important;
                                     position: absolute;
                                     top: 0px;
                                     color: var(--cm-${type}-gutter)!important;
