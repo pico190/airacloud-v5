@@ -10,7 +10,7 @@ export function loadIntelli(intelli) {
 
         var elementsline = document.querySelector(".cm-activeLine").querySelectorAll('[class*="ͼ"]')
         var editorToken = nearElem(elementsline, cursor)
-        console.log(elementsline)
+        // console.log(elementsline)
     
         intellisense.innerHTML = ``;
         intellisense.innerHTML += `<div class="intellitem"><b>${editorToken.innerText}</b></div>`;
