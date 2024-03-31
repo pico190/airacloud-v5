@@ -17,7 +17,7 @@ import { showMinimap } from "@replit/codemirror-minimap"
 import { lintmsg } from "../utils/codemirror/lints/lintmsg";
 import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
 import { keymap } from '@codemirror/view';
-import { console_info, console_warn, console_group } from "../utils/Console";
+import { console_info, console_warn, console_group, console_error } from "../utils/Console";
 import phpLinter from "../utils/codemirror/lints/php";
 import cssLinter from "../utils/codemirror/lints/css";
 import jsLinter from "../utils/codemirror/lints/js";
@@ -67,17 +67,19 @@ export function EditorNoCookie({ urlparsed }) {
                                     $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
                                         saveToCache('/intellisense-html.txt', encode(JSON.stringify(data)))
                                         .then(function() {
-                                          console.log('Archivo guardado en caché');
+                                          console_info("HTML Intelli Saved in caché");
                                         })
                                         .catch(function(error) {
-                                          console.error('Error al guardar en caché:', error);
+                                          console_error("Error while saving in caché:")
+                                          console.error(error)
                                         });    
                                         setReference(data);
                                     });
                                 }
                             })
                             .catch(function(error) {
-                                console.error('Error al obtener de caché:', error);
+                                console_error("Error al get caché")
+                                console.error(error);
                             });
                         console_info("HTML IntelliSense Loaded");
                     }
