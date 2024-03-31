@@ -25,28 +25,6 @@ import ReactDOMServer from 'react-dom/server';
     return nearestElement;
   }
   
-  function calculateDistance(elem, targetRef) {
-    let distance = Infinity;
-  
-    if (elem === targetRef) {
-      distance = 0;
-    } else {
-      const vertDistance = Math.abs(elem.offsetTop - targetRef.offsetTop);
-      const horizDistance = Math.abs(elem.offsetLeft - targetRef.offsetLeft);
-      distance = Math.sqrt(vertDistance ** 2 + horizDistance ** 2);
-    }
-  
-    if (elem.children.length > 0) {
-      Array.from(elem.children).forEach(child => {
-        const childDistance = calculateDistance(child, targetRef);
-        if (childDistance < distance) {
-          distance = childDistance;
-        }
-      });
-    }
-  
-    return distance;
-  }
 
   export function href(url) {
     window.location.replace(url);
