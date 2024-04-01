@@ -45,7 +45,7 @@ export function lintmsg(errors, setMinimapLines) {
                                 `;
                                 minimaplnes[index] = `var(--cm-${type}LineBg)`
                                 gutterTop = gutter.offsetTop;
-                            }     
+                            } 
                         })
                     }
                     var lineNumbersSum = 0;
@@ -67,7 +67,15 @@ export function lintmsg(errors, setMinimapLines) {
                                     color: var(--cm-${type}-gutter)!important;
                                 }
                                 `;
-                            }     
+                            } else {
+                                cssgenerated += `
+                                .cm-line:nth-of-type(${index + lineNumbersSum})::after {
+                                    content: " ${index + lineNumbersSum}"!important;
+                                    position: absolute;
+                                    top: 0px;
+                                }
+                                `
+                            }       
                         })
                     }
                 }
