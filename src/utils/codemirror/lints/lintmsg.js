@@ -1,7 +1,7 @@
 
 
 export function lintmsg(errors, setMinimapLines) {
-    // try {
+    try {
         
     
         var cssgenerated = ``;
@@ -99,7 +99,7 @@ export function lintmsg(errors, setMinimapLines) {
 
         // setMinimapLines([ {...minimaplnes} ])
         
-    // } catch(err) {
-    //     return false;
-    // }
+    } catch(err) {
+        return false;
+    }
 }
