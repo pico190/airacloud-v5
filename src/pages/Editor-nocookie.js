@@ -203,7 +203,8 @@ export function EditorNoCookie({ urlparsed }) {
         lint(val);
 
     };
-    const onUpdate = () => {
+    const onUpdate = (viewUpdate) => {
+        console.log(viewUpdate)
         lintmsg(errors);
     };
 
