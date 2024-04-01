@@ -15,35 +15,35 @@
 
 //                                  --- IMPORTANT LIBRARIES ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
-import React, {  useEffect, useState  }                             from "react                "; // React     
-import $                                                            from 'jquery               '; // JQUERY
-import {  encode, decode              }                             from 'js-base64            '; // BASE 64
+import React, {  useEffect, useState  }                             from "react"                ; // React     
+import $                                                            from 'jquery'               ; // JQUERY
+import {  encode, decode              }                             from 'js-base64'            ; // BASE 64
 import CodeMirror                                                   from '@uiw/react-codemirror'; // CODEMIRROR  
-import {  Prec                        }                             from "@codemirror/state    "; // CODEMIRROR UTILS   
-import {  keymap                      }                             from "@codemirror/view     "; // CODEMIRROR UTILS
+import {  Prec                        }                             from "@codemirror/state"    ; // CODEMIRROR UTILS   
+import {  keymap                      }                             from "@codemirror/view"     ; // CODEMIRROR UTILS
 
 //                                 --- CODEMIRROR EXTENSIONS ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
-import rainbowBrackets                                              from 'rainbowbrackets                       '; // RAINBOW BRACKETS
-import {  color                       }                             from '@uiw/codemirror-extensions-color      '; // CSS COLOR PICKER
+import rainbowBrackets                                              from 'rainbowbrackets'                       ; // RAINBOW BRACKETS
+import {  color                       }                             from '@uiw/codemirror-extensions-color'      ; // CSS COLOR PICKER
 import {  indentationMarkers          }                             from '@replit/codemirror-indentation-markers'; // IDENTATION MARKERS
 import {  inlineSuggestion            }                             from 'codemirror-extension-inline-suggestion'; // INLINE SUGGESTIONS
-import {  hyperLink                   }                             from '@uiw/codemirror-extensions-hyper-link '; // HYPER LINK
-import {  showMinimap                 }                             from "@replit/codemirror-minimap            "; // CODEMIRROR MINIMAP
-import {  vscodeKeymap                }                             from "@replit/codemirror-vscode-keymap      "; // VSCODE KEYMAP [NOT WORKING]
-import {  continueKeymap              }                             from "@valtown/codemirror-continue          "; // CONTINUE KEYMAP
+import {  hyperLink                   }                             from '@uiw/codemirror-extensions-hyper-link' ; // HYPER LINK
+import {  showMinimap                 }                             from "@replit/codemirror-minimap"            ; // CODEMIRROR MINIMAP
+import {  vscodeKeymap                }                             from "@replit/codemirror-vscode-keymap"      ; // VSCODE KEYMAP [NOT WORKING]
+import {  continueKeymap              }                             from "@valtown/codemirror-continue"          ; // CONTINUE KEYMAP
 
 //                                       --- EXTRA ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
-import langLoader                                                   from "../utils/codemirror/langloader    "; // LOADS CODING LANGUAGE
-import loadDetails                                                  from "../utils/codemirror/details       "; // LOADS SOME DETAILS (FOLD ICONS, SEARCH ICONS)
+import langLoader                                                   from "../utils/codemirror/langloader"    ; // LOADS CODING LANGUAGE
+import loadDetails                                                  from "../utils/codemirror/details"       ; // LOADS SOME DETAILS (FOLD ICONS, SEARCH ICONS)
 import loadLint                                                     from "../utils/codemirror/lints/loadLint"; // LOADS THE CODE ERROR DETECTOR
 
-import {  airatheme                                               } from "../utils/codemirror/airatheme    "; // AIRA CUSTOM THEME FOR CODEMIRROR
+import {  airatheme                                               } from "../utils/codemirror/airatheme"    ; // AIRA CUSTOM THEME FOR CODEMIRROR
 import { htmlIntelli, editorislang                                } from "../utils/codemirror/intelli/html "; // HTML INTELLI
 import {  lintmsg                                                 } from "../utils/codemirror/lints/lintmsg"; // MARKS THE CODE ERRORS IN THE EDITOR
-import { console_info, console_warn, console_group, console_error } from "../utils/Console                 "; // CONSOLE MESSAGES
-import { saveToCache, retrieveFromCache                           } from "../utils/cache                   "; // SAVES DATA IN CACHE
+import { console_info, console_warn, console_group, console_error } from "../utils/Console"                 ; // CONSOLE MESSAGES
+import { saveToCache, retrieveFromCache                           } from "../utils/cache"                   ; // SAVES DATA IN CACHE
 
 
 
