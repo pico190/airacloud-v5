@@ -168,7 +168,6 @@ export function EditorNoCookie({ urlparsed }) {
   
     setInterval(() => {
         loadDetails();
-        loadIntelli();
       }, 1);
 
     function lint(val) {
@@ -204,7 +203,8 @@ export function EditorNoCookie({ urlparsed }) {
 
     };
     const onUpdate = (viewUpdate) => {
-        console.log(viewUpdate.view.observer.selectionRange.focusNode.wholeText)
+        var editorToken = viewUpdate.view.observer.selectionRange.focusNode.wholeText
+        loadIntelli(editorToken);
         lintmsg(errors);
     };
 
