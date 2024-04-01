@@ -40,7 +40,7 @@ import loadDetails                                                  from "../uti
 import loadLint                                                     from "../utils/codemirror/lints/loadLint"; // LOADS THE CODE ERROR DETECTOR
 
 import {  airatheme                                               } from "../utils/codemirror/airatheme"    ; // AIRA CUSTOM THEME FOR CODEMIRROR
-import { htmlIntelli, editorislang                                } from "../utils/codemirror/intelli/html "; // HTML INTELLI
+import { htmlIntelli, editorislang                                } from "../utils/codemirror/intelli/html" ; // HTML INTELLI
 import {  lintmsg                                                 } from "../utils/codemirror/lints/lintmsg"; // MARKS THE CODE ERRORS IN THE EDITOR
 import { console_info, console_warn, console_group, console_error } from "../utils/Console"                 ; // CONSOLE MESSAGES
 import { saveToCache, retrieveFromCache                           } from "../utils/cache"                   ; // SAVES DATA IN CACHE
