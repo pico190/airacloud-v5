@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { encode, decode } from 'js-base64'
 import CodeMirror from '@uiw/react-codemirror';
-import React, { useState, useEffect } from 'react';
-
 import { langs } from '@uiw/codemirror-extensions-langs';
 import rainbowBrackets from 'rainbowbrackets'   
 import { color } from '@uiw/codemirror-extensions-color';
