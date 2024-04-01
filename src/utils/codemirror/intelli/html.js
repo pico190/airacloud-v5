@@ -1,5 +1,5 @@
 
-export function htmlIntelli(editorToken) {
+export default function htmlIntelli(editorToken) {
     var intellisense = document.getElementById("intellisense");
     console.log(editorToken)
     var editor = document.querySelector(".cm-editor")
