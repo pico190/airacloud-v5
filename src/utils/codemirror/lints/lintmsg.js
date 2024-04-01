@@ -49,8 +49,13 @@ export function lintmsg(errors, setMinimapLines) {
                         })
                     }
                     var lineNumbersSum = 0;
-                    if(document.querySelector("cm-content") ? document.querySelector("cm-content").firstChild.classList.includes("cm-gap") : false) {
-                        lineNumbersSum = 1
+                    if(document.querySelector(".cm-content") ? document.querySelector(".cm-content").firstChild.classList.includes(".cm-gap") : false) {
+                        var lineheight = document.querySelector(".cm-line").offsetHeight;
+                        var gap = document.querySelector(".cm-gap");
+                        
+                        var linesum = parseInt(gap.offsetHeight / lineheight) * 2
+
+                        lineNumbersSum = linesum;
                     }
                     var line = document.querySelectorAll(".cm-line") ? document.querySelectorAll(".cm-lineNumbers > .cm-gutterElement") : false
                     if(line) {
