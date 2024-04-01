@@ -1,8 +1,7 @@
-import { nearElem } from "../../generalfuncs";
 
 export function loadIntelli(editorToken) {
     var intellisense = document.getElementById("intellisense");
-
+    console.log(editorToken)
     var editor = document.querySelector(".cm-editor")
     var cursor = document.querySelector(".cm-cursor-primary");
 
