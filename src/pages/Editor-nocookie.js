@@ -204,7 +204,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     };
     const onUpdate = (viewUpdate) => {
-        console.log(viewUpdate.view.observer.selectionRange.focusNode.innerText)
+        console.log(viewUpdate.view.observer.selectionRange.focusNode.wholeText)
         lintmsg(errors);
     };
 
