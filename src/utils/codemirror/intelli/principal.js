@@ -1,6 +1,6 @@
 import { nearElem } from "../../generalfuncs";
 
-export function loadIntelli(intelli) {
+export function loadIntelli(editorToken) {
     var intellisense = document.getElementById("intellisense");
 
     var editor = document.querySelector(".cm-editor")
@@ -10,7 +10,6 @@ export function loadIntelli(intelli) {
         if(editor.classList.contains("cm-focused")) {
 
             var elementsline = document.querySelector(".cm-activeLine").querySelectorAll('[class*="ͼ"]')
-            var editorToken = nearElem(elementsline, cursor)
             
             intellisense.innerHTML = ``;
             intellisense.innerHTML += `<div class="intellitem"><b>${editorToken.innerText}</b></div>`;
