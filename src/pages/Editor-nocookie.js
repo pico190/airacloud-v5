@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { encode, decode } from 'js-base64'
 import CodeMirror from '@uiw/react-codemirror';
+import React, { useState, useEffect } from 'react';
 
 import { langs } from '@uiw/codemirror-extensions-langs';
 import rainbowBrackets from 'rainbowbrackets'   
@@ -194,12 +195,21 @@ export function EditorNoCookie({ urlparsed }) {
         
     }
 
+
+    let typingTimer;
+    const doneTyping = (val) => {
+        lint(val)
+    };
+
     const onChange = (val) => {
         setErrors([])
         window.history.pushState({}, null, "https://"+window.location.host+"/"+urlparsed[0]+"/"+urlparsed[1]+"/"+encode(val));
         window.parent.postMessage(val, "*");
 
-        lint(val);
+        if(typingTimer) {
+            clearTimeout(typingTimer);
+        }
+        typingTimer = setTimeout(() => {doneTyping(val)}, 1000); 
 
     };
     const onUpdate = (viewUpdate) => {
