@@ -167,6 +167,12 @@ export function EditorNoCookie({ urlparsed }) {
   
     setInterval(() => {
         loadDetails();
+
+        var cursor = document.querySelector(".cm-cursor-primary");
+        var intellisense = document.getElementById("intellisense");
+        
+        intellisense.style.left = (cursor.getBoundingClientRect().left - 3) + "px";
+        intellisense.style.top = (cursor.getBoundingClientRect().top - 20) + "px";
       }, 1);
 
     function lint(val) {
