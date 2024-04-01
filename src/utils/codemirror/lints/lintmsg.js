@@ -49,8 +49,7 @@ export function lintmsg(errors, setMinimapLines) {
                         })
                     }
                     var lineNumbersSum = 0;
-                    if(document.querySelector(".cm-content") ? document.querySelector(".cm-content").firstChild.classList.includes(".cm-gap") : false) {
-                        var lineheight = document.querySelector(".cm-line") ? document.querySelector(".cm-line").offsetHeight : 1;
+                    if (document.querySelector(".cm-content") ? document.querySelector(".cm-content").firstChild.classList.contains("cm-gap") : false) {                        var lineheight = document.querySelector(".cm-line") ? document.querySelector(".cm-line").offsetHeight : 1;
                         var gap = document.querySelector(".cm-gap");
 
                         if(gap) {
