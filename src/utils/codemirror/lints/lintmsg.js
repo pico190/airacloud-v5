@@ -100,6 +100,7 @@ export function lintmsg(errors, setMinimapLines) {
         // setMinimapLines([ {...minimaplnes} ])
         
     } catch(err) {
+        console.log(err);
         return false;
     }
 }
