@@ -1,10 +1,12 @@
+
+import {  langs  }                                                  from '@uiw/codemirror-extensions-langs';
 import { decode } from 'js-base64';
 import { pythonLanguage } from "@codemirror/lang-python";
 import { jsonLanguage } from "@codemirror/lang-json";
-import { html, CompletionContext } from "@codemirror/lang-html";
+import { html } from "@codemirror/lang-html";
 import { properties } from "@codemirror/legacy-modes/mode/properties";
 
-export default function langLoader(lang, langs) {
+export default function langLoader(lang) {
 
     var lng = null;
     try {

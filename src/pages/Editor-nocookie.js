@@ -1,44 +1,72 @@
-import React, { useEffect, useState } from "react";
-import { encode, decode } from 'js-base64'
-import CodeMirror from '@uiw/react-codemirror';
-import { langs } from '@uiw/codemirror-extensions-langs';
-import rainbowBrackets from 'rainbowbrackets'   
-import { color } from '@uiw/codemirror-extensions-color';
-import { indentationMarkers } from '@replit/codemirror-indentation-markers';
-import { inlineSuggestion } from 'codemirror-extension-inline-suggestion';
-import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
-import { airatheme } from "../utils/codemirror/airatheme";
-import $ from 'jquery'
-import { spaces, hexToRgb } from "../utils/generalfuncs";
-import langLoader from "../utils/codemirror/langloader";
-import { loadDetails } from "../utils/codemirror/details";
-import { showMinimap } from "@replit/codemirror-minimap"
-import { lintmsg } from "../utils/codemirror/lints/lintmsg";
-import { vscodeKeymap } from "@replit/codemirror-vscode-keymap";
-import { Prec } from "@codemirror/state";
-import { keymap } from "@codemirror/view";
-import { console_info, console_warn, console_group, console_error } from "../utils/Console";
-import phpLinter from "../utils/codemirror/lints/php";
-import cssLinter from "../utils/codemirror/lints/css";
-import jsLinter from "../utils/codemirror/lints/js";
-import jsonLinter from "../utils/codemirror/lints/json";
-import {CompletionContext} from "@codemirror/autocomplete"
-import { loadIntelli } from "../utils/codemirror/intelli/principal";
-import { saveToCache, retrieveFromCache } from "../utils/cache";
-import { continueKeymap } from "@valtown/codemirror-continue";
+// ________  ___  ________  ________  ________  ___       ________  ___  ___  ________          ___      ___ ________      
+// |\   __  \|\  \|\   __  \|\   __  \|\   ____\|\  \     |\   __  \|\  \|\  \|\   ___ \        |\  \    /  /|\   ____\     
+// \ \  \|\  \ \  \ \  \|\  \ \  \|\  \ \  \___|\ \  \    \ \  \|\  \ \  \\\  \ \  \_|\ \       \ \  \  /  / | \  \___|_    
+//  \ \   __  \ \  \ \   _  _\ \   __  \ \  \    \ \  \    \ \  \\\  \ \  \\\  \ \  \ \\ \       \ \  \/  / / \ \_____  \   
+//   \ \  \ \  \ \  \ \  \\  \\ \  \ \  \ \  \____\ \  \____\ \  \\\  \ \  \\\  \ \  \_\\ \       \ \    / /   \|____|\  \  
+//    \ \__\ \__\ \__\ \__\\ _\\ \__\ \__\ \_______\ \_______\ \_______\ \_______\ \_______\       \ \__/ /      ____\_\  \ 
+//     \|__|\|__|\|__|\|__|\|__|\|__|\|__|\|_______|\|_______|\|_______|\|_______|\|_______|        \|__|/      |\_________\
+//                                                                                                              \|_________|
+
+// EDITOR NO COOKIE - IFRAME VERSION OF THE EDITOR
+      
+//                      ///////////////////////////////////////////////
+//                      //                LIBRARIES                  //
+//                      ///////////////////////////////////////////////
+
+//                                  --- IMPORTANT LIBRARIES ---
+//     IMPORTS ---------------------------------------------------  LIBRARY --------------------
+import React, {  useEffect, useState  }                             from "react                "; // React     
+import $                                                            from 'jquery               '; // JQUERY
+import {  encode, decode              }                             from 'js-base64            '; // BASE 64
+import CodeMirror                                                   from '@uiw/react-codemirror'; // CODEMIRROR  
+import {  Prec                        }                             from "@codemirror/state    "; // CODEMIRROR UTILS   
+import {  keymap                      }                             from "@codemirror/view     "; // CODEMIRROR UTILS
+
+//                                 --- CODEMIRROR EXTENSIONS ---
+//     IMPORTS ---------------------------------------------------  LIBRARY --------------------
+import rainbowBrackets                                              from 'rainbowbrackets                       '; // RAINBOW BRACKETS
+import {  color                       }                             from '@uiw/codemirror-extensions-color      '; // CSS COLOR PICKER
+import {  indentationMarkers          }                             from '@replit/codemirror-indentation-markers'; // IDENTATION MARKERS
+import {  inlineSuggestion            }                             from 'codemirror-extension-inline-suggestion'; // INLINE SUGGESTIONS
+import {  hyperLink                   }                             from '@uiw/codemirror-extensions-hyper-link '; // HYPER LINK
+import {  showMinimap                 }                             from "@replit/codemirror-minimap            "; // CODEMIRROR MINIMAP
+import {  vscodeKeymap                }                             from "@replit/codemirror-vscode-keymap      "; // VSCODE KEYMAP [NOT WORKING]
+import {  continueKeymap              }                             from "@valtown/codemirror-continue          "; // CONTINUE KEYMAP
+
+//                                       --- EXTRA ---
+//     IMPORTS ---------------------------------------------------  LIBRARY --------------------
+import langLoader                                                   from "../utils/codemirror/langloader    "; // LOADS CODING LANGUAGE
+import loadDetails                                                  from "../utils/codemirror/details       "; // LOADS SOME DETAILS (FOLD ICONS, SEARCH ICONS)
+import loadLint                                                     from "../utils/codemirror/lints/loadLint"; // LOADS THE CODE ERROR DETECTOR
+
+import {  airatheme                                               } from "../utils/codemirror/airatheme    "; // AIRA CUSTOM THEME FOR CODEMIRROR
+import { htmlIntelli, editorislang                                } from "../utils/codemirror/intelli/html "; // HTML INTELLI
+import {  lintmsg                                                 } from "../utils/codemirror/lints/lintmsg"; // MARKS THE CODE ERRORS IN THE EDITOR
+import { console_info, console_warn, console_group, console_error } from "../utils/Console                 "; // CONSOLE MESSAGES
+import { saveToCache, retrieveFromCache                           } from "../utils/cache                   "; // SAVES DATA IN CACHE
+
+
+
+
 
 export function EditorNoCookie({ urlparsed }) {
-    const [reference, setReference] = useState([]);
-    const [intelliLoaded, setIntelliLoaded] = useState(false);
-    const [initialValue, setinitialValue] = useState("");
-    const [lang, setLang] = useState(null);
-    const [extensionsarray, setExtensions] = useState(null);
+
+
+
+    // USE STATES
+    var [ reference, setReference         ] = useState([]   ); // INTELLI INFO
+    var [ intelliLoaded, setIntelliLoaded ] = useState(false); // IF INTELLI IS LOADED
+    var [ initialValue, setinitialValue   ] = useState(""   ); // THE VALUE WHEN YOU LOAD THE WEB
+    var [ lang, setLang                   ] = useState(null ); // LANGUAGE OF EDITOR
+    var [ extensionsarray, setExtensions  ] = useState(null ); // EXTENSIONS
+    var [ minimaplines, setMinimapLines   ] = useState([]   ); // MINIMAP ERROR LINES
+    var [ errors, setErrors               ] = useState([]   ); // ERROR LIST OF LINTER
 
     // Format: https://airaurl/editor-nocookie/lang/base64editorcontent
     useEffect(() => {
-        // urlparsed[1] => lang
-        // urlparsed[2] => codigo base64 que es el contenido
-        setLang(langLoader(urlparsed[1], langs))
+        
+        // URL CODE DETECTOR ---------------------------------------
+        setLang(langLoader(urlparsed[1]))
         var value;
         var errormsg = "Base64 Decoding Error"
         try {
@@ -58,8 +86,7 @@ export function EditorNoCookie({ urlparsed }) {
         const loadIntelliSense = () => {
             if (!intelliLoaded) {
                 try {
-                    var htmlintelli = ["php", "html", "jsx", "javascript"];
-                    if(htmlintelli.includes(document.querySelector(".cm-content").getAttribute("data-language"))) {
+                    if(editorislang(htmlIntelli)) {
                         setIntelliLoaded(true);
                         retrieveFromCache('/intellisense-html.txt')
                             .then(function(response) {
@@ -94,19 +121,14 @@ export function EditorNoCookie({ urlparsed }) {
         return () => window.removeEventListener("load", loadIntelliSense);
     }, [intelliLoaded]);
 
-
     
     const fetchSuggestion = async (state) => {
         return '';
     };
-
     let createMinimap = () => {
         const dom = document.createElement('div');
         return { dom }
-      }
-
-      var [ minimaplines, setMinimapLines ] = useState([])
-      
+    }
 
       
     // Lang Updater
@@ -155,10 +177,6 @@ export function EditorNoCookie({ urlparsed }) {
             )
         }
     }, [lang])
-
-    const [errors, setErrors] = useState([]);
-  
-
     useEffect(() => {
       console.log("Errors detected:", errors);
       lintmsg(errors, setMinimapLines);
@@ -173,36 +191,12 @@ export function EditorNoCookie({ urlparsed }) {
         
         intellisense.style.left = (cursor.getBoundingClientRect().left - 3) + "px";
         intellisense.style.top = (cursor.getBoundingClientRect().top - 20) + "px";
-      }, 1);
-
-    function lint(val) {
-        function editorislang(array) {
-            return array.includes(document.querySelector(".cm-content").getAttribute("data-language"))
-        }
-        var phplint = ["php"];
-        if(editorislang(phplint)) {
-            phpLinter(val, setErrors);
-        }
-        var csslint = ["css", "less"];
-        if(editorislang(csslint)) {
-            cssLinter(val, setErrors);
-        }
-        var jslint = ["js", "jsx", "javascript"];
-        if(editorislang(jslint)) {
-            jsLinter(val, setErrors);
-        }
-        var jsonlint = ["json"];
-        if(editorislang(jsonlint)) {
-            jsonLinter(val, setErrors);
-        }
-
-        
-    }
+    }, 1);
 
 
     let typingTimer;
     const doneTyping = (val) => {
-        lint(val)
+        loadLint(val)
     };
 
     const onChange = (val) => {
@@ -218,17 +212,16 @@ export function EditorNoCookie({ urlparsed }) {
     };
     const onUpdate = (viewUpdate) => {
         var editorToken = viewUpdate.view.observer.selectionRange.focusNode.wholeText
-        loadIntelli(editorToken);
+        htmlIntelli(editorToken);
         lintmsg(errors);
         console.log(viewUpdate)
     };
-
     const mount = (view, state) => { 
         document.getElementById("loader").style.opacity = 0; 
         document.getElementById("loader").style.pointerEvents = "none" 
         console.log(view, "|", state);
 
-        lint(initialValue);
+        loadLint(initialValue);
     };
     
     return (
@@ -248,11 +241,11 @@ export function EditorNoCookie({ urlparsed }) {
 
                         </svg>
                         <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none;
-  border-radius: 0px !important;
-  -webkit-border-radius: 0px !important;
-  -moz-border-radius: 0px !important;
-  -ms-border-radius: 0px !important;
-  -o-border-radius: 0px !important;}" />
+                        border-radius: 0px !important;
+                        -webkit-border-radius: 0px !important;
+                        -moz-border-radius: 0px !important;
+                        -ms-border-radius: 0px !important;
+                        -o-border-radius: 0px !important;}" />
                         <style id="langstyle" />
                         <style id="linter" />
                         <style id="scrollbehavior" />

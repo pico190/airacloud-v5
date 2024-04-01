@@ -1,5 +1,5 @@
 
-export function loadIntelli(editorToken) {
+export function htmlIntelli(editorToken) {
     var intellisense = document.getElementById("intellisense");
     console.log(editorToken)
     var editor = document.querySelector(".cm-editor")

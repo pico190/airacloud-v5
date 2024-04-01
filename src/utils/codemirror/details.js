@@ -2,7 +2,7 @@
 import { spaces, hexToRgb } from "../generalfuncs";
 import $ from 'jquery'
 
-export function loadDetails() {
+export default function loadDetails() {
 
     try {
 
