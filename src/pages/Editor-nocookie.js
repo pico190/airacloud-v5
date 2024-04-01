@@ -206,6 +206,7 @@ export function EditorNoCookie({ urlparsed }) {
         var editorToken = viewUpdate.view.observer.selectionRange.focusNode.wholeText
         loadIntelli(editorToken);
         lintmsg(errors);
+        console.log(viewUpdate)
     };
 
     const mount = (view, state) => { 
