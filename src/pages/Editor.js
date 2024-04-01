@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SideBar } from './editorc/Sidebar'
 import { encode, decode } from 'js-base64'
 import CodeMirror from '@uiw/react-codemirror';
-import { loadDetails } from "../utils/codemirror/details";
+import { loadDetails } from "../utils/codemirror/loadDetails";
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { href } from "../utils/generalfuncs";
 import rainbowBrackets from 'rainbowbrackets'   
