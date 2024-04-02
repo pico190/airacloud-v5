@@ -34,6 +34,11 @@ import {  showMinimap                 }                             from "@repli
 import {  vscodeKeymap                }                             from "@replit/codemirror-vscode-keymap"      ; // VSCODE KEYMAP [NOT WORKING]
 import {  continueKeymap              }                             from "@valtown/codemirror-continue"          ; // CONTINUE KEYMAP
 
+//                                      --- PAGES & UI ---
+//     IMPORTS ---------------------------------------------------  LIBRARY --------------------
+import Toolbar from "./codiumc/toolbar";
+
+
 //                                       --- EXTRA ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
 import langLoader                                                   from "../utils/codemirror/langloader"    ; // LOADS CODING LANGUAGE
@@ -47,7 +52,7 @@ import { htmlintelli, editorislang                                } from "../uti
 import {  lintmsg                                                 } from "../utils/codemirror/lints/lintmsg"; // MARKS THE CODE ERRORS IN THE EDITOR
 import { console_info, console_warn, console_group, console_error } from "../utils/Console"                 ; // CONSOLE MESSAGES
 import { saveToCache, retrieveFromCache                           } from "../utils/cache"                   ; // SAVES DATA IN CACHE
-import Toolbar from "./codiumc/toolbar";
+
 
 
 
@@ -64,6 +69,9 @@ export function Codium({ urlparsed }) {
     var [ extensionsarray, setExtensions  ] = useState(null ); // EXTENSIONS
     var [ minimaplines, setMinimapLines   ] = useState([]   ); // MINIMAP ERROR LINES
     var [ errors, setErrors               ] = useState([]   ); // ERROR LIST OF LINTER
+
+    var [ windowpage, setWindowpage       ] = useState(""   ); // WINDOW HASH = WINDOW PAGE
+    var [ DOMContent, setDomContent       ] = useState(<></>); // DOM CONTENT - CODIUM
 
     window.addEventListener("DOMContentLoaded", () => {
         var title = document.querySelector("title");
@@ -183,6 +191,8 @@ export function Codium({ urlparsed }) {
         
         intellisense.style.left = (cursor.getBoundingClientRect().left - 3) + "px";
         intellisense.style.top = (cursor.getBoundingClientRect().top - 20) + "px";
+
+        setWindowpage(window.location.hash.replace("#", ""));
     }, 1);
 
 
@@ -215,6 +225,19 @@ export function Codium({ urlparsed }) {
 
         loadLint(initialValue, setErrors);
     };
+
+    useEffect(() => {
+
+        switch (windowpage) {
+            case "files":
+                setDomContent(<CodiumNotFound />)
+            case "settings":
+                setDomContent(<CodiumNotFound />)
+            default:
+               setDomContent(<CodiumNotFound />)
+        }
+
+    }, [windowpage])
     
     return (
         <>
@@ -243,6 +266,8 @@ export function Codium({ urlparsed }) {
                         <style id="scrollbehavior" />
                         <div id="intellisense" className="intellisense" />
                         <Toolbar />
+                        {DOMContent}
+
                         {/* <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}

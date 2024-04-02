@@ -1,11 +1,19 @@
 * {
-    --toolbar: #1a2026;
+    --toolbar: #1d262f;
     --toolbar-size: 80px;
     --toolbar-icons: #ffffff2a;
     --toolbar-hover: #94bff0;
     --toolbar-click: 148, 191, 240;
+
+    --c-body: #2b3640;
 }
 
+html, body {
+    background-color: var(--body);
+}
+body {
+    display: flex;
+}
 
 .codium-spacer{
     margin-top: 100%;
@@ -54,4 +62,40 @@
 }
 .codium-toolbaritem.codium-toolbaritem-active > #fluenticon_files {
     display: none!important;
+}
+
+.codium-body {
+  background-color: var(--c-body);
+  width: 100%;
+}
+.codium-notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;  
+  gap: 15px;
+}
+
+.codium-notfound-bg {
+    background-image: url('https://airacloud-v5-d1.vercel.app/codium-background-colors.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.codium-notfound h1 {
+  font-size: 50px;
+}
+
+.codium-notfound h3 {
+  font-weight: normal;
+  font-size: 30px;
+}
+
+.codium-notfound code {
+  background-color: #00000069;
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 20px;
+  font-family: var(--editor-font-family);
+  font-weight: 100;
 }
