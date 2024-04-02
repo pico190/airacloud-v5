@@ -224,7 +224,7 @@ export default function Files() {
     };
     const onUpdate = (viewUpdate) => {
         var editorToken = viewUpdate.view.observer.selectionRange.focusNode.wholeText
-        htmlIntelli(editorToken);
+        // htmlIntelli(editorToken);
         lintmsg(errors);
         console.log(viewUpdate)
     };
@@ -253,7 +253,7 @@ export default function Files() {
                             </defs>
 
                         </svg>
-                        <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none;
+                        <style children=".editorcontainer {border: none;
                         border-radius: 0px !important;
                         -webkit-border-radius: 0px !important;
                         -moz-border-radius: 0px !important;
