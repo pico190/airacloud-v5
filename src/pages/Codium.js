@@ -20,9 +20,9 @@ import                                                                   "./codi
 
 //                                      --- PAGES & UI ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
-import Toolbar from "./codiumc/toolbar";
-import CodiumNotFound from "./codiumc/notfound";
-import Files from "./codiumc/Files";
+import Toolbar                                                      from "./codiumc/toolbar" ; // Toolbar
+import CodiumNotFound                                               from "./codiumc/notfound"; // Notfound page
+import Files                                                        from "./codiumc/files.js"; // Files page
 
 
 
