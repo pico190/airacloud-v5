@@ -6,9 +6,10 @@
         --toolbar-click: 148, 191, 240;
 
         --c-body: #181e23;
-        --files: #0e1315;
-        --files-width: 200px;
+        --files: #0d1113;
+        --files-width: 250px;
         --files-icon-size: 16px;
+        --editor-files-width: 160px;
     }
 
     html, body {
@@ -74,15 +75,15 @@
     }
 
     .codium-body {
-    background-color: var(--c-body);
-    width: 100%;
+        background-color: var(--c-body);
+        width: 100%;
     }
     .codium-notfound {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;  
-    gap: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;  
+        gap: 15px;
     }
 
     .codium-notfound-bg {
@@ -113,6 +114,8 @@
     width: 100%;
     background-color: var(--files);
     border-left: 1px solid var(--toolbar);
+    display: flex;
+    flex-direction: column;
   }
   .codium-files {
     background: var(--files);
@@ -144,7 +147,7 @@
     border-bottom: 1px solid var(--toolbar);
   }
   .codium-editor-file {
-    width: 150px;
+    width: var(--editor-files-width);
     height: 40px;
     border-right: 1px solid var(--toolbar);
     overflow: hidden;
