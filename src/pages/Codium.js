@@ -63,64 +63,53 @@ export function Codium({ urlparsed }) {
     var [ minimaplines, setMinimapLines   ] = useState([]   ); // MINIMAP ERROR LINES
     var [ errors, setErrors               ] = useState([]   ); // ERROR LIST OF LINTER
 
-    // Format: https://airaurl/editor-nocookie/lang/base64editorcontent
-    useEffect(() => {
-        
-        // URL CODE DETECTOR ---------------------------------------
-        setLang(langLoader(urlparsed[1]))
-        var value;
-        var errormsg = "Base64 Decoding Error"
-        try {
-            value = decode(urlparsed[2] ? urlparsed[2] : encode(errormsg))
-            console_group("B64 Editor Content Loaded");
-            console.log(value);
-            console.groupEnd();
-        } catch(err) {
-            console_warn("Error loading B64 Editor content");
-            value = errormsg
-        }
-        setinitialValue(value)
-    }, [urlparsed])
+    window.addEventListener("DOMContentLoaded", () => {
+        var title = document.querySelector("title");
+        var logo = document.querySelector('link[rel="icon"]');
 
-    // IntelliSense
-    useEffect(() => {
-        const loadIntelliSense = () => {
-            if (!intelliLoaded) {
-                try {
-                    if(editorislang(htmlintelli)) {
-                        setIntelliLoaded(true);
-                        retrieveFromCache('/intellisense-html.txt')
-                            .then(function(response) {
-                                if (response) {
-                                    setReference(JSON.parse(decode(response)));
-                                } else { 
-                                    $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
-                                        saveToCache('/intellisense-html.txt', encode(JSON.stringify(data)))
-                                        .then(function() {
-                                          console_info("HTML Intelli Saved in caché");
-                                        })
-                                        .catch(function(error) {
-                                          console_error("Error while saving in caché:")
-                                          console.error(error)
-                                        });    
-                                        setReference(data);
-                                    });
-                                }
-                            })
-                            .catch(function(error) {
-                                console_error("Error al get caché")
-                                console.error(error);
-                            });
-                        console_info("HTML IntelliSense Loaded");
-                    }
-                } catch(err) {
-                    return true;
-                }
-            }
-        };
-        window.addEventListener("load", loadIntelliSense);
-        return () => window.removeEventListener("load", loadIntelliSense);
-    }, [intelliLoaded]);
+        title.innerHTML = "AiraCloud Codium";
+        logo.href = "/codium.svg";
+    })
+
+    // // IntelliSense
+    // useEffect(() => {
+    //     const loadIntelliSense = () => {
+    //         if (!intelliLoaded) {
+    //             try {
+    //                 if(editorislang(htmlintelli)) {
+    //                     setIntelliLoaded(true);
+    //                     retrieveFromCache('/intellisense-html.txt')
+    //                         .then(function(response) {
+    //                             if (response) {
+    //                                 setReference(JSON.parse(decode(response)));
+    //                             } else { 
+    //                                 $.get("https://xploit.men/References/get.php?file=html/es.json", (data) => {
+    //                                     saveToCache('/intellisense-html.txt', encode(JSON.stringify(data)))
+    //                                     .then(function() {
+    //                                       console_info("HTML Intelli Saved in caché");
+    //                                     })
+    //                                     .catch(function(error) {
+    //                                       console_error("Error while saving in caché:")
+    //                                       console.error(error)
+    //                                     });    
+    //                                     setReference(data);
+    //                                 });
+    //                             }
+    //                         })
+    //                         .catch(function(error) {
+    //                             console_error("Error al get caché")
+    //                             console.error(error);
+    //                         });
+    //                     console_info("HTML IntelliSense Loaded");
+    //                 }
+    //             } catch(err) {
+    //                 return true;
+    //             }
+    //         }
+    //     };
+    //     window.addEventListener("load", loadIntelliSense);
+    //     return () => window.removeEventListener("load", loadIntelliSense);
+    // }, [intelliLoaded]);
 
     
     const fetchSuggestion = async (state) => {
@@ -252,7 +241,7 @@ export function Codium({ urlparsed }) {
                         <style id="scrollbehavior" />
                         <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} className="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />
                         <div id="intellisense" className="intellisense" />
-                        <CodeMirror
+                        {/* <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}
                             value={initialValue}
@@ -265,7 +254,7 @@ export function Codium({ urlparsed }) {
                                 height: "100%",
                                 width: "100%"
                             }}
-                        />
+                        /> */}
                         {/* <div id="errorline" 
                             style={{ 
                                 position: "absolute", 
