@@ -27,15 +27,15 @@
     align-items: center;
     justify-content: center;
 }
-.codium-toolbaritem svg {
+.codium-toolbaritem svg * {
     fill: var(--toolbar-icons)!important;
     width: 70%;
     height: 70%;
 }
-.codium-toolbaritem:hover svg {
+.codium-toolbaritem:hover svg * {
     fill: var(--toolbar-hover)!important;
 }
-.codium-toolbaritem.codium-toolbaritem-active svg {
+.codium-toolbaritem.codium-toolbaritem-active svg * {
     fill: rgb(var(--toolbar-click))!important;
 }
 .codium-toolbaritem.codium-toolbaritem-active {
