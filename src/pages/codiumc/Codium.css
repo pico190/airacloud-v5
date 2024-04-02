@@ -22,23 +22,30 @@
 
 .codium-toolbaritem {
     width: var(--toolbar-size);
-    height: var(--toolbar-size);
+    height: calc(var(--toolbar-size) * 1.3);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .codium-toolbaritem svg {
     fill: var(--toolbar-icons)!important;
+    width: 70%;
+    height: 70%;
 }
 .codium-toolbaritem:hover svg {
     fill: var(--toolbar-hover)!important;
 }
 .codium-toolbaritem.codium-toolbaritem-active svg {
     fill: rgb(var(--toolbar-click))!important;
-    width:80%;
-    height: 80%;
 }
 .codium-toolbaritem.codium-toolbaritem-active {
     background-color: rgba(var(--toolbar-click), .2);
     border-left: 3px solid rgb(var(--toolbar-click));
+}
+
+.codium-toolbaritem.codium-toolbaritem-active > .codium-toolbaritem-svg-active {
+    display: block!important;
+}
+.codium-toolbaritem.codium-toolbaritem-active > #fluenticon_files {
+    display: none!important;
 }
