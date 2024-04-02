@@ -50,7 +50,7 @@ import { saveToCache, retrieveFromCache                           } from "../uti
 
 
 
-export function EditorNoCookie({ urlparsed }) {
+export function Codium({ urlparsed }) {
 
 
 
