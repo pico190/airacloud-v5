@@ -15,7 +15,8 @@
 
 //                                  --- IMPORTANT LIBRARIES ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
-import React, {  useEffect, useState  }                             from "react"                ; // React     
+import React, {  useEffect, useState  }                             from "react"               ; // React     
+import                                                                   "./codiumc/Codium.css"; // CSS                                    
 
 //                                      --- PAGES & UI ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
