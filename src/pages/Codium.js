@@ -79,16 +79,6 @@ export function Codium({ urlparsed }) {
                             </defs>
 
                         </svg>
-                        <style children="* {--editor-font-size: 2vw;} .editorcontainer {border: none;
-                        border-radius: 0px !important;
-                        -webkit-border-radius: 0px !important;
-                        -moz-border-radius: 0px !important;
-                        -ms-border-radius: 0px !important;
-                        -o-border-radius: 0px !important;}" />
-                        <style id="langstyle" />
-                        <style id="linter" />
-                        <style id="scrollbehavior" />
-                        <div id="intellisense" className="intellisense" />
                         <Toolbar />
                         {DOMContent}
 
