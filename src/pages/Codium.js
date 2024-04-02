@@ -51,11 +51,14 @@ export function Codium({ urlparsed }) {
             case "files":
                 setDomContent(<>
                  <Files/>
-                </>)
+                </>);
+                break;
             case "settings":
                 setDomContent(<CodiumNotFound />)
+                break;
             default:
                setDomContent(<CodiumNotFound />)
+               break;
         }
 
     }, [windowpage])
