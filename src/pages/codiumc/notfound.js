@@ -1,4 +1,4 @@
-export default function NotFound()  {
+export default function CodiumNotFound()  {
     
     var image = new Image();
     image.src = 'coming-soon.png';
