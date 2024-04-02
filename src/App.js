@@ -36,12 +36,18 @@ function App() {
     ///////////////////////////////
     
                 // SID Client
+
+                var urlswithoutsid = [
+                  "editor-nocookie", "codium"
+                ];
+
+
                 const [SwiftlyIDClient, setSwiftlyIDClient] = useState("");
 
                 var [urlparsed, seturlparsed] = useState(UrlParser())
 
                 useEffect(() => {
-                  if(!urlparsed.includes("editor-nocookie")) {
+                  if(!urlswithoutsid.includes(urlparsed[0])) {
                       const fetchData = async () => {
                         const result = await StartSwiftlyIDClient();
                         setSwiftlyIDClient(result);
