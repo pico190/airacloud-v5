@@ -3,7 +3,9 @@ import { Ic_Outline_DocumentMultiple, Ic_Filled_DocumentMultiple } from "../../u
 export default function Toolbar() {
 
 
-    function click(elem) {
+    function click(name) {
+        var elem = document.querySelector('div.codium-toolbaritem[name="'+name+'"]');
+        console.log(elem);
         if(!elem.classList.contains("codium-toolbaritem-active")) {
             var name = elem.getAttribute("name");
             window.location.href = "#" + name;
@@ -13,7 +15,7 @@ export default function Toolbar() {
 
     return (
         <div className="codium-toolbar">
-            <div className="codium-toolbaritem" onClick={() => {click(this)}} name="files">
+            <div className="codium-toolbaritem" onClick={() => {click("files")}} name="files">
                 <Ic_Outline_DocumentMultiple id="files" />
                 <div className="codium-toolbaritem-svg-active" style={{display: "none"}}>
                     <Ic_Filled_DocumentMultiple id="files-active" />

@@ -27,10 +27,12 @@
     align-items: center;
     justify-content: center;
 }
-.codium-toolbaritem svg * {
-    fill: var(--toolbar-icons)!important;
+.codium-toolbaritem svg {
     width: 70%;
     height: 70%;
+}
+.codium-toolbaritem svg * {
+    fill: var(--toolbar-icons)!important;
 }
 .codium-toolbaritem:hover svg * {
     fill: var(--toolbar-hover)!important;
