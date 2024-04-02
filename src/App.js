@@ -100,17 +100,20 @@ function App() {
               setContent(<LoadWeb url={'https://'+window.location.host+'/notfound.html'} />);
               break;
           }
-        } else {
+        } 
           // Webs can load without swiftly id
           switch (urlparsed[0]) {
             case "editor-nocookie":
               setContent(<EditorNoCookie urlparsed={urlparsed} />)
               break;
+            case "codium":
+              setContent(<Codium urlparsed={urlparsed}/>);
+              break;
             default:
               setContent(<LoadWeb url={'https://'+window.location.host+'/notfound.html'} />);
               break;
           }
-        }
+        
       }
     } catch(error) {
       window.location.href = 'https://'+window.location.host+'/home/';

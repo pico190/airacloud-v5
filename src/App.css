@@ -1080,9 +1080,6 @@ img::selection {
 .cm-spacematch {
   background-color: transparent!important;
 }
-.cm-nonmatchingBracket span {
-  color: var(--cm-nonMatching)!important;
-}
 .cm-nonmatchingBracket {
   background-color: transparent!important;
 }
@@ -1270,7 +1267,6 @@ img::selection {
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
-  /* Color of not closed tags                                  [DISCARDED - Linter does the work] */
   /* Background Color of Search panel                          */ --cm-search:                   var(--sb-account-hover);
   /* Color of gutter line error text                           */ --cm-error-gutter:             #FF9C9C;
   /* Error line background                                     */ --cm-errorLineBg:              #422327;
@@ -1398,7 +1394,6 @@ img::selection {
   /* Color of the line number                                  */ --cm-gutter-fg:                rgba(var(--textrgba), .5);
   /* Color of the selected line number                         */ --cm-gutter-active-foreground: var(--cm-foreground);
   /* Background color of the selected line                     */ --cm-lineHighlight:            #ffffff0f;
-  /* Color of not closed tags                                  [DISCARDED - Linter does the work] */
   /* Error line background                                     */ --cm-errorLineBg:              #e7c9cf;
   /* Color of gutter line error text                           */ --cm-error-gutter:             #530c0c;
   /* Color of gutter line warn text                            */ --cm-warn-gutter:              #675d00;
