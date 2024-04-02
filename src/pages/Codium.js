@@ -22,6 +22,7 @@ import                                                                   "./codi
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
 import Toolbar from "./codiumc/toolbar";
 import CodiumNotFound from "./codiumc/notfound";
+import Files from "./codiumc/Files";
 
 
 
@@ -48,6 +49,7 @@ export function Codium({ urlparsed }) {
         switch (windowpage) {
             case "files":
                 setDomContent(<>
+                 <Files/>
                 </>)
             case "settings":
                 setDomContent(<CodiumNotFound />)
