@@ -1,115 +1,115 @@
-* {
-    --toolbar: #0b0f13;
-    --toolbar-size: 80px;
-    --toolbar-icons: #ffffff2a;
-    --toolbar-hover: #94bff0;
-    --toolbar-click: 148, 191, 240;
+    * {
+        --toolbar: #0b0f13;
+        --toolbar-size: 80px;
+        --toolbar-icons: #ffffff2a;
+        --toolbar-hover: #94bff0;
+        --toolbar-click: 148, 191, 240;
 
-    --c-body: #181e23;
-    --files: #111619;
-    --files-width: 200px;
-    --files-icon-size: 16px;
-}
+        --c-body: #181e23;
+        --files: #0e1315;
+        --files-width: 200px;
+        --files-icon-size: 16px;
+    }
 
-html, body {
+    html, body {
+        background-color: var(--c-body);
+    }
+    body {
+        display: flex;
+    }
+
+    .codium-files {
+        height: 100vh;
+        background-color: var(--files);
+    }
+
+    .codium-spacer{
+        margin-top: 100%;
+        height: 100%;
+    }
+
+    .codium-toolbar {
+        height: 100vh;
+        display: flex;
+        width: var(--toolbar-size);
+        background-color: var(--toolbar);
+        flex-direction: column;
+    }
+
+    .codium-toolbaritem {
+        width: var(--toolbar-size);
+        height: calc(var(--toolbar-size) * 1.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .codium-toolbaritem svg, .codium-toolbaritem-svg-active {
+        width: 70%;
+        height: 70%;
+    }
+    .codium-toolbaritem-svg-active svg {
+        width: 100%;
+        height: 100%;
+    }
+    .codium-toolbaritem svg * {
+        fill: var(--toolbar-icons)!important;
+    }
+    .codium-toolbaritem:hover svg * {
+        fill: var(--toolbar-hover)!important;
+    }
+    .codium-toolbaritem.codium-toolbaritem-active svg * {
+        fill: rgb(var(--toolbar-click))!important;
+    }
+    .codium-toolbaritem.codium-toolbaritem-active {
+        background-color: rgba(var(--toolbar-click), .2);
+        border-left: 3px solid rgb(var(--toolbar-click));
+    }
+
+    .codium-toolbaritem.codium-toolbaritem-active > .codium-toolbaritem-svg-active {
+        display: block!important;
+    }
+    .codium-toolbaritem.codium-toolbaritem-active > #fluenticon_files {
+        display: none!important;
+    }
+
+    .codium-body {
     background-color: var(--c-body);
-}
-body {
-    display: flex;
-}
-
-.codium-files {
-    height: 100vh;
-    background-color: var(--files);
-}
-
-.codium-spacer{
-    margin-top: 100%;
-    height: 100%;
-}
-
-.codium-toolbar {
-    height: 100vh;
-    display: flex;
-    width: var(--toolbar-size);
-    background-color: var(--toolbar);
-    flex-direction: column;
-}
-
-.codium-toolbaritem {
-    width: var(--toolbar-size);
-    height: calc(var(--toolbar-size) * 1.3);
+    width: 100%;
+    }
+    .codium-notfound {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-}
-.codium-toolbaritem svg, .codium-toolbaritem-svg-active {
-    width: 70%;
-    height: 70%;
-}
-.codium-toolbaritem-svg-active svg {
-    width: 100%;
-    height: 100%;
-}
-.codium-toolbaritem svg * {
-    fill: var(--toolbar-icons)!important;
-}
-.codium-toolbaritem:hover svg * {
-    fill: var(--toolbar-hover)!important;
-}
-.codium-toolbaritem.codium-toolbaritem-active svg * {
-    fill: rgb(var(--toolbar-click))!important;
-}
-.codium-toolbaritem.codium-toolbaritem-active {
-    background-color: rgba(var(--toolbar-click), .2);
-    border-left: 3px solid rgb(var(--toolbar-click));
-}
+    flex-direction: column;  
+    gap: 15px;
+    }
 
-.codium-toolbaritem.codium-toolbaritem-active > .codium-toolbaritem-svg-active {
-    display: block!important;
-}
-.codium-toolbaritem.codium-toolbaritem-active > #fluenticon_files {
-    display: none!important;
-}
+    .codium-notfound-bg {
+        background-image: url('https://airacloud-v5-d1.vercel.app/codium-background-colors.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
-.codium-body {
-  background-color: var(--c-body);
-  width: 100%;
-}
-.codium-notfound {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;  
-  gap: 15px;
-}
+    .codium-notfound h1 {
+        font-size: 50px;
+    }
 
-.codium-notfound-bg {
-    background-image: url('https://airacloud-v5-d1.vercel.app/codium-background-colors.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+    .codium-notfound h3 {
+        font-weight: normal;
+        font-size: 30px;
+    }
 
-.codium-notfound h1 {
-  font-size: 50px;
-}
+    .codium-notfound code {
+        background-color: #00000069;
+        padding: 5px 10px;
+        border-radius: 7px;
+        font-size: 20px;
+        font-family: var(--editor-font-family);
+        font-weight: 100;
+    }
 
-.codium-notfound h3 {
-  font-weight: normal;
-  font-size: 30px;
-}
-
-.codium-notfound code {
-  background-color: #00000069;
-  padding: 5px 10px;
-  border-radius: 7px;
-  font-size: 20px;
-  font-family: var(--editor-font-family);
-  font-weight: 100;
-}
-
-.codium-editor {
+  .codium-editor {
     width: 100%;
     background-color: var(--files);
     border-left: 1px solid var(--toolbar);
@@ -125,13 +125,12 @@ body {
     font-size: 20px;
     gap: 10px;
     display: flex;
-    padding-left: 9px;
-    padding-top: 5px;
-    padding-bottom: 5px;
     border-top: 1px solid var(--toolbar);
     cursor: pointer;
     align-items: center;
+    padding: 12px 9px;
   }
+  
   .codium-file img {
     transform: scale(1.6);
     -webkit-transform: scale(1.6);
@@ -155,4 +154,7 @@ body {
   .codium-editor-file span {
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .codium-file span {
+    color: rgba(255, 255, 255, 0.8)!important;
   }
