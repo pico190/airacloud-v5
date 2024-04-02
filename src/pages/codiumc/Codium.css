@@ -110,6 +110,25 @@
         font-weight: 100;
     }
 
+    .editorcontainer {
+        border: none;
+        border-radius: 0px !important;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        -ms-border-radius: 0px !important;
+        -o-border-radius: 0px !important;
+        
+        border-top-left-radius: 10px !important;
+        -moz-top-left-border-radius: 10px !important;
+        -ms-top-left-border-radius: 10px !important;
+        -o-top-left-border-radius: 10px !important;
+    }
+
+    .cm-content, .cm-gutterElement {
+        padding: 0!important;
+        margin-top: 0!important;
+    }
+
   .codium-editor {
     width: 100%;
     background-color: var(--files);
