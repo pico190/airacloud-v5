@@ -1,5 +1,5 @@
 * {
-    --toolbar: #26323d;
+    --toolbar: #1a2026;
     --toolbar-size: 80px;
     --toolbar-icons: #ffffff2a;
     --toolbar-hover: #94bff0;
@@ -23,6 +23,9 @@
 .codium-toolbaritem {
     width: var(--toolbar-size);
     height: var(--toolbar-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .codium-toolbaritem svg {
     fill: var(--toolbar-icons)!important;
@@ -32,6 +35,8 @@
 }
 .codium-toolbaritem.codium-toolbaritem-active svg {
     fill: rgb(var(--toolbar-click))!important;
+    width:80%;
+    height: 80%;
 }
 .codium-toolbaritem.codium-toolbaritem-active {
     background-color: rgba(var(--toolbar-click), .2);
