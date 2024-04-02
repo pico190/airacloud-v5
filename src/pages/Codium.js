@@ -21,6 +21,7 @@ import {  encode                      }                             from 'js-bas
 import CodeMirror                                                   from '@uiw/react-codemirror'; // CODEMIRROR  
 import {  Prec                        }                             from "@codemirror/state"    ; // CODEMIRROR UTILS   
 import {  keymap                      }                             from "@codemirror/view"     ; // CODEMIRROR UTILS
+import                                                                   "./codiumc/Codium.css" ; // CSS
 
 //                                 --- CODEMIRROR EXTENSIONS ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
