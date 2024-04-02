@@ -11,13 +11,13 @@ export default function Files() {
     return (
         <>
             <div className="codium-files">
-                <File file="airacloud" icon="react" extension="jsx" />
+                <File file="airacloud" icon="jsx" extension="jsx" />
                 <File file="README" icon="markdown" extension="md" />
             </div>
             <div className="codium-editor">
                 <div className="codium-editor-files">
-                    <File file="airacloud" icon="react" extension="jsx" />
-                    <File file="README" icon="markdown" extension="md" />
+                    <File file="airacloud" icon="jsx" extension="jsx" isEditor={true} />
+                    <File file="README" icon="markdown" extension="md" isEditor={true} />
                 </div>
             </div>
         </>

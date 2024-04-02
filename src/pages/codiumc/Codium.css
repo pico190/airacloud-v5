@@ -1,18 +1,25 @@
 * {
-    --toolbar: #1d262f;
+    --toolbar: #0b0f13;
     --toolbar-size: 80px;
     --toolbar-icons: #ffffff2a;
     --toolbar-hover: #94bff0;
     --toolbar-click: 148, 191, 240;
 
-    --c-body: #2b3640;
+    --c-body: #181e23;
+    --files: #111619;
+    --files-width: 200px
 }
 
 html, body {
-    background-color: var(--body);
+    background-color: var(--c-body);
 }
 body {
     display: flex;
+}
+
+.codium-files {
+    height: 100vh;
+    background-color: var(--files);
 }
 
 .codium-spacer{
@@ -34,6 +41,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .codium-toolbaritem svg, .codium-toolbaritem-svg-active {
     width: 70%;
@@ -99,3 +107,46 @@ body {
   font-family: var(--editor-font-family);
   font-weight: 100;
 }
+
+.codium-editor {
+    width: 100%;
+    background-color: var(--files);
+    border-left: 1px solid var(--toolbar);
+  }
+  .codium-files {
+    background: var(--files);
+    height: 100vh;
+    width: 200px;
+  }
+  .codium-file {
+    width: 100%;
+    background-color: #0000000d;
+    font-size: 20px;
+    gap: 10px;
+    display: flex;
+    padding-left: 9px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid var(--toolbar);
+    cursor: pointer;
+  }
+  .codium-file img {
+    transform: scale(1.6);
+  }
+  .codium-editor-files {
+    display: flex;
+    border-bottom: 1px solid var(--toolbar);
+  }
+  .codium-editor-file {
+    width: 150px;
+    height: 40px;
+    border-right: 1px solid var(--toolbar);
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 25px 10px;
+  }
+  .codium-editor-file span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
