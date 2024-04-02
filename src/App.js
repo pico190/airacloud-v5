@@ -20,6 +20,7 @@ import $ from 'jquery';
 import { loadProjects } from './utils/api/loadprojects'
 
 // Pages
+import { Codium } from './pages/Codium.js'
 import { Home } from './pages/Home.js'
 import { Editor } from './pages/Editor.js'
 import { EditorNoCookie } from './pages/Editor-nocookie.js';

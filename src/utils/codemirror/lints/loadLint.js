@@ -4,7 +4,7 @@ import cssLinter from "./css";
 import jsLinter from "./js";
 import jsonLinter from "./json";
 
-export default function loadLint(val) {
+export default function loadLint(val, setErrors) {
     if(editorislang(phplint)) {
         phpLinter(val, setErrors);
     }

@@ -197,7 +197,7 @@ export function EditorNoCookie({ urlparsed }) {
 
     let typingTimer;
     const doneTyping = (val) => {
-        loadLint(val)
+        loadLint(val, setErrors)
     };
 
     const onChange = (val) => {
@@ -222,7 +222,7 @@ export function EditorNoCookie({ urlparsed }) {
         document.getElementById("loader").style.pointerEvents = "none" 
         console.log(view, "|", state);
 
-        loadLint(initialValue);
+        loadLint(initialValue, setErrors);
     };
     
     return (
