@@ -1,4 +1,4 @@
-function File(file, icon, extension, isEditor=false) {
+function File({file, icon, extension, isEditor=false}) {
     return (
         <div className={`codium-file ${isEditor ? "codium-editor-file" : ""}`}>
             <img src={`/airaicons/${icon}.svg`} loading="lazy" alt="" />
