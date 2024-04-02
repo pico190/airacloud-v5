@@ -1,7 +1,7 @@
 export default function CodiumNotFound()  {
     
     var image = new Image();
-    image.src = 'coming-soon.png';
+    image.src = '/codium-background-colors.png';
 
     image.onload = function() {
         var element = document.getElementById('codiumnotfound');
