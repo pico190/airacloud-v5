@@ -1,5 +1,5 @@
 
-import {  langs  }                                                  from '@uiw/codemirror-extensions-langs';
+import {  langs  } from '@uiw/codemirror-extensions-langs';
 import { decode } from 'js-base64';
 import { pythonLanguage } from "@codemirror/lang-python";
 import { jsonLanguage } from "@codemirror/lang-json";

@@ -36,7 +36,7 @@ import {  continueKeymap              }                             from "@valto
 //                                       --- EXTRA ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
 import langLoader                                                   from "../utils/codemirror/langloader"    ; // LOADS CODING LANGUAGE
-// import loadDetails                                                  from "../utils/codemirror/loadDetails"   ; // LOADS SOME DETAILS (FOLD ICONS, SEARCH ICONS)
+import loadDetails                                                  from "../utils/codemirror/loadDetails"   ; // LOADS SOME DETAILS (FOLD ICONS, SEARCH ICONS)
 import loadLint                                                     from "../utils/codemirror/lints/loadLint"; // LOADS THE CODE ERROR DETECTOR
 
 import htmlIntelli                                                  from "../utils/codemirror/intelli/html" ;
@@ -185,7 +185,7 @@ export function EditorNoCookie({ urlparsed }) {
   
   
     setInterval(() => {
-        // loadDetails();
+        loadDetails();
 
         var cursor = document.querySelector(".cm-cursor-primary");
         var intellisense = document.getElementById("intellisense");
