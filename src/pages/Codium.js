@@ -14,11 +14,12 @@
 //                      ///////////////////////////////////////////////
 
 //                                  --- IMPORTANT LIBRARIES ---
-//     IMPORTS ---------------------------------------------------  LIBRARY --------------------
-import React, {  useEffect, useState  }                             from "react"               ; // React     
-import                                                                   "./codiumc/Codium.css"; // CSS                                    
+//     IMPORTS ---------------------------------------------------  LIBRARY --------------------     
+import                                                                   "./codiumc/Codium.css"; // CSS  
+import React, {  useEffect, useState  }                             from "react"               ; // React                                  
+import { console_info                 }                             from "../utils/Console";
 
-//                                      --- PAGES & UI ---
+//                                       --- PAGES & UI ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
 import Toolbar                                                      from "./codiumc/toolbar" ; // Toolbar
 import CodiumNotFound                                               from "./codiumc/notfound"; // Notfound page
@@ -45,7 +46,7 @@ export function Codium({ urlparsed }) {
     }, 1);
 
     useEffect(() => {
-
+        console_info("Window: "+windowpage)
         switch (windowpage) {
             case "files":
                 setDomContent(<>
