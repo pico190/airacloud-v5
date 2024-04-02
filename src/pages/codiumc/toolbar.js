@@ -8,7 +8,7 @@ export default function Toolbar() {
         console.log(elem);
         if(!elem.classList.contains("codium-toolbaritem-active")) {
             var name = elem.getAttribute("name");
-            window.location.href = "#" + name;
+            window.location.href = "/codium/#" + name;
             elem.classList.add("codium-toolbaritem-active");
         }
     }
@@ -22,6 +22,12 @@ export default function Toolbar() {
                 </div>
             </div>
             <div className="codium-spacer"></div>
+            <div className="codium-toolbaritem" onClick={() => {click("settings")}} name="settings">
+                <Ic_Outline_DocumentMultiple id="files" />
+                <div className="codium-toolbaritem-svg-active" style={{display: "none"}}>
+                    <Ic_Filled_DocumentMultiple id="files-active" />
+                </div>
+            </div>
         </div>
     )
 }
