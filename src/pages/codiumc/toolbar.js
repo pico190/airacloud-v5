@@ -4,12 +4,12 @@ import { jsxtostr } from "../../utils/generalfuncs";
 export default function Toolbar() {
 
 
-    function click(this) {
-        if(!this.classList.contains("codium-toolbaritem-active")) {
-            var name = this.getAttribute("name");
+    function click(elem) {
+        if(!elem.classList.contains("codium-toolbaritem-active")) {
+            var name = elem.getAttribute("name");
             window.location.href = "#" + name;
-            if(name == "files") {this.innerHTML = jsxtostr(<ic_fluent_document_multiple_24_filled id="files" />)}
-            this.classList.add("codium-toolbaritem-active");
+            if(name == "files") {elem.innerHTML = jsxtostr(<ic_fluent_document_multiple_24_filled id="files" />)}
+            elem.classList.add("codium-toolbaritem-active");
         }
     }
 
