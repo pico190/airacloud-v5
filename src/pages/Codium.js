@@ -7,7 +7,7 @@
 //     \|__|\|__|\|__|\|__|\|__|\|__|\|__|\|_______|\|_______|\|_______|\|_______|\|_______|        \|__|/      |\_________\
 //                                                                                                              \|_________|
 
-// EDITOR NO COOKIE - IFRAME VERSION OF THE EDITOR
+// CODIUM - VSCODE WEB LIKE VERSION - WITH AIRACLOUD TECH
       
 //                      ///////////////////////////////////////////////
 //                      //                LIBRARIES                  //
@@ -16,8 +16,8 @@
 //                                  --- IMPORTANT LIBRARIES ---
 //     IMPORTS ---------------------------------------------------  LIBRARY --------------------
 import React, {  useEffect, useState  }                             from "react"                ; // React     
-import $                                                            from 'jquery'               ; // JQUERY
-import {  encode, decode              }                             from 'js-base64'            ; // BASE 64
+// import $                                                            from 'jquery'               ; // JQUERY
+import {  encode                      }                             from 'js-base64'            ; // BASE 64
 import CodeMirror                                                   from '@uiw/react-codemirror'; // CODEMIRROR  
 import {  Prec                        }                             from "@codemirror/state"    ; // CODEMIRROR UTILS   
 import {  keymap                      }                             from "@codemirror/view"     ; // CODEMIRROR UTILS
@@ -46,6 +46,7 @@ import { htmlintelli, editorislang                                } from "../uti
 import {  lintmsg                                                 } from "../utils/codemirror/lints/lintmsg"; // MARKS THE CODE ERRORS IN THE EDITOR
 import { console_info, console_warn, console_group, console_error } from "../utils/Console"                 ; // CONSOLE MESSAGES
 import { saveToCache, retrieveFromCache                           } from "../utils/cache"                   ; // SAVES DATA IN CACHE
+import Toolbar from "./codiumc/toolbar";
 
 
 
@@ -239,8 +240,8 @@ export function Codium({ urlparsed }) {
                         <style id="langstyle" />
                         <style id="linter" />
                         <style id="scrollbehavior" />
-                        <img onClick={() => {window.open("https://"+window.location.host+"/", "_blank");}} className="editor-nocookie-watermark" src={`https://${window.location.host}/favicon.ico`} loading="lazy" alt="AiraCloud" />
                         <div id="intellisense" className="intellisense" />
+                        <Toolbar />
                         {/* <CodeMirror
                             className="editorcontainer"
                             extensions={extensionsarray}

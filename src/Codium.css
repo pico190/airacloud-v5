@@ -1,0 +1,39 @@
+* {
+    --toolbar: #26323d;
+    --toolbar-size: 80px;
+    --toolbar-icons: #ffffff2a;
+    --toolbar-hover: #94bff0;
+    --toolbar-click: 148, 191, 240;
+}
+
+
+.codium-spacer{
+    margin-top: 100%;
+    height: 100%;
+}
+
+.codium-toolbar {
+    height: 100vh;
+    display: flex;
+    width: var(--toolbar-size);
+    background-color: var(--toolbar);
+    flex-direction: column;
+}
+
+.codium-toolbaritem {
+    width: var(--toolbar-size);
+    height: var(--toolbar-size);
+}
+.codium-toolbaritem svg {
+    fill: var(--toolbar-icons)!important;
+}
+.codium-toolbaritem:hover svg {
+    fill: var(--toolbar-hover)!important;
+}
+.codium-toolbaritem.codium-toolbaritem-active svg {
+    fill: rgb(var(--toolbar-click))!important;
+}
+.codium-toolbaritem.codium-toolbaritem-active {
+    background-color: rgba(var(--toolbar-click), .2);
+    border-left: 3px solid rgb(var(--toolbar-click));
+}
