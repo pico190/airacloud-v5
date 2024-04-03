@@ -1,10 +1,13 @@
 import langLoader from "../utils/codemirror/langloader"    ; // LOADS CODING LANGUAGE
 import { AiraCode } from "./AiraCode";
+import { encode, decode } from 'js-base64'; // BASE 64
+import React, { useEffect, useState } from "react"; // React     
+import { console_info, console_warn, console_group, console_error } from "../utils/Console"; // CONSOLE MESSAGES
 
 export function EditorNoCookie(urlparsed) {
 
-    var [editorlang, setEditorLang] = langLoader()
-    var [editorcontent, setEditorContent] = "";
+    var [editorlang, setEditorLang] = useState(langLoader())
+    var [editorcontent, setEditorContent] = useState("");
     
     // Format: https://airaurl/editor-nocookie/lang/base64editorcontent
     useEffect(() => {
