@@ -4,7 +4,7 @@ import { encode, decode } from 'js-base64'; // BASE 64
 import React, { useEffect, useState } from "react"; // React     
 import { console_info, console_warn, console_group, console_error } from "../utils/Console"; // CONSOLE MESSAGES
 
-export function EditorNoCookie(urlparsed) {
+export function EditorNoCookie({urlparsed}) {
 
     var [editorlang, setEditorLang] = useState(langLoader())
     var [editorcontent, setEditorContent] = useState("");
