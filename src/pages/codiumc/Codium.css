@@ -112,6 +112,7 @@
 
     .editorcontainer {
         border: none;
+        overflow: hidden!important;
         border-radius: 0px !important;
         -webkit-border-radius: 0px !important;
         -moz-border-radius: 0px !important;
@@ -124,10 +125,26 @@
         -o-top-left-border-radius: 10px !important;
     }
 
-    .cm-content, .cm-gutterElement {
-        padding: 0!important;
-        margin-top: 0!important;
+
+    .cm-editor {
+        transform: translateY(-4px);
+        -webkit-transform: translateY(-4px);
+        -moz-transform: translateY(-4px);
+        -ms-transform: translateY(-4px);
+        -o-transform: translateY(-4px);
     }
+
+    .cm-minimap-gutter {
+        transform: translateY(4px);
+        position: fixed;
+        right: 17px;
+        top: 0;
+    }
+    .cm-scroller {
+        overflow: auto!important;
+    }
+
+
 
   .codium-editor {
     width: 100%;
@@ -179,4 +196,8 @@
   }
   .codium-file span {
     color: rgba(255, 255, 255, 0.8)!important;
+  }
+
+  .cm-content {
+    width: 870px!important;
   }
