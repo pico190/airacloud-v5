@@ -189,7 +189,7 @@ export function AiraCode({
         loadLint(val, setErrors)
     };
 
-    const onChange = (val) => {
+    const editorChange = (val) => {
         onChange(val);
         setErrors([])
 
@@ -200,7 +200,7 @@ export function AiraCode({
 
 
     };
-    const onUpdate = (viewUpdate) => {
+    const editorUpdate = (viewUpdate) => {
         var editorToken = viewUpdate.view.observer.selectionRange.focusNode.wholeText
         htmlIntelli(editorToken);
         lintmsg(errors);
@@ -241,8 +241,8 @@ export function AiraCode({
                             onCreateEditor={mount}
                             theme={airatheme}
                             basicSetup={{}}
-                            onChange={onChange}
-                            onUpdate={onUpdate}
+                            onChange={editorChange}
+                            onUpdate={editorUpdate}
                             style={{
                                 height: "100%",
                                 width: "100%"
